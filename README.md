@@ -1,1 +1,1 @@
-# SvKGS-Arendehandlingar
+# SvKGS-Ärendehandlingar

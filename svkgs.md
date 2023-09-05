@@ -73,9 +73,8 @@ ingående handlingarna definieras i ett XML-schema. Se avsnittet
 [Scheman](#_Scheman) nedan. Detta är XML-dokumentets grundläg­gande
 uppbyggnad:
 
-![En bild som visar svart, mörker Automatiskt genererad
-beskrivning](media/image1.png){width="2.5520833333333335in"
-height="2.482082239720035in"}
+<img src="media/image1.png" style="width:2.55208in;height:2.48208in"
+alt="En bild som visar svart, mörker Automatiskt genererad beskrivning" />
 
 Figur . Grundläggande struktur i ett XML-dokument
 
@@ -112,9 +111,8 @@ I tabellerna nedan finns de element som bör eller måste finnas i ett
 XML-dokument enligt SvKGS Ärendehandlingar. Tabellerna följer strukturen
 i XML-dokumentet:
 
-![En bild som visar text, skärmbild, Teckensnitt, linje Automatiskt
-genererad beskrivning](media/image2.png){width="2.7965594925634294in"
-height="3.6805555555555554in"}
+<img src="media/image2.png" style="width:2.79656in;height:3.68056in"
+alt="En bild som visar text, skärmbild, Teckensnitt, linje Automatiskt genererad beskrivning" />
 
 Figur . Översikt av tabeller med dataelement.
 
@@ -135,7 +133,7 @@ eller vara tillagda värden och är därför också en del av Svenska kyrkans
 anpassning av ERMS. Utgångspunkten har varit att så långt som möjligt
 använda värden från ERMS.
 
-[]{#_Scheman .anchor}Scheman
+<span id="_Scheman" class="anchor"></span>Scheman
 
 XML-scheman och Schematron används i ERMS för att på ett mer tekniskt
 sätt definiera hur da­taelementen ska utformas. Scheman kan också
@@ -153,10 +151,11 @@ och [ERMS-SVK-ARENDEN.sch](#_Schematron:_ERMS-SVK-ARENDE.sch).
 
 ERMS-SVK-ARENDE.xsd är identisk med ERMS.xsd men har en egen namnrymd
 för att göra det möjligt att importera och använda andra scheman i
-kombination med detta. I elementet [addit­ionalXMLData]{.mark} tillåter
-ERMS att man använder element från en annan namnrymd, och detta
-ut­nyttjas i ERMS-SVK-ARENDE.xsd där element från
-ERMS-SVK-ARENDEN-element.xsd import­eras.
+kombination med detta. I elementet
+<span class="mark">addit­ionalXMLData</span> tillåter ERMS att man
+använder element från en annan namnrymd, och detta ut­nyttjas i
+ERMS-SVK-ARENDE.xsd där element från ERMS-SVK-ARENDEN-element.xsd
+import­eras.
 
 ERMS-SVK-ARENDE.sch innehåller de regler som finns i ERMS.sch samt de
 regler som är Svenska kyrkans anpassningar av element som ingår i ERMS.
@@ -170,14 +169,15 @@ De frivilliga element i ERMS som formellt inte ingår i SvKGS
 det har varit önskvärt att detta schema ska vara överens­stämmande med
 ERMS.xsd.
 
-En särskild anmärkning om elementet [appendix]{.mark} i
+En särskild anmärkning om elementet <span class="mark">appendix</span> i
 ERMS-SVK-ARENDE.xsd behöver göras. Ef­tersom det har funnits behov av att
 utöka detta element med flera underelement, och då det inte finns något
-element [additionalXMLData]{.mark} här, används inte [appendix]{.mark}
-utan i stället ett eget element [svkAppendix]{.mark} som definieras i
+element <span class="mark">additionalXMLData</span> här, används inte
+<span class="mark">appendix</span> utan i stället ett eget element
+<span class="mark">svkAppendix</span> som definieras i
 ERMS-SVK-ARENDEN-element.xsd.
 
-Elementet [appendix]{.mark} finns fortfarande kvar i
+Elementet <span class="mark">appendix</span> finns fortfarande kvar i
 ERMS-SVK-ARENDE.xsd, men användandet av det förbjuds genom en regel i
 ERMS-SVK-ARENDE.sch.
 
@@ -245,8 +245,7 @@ innehåller dokumentfiler samlas dessa i en undermapp. Varje sådant
 lerveranspaket får bara innehålla ärenden från en och samma arkivbildare
 och ett och samma diarium.
 
-![](media/image3.png){width="1.815631014873141in"
-height="1.4765255905511812in"}
+<img src="media/image3.png" style="width:1.81563in;height:1.47653in" />
 
 Figur . Mappstruktur för ärendeleverans. Namn på mappar och filer är
 enbart exempel.
@@ -264,3085 +263,2031 @@ Kontroll är ett obligatoriskt element som beskriver själva XML-filen och
 vad den innehåller. Den underlättare förståelsen av informationen, om
 XML-filen skulle seprareras från arkivpaktetet.
 
-[]{#_Tabell_1._Kontroll .anchor}Tabell 1. Kontroll
+<span id="_Tabell_1._Kontroll" class="anchor"></span>Tabell 1. Kontroll
 
-+------------+-------------+------------------------------------------+
-| ID         | Element     |                                          |
-+============+=============+==========================================+
-| erms-svk   | Sc          |                                          |
-|            | hemaversion |                                          |
-+------------+-------------+------------------------------------------+
-| erms-svk:1 | Id          | Identifierar ERMS-dokumentet             |
-|            | entifikator |                                          |
-| (ERMS1)    |             | Obligatoriskt. Elementet får upprepas.   |
-|            |             |                                          |
-|            |             | Två identifikatorer ska användas:        |
-|            |             | arkivbildarens namn och ärendets nummer. |
-|            |             | Se exempel nedan.                        |
-|            |             |                                          |
-|            |             | XML-element: identification\             |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| erms-svk:2 | Typ av      | Beskrivning av identifikatorn.           |
-|            | id          |                                          |
-| (ERMS2)    | entifikator | Obligatoriskt. Värdet välj från          |
-|            |             | [SVK-värdelista                          |
-|            |             | 1](#_SVK-VÄRDELISTA_1_–).                |
-|            |             |                                          |
-|            |             | XML-element:                             |
-|            |             | identification/@identificationType\      |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| Exempel 1  |             |                                          |
-| --         |             |                                          |
-| Ide        |             |                                          |
-| ntifikator |             |                                          |
-|            |             |                                          |
-| \          |             |                                          |
-| <control\> |             |                                          |
-|            |             |                                          |
-| \<iden     |             |                                          |
-| tification |             |                                          |
-| id         |             |                                          |
-| entificati |             |                                          |
-| onType=\"a |             |                                          |
-| rkivbildar |             |                                          |
-| e\"\>Sunne |             |                                          |
-| pastora    |             |                                          |
-| t\</identi |             |                                          |
-| fication\> |             |                                          |
-|            |             |                                          |
-| \<iden     |             |                                          |
-| tification |             |                                          |
-| identifi   |             |                                          |
-| cationType |             |                                          |
-| =\"ärenden |             |                                          |
-| ummer\"\>P |             |                                          |
-| 2019-025   |             |                                          |
-| 4\</identi |             |                                          |
-| fication\> |             |                                          |
-|            |             |                                          |
-| \<         |             |                                          |
-| /control\> |             |                                          |
-+------------+-------------+------------------------------------------+
-| erms-svk:3 | Information | Informationsklass som baseras på         |
-|            | s-klassning | säkerhetsklassificering                  |
-| (ERMS3)    |             |                                          |
-|            |             | XML-element: informationClass\           |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| erms-svk:4 | Kl          | Den klassificeringsstruktur som har      |
-|            | assificerin | använts vid klassificering av det        |
-| (ERMS4,    | gs-struktur | aktuella ärendet.                        |
-| ERMS5,     |             |                                          |
-| ERMS6)     |             | Obligatoriskt. Värdet väljs från         |
-|            |             | [SVK-värdelista                          |
-|            |             | 2](#_SVK-VÄRDELISTA_2_–).                |
-|            |             |                                          |
-|            |             | XML-element: classificationSchema/\      |
-|            |             | tex                                      |
-|            |             | tualDescriptionOfClassificationSchema/p\ |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| Exempel 2  |             |                                          |
-| --         |             |                                          |
-| Kla        |             |                                          |
-| ssificerin |             |                                          |
-| gsstruktur |             |                                          |
-|            |             |                                          |
-| \          |             |                                          |
-| <control\> |             |                                          |
-|            |             |                                          |
-| \<cl       |             |                                          |
-| assificati |             |                                          |
-| onSchema\> |             |                                          |
-|            |             |                                          |
-| \<te       |             |                                          |
-| xtualDescr |             |                                          |
-| iptionOfCl |             |                                          |
-| assificati |             |                                          |
-| onSchema\> |             |                                          |
-|            |             |                                          |
-| \<p\       |             |                                          |
-| >KlaSL2016 |             |                                          |
-| _1.0\</p\> |             |                                          |
-|            |             |                                          |
-| \</te      |             |                                          |
-| xtualDescr |             |                                          |
-| iptionOfCl |             |                                          |
-| assificati |             |                                          |
-| onSchema\> |             |                                          |
-|            |             |                                          |
-| \</cl      |             |                                          |
-| assificati |             |                                          |
-| onSchema\> |             |                                          |
-|            |             |                                          |
-| \<         |             |                                          |
-| /control\> |             |                                          |
-+------------+-------------+------------------------------------------+
-| erms-svk:5 | Säkerhe     | Säkerhetsklass.                          |
-|            | ts­klassning |                                          |
-| (ERMS8)    |             | XML-element: securityClass\              |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| erms-svk:6 | Underhåll   | Samlingselement för                      |
-|            |             | underhållsinformation som används för    |
-| (ERMS10)   |             | att beskriva XML-dokumentets tillkomst   |
-|            |             | och eventuella ändringar.                |
-|            |             |                                          |
-|            |             | Obligatoriskt.                           |
-|            |             |                                          |
-|            |             | XML-element: maintenanceInformation      |
-+------------+-------------+------------------------------------------+
-| erms-svk:7 | Status      | XML-dokumentets status.                  |
-|            |             |                                          |
-| (ERMS11)   |             | Obligatoriskt. Värdet väljs från         |
-|            |             | värdelista [SVK-värdelista               |
-|            |             | 3](#_SVK-VÄRDELISTA_3_–).                |
-|            |             |                                          |
-|            |             | För ett nyskapat dokument är värdet      |
-|            |             | alltid "new".                            |
-|            |             |                                          |
-|            |             | XML-element: maintenanceStatus/@value\   |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| erms-svk:8 | Skapare     | Samlingselement med beskrivning av den   |
-|            |             | instans som har skapat XML-dokumentet.   |
-| (ERMS12)   |             |                                          |
-|            |             | Obligatoriskt.                           |
-|            |             |                                          |
-|            |             | XML-element: maintenanceAgency           |
-+------------+-------------+------------------------------------------+
-| erms-svk:9 | Skapare ID  | Identifierande kod för den instans som   |
-|            |             | har skapat XML-dokumentet.               |
-| (ERMS13)   |             |                                          |
-|            |             | Obligatoriskt.                           |
-|            |             |                                          |
-|            |             | XML-element: agencyCode\                 |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| e          | Typ av ID   | Beskriver vilken typ av kod som har      |
-| rms-svk:10 |             | använts för att identifiera skaparen av  |
-|            |             | XML-dokumentet.                          |
-| (ERMS14)   |             |                                          |
-|            |             | Obligatoriskt. Värdet väljs från         |
-|            |             | värdelista [SVK-värdelista               |
-|            |             | 4](#_SVK-VÄRDELISTA_4_–).                |
-|            |             |                                          |
-|            |             | XML-element: agencyCode/@type\           |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| e          | Alternativt | Ytterligare en identifierande kod som    |
-| rms-svk:11 | ID          | kan användas vid behov.                  |
-|            |             |                                          |
-| (ERMS15)   |             | XML-element: otherAgencyCode\            |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| e          | Typ av      | Samma som ovan (erms-svk:10)             |
-| rms-svk:12 | alternativt |                                          |
-|            | ID          | Obligatoriskt om Alternativt ID används. |
-| (ERMS16)   |             |                                          |
-|            |             | XML-element: otherAgencyCode/@type\      |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| e          | Skapare     | Namn på den instans som har skapat       |
-| rms-svk:13 | Namn        | XML-dokumentet.                          |
-|            |             |                                          |
-| (ERMS17)   |             | Obligatoriskt.                           |
-|            |             |                                          |
-|            |             | XML-element: agencyName\                 |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| e          | Underhå     | Samlingselement för dokumentets          |
-| rms-svk:14 | lls­historia | underhållshistoria.                      |
-|            |             |                                          |
-| (ERMS19)   |             | Obligatoriskt.                           |
-|            |             |                                          |
-|            |             | XML-element: maintenanceHistory          |
-+------------+-------------+------------------------------------------+
-| e          | Underhå     | En händelse i dokumentets                |
-| rms-svk:15 | lls­händelse | underhållshistoria.                      |
-|            |             |                                          |
-| (ERMS20)   |             | Obligatoriskt. Elementet kan upprepas.   |
-|            |             |                                          |
-|            |             | När XML-dokumentet skapas, får det en    |
-|            |             | Underhållshändelse av typen "created".   |
-|            |             |                                          |
-|            |             | XML-element: maintenanceEvent            |
-+------------+-------------+------------------------------------------+
-| e          | Typ av      | Typ av underhållshändelse.               |
-| rms-svk:16 | händelse    |                                          |
-|            |             | Obligatoriskt. Värdet väljs från         |
-| (ERMS21)   |             | värdelistan [SVK-värdelista              |
-|            |             | 5](#_SVK-VÄRDELISTA_5_–).                |
-|            |             |                                          |
-|            |             | XML-element: eventType/@value\           |
-|            |             | Datatyp: token                           |
-+------------+-------------+------------------------------------------+
-| e          | Datum för   | Datum då underhållshändelsen inträffade. |
-| rms-svk:17 | händelse    |                                          |
-|            |             | Obligatoriskt.                           |
-| (ERMS22)   |             |                                          |
-|            |             | XML-element: eventDateTime\              |
-|            |             | Datatyp: dateTime                        |
-+------------+-------------+------------------------------------------+
-| e          | Utförare    | Den agent som har utfört handlingen.     |
-| rms-svk:18 |             |                                          |
-|            |             | Obligatoriskt.                           |
-| (ERMS23)   |             |                                          |
-|            |             | XML-element: agent                       |
-+------------+-------------+------------------------------------------+
-| e          | Typ av      | Anger vilken egenskap utföraren har i    |
-| rms-svk:19 | utförare    | förhållande till den utförda handlingen. |
-|            |             |                                          |
-| (ERMS93)   |             | Värdet väljs från värdelistan            |
-|            |             | [SVK-värdelista                          |
-|            |             | 6](#_SVK-VÄRDELISTA_6_–).                |
-|            |             |                                          |
-|            |             | XML-element: agent/@agentType\           |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| e          | Namn        | Namn på den person eller organisation    |
-| rms-svk:20 |             | som har utfört handlingen.               |
-|            |             |                                          |
-| (ERMS95)   |             | Obligatoriskt.                           |
-|            |             |                                          |
-|            |             | XML-element: agent/name\                 |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| e          | O           | Organisationstillhörighet.               |
-| rms-svk:21 | rganisation |                                          |
-|            |             | Obligatoriskt om det är en person som är |
-| (ERMS99)   |             | agent.                                   |
-|            |             |                                          |
-|            |             | XML-element: agent/organisation\         |
-|            |             | Datatyp: string                          |
-+------------+-------------+------------------------------------------+
-| Exempel 3  |             |                                          |
-| --         |             |                                          |
-| Underhåll  |             |                                          |
-|            |             |                                          |
-| \          |             |                                          |
-| <control\> |             |                                          |
-|            |             |                                          |
-| \<main     |             |                                          |
-| tenanceInf |             |                                          |
-| ormation\> |             |                                          |
-|            |             |                                          |
-| \<mainten  |             |                                          |
-| anceStatus |             |                                          |
-| value=     |             |                                          |
-| \"new\"/\> |             |                                          |
-|            |             |                                          |
-| \          |             |                                          |
-| <maintenan |             |                                          |
-| ceAgency\> |             |                                          |
-|            |             |                                          |
-| \<         |             |                                          |
-| agencyCode |             |                                          |
-| type=      |             |                                          |
-| \"organisa |             |                                          |
-| tionsnumme |             |                                          |
-| r\"\>12345 |             |                                          |
-| 67876\</ag |             |                                          |
-| encyCode\> |             |                                          |
-|            |             |                                          |
-| \<a        |             |                                          |
-| gencyName\ |             |                                          |
-| >Kyrkostyr |             |                                          |
-| elsen\</ag |             |                                          |
-| encyName\> |             |                                          |
-|            |             |                                          |
-| \<         |             |                                          |
-| /maintenan |             |                                          |
-| ceAgency\> |             |                                          |
-|            |             |                                          |
-| \<         |             |                                          |
-| maintenanc |             |                                          |
-| eHistory\> |             |                                          |
-|            |             |                                          |
-| \<maintena |             |                                          |
-| nceEvent\> |             |                                          |
-|            |             |                                          |
-| \          |             |                                          |
-| <eventType |             |                                          |
-| value=\"cr |             |                                          |
-| eated\"/\> |             |                                          |
-|            |             |                                          |
-| \<ev       |             |                                          |
-| entDateTim |             |                                          |
-| e\>2001-12 |             |                                          |
-| -17T09:30: |             |                                          |
-| 47\</event |             |                                          |
-| DateTime\> |             |                                          |
-|            |             |                                          |
-| \<agent    |             |                                          |
-| agent      |             |                                          |
-| Type=\"del |             |                                          |
-| iverer\"\> |             |                                          |
-|            |             |                                          |
-| \<na       |             |                                          |
-| me\>Public |             |                                          |
-| 36         |             |                                          |
-| 0\</name\> |             |                                          |
-|            |             |                                          |
-| \<         |             |                                          |
-| organisati |             |                                          |
-| on\>Tietoe |             |                                          |
-| vry\</orga |             |                                          |
-| nisation\> |             |                                          |
-|            |             |                                          |
-| \</agent\> |             |                                          |
-|            |             |                                          |
-| \          |             |                                          |
-| </maintena |             |                                          |
-| nceEvent\> |             |                                          |
-|            |             |                                          |
-| \</        |             |                                          |
-| maintenanc |             |                                          |
-| eHistory\> |             |                                          |
-|            |             |                                          |
-| \</main    |             |                                          |
-| tenanceInf |             |                                          |
-| ormation\> |             |                                          |
-|            |             |                                          |
-| \<         |             |                                          |
-| /control\> |             |                                          |
-+------------+-------------+------------------------------------------+
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Element</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>erms-svk</td>
+<td>Schemaversion</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:1</p>
+<p>(ERMS1)</p></td>
+<td>Identifikator</td>
+<td><p>Identifierar ERMS-dokumentet</p>
+<p>Obligatoriskt. Elementet får upprepas.</p>
+<p>Två identifikatorer ska användas: arkivbildarens namn och ärendets
+nummer. Se exempel nedan.</p>
+<p>XML-element: identification<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:2</p>
+<p>(ERMS2)</p></td>
+<td>Typ av identifikator</td>
+<td><p>Beskrivning av identifikatorn.</p>
+<p>Obligatoriskt. Värdet välj från <a
+href="#_SVK-VÄRDELISTA_1_–">SVK-värdelista 1</a>.</p>
+<p>XML-element: identification/@identificationType<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 1 – Identifikator</p>
+<p>&lt;control&gt;</p>
+<p>&lt;identification identificationType="arkivbildare"&gt;Sunne
+pastorat&lt;/identification&gt;</p>
+<p>&lt;identification identificationType="ärendenummer"&gt;P
+2019-0254&lt;/identification&gt;</p>
+<p>&lt;/control&gt;</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:3</p>
+<p>(ERMS3)</p></td>
+<td>Informations-klassning</td>
+<td><p>Informationsklass som baseras på säkerhetsklassificering</p>
+<p>XML-element: informationClass<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:4</p>
+<p>(ERMS4, ERMS5, ERMS6)</p></td>
+<td>Klassificerings-struktur</td>
+<td><p>Den klassificeringsstruktur som har använts vid klassificering av
+det aktuella ärendet.</p>
+<p>Obligatoriskt. Värdet väljs från <a
+href="#_SVK-VÄRDELISTA_2_–">SVK-värdelista 2</a>.</p>
+<p>XML-element: classificationSchema/<br />
+textualDescriptionOfClassificationSchema/p<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 2 – Klassificeringsstruktur</p>
+<p>&lt;control&gt;</p>
+<p>&lt;classificationSchema&gt;</p>
+<p>&lt;textualDescriptionOfClassificationSchema&gt;</p>
+<p>&lt;p&gt;KlaSL2016_1.0&lt;/p&gt;</p>
+<p>&lt;/textualDescriptionOfClassificationSchema&gt;</p>
+<p>&lt;/classificationSchema&gt;</p>
+<p>&lt;/control&gt;</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:5</p>
+<p>(ERMS8)</p></td>
+<td>Säkerhets­klassning</td>
+<td><p>Säkerhetsklass.</p>
+<p>XML-element: securityClass<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:6</p>
+<p>(ERMS10)</p></td>
+<td>Underhåll</td>
+<td><p>Samlingselement för underhållsinformation som används för att
+beskriva XML-dokumentets tillkomst och eventuella ändringar.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: maintenanceInformation</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:7</p>
+<p>(ERMS11)</p></td>
+<td>Status</td>
+<td><p>XML-dokumentets status.</p>
+<p>Obligatoriskt. Värdet väljs från värdelista <a
+href="#_SVK-VÄRDELISTA_3_–">SVK-värdelista 3</a>.</p>
+<p>För ett nyskapat dokument är värdet alltid ”new”.</p>
+<p>XML-element: maintenanceStatus/@value<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:8</p>
+<p>(ERMS12)</p></td>
+<td>Skapare</td>
+<td><p>Samlingselement med beskrivning av den instans som har skapat
+XML-dokumentet.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: maintenanceAgency</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:9</p>
+<p>(ERMS13)</p></td>
+<td>Skapare ID</td>
+<td><p>Identifierande kod för den instans som har skapat
+XML-dokumentet.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: agencyCode<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:10</p>
+<p>(ERMS14)</p></td>
+<td>Typ av ID</td>
+<td><p>Beskriver vilken typ av kod som har använts för att identifiera
+skaparen av XML-dokumentet.</p>
+<p>Obligatoriskt. Värdet väljs från värdelista <a
+href="#_SVK-VÄRDELISTA_4_–">SVK-värdelista 4</a>.</p>
+<p>XML-element: agencyCode/@type<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:11</p>
+<p>(ERMS15)</p></td>
+<td>Alternativt ID</td>
+<td><p>Ytterligare en identifierande kod som kan användas vid behov.</p>
+<p>XML-element: otherAgencyCode<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:12</p>
+<p>(ERMS16)</p></td>
+<td>Typ av alternativt ID</td>
+<td><p>Samma som ovan (erms-svk:10)</p>
+<p>Obligatoriskt om Alternativt ID används.</p>
+<p>XML-element: otherAgencyCode/@type<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:13</p>
+<p>(ERMS17)</p></td>
+<td>Skapare Namn</td>
+<td><p>Namn på den instans som har skapat XML-dokumentet.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: agencyName<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:14</p>
+<p>(ERMS19)</p></td>
+<td>Underhålls­historia</td>
+<td><p>Samlingselement för dokumentets underhållshistoria.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: maintenanceHistory</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:15</p>
+<p>(ERMS20)</p></td>
+<td>Underhålls­händelse</td>
+<td><p>En händelse i dokumentets underhållshistoria.</p>
+<p>Obligatoriskt. Elementet kan upprepas.</p>
+<p>När XML-dokumentet skapas, får det en Underhållshändelse av typen
+”created”.</p>
+<p>XML-element: maintenanceEvent</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:16</p>
+<p>(ERMS21)</p></td>
+<td>Typ av händelse</td>
+<td><p>Typ av underhållshändelse.</p>
+<p>Obligatoriskt. Värdet väljs från värdelistan <a
+href="#_SVK-VÄRDELISTA_5_–">SVK-värdelista 5</a>.</p>
+<p>XML-element: eventType/@value<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:17</p>
+<p>(ERMS22)</p></td>
+<td>Datum för händelse</td>
+<td><p>Datum då underhållshändelsen inträffade.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: eventDateTime<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:18</p>
+<p>(ERMS23)</p></td>
+<td>Utförare</td>
+<td><p>Den agent som har utfört handlingen.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: agent</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:19</p>
+<p>(ERMS93)</p></td>
+<td>Typ av utförare</td>
+<td><p>Anger vilken egenskap utföraren har i förhållande till den
+utförda handlingen.</p>
+<p>Värdet väljs från värdelistan <a
+href="#_SVK-VÄRDELISTA_6_–">SVK-värdelista 6</a>.</p>
+<p>XML-element: agent/@agentType<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:20</p>
+<p>(ERMS95)</p></td>
+<td>Namn</td>
+<td><p>Namn på den person eller organisation som har utfört
+handlingen.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: agent/name<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:21</p>
+<p>(ERMS99)</p></td>
+<td>Organisation</td>
+<td><p>Organisationstillhörighet.</p>
+<p>Obligatoriskt om det är en person som är agent.</p>
+<p>XML-element: agent/organisation<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 3 – Underhåll</p>
+<p>&lt;control&gt;</p>
+<p>&lt;maintenanceInformation&gt;</p>
+<p>&lt;maintenanceStatus value="new"/&gt;</p>
+<p>&lt;maintenanceAgency&gt;</p>
+<p>&lt;agencyCode
+type="organisationsnummer"&gt;1234567876&lt;/agencyCode&gt;</p>
+<p>&lt;agencyName&gt;Kyrkostyrelsen&lt;/agencyName&gt;</p>
+<p>&lt;/maintenanceAgency&gt;</p>
+<p>&lt;maintenanceHistory&gt;</p>
+<p>&lt;maintenanceEvent&gt;</p>
+<p>&lt;eventType value="created"/&gt;</p>
+<p>&lt;eventDateTime&gt;2001-12-17T09:30:47&lt;/eventDateTime&gt;</p>
+<p>&lt;agent agentType="deliverer"&gt;</p>
+<p>&lt;name&gt;Public 360&lt;/name&gt;</p>
+<p>&lt;organisation&gt;Tietoevry&lt;/organisation&gt;</p>
+<p>&lt;/agent&gt;</p>
+<p>&lt;/maintenanceEvent&gt;</p>
+<p>&lt;/maintenanceHistory&gt;</p>
+<p>&lt;/maintenanceInformation&gt;</p>
+<p>&lt;/control&gt;</p></td>
+</tr>
+</tbody>
+</table>
 
 Information om ärendeakter
 
-[]{#_Tabell_2._Ärendeakter .anchor}Tabell 2. Ärendeakter
+<span id="_Tabell_2._Ärendeakter" class="anchor"></span>Tabell 2.
+Ärendeakter
 
-+------------+------------+--------------------------------------------+
-| ID         | Element    |                                            |
-+============+============+============================================+
-| e          | Ärendeakt  | Samlingsobjekt för ärendeakten med         |
-| rms-svk:22 |            | ingående dokument och filer.               |
-|            |            |                                            |
-| (ERMS198)  |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | Varje ärendeakt ska dokumenteras i en      |
-|            |            | XML-fil, och ingen XML-fil får innehålla   |
-|            |            | mer än en ärendeakt.                       |
-|            |            |                                            |
-|            |            | XML-element: aggregation                   |
-+------------+------------+--------------------------------------------+
-| e          | Ide        | Identifikator för ärendeakten i form av    |
-| rms-svk:23 | ntifikator | UUID. Identifikatorn anges automatiskt     |
-|            |            | redan i det levererande systemet eller vid |
-| (ERMS199)  |            | överföring till e-arkivet.                 |
-|            |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | XML-element:                               |
-|            |            | aggregation/@systemIdentifier\             |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Typ av     | Typ av aggregation, vilket i den här       |
-| rms-svk:24 | a          | specifikationen alltid är "caseFile", det  |
-|            | ggre­gation | vill säga "ärendeakt".                     |
-| (ERMS200)  |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | XML-element:                               |
-|            |            | aggregation/@aggregationType="caseFile"\   |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 4  |            |                                            |
-| --         |            |                                            |
-| Ärendeakt  |            |                                            |
-|            |            |                                            |
-| \<a        |            |                                            |
-| ggregation |            |                                            |
-| systemI    |            |                                            |
-| dentifier= |            |                                            |
-| \"3b9fbc5f |            |                                            |
-| -3eaf-4521 |            |                                            |
-| -9726-0f14 |            |                                            |
-| 2feb04c3\" |            |                                            |
-| aggregatio |            |                                            |
-| nType=\"ca |            |                                            |
-| seFile\"\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Är         | Ärendets officiella nummer,                |
-| rms-svk:25 | ende­nummer | "diarienumret".                            |
-|            |            |                                            |
-| (ERMS218)  |            | Ärendenumret ska ha formatet \[diariekod\] |
-|            |            | \[årtal\]-\[löpnummer\]. Diariekoden ska   |
-|            |            | bestå av versaler. Löpnumret ska bestå av  |
-|            |            | fyra siffror och fylls vid behov ut med    |
-|            |            | nollor, t.ex. S 2019-0043.                 |
-|            |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | XML-element: objectId\                     |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Intern     | Befintligt id i det levererande systemet   |
-| rms-svk:26 | ide        |                                            |
-|            | ntifi­kator | Om elementet Intern identifikator används, |
-| (ERMS219)  |            | måste attributet extraIdType ha värdet     |
-|            |            | "deliveringSystemId".                      |
-|            |            |                                            |
-|            |            | XML-element: extraId\                      |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 5  |            |                                            |
-| --         |            |                                            |
-| Är         |            |                                            |
-| endenummer |            |                                            |
-| och Intern |            |                                            |
-| ide        |            |                                            |
-| ntifikator |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-|            |            |                                            |
-| \<o        |            |                                            |
-| bjectId\>F |            |                                            |
-| 20         |            |                                            |
-| 19-0032\</ |            |                                            |
-| objectId\> |            |                                            |
-|            |            |                                            |
-| \<extraId  |            |                                            |
-| ext        |            |                                            |
-| raIdType=\ |            |                                            |
-| "deliverin |            |                                            |
-| gSystemId\ |            |                                            |
-| "\>34565\< |            |                                            |
-| /extraId\> |            |                                            |
-|            |            |                                            |
-| \</agg     |            |                                            |
-| regation\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | I          | Ärendets informationsklass.                |
-| rms-svk:27 | nformation |                                            |
-|            | s­klassning | XML-element: informationClass\             |
-| (ERMS202)  |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Säkerhet   | Ärendets säkerhetsklass.                   |
-| rms-svk:28 | s­klassning |                                            |
-|            |            | XML-element: securityClass\                |
-| (ERMS203)  |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Klas       | Namnet på den process i den officiella     |
-| rms-svk:29 | sificering | klassificeringsstrukturen som har angivits |
-|            |            | som klassificering av ärendet och de       |
-| (ERMS208)  |            | ingående handlingarna.                     |
-|            |            |                                            |
-|            |            | XML-element: classification\               |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Klassifi   | Koden för den process som angivits under   |
-| rms-svk:30 | ce­ringskod | Klassificering                             |
-|            |            |                                            |
-| (ERMS75)   |            | XML-element:                               |
-|            |            | classification/@classificationCode\        |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 6  |            |                                            |
-| --         |            |                                            |
-| Klas       |            |                                            |
-| sificering |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-|            |            |                                            |
-| \<clas     |            |                                            |
-| sification |            |                                            |
-| classifica |            |                                            |
-| tionCode=\ |            |                                            |
-| "2.7\"\>Ge |            |                                            |
-| servic     |            |                                            |
-| e\</classi |            |                                            |
-| fication\> |            |                                            |
-|            |            |                                            |
-| \</agg     |            |                                            |
-| regation\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Nyckelord  | Samlingselement för enskilda nyckelord.    |
-| rms-svk:31 |            |                                            |
-|            |            | XML-element: keywords                      |
-| (ERMS223)  |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Nyckelord  | Enskilt nyckelord.                         |
-| rms-svk:32 |            |                                            |
-|            |            | Elementet kan upprepas.                    |
-| (ERMS224)  |            |                                            |
-|            |            | XML-element: keyword\                      |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 7  |            |                                            |
-| --         |            |                                            |
-| Nyckelord  |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| keywords\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <keyword\> |            |                                            |
-| församling |            |                                            |
-| sordning\< |            |                                            |
-| /keyword\> |            |                                            |
-|            |            |                                            |
-| \<k        |            |                                            |
-| eyword\>ky |            |                                            |
-| rkorådet\< |            |                                            |
-| /keyword\> |            |                                            |
-|            |            |                                            |
-| \</        |            |                                            |
-| keywords\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Är         | Ärendemening, ärendets titel.              |
-| rms-svk:33 | endemening |                                            |
-|            |            | Obligatoriskt.                             |
-| (ERMS209)  |            |                                            |
-|            |            | XML-element: title\                        |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Annan      | Används endast för Offentlig titel i       |
-| rms-svk:34 | titel      | leveranser från Public 360°.               |
-|            |            |                                            |
-| (ERMS210)  |            | Om elementet Annan titel används måste     |
-|            |            | attributet titleType ha värdet             |
-|            |            | "publicTitle".                             |
-|            |            |                                            |
-|            |            | XML-element: otherTitle\                   |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 8  |            |                                            |
-| --         |            |                                            |
-| Är         |            |                                            |
-| endemening |            |                                            |
-| och Annan  |            |                                            |
-| titel      |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-|            |            |                                            |
-| \<title    |            |                                            |
-| \>Ärendets |            |                                            |
-| titel      |            |                                            |
-| \</title\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| otherTitle |            |                                            |
-| titleType  |            |                                            |
-| =\"publicT |            |                                            |
-| itle\"\>En |            |                                            |
-| offentlig  |            |                                            |
-| titel\</ot |            |                                            |
-| herTitle\> |            |                                            |
-|            |            |                                            |
-| \</agg     |            |                                            |
-| regation\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Är         | Ärendets status.                           |
-| rms-svk:35 | endestatus |                                            |
-|            |            | Obligatoriskt. Värdet väljs från           |
-| (ERMS239)  |            | värdelistan [SVK-värdelista                |
-|            |            | 7](#_SVK-VÄRDELISTA_7_–).                  |
-|            |            |                                            |
-|            |            | Giltiga värden:"closed" (avslutat) eller   |
-|            |            | "obliterated" (makulerat).                 |
-|            |            |                                            |
-|            |            | Exempel:                                   |
-|            |            |                                            |
-|            |            | \<aggregation\>                            |
-|            |            |                                            |
-|            |            | \<status                                   |
-|            |            | []{.mark}value=\"[closed]{.mark}\"/\>      |
-|            |            |                                            |
-|            |            | \</aggregation\>                           |
-|            |            |                                            |
-|            |            | XML-element: status/@value\                |
-|            |            | Datatype: string                           |
-+------------+------------+--------------------------------------------+
-| e          | Ären       | Referens till och/eller från annat ärende. |
-| rms-svk:36 | dereferens |                                            |
-|            |            | Om möjligt anges det andra ärendets        |
-| (ERMS52,   |            | Ärendenummer enligt specifikationen i      |
-| ERMS53)    |            | detta dokument, annars ärendenumret i      |
-|            |            | annat format eller fritext.                |
-|            |            |                                            |
-|            |            | Elementet kan upprepas.                    |
-|            |            |                                            |
-|            |            | Om elementet Ärendereferens används, måste |
-|            |            | attributet relationType ha värdet          |
-|            |            | "reference".                               |
-|            |            |                                            |
-|            |            | XML-element: relation\                     |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 9  |            |                                            |
-| --         |            |                                            |
-| Ären       |            |                                            |
-| dereferens |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-|            |            |                                            |
-| \<relation |            |                                            |
-| relationT  |            |                                            |
-| ype=\"refe |            |                                            |
-| rence\"\>F |            |                                            |
-| 20         |            |                                            |
-| 19-0454\</ |            |                                            |
-| relation\> |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Utökad     | Utökad XML-data är en del av Svenska       |
-| rms-svk:37 | XML-data   | kyrkans anpassning av ERMS.                |
-|            |            |                                            |
-| (ERMS252,  |            | Se [Tabell 3](#_Tabell_3._Svenska).        |
-|            |            |                                            |
-| ERMS43)    |            | XML-element: additionalXMLData             |
-+------------+------------+--------------------------------------------+
-| e          | Sekretess  | Samlingselement för uppgift om sekretess.  |
-| rms-svk:38 |            |                                            |
-|            |            | Elementet kan upprepas.                    |
-| (ERMS253,  |            |                                            |
-| ERMS57)    |            | Om elementet Sekretess används måste       |
-|            |            | attributet restrictionType ha värdet       |
-|            |            | "confidential".                            |
-|            |            |                                            |
-|            |            | XML-element: restriction                   |
-+------------+------------+--------------------------------------------+
-| e          | F          | Fritext som beskriver sekretessen.         |
-| rms-svk:39 | örklarande |                                            |
-|            | text       | XML-element: explanatoryText\              |
-| (ERMS58)   |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Lagrum     | Hänvisning till paragraf i kyrkoordningens |
-| rms-svk:40 |            | 54 kapitel, till Offentlighets- och        |
-|            |            | sekretesslagen eller till annat lagrum som |
-| (ERMS59)   |            | stöder den angivna sekretessen.            |
-|            |            |                                            |
-|            |            | Obligatoriskt om elementet Sekretess       |
-|            |            | används.                                   |
-|            |            |                                            |
-|            |            | XML-element: regulation\                   |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Sekr       | Datum då sekretessmarkeringen gjordes.     |
-| rms-svk:41 | etess­datum |                                            |
-|            |            | Om elementet Sekretessdatum används, måste |
-|            |            | attributet dateTyp ha värdet "created"     |
-|            |            |                                            |
-|            |            | XML-element: dates/date\                   |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| Exempel 10 |            |                                            |
-| --         |            |                                            |
-| Sekretess  |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-|            |            |                                            |
-| \<r        |            |                                            |
-| estriction |            |                                            |
-| rest       |            |                                            |
-| rictionTyp |            |                                            |
-| e=\"confid |            |                                            |
-| ential\"\> |            |                                            |
-|            |            |                                            |
-| \<explan   |            |                                            |
-| atoryText\ |            |                                            |
-| >Sekretess |            |                                            |
-| enligt     |            |                                            |
-| KO         |            |                                            |
-| \</explana |            |                                            |
-| toryText\> |            |                                            |
-|            |            |                                            |
-| \<regu     |            |                                            |
-| lation\>KO |            |                                            |
-| 54:2\</re  |            |                                            |
-| gulation\> |            |                                            |
-|            |            |                                            |
-| \<dates\>  |            |                                            |
-|            |            |                                            |
-| \<date     |            |                                            |
-| dateType=\ |            |                                            |
-| "created\" |            |                                            |
-| \>2020-01- |            |                                            |
-| 02T00:00:0 |            |                                            |
-| 0\</date\> |            |                                            |
-|            |            |                                            |
-| \</dates\> |            |                                            |
-|            |            |                                            |
-| \</res     |            |                                            |
-| triction\> |            |                                            |
-|            |            |                                            |
-| \</agg     |            |                                            |
-| regation\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Aktörer    | Samlingselement för alla agerande parter i |
-| rms-svk:42 |            | ärendet.                                   |
-|            |            |                                            |
-| (ER        |            | XML-element: agents                        |
-| MS230-235) |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Skapare    | Den som har skapat ärendet i systemet.     |
-| rms-svk:43 |            |                                            |
-|            |            | Om elementet Skapare används, måste        |
-| (ERMS230)  |            | agentType ha värdet "creator".             |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| e          | H          | Ansvarig handläggare för ärendet.          |
-| rms-svk:44 | andläggare |                                            |
-|            |            | Om elementet Handläggare används, måste    |
-|            |            | agentType ha värdet "responsible_person".  |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| e          | Medh       | Eventuella medhandläggare utöver den       |
-| rms-svk:45 | and­läggare | ansvariga.                                 |
-|            |            |                                            |
-| (ERMS232)  |            | Elementet kan upprepas.                    |
-|            |            |                                            |
-|            |            | Om elementet Medhandläggare används, måste |
-|            |            | agentType ha värdet "editor".              |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| e          | Ärendepart | Extern part i ärendet.                     |
-| rms-svk:46 |            |                                            |
-|            |            | Elementet kan upprepas.                    |
-|            |            |                                            |
-|            |            | Om elementet Ärendepart används, måste     |
-|            |            | agentType ha värdet "counterpart".         |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| e          | Annan      | Annan typ av aktör eller kontakt kopplad   |
-| rms-svk:47 | aktör      | till ärendet.                              |
-|            |            |                                            |
-|            |            | Elementet kan upprepas.                    |
-|            |            |                                            |
-|            |            | Om elementet Annan aktör används, måste    |
-|            |            | agentType ha värdet "agent".               |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| e          | Avslutare  | Den som har avslutat eller makulerat       |
-| rms-svk:48 |            | ärendet.                                   |
-|            |            |                                            |
-|            |            | Om elementet Avslutare används, måste      |
-|            |            | agentType ha värdet "other" och            |
-|            |            | otherAgentType värdet "closer".            |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| Exempel 11 |            |                                            |
-| -- Aktörer |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-|            |            |                                            |
-| \<agents\> |            |                                            |
-|            |            |                                            |
-| \<agent    |            |                                            |
-| age        |            |                                            |
-| ntType=\"c |            |                                            |
-| reator\"\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| name\>Anna |            |                                            |
-| Andersso   |            |                                            |
-| n\</name\> |            |                                            |
-|            |            |                                            |
-| \<idNumber |            |                                            |
-| idNumbe    |            |                                            |
-| rType=\"us |            |                                            |
-| ername\"\> |            |                                            |
-| svkanan\</ |            |                                            |
-| idNumber\> |            |                                            |
-|            |            |                                            |
-| \</agent\> |            |                                            |
-|            |            |                                            |
-| \<agent    |            |                                            |
-| agen       |            |                                            |
-| tType=\"re |            |                                            |
-| sponsible_ |            |                                            |
-| person\"\> |            |                                            |
-|            |            |                                            |
-| \<n        |            |                                            |
-| ame\>Johan |            |                                            |
-| Göransso   |            |                                            |
-| n\</name\> |            |                                            |
-|            |            |                                            |
-| \<idNumber |            |                                            |
-| idNumbe    |            |                                            |
-| rType=\"us |            |                                            |
-| ername\"\> |            |                                            |
-| svkjogo\</ |            |                                            |
-| idNumber\> |            |                                            |
-|            |            |                                            |
-| \</agent\> |            |                                            |
-|            |            |                                            |
-| \<agent    |            |                                            |
-| agentTy    |            |                                            |
-| pe=\"count |            |                                            |
-| erpart\"\> |            |                                            |
-|            |            |                                            |
-| \<na       |            |                                            |
-| me\>Försäk |            |                                            |
-| ringskassa |            |                                            |
-| n\</name\> |            |                                            |
-|            |            |                                            |
-| \</agent\> |            |                                            |
-|            |            |                                            |
-| \<agent    |            |                                            |
-| agentType  |            |                                            |
-| =\"other\" |            |                                            |
-| otherAg    |            |                                            |
-| entType=\" |            |                                            |
-| closer\"\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| name\>Erik |            |                                            |
-| Gustavsso  |            |                                            |
-| n\</name\> |            |                                            |
-|            |            |                                            |
-| \<idNumber |            |                                            |
-| idNumbe    |            |                                            |
-| rType=\"us |            |                                            |
-| ername\"\> |            |                                            |
-| svkergu\</ |            |                                            |
-| idNumber\> |            |                                            |
-|            |            |                                            |
-| \</agent\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </agents\> |            |                                            |
-|            |            |                                            |
-| \</agg     |            |                                            |
-| regation\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | B          | En beskrivning av ärendet utöver           |
-| rms-svk:49 | eskrivning | Ärendemening.                              |
-|            |            |                                            |
-| (ERMS211)  |            | XML-element: description\                  |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Datum      | Samlingselement för datum som gäller för   |
-| rms-svk:50 |            | ärendet.                                   |
-|            |            |                                            |
-| E          |            | Alla datum har datatypen xs:dateTime i     |
-| RMS204-206 |            | UTC-format, vilket betyder att både datum  |
-|            |            | och klocklag ned till sekundnivå ska       |
-|            |            | anges. Om klockslag saknas används         |
-|            |            | noll-tecken. Tidszon anges inte men        |
-|            |            | förutsätts vara Europe/Stockholm.          |
-|            |            |                                            |
-|            |            | \[År\]-\[Måna                              |
-|            |            | d\]-\[Dag\]T\[Timme\]:\[Minut\]:\[Sekund\] |
-|            |            |                                            |
-|            |            | Exempel:\                                  |
-|            |            | 2018-03-04T15:15:22\                       |
-|            |            | 2020-09-17T00:00:00                        |
-|            |            |                                            |
-|            |            | XML-element: dates                         |
-+------------+------------+--------------------------------------------+
-| e          | Skapat     | Datum då ärendet skapades i systemet. Här  |
-| rms-svk:51 |            | avses ett av systemet automatiskt satt     |
-|            |            | datum.                                     |
-| (ERMS232)  |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | Om uppgiften saknas i diariesystemet,      |
-|            |            | används samma datum som för Öppnat.        |
-|            |            |                                            |
-|            |            | Om elementet Skapat används, måste         |
-|            |            | dateType ha värdet "created".              |
-|            |            |                                            |
-|            |            | XML-element: date/@dateType="created"\     |
-|            |            | Datatyp: xs:dateTime                       |
-+------------+------------+--------------------------------------------+
-| e          | Öppnat     | Datum då ärendet officiellt öppnades       |
-| rms-svk:52 |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | Om elementet Öppnat används, måste         |
-|            |            | dateType ha värdet "opened".               |
-|            |            |                                            |
-|            |            | XML-element: date/@dateType="opened"\      |
-|            |            | Datatyp: xs:dateTime                       |
-+------------+------------+--------------------------------------------+
-| e          | Avslutat   | Datum då ärendet avslutades eller          |
-| rms-svk:53 |            | makulerades.                               |
-|            |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | Om elementet Avslutat används, måste       |
-|            |            | dateType ha värdet "closed".               |
-|            |            |                                            |
-|            |            | XML-element: date/@dateType="closed"\      |
-|            |            | Datatyp: xs:dateTime                       |
-+------------+------------+--------------------------------------------+
-| Exempel 12 |            |                                            |
-| -- Datum   |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-|            |            |                                            |
-| \<dates\>  |            |                                            |
-|            |            |                                            |
-| \<date     |            |                                            |
-| dateType=\ |            |                                            |
-| "created\" |            |                                            |
-| \>2020-05- |            |                                            |
-| 20T00:00:0 |            |                                            |
-| 0\</date\> |            |                                            |
-|            |            |                                            |
-| \<date     |            |                                            |
-| dateType=  |            |                                            |
-| \"opened\" |            |                                            |
-| \>2020-05- |            |                                            |
-| 22T00:00:0 |            |                                            |
-| 0\</date\> |            |                                            |
-|            |            |                                            |
-| \<date     |            |                                            |
-| dateType=  |            |                                            |
-| \"closed\" |            |                                            |
-| \>2020-05- |            |                                            |
-| 30T00:00:0 |            |                                            |
-| 0\</date\> |            |                                            |
-|            |            |                                            |
-| \</dates\> |            |                                            |
-|            |            |                                            |
-| \</agg     |            |                                            |
-| regation\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Beslut i   | Samlingselement som används för uppgifter  |
-| rms-svk:54 | ärendet    | om beslut som har fattats i ärendet och    |
-|            |            | som i diariesystemet har registrerats      |
-| (ERMS240)  |            | separat och inte som en vanlig handling.   |
-|            |            |                                            |
-|            |            | Elementet kan upprepas                     |
-|            |            |                                            |
-|            |            | XML-element: action                        |
-+------------+------------+--------------------------------------------+
-| e          | B          | Beslutets lydelse samt ev. referens till   |
-| rms-svk:55 | eslutstext | protokoll.                                 |
-|            |            |                                            |
-| (ERMS84)   |            | Om elementet Beslut i ärendet används, är  |
-|            |            | detta element obligatoriskt.               |
-|            |            |                                            |
-|            |            | XML-element: actionText\                   |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Typ av     | Obligatoriskt om elementet Beslut i        |
-| rms-svk:56 | händelse   | ärendet används                            |
-|            |            |                                            |
-| (ERMS87)   |            | Elementet måste ha värdet "beslut".        |
-|            |            |                                            |
-|            |            | XML-element: actionType\                   |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Be         | Datum då beslutet fattades.                |
-| rms-svk:57 | slutsdatum |                                            |
-|            |            | Om elementet Beslutsdatum används, måste   |
-| (ERMS89,   |            | dateType ha värdet "decision_date".        |
-| ERMS47)    |            |                                            |
-|            |            | XML-element:                               |
-|            |            | dates/date/@dateType="decision_date"\      |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| e          | Besl       | Namn på person eller organ som har fattat  |
-| rms-svk:58 | utsfattare | beslutet                                   |
-|            |            |                                            |
-| (ERMS90,   |            | Underelementet agents används. Se exemplet |
-| ERMS91,    |            | nedan.                                     |
-| ERMS93)    |            |                                            |
-|            |            | Om elementet Beslutsfattare används, måste |
-|            |            | agentType ha värdet "other" och            |
-|            |            | otherAgentType ha värdet "decisionMaker".  |
-|            |            | Se exemplet nedan.                         |
-|            |            |                                            |
-|            |            | XML-element: agents/agent/name\            |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 13 |            |                                            |
-| -- Beslut  |            |                                            |
-| i ärendet  |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-|            |            |                                            |
-| \<action\> |            |                                            |
-|            |            |                                            |
-| \<a        |            |                                            |
-| ctionText\ |            |                                            |
-| >Beslutets |            |                                            |
-| ly         |            |                                            |
-| delse\</ac |            |                                            |
-| tionText\> |            |                                            |
-|            |            |                                            |
-| \<act      |            |                                            |
-| ionType\>b |            |                                            |
-| eslut\</ac |            |                                            |
-| tionType\> |            |                                            |
-|            |            |                                            |
-| \<dates\>  |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| actionDate |            |                                            |
-| da         |            |                                            |
-| teType=\"d |            |                                            |
-| ecision_da |            |                                            |
-| te\"\>2020 |            |                                            |
-| -05-20T00: |            |                                            |
-| 00:00\</ac |            |                                            |
-| tionDate\> |            |                                            |
-|            |            |                                            |
-| \</dates\> |            |                                            |
-|            |            |                                            |
-| \<agents\> |            |                                            |
-|            |            |                                            |
-| \<agent    |            |                                            |
-| agentType  |            |                                            |
-| =\"other\" |            |                                            |
-| othe       |            |                                            |
-| rAgentType |            |                                            |
-| =\"decisio |            |                                            |
-| nMaker\"\> |            |                                            |
-|            |            |                                            |
-| \<name\    |            |                                            |
-| >Kyrkoråde |            |                                            |
-| t\</name\> |            |                                            |
-|            |            |                                            |
-| \</agent\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </agents\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </action\> |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Kommentar  | Kommentar till ärendet.                    |
-| rms-svk:59 |            |                                            |
-|            |            | Kommentaren utgörs av en enda              |
-| (ERMS212,  |            | sammanhängande text och är inte möjlig att |
-| ERMS50)    |            | upprepa. Se exemplet nedan.                |
-|            |            |                                            |
-|            |            | För upprepade kommentarer eller            |
-|            |            | anteckningar används i stället elementet   |
-|            |            | svkNotes, se [Tabell                       |
-|            |            | 3](#_Tabell_3._Svenska)                    |
-|            |            |                                            |
-|            |            | Om elementet Kommentar används, måste      |
-|            |            | noteType ha värdet "comment"               |
-|            |            |                                            |
-|            |            | XML-element: notes/note\                   |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Datum för  | Datum då kommentaren skapades.             |
-| rms-svk:60 | kommentar  |                                            |
-|            |            | XML-element: notes/note/@noteDate\         |
-| (ERMS51)   |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| Exempel 14 |            |                                            |
-| --         |            |                                            |
-| Kommentar  |            |                                            |
-|            |            |                                            |
-| \<agg      |            |                                            |
-| regation\> |            |                                            |
-|            |            |                                            |
-| \<notes\>  |            |                                            |
-|            |            |                                            |
-| \<note     |            |                                            |
-| noteType=\ |            |                                            |
-| "comment\" |            |                                            |
-| noteDate=  |            |                                            |
-| \"2019-02- |            |                                            |
-| 21T00:00:0 |            |                                            |
-| 0\"\>Detta |            |                                            |
-| är en      |            |                                            |
-| kommenta   |            |                                            |
-| r\</note\> |            |                                            |
-|            |            |                                            |
-| \</notes\> |            |                                            |
-|            |            |                                            |
-| \</agg     |            |                                            |
-| regation\> |            |                                            |
-+------------+------------+--------------------------------------------+
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Element</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>erms-svk:22</p>
+<p>(ERMS198)</p></td>
+<td>Ärendeakt</td>
+<td><p>Samlingsobjekt för ärendeakten med ingående dokument och
+filer.</p>
+<p>Obligatoriskt.</p>
+<p>Varje ärendeakt ska dokumenteras i en XML-fil, och ingen XML-fil får
+innehålla mer än en ärendeakt.</p>
+<p>XML-element: aggregation</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:23</p>
+<p>(ERMS199)</p></td>
+<td>Identifikator</td>
+<td><p>Identifikator för ärendeakten i form av UUID. Identifikatorn
+anges automatiskt redan i det levererande systemet eller vid överföring
+till e-arkivet.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: aggregation/@systemIdentifier<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:24</p>
+<p>(ERMS200)</p></td>
+<td>Typ av aggre­gation</td>
+<td><p>Typ av aggregation, vilket i den här specifikationen alltid är
+”caseFile”, det vill säga ”ärendeakt”.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: aggregation/@aggregationType=”caseFile”<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 4 – Ärendeakt</p>
+<p>&lt;aggregation
+systemIdentifier="3b9fbc5f-3eaf-4521-9726-0f142feb04c3"
+aggregationType="caseFile"&gt;</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:25</p>
+<p>(ERMS218)</p></td>
+<td>Ärende­nummer</td>
+<td><p>Ärendets officiella nummer, ”diarienumret”.</p>
+<p>Ärendenumret ska ha formatet [diariekod] [årtal]-[löpnummer].
+Diariekoden ska bestå av versaler. Löpnumret ska bestå av fyra siffror
+och fylls vid behov ut med nollor, t.ex. S 2019-0043.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: objectId<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:26</p>
+<p>(ERMS219)</p></td>
+<td>Intern identifi­kator</td>
+<td><p>Befintligt id i det levererande systemet</p>
+<p>Om elementet Intern identifikator används, måste attributet
+extraIdType ha värdet ”deliveringSystemId”.</p>
+<p>XML-element: extraId<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 5 – Ärendenummer och Intern identifikator</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;objectId&gt;F 2019-0032&lt;/objectId&gt;</p>
+<p>&lt;extraId
+extraIdType="deliveringSystemId"&gt;34565&lt;/extraId&gt;</p>
+<p>&lt;/aggregation&gt;</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:27</p>
+<p>(ERMS202)</p></td>
+<td>Informations­klassning</td>
+<td><p>Ärendets informationsklass.</p>
+<p>XML-element: informationClass<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:28</p>
+<p>(ERMS203)</p></td>
+<td>Säkerhets­klassning</td>
+<td><p>Ärendets säkerhetsklass.</p>
+<p>XML-element: securityClass<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:29</p>
+<p>(ERMS208)</p></td>
+<td>Klassificering</td>
+<td><p>Namnet på den process i den officiella klassificeringsstrukturen
+som har angivits som klassificering av ärendet och de ingående
+handlingarna.</p>
+<p>XML-element: classification<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:30</p>
+<p>(ERMS75)</p></td>
+<td>Klassifice­ringskod</td>
+<td><p>Koden för den process som angivits under Klassificering</p>
+<p>XML-element: classification/@classificationCode<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 6 – Klassificering</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;classification classificationCode="2.7"&gt;Ge
+service&lt;/classification&gt;</p>
+<p>&lt;/aggregation&gt;</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:31</p>
+<p>(ERMS223)</p></td>
+<td>Nyckelord</td>
+<td><p>Samlingselement för enskilda nyckelord.</p>
+<p>XML-element: keywords</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:32</p>
+<p>(ERMS224)</p></td>
+<td>Nyckelord</td>
+<td><p>Enskilt nyckelord.</p>
+<p>Elementet kan upprepas.</p>
+<p>XML-element: keyword<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 7 – Nyckelord</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;keywords&gt;</p>
+<p>&lt;keyword&gt;församlingsordning&lt;/keyword&gt;</p>
+<p>&lt;keyword&gt;kyrkorådet&lt;/keyword&gt;</p>
+<p>&lt;/keywords&gt;</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:33</p>
+<p>(ERMS209)</p></td>
+<td>Ärendemening</td>
+<td><p>Ärendemening, ärendets titel.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: title<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:34</p>
+<p>(ERMS210)</p></td>
+<td>Annan titel</td>
+<td><p>Används endast för Offentlig titel i leveranser från Public
+360°.</p>
+<p>Om elementet Annan titel används måste attributet titleType ha värdet
+”publicTitle”.</p>
+<p>XML-element: otherTitle<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 8 – Ärendemening och Annan titel</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;title&gt;Ärendets titel&lt;/title&gt;</p>
+<p>&lt;otherTitle titleType="publicTitle"&gt;En offentlig
+titel&lt;/otherTitle&gt;</p>
+<p>&lt;/aggregation&gt;</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:35</p>
+<p>(ERMS239)</p></td>
+<td>Ärendestatus</td>
+<td><p>Ärendets status.</p>
+<p>Obligatoriskt. Värdet väljs från värdelistan <a
+href="#_SVK-VÄRDELISTA_7_–">SVK-värdelista 7</a>.</p>
+<p>Giltiga värden:”closed” (avslutat) eller ”obliterated”
+(makulerat).</p>
+<p>Exempel:</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;status <mark></mark>value="<mark>closed</mark>"/&gt;</p>
+<p>&lt;/aggregation&gt;</p>
+<p>XML-element: status/@value<br />
+Datatype: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:36</p>
+<p>(ERMS52, ERMS53)</p></td>
+<td>Ärendereferens</td>
+<td><p>Referens till och/eller från annat ärende.</p>
+<p>Om möjligt anges det andra ärendets Ärendenummer enligt
+specifikationen i detta dokument, annars ärendenumret i annat format
+eller fritext.</p>
+<p>Elementet kan upprepas.</p>
+<p>Om elementet Ärendereferens används, måste attributet relationType ha
+värdet ”reference”.</p>
+<p>XML-element: relation<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 9 – Ärendereferens</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;relation relationType="reference"&gt;F
+2019-0454&lt;/relation&gt;</p>
+<p>&lt;aggregation&gt;</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:37</p>
+<p>(ERMS252,</p>
+<p>ERMS43)</p></td>
+<td>Utökad XML-data</td>
+<td><p>Utökad XML-data är en del av Svenska kyrkans anpassning av
+ERMS.</p>
+<p>Se <a href="#_Tabell_3._Svenska">Tabell 3</a>.</p>
+<p>XML-element: additionalXMLData</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:38</p>
+<p>(ERMS253, ERMS57)</p></td>
+<td>Sekretess</td>
+<td><p>Samlingselement för uppgift om sekretess.</p>
+<p>Elementet kan upprepas.</p>
+<p>Om elementet Sekretess används måste attributet restrictionType ha
+värdet ”confidential”.</p>
+<p>XML-element: restriction</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:39</p>
+<p>(ERMS58)</p></td>
+<td>Förklarande text</td>
+<td><p>Fritext som beskriver sekretessen.</p>
+<p>XML-element: explanatoryText<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:40</p>
+<p>(ERMS59)</p></td>
+<td>Lagrum</td>
+<td><p>Hänvisning till paragraf i kyrkoordningens 54 kapitel, till
+Offentlighets- och sekretesslagen eller till annat lagrum som stöder den
+angivna sekretessen.</p>
+<p>Obligatoriskt om elementet Sekretess används.</p>
+<p>XML-element: regulation<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:41</td>
+<td>Sekretess­datum</td>
+<td><p>Datum då sekretessmarkeringen gjordes.</p>
+<p>Om elementet Sekretessdatum används, måste attributet dateTyp ha
+värdet ”created”</p>
+<p>XML-element: dates/date<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 10 – Sekretess</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;restriction restrictionType="confidential"&gt;</p>
+<p>&lt;explanatoryText&gt;Sekretess enligt
+KO&lt;/explanatoryText&gt;</p>
+<p>&lt;regulation&gt;KO 54:2&lt;/regulation&gt;</p>
+<p>&lt;dates&gt;</p>
+<p>&lt;date dateType="created"&gt;2020-01-02T00:00:00&lt;/date&gt;</p>
+<p>&lt;/dates&gt;</p>
+<p>&lt;/restriction&gt;</p>
+<p>&lt;/aggregation&gt;</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:42</p>
+<p>(ERMS230-235)</p></td>
+<td>Aktörer</td>
+<td><p>Samlingselement för alla agerande parter i ärendet.</p>
+<p>XML-element: agents</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:43</p>
+<p>(ERMS230)</p></td>
+<td>Skapare</td>
+<td><p>Den som har skapat ärendet i systemet.</p>
+<p>Om elementet Skapare används, måste agentType ha värdet
+”creator”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:44</td>
+<td>Handläggare</td>
+<td><p>Ansvarig handläggare för ärendet.</p>
+<p>Om elementet Handläggare används, måste agentType ha värdet
+”responsible_person”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:45</p>
+<p>(ERMS232)</p></td>
+<td>Medhand­läggare</td>
+<td><p>Eventuella medhandläggare utöver den ansvariga.</p>
+<p>Elementet kan upprepas.</p>
+<p>Om elementet Medhandläggare används, måste agentType ha värdet
+”editor”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:46</td>
+<td>Ärendepart</td>
+<td><p>Extern part i ärendet.</p>
+<p>Elementet kan upprepas.</p>
+<p>Om elementet Ärendepart används, måste agentType ha värdet
+”counterpart”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:47</td>
+<td>Annan aktör</td>
+<td><p>Annan typ av aktör eller kontakt kopplad till ärendet.</p>
+<p>Elementet kan upprepas.</p>
+<p>Om elementet Annan aktör används, måste agentType ha värdet
+”agent”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:48</td>
+<td>Avslutare</td>
+<td><p>Den som har avslutat eller makulerat ärendet.</p>
+<p>Om elementet Avslutare används, måste agentType ha värdet ”other” och
+otherAgentType värdet ”closer”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 11 – Aktörer</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;agents&gt;</p>
+<p>&lt;agent agentType="creator"&gt;</p>
+<p>&lt;name&gt;Anna Andersson&lt;/name&gt;</p>
+<p>&lt;idNumber idNumberType="username"&gt;svkanan&lt;/idNumber&gt;</p>
+<p>&lt;/agent&gt;</p>
+<p>&lt;agent agentType="responsible_person"&gt;</p>
+<p>&lt;name&gt;Johan Göransson&lt;/name&gt;</p>
+<p>&lt;idNumber idNumberType="username"&gt;svkjogo&lt;/idNumber&gt;</p>
+<p>&lt;/agent&gt;</p>
+<p>&lt;agent agentType="counterpart"&gt;</p>
+<p>&lt;name&gt;Försäkringskassan&lt;/name&gt;</p>
+<p>&lt;/agent&gt;</p>
+<p>&lt;agent agentType="other" otherAgentType="closer"&gt;</p>
+<p>&lt;name&gt;Erik Gustavsson&lt;/name&gt;</p>
+<p>&lt;idNumber idNumberType="username"&gt;svkergu&lt;/idNumber&gt;</p>
+<p>&lt;/agent&gt;</p>
+<p>&lt;/agents&gt;</p>
+<p>&lt;/aggregation&gt;</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:49</p>
+<p>(ERMS211)</p></td>
+<td>Beskrivning</td>
+<td><p>En beskrivning av ärendet utöver Ärendemening.</p>
+<p>XML-element: description<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:50</p>
+<p>ERMS204-206</p></td>
+<td>Datum</td>
+<td><p>Samlingselement för datum som gäller för ärendet.</p>
+<p>Alla datum har datatypen xs:dateTime i UTC-format, vilket betyder att
+både datum och klocklag ned till sekundnivå ska anges. Om klockslag
+saknas används noll-tecken. Tidszon anges inte men förutsätts vara
+Europe/Stockholm.</p>
+<p>[År]-[Månad]-[Dag]T[Timme]:[Minut]:[Sekund]</p>
+<p>Exempel:<br />
+2018-03-04T15:15:22<br />
+2020-09-17T00:00:00</p>
+<p>XML-element: dates</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:51</p>
+<p>(ERMS232)</p></td>
+<td>Skapat</td>
+<td><p>Datum då ärendet skapades i systemet. Här avses ett av systemet
+automatiskt satt datum.</p>
+<p>Obligatoriskt.</p>
+<p>Om uppgiften saknas i diariesystemet, används samma datum som för
+Öppnat.</p>
+<p>Om elementet Skapat används, måste dateType ha värdet ”created”.</p>
+<p>XML-element: date/@dateType=”created”<br />
+Datatyp: xs:dateTime</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:52</td>
+<td>Öppnat</td>
+<td><p>Datum då ärendet officiellt öppnades</p>
+<p>Obligatoriskt.</p>
+<p>Om elementet Öppnat används, måste dateType ha värdet ”opened”.</p>
+<p>XML-element: date/@dateType=”opened”<br />
+Datatyp: xs:dateTime</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:53</td>
+<td>Avslutat</td>
+<td><p>Datum då ärendet avslutades eller makulerades.</p>
+<p>Obligatoriskt.</p>
+<p>Om elementet Avslutat används, måste dateType ha värdet ”closed”.</p>
+<p>XML-element: date/@dateType=”closed”<br />
+Datatyp: xs:dateTime</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 12 – Datum</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;dates&gt;</p>
+<p>&lt;date dateType="created"&gt;2020-05-20T00:00:00&lt;/date&gt;</p>
+<p>&lt;date dateType="opened"&gt;2020-05-22T00:00:00&lt;/date&gt;</p>
+<p>&lt;date dateType="closed"&gt;2020-05-30T00:00:00&lt;/date&gt;</p>
+<p>&lt;/dates&gt;</p>
+<p>&lt;/aggregation&gt;</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:54</p>
+<p>(ERMS240)</p></td>
+<td>Beslut i ärendet</td>
+<td><p>Samlingselement som används för uppgifter om beslut som har
+fattats i ärendet och som i diariesystemet har registrerats separat och
+inte som en vanlig handling.</p>
+<p>Elementet kan upprepas</p>
+<p>XML-element: action</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:55</p>
+<p>(ERMS84)</p></td>
+<td>Beslutstext</td>
+<td><p>Beslutets lydelse samt ev. referens till protokoll.</p>
+<p>Om elementet Beslut i ärendet används, är detta element
+obligatoriskt.</p>
+<p>XML-element: actionText<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:56</p>
+<p>(ERMS87)</p></td>
+<td>Typ av händelse</td>
+<td><p>Obligatoriskt om elementet Beslut i ärendet används</p>
+<p>Elementet måste ha värdet ”beslut”.</p>
+<p>XML-element: actionType<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:57</p>
+<p>(ERMS89, ERMS47)</p></td>
+<td>Beslutsdatum</td>
+<td><p>Datum då beslutet fattades.</p>
+<p>Om elementet Beslutsdatum används, måste dateType ha värdet
+”decision_date”.</p>
+<p>XML-element: dates/date/@dateType=”decision_date”<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:58</p>
+<p>(ERMS90, ERMS91, ERMS93)</p></td>
+<td>Beslutsfattare</td>
+<td><p>Namn på person eller organ som har fattat beslutet</p>
+<p>Underelementet agents används. Se exemplet nedan.</p>
+<p>Om elementet Beslutsfattare används, måste agentType ha värdet
+”other” och otherAgentType ha värdet ”decisionMaker”. Se exemplet
+nedan.</p>
+<p>XML-element: agents/agent/name<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 13 – Beslut i ärendet</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;action&gt;</p>
+<p>&lt;actionText&gt;Beslutets lydelse&lt;/actionText&gt;</p>
+<p>&lt;actionType&gt;beslut&lt;/actionType&gt;</p>
+<p>&lt;dates&gt;</p>
+<p>&lt;actionDate
+dateType="decision_date"&gt;2020-05-20T00:00:00&lt;/actionDate&gt;</p>
+<p>&lt;/dates&gt;</p>
+<p>&lt;agents&gt;</p>
+<p>&lt;agent agentType="other" otherAgentType="decisionMaker"&gt;</p>
+<p>&lt;name&gt;Kyrkorådet&lt;/name&gt;</p>
+<p>&lt;/agent&gt;</p>
+<p>&lt;/agents&gt;</p>
+<p>&lt;/action&gt;</p>
+<p>&lt;aggregation&gt;</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:59</p>
+<p>(ERMS212, ERMS50)</p></td>
+<td>Kommentar</td>
+<td><p>Kommentar till ärendet.</p>
+<p>Kommentaren utgörs av en enda sammanhängande text och är inte möjlig
+att upprepa. Se exemplet nedan.</p>
+<p>För upprepade kommentarer eller anteckningar används i stället
+elementet svkNotes, se <a href="#_Tabell_3._Svenska">Tabell 3</a></p>
+<p>Om elementet Kommentar används, måste noteType ha värdet
+”comment”</p>
+<p>XML-element: notes/note<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:60</p>
+<p>(ERMS51)</p></td>
+<td>Datum för kommentar</td>
+<td><p>Datum då kommentaren skapades.</p>
+<p>XML-element: notes/note/@noteDate<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 14 – Kommentar</p>
+<p>&lt;aggregation&gt;</p>
+<p>&lt;notes&gt;</p>
+<p>&lt;note noteType="comment" noteDate="2019-02-21T00:00:00"&gt;Detta
+är en kommentar&lt;/note&gt;</p>
+<p>&lt;/notes&gt;</p>
+<p>&lt;/aggregation&gt;</p></td>
+</tr>
+</tbody>
+</table>
 
-[]{#_Tabell_3._Svenska .anchor}
+<span id="_Tabell_3._Svenska" class="anchor"></span>
 
 Tabell 3. Svenska kyrkans tilläggsinformation om ärendeakter
 
-+-----------+-----------+---------------------------------------------+
-| ID        | Element   |                                             |
-+===========+===========+=============================================+
-| er        | T         | De element som inte ingår i ERMS utan är    |
-| ms-svk:61 | illäggsin | tillägg i Svenska kyrkans anpassning är     |
-|           | ­formation | samlade i elementet Tilläggsinformation.    |
-|           |           |                                             |
-|           |           | XML-element:                                |
-|           |           | additionalInformation/additionalXMLData/\   |
-|           |           | svk:ermsSvkArende/svk:ermsSvkAggregation    |
-+-----------+-----------+---------------------------------------------+
-| er        | Initiativ | Anger om initiativ till ärendets öppnande   |
-| ms-svk:62 |           | är externt (genom en inkommande handling),  |
-|           |           | eller om ärendet har öppnats på eget        |
-|           |           | (internt) initiativ.                        |
-|           |           |                                             |
-|           |           | Värdet väljs från värdelistan               |
-|           |           | [SVK-värdelista 9](#_SVK-VÄRDELISTA_9_–).   |
-|           |           |                                             |
-|           |           | Möjliga värden: "externt"eller "eget"       |
-|           |           |                                             |
-|           |           | XML-element: svk:initiative\                |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| er        | R         | Samlingselement med referenser till projekt |
-| ms-svk:63 | elaterade | som ärendet relaterar till.                 |
-|           | projekt   |                                             |
-|           |           | XML-element: svk:relatedProjects            |
-+-----------+-----------+---------------------------------------------+
-| er        | Relaterat | Referens till projekt som ärendet relaterar |
-| ms-svk:64 | projekt   | till.                                       |
-|           |           |                                             |
-|           |           | Elementet kan upprepas.                     |
-|           |           |                                             |
-|           |           | XML-element: svk:relatedProject             |
-+-----------+-----------+---------------------------------------------+
-| er        | Pr        | Det relaterade projektets namn.             |
-| ms-svk:65 | ojektnamn |                                             |
-|           |           | Obligatoriskt om elementet Relaterat        |
-|           |           | projekt används.                            |
-|           |           |                                             |
-|           |           | XML-element: svk:name\                      |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| er        | Iden      | Projektnummer eller annan identifikator för |
-| ms-svk:66 | tifikator | projektet.                                  |
-|           |           |                                             |
-|           |           | Obligatoriskt om elementet Relaterat        |
-|           |           | projekt används.                            |
-|           |           |                                             |
-|           |           | XML-element: svk:identificator\             |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| er        | Internt   | Projektets id-nummer i det levererande      |
-| ms-svk:67 | ID        | systemet                                    |
-|           |           |                                             |
-|           |           | XML-element: svk:deliveringSystemId\        |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| Exempel   |           |                                             |
-| 15 --     |           |                                             |
-| Relaterat |           |                                             |
-| projekt   |           |                                             |
-|           |           |                                             |
-| \<svk:er  |           |                                             |
-| msSvkAggr |           |                                             |
-| egation\> |           |                                             |
-|           |           |                                             |
-| \<svk     |           |                                             |
-| :relatedP |           |                                             |
-| rojects\> |           |                                             |
-|           |           |                                             |
-| \<sv      |           |                                             |
-| k:related |           |                                             |
-| Project\> |           |                                             |
-|           |           |                                             |
-| \<sv      |           |                                             |
-| k:name\>O |           |                                             |
-| mläggning |           |                                             |
-| av        |           |                                             |
-| kyrktaket |           |                                             |
-| 2009\</s  |           |                                             |
-| vk:name\> |           |                                             |
-|           |           |                                             |
-| \<sv      |           |                                             |
-| k:identif |           |                                             |
-| icator\>P |           |                                             |
-| 2         |           |                                             |
-| 009:1\</s |           |                                             |
-| vk:identi |           |                                             |
-| ficator\> |           |                                             |
-|           |           |                                             |
-| \<sv      |           |                                             |
-| k:deliver |           |                                             |
-| ingSystem |           |                                             |
-| Id\>34958 |           |                                             |
-| \</svk:de |           |                                             |
-| liveringS |           |                                             |
-| ystemId\> |           |                                             |
-|           |           |                                             |
-| \</sv     |           |                                             |
-| k:related |           |                                             |
-| Project\> |           |                                             |
-|           |           |                                             |
-| \</svk    |           |                                             |
-| :relatedP |           |                                             |
-| rojects\> |           |                                             |
-|           |           |                                             |
-| \</svk:er |           |                                             |
-| msSvkAggr |           |                                             |
-| egation\> |           |                                             |
-+-----------+-----------+---------------------------------------------+
-| er        | R         | Samlingselement med referenser till         |
-| ms-svk:68 | elaterade | fastigheter eller byggnader som ärendet     |
-|           | fa        | relaterar till.                             |
-|           | stigheter |                                             |
-|           |           | XML-element: svk:relatedRealEstates         |
-+-----------+-----------+---------------------------------------------+
-| er        | Relaterad | Referens till fastighet eller byggnad som   |
-| ms-svk:69 | fastighet | ärendet relaterar till.                     |
-|           |           |                                             |
-|           |           | Elementet kan upprepas.                     |
-|           |           |                                             |
-|           |           | XML-element: svk:relatedRealEstate          |
-+-----------+-----------+---------------------------------------------+
-| er        | Fast      | Fastighetens eller byggnadens namn.         |
-| ms-svk:70 | ighetsnam |                                             |
-|           |           | Obligatoriskt om elementet Relaterad        |
-|           |           | fastighet används.                          |
-|           |           |                                             |
-|           |           | XML-element: svk:name\                      |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| er        | Iden      | Fastighetsnummer eller annan identifikator  |
-| ms-svk:71 | tifikator | för fastigheten eller byggnaden.            |
-|           |           |                                             |
-|           |           | XML-element: svk:identificator\             |
-|           |           | Datatyp: token                              |
-|           |           |                                             |
-|           |           | Obligatoriskt om elementet Relaterad        |
-|           |           | fastighet används.                          |
-+-----------+-----------+---------------------------------------------+
-| er        | Internt   | Fastighetens eller byggnadens id-nummer i   |
-| ms-svk:72 | ID        | det levererande systemet.                   |
-|           |           |                                             |
-|           |           | XML-element: svk:deliveringSystemId\        |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| Exempel   |           |                                             |
-| 16 --     |           |                                             |
-| Relaterad |           |                                             |
-| fastighet |           |                                             |
-|           |           |                                             |
-| \<svk:er  |           |                                             |
-| msSvkAggr |           |                                             |
-| egation\> |           |                                             |
-|           |           |                                             |
-| \<svk:re  |           |                                             |
-| latedReal |           |                                             |
-| Estates\> |           |                                             |
-|           |           |                                             |
-| \<svk:r   |           |                                             |
-| elatedRea |           |                                             |
-| lEstate\> |           |                                             |
-|           |           |                                             |
-| \<sv      |           |                                             |
-| k:name\>O |           |                                             |
-| mläggning |           |                                             |
-| av        |           |                                             |
-| kyrktaket |           |                                             |
-| 2009\</s  |           |                                             |
-| vk:name\> |           |                                             |
-|           |           |                                             |
-| \<sv      |           |                                             |
-| k:identif |           |                                             |
-| icator\>P |           |                                             |
-| 2         |           |                                             |
-| 009:1\</s |           |                                             |
-| vk:identi |           |                                             |
-| ficator\> |           |                                             |
-|           |           |                                             |
-| \<sv      |           |                                             |
-| k:deliver |           |                                             |
-| ingSystem |           |                                             |
-| Id\>34958 |           |                                             |
-| \</svk:de |           |                                             |
-| liveringS |           |                                             |
-| ystemId\> |           |                                             |
-|           |           |                                             |
-| \</svk:r  |           |                                             |
-| elatedRea |           |                                             |
-| lEstate\> |           |                                             |
-|           |           |                                             |
-| \</svk:re |           |                                             |
-| latedReal |           |                                             |
-| Estates\> |           |                                             |
-|           |           |                                             |
-| \</svk:er |           |                                             |
-| msSvkAggr |           |                                             |
-| egation\> |           |                                             |
-+-----------+-----------+---------------------------------------------+
-| er        | Ant       | Samlingselement för anteckningar kopplade   |
-| ms-svk:73 | eckningar | till ett ärende.                            |
-|           |           |                                             |
-|           |           | XLM-element: svk:svkNotes                   |
-+-----------+-----------+---------------------------------------------+
-| er        | A         | Enskild anteckning kopplad till ärendet.    |
-| ms-svk:74 | nteckning |                                             |
-|           |           | Elementet kan upprepas.                     |
-|           |           |                                             |
-|           |           | XML-element: svk:svkNote                    |
-+-----------+-----------+---------------------------------------------+
-| er        | Typ av    | Obligatoriskt om elementet Anteckning       |
-| ms-svk:75 | a         | används.                                    |
-|           | nteckning |                                             |
-|           |           | Värdet väljs från [SVK-värdelista           |
-|           |           | 10](#_SVK-VÄRDELISTA_10_–).                 |
-|           |           |                                             |
-|           |           | XML-element: svk:svkNote/@typeOfNote\       |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| er        | Text      | Anteckningens lydelse.                      |
-| ms-svk:76 |           |                                             |
-|           |           | Obligatoriskt om elementet Anteckning       |
-|           |           | används.                                    |
-|           |           |                                             |
-|           |           | XML-element: svk:noteText\                  |
-|           |           | Datatyp: string                             |
-+-----------+-----------+---------------------------------------------+
-| er        | Skapare   | Person som har gjort anteckningen.          |
-| ms-svk:77 | av        |                                             |
-|           | a         | Obligatoriskt om elementet Anteckning       |
-|           | nteckning | används.                                    |
-|           |           |                                             |
-|           |           | XML-element: svk:noteAuthor\                |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| er        | Datum för | Datum och tid när anteckningen gjordes.     |
-| ms-svk:78 | a         |                                             |
-|           | nteckning | Obligatoriskt om elementet Anteckning       |
-|           |           | används.                                    |
-|           |           |                                             |
-|           |           | XML-element: svk:noteDate\                  |
-|           |           | Datatyp: dateTime                           |
-+-----------+-----------+---------------------------------------------+
-| Exempel   |           |                                             |
-| 17 --     |           |                                             |
-| Ant       |           |                                             |
-| eckningar |           |                                             |
-|           |           |                                             |
-| \<svk:er  |           |                                             |
-| msSvkAggr |           |                                             |
-| egation\> |           |                                             |
-|           |           |                                             |
-| \<svk:s   |           |                                             |
-| vkNotes\> |           |                                             |
-|           |           |                                             |
-| \<sv      |           |                                             |
-| k:svkNote |           |                                             |
-| typ       |           |                                             |
-| eOfNote=\ |           |                                             |
-| "generell |           |                                             |
-| antec     |           |                                             |
-| kning\"\> |           |                                             |
-|           |           |                                             |
-| \<s       |           |                                             |
-| vk:noteTe |           |                                             |
-| xt\>Detta |           |                                             |
-| är en     |           |                                             |
-| antecknin |           |                                             |
-| g\</svk:n |           |                                             |
-| oteText\> |           |                                             |
-|           |           |                                             |
-| \<svk:    |           |                                             |
-| noteAutho |           |                                             |
-| r\>Jörgen |           |                                             |
-| Persson\  |           |                                             |
-| </svk:not |           |                                             |
-| eAuthor\> |           |                                             |
-|           |           |                                             |
-| \<svk:n   |           |                                             |
-| oteDate\> |           |                                             |
-| 2019-02-2 |           |                                             |
-| 3T00:00:0 |           |                                             |
-| 0\</svk:n |           |                                             |
-| oteDate\> |           |                                             |
-|           |           |                                             |
-| \</svk:   |           |                                             |
-| svkNote\> |           |                                             |
-|           |           |                                             |
-| \</svk:s  |           |                                             |
-| vkNotes\> |           |                                             |
-|           |           |                                             |
-| \</svk:er |           |                                             |
-| msSvkAggr |           |                                             |
-| egation\> |           |                                             |
-+-----------+-----------+---------------------------------------------+
-| er        | Änd       | Samlingselement för loggningsuppgifter.     |
-| ms-svk:79 | ringslogg |                                             |
-|           |           | XML-element: svk:auditLogEvents             |
-+-----------+-----------+---------------------------------------------+
-| er        | Händelse  | Enskild händelse i ändringsloggen.          |
-| ms-svk:80 |           |                                             |
-|           |           | Obligatoriskt om elementet Ändringslogg     |
-|           |           | används.                                    |
-|           |           |                                             |
-|           |           | XML-element: svk:auditLogEvent              |
-+-----------+-----------+---------------------------------------------+
-| er        | Tid       | Datum och tid då ändringen gjordes.         |
-| ms-svk:81 |           |                                             |
-|           |           | Obligatoriskt om elementet Händelse         |
-|           |           | används.                                    |
-|           |           |                                             |
-|           |           | XML-element: svk:time\                      |
-|           |           | Datatyp: dateTime                           |
-+-----------+-----------+---------------------------------------------+
-| er        | Användare | Namn på personen som gjorde ändringen.      |
-| ms-svk:82 |           |                                             |
-|           |           | Obligatoriskt om elementet Händelse         |
-|           |           | används.                                    |
-|           |           |                                             |
-|           |           | XML-element: svk:user\                      |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| er        | Tillämpni | Beskrivning av det som ändringen avser.     |
-| ms-svk:83 | ngs­område |                                             |
-|           |           | Obligatoriskt om elementet Händelse         |
-|           |           | används.                                    |
-|           |           |                                             |
-|           |           | Värdet väljs från [SVK-värdelista           |
-|           |           | 11](#_SVK-VÄRDELISTA_11_–).                 |
-|           |           |                                             |
-|           |           | XML-element: svk:scope\                     |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| er        | Händelse  | Beskrivning av ändringen.                   |
-| ms-svk:84 |           |                                             |
-|           |           | Obligatoriskt om elementet Händelse         |
-|           |           | används.                                    |
-|           |           |                                             |
-|           |           | Värdet väljs från [SVK-värdelista           |
-|           |           | 12](#_SVK-VÄRDELISTA_12_–).                 |
-|           |           |                                             |
-|           |           | XML-element: svk:action\                    |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| er        | Värde     | Om ett värde har ändrats, anges här         |
-| ms-svk:85 | före      | lydelsen före ändringen.                    |
-|           | ändring   |                                             |
-|           |           | XML-element: svk:valueBeforeChange\         |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| er        | Värde     | Om ett värde har ändrats, anges här         |
-| ms-svk:86 | efter     | lydelsen efter ändringen.                   |
-|           | ändring   |                                             |
-|           |           | XML-element: svk:valueAfterChange\          |
-|           |           | Datatyp: token                              |
-+-----------+-----------+---------------------------------------------+
-| Exempel   |           |                                             |
-| 18 --     |           |                                             |
-| Änd       |           |                                             |
-| ringslogg |           |                                             |
-|           |           |                                             |
-| \<svk:er  |           |                                             |
-| msSvkAggr |           |                                             |
-| egation\> |           |                                             |
-|           |           |                                             |
-| \<sv      |           |                                             |
-| k:auditLo |           |                                             |
-| gEvents\> |           |                                             |
-|           |           |                                             |
-| \<s       |           |                                             |
-| vk:auditL |           |                                             |
-| ogEvent\> |           |                                             |
-|           |           |                                             |
-| \<svk:ti  |           |                                             |
-| me\>2009- |           |                                             |
-| 09-22T11: |           |                                             |
-| 47:00\</s |           |                                             |
-| vk:time\> |           |                                             |
-|           |           |                                             |
-| \<s       |           |                                             |
-| vk:user\> |           |                                             |
-| Jörgen    |           |                                             |
-| Pe        |           |                                             |
-| rsson\</s |           |                                             |
-| vk:user\> |           |                                             |
-|           |           |                                             |
-| \<svk:    |           |                                             |
-| scope\>är |           |                                             |
-| ende\</sv |           |                                             |
-| k:scope\> |           |                                             |
-|           |           |                                             |
-| \<svk:ac  |           |                                             |
-| tion\>cre |           |                                             |
-| ate\</svk |           |                                             |
-| :action\> |           |                                             |
-|           |           |                                             |
-| \</s      |           |                                             |
-| vk:auditL |           |                                             |
-| ogEvent\> |           |                                             |
-|           |           |                                             |
-| \<s       |           |                                             |
-| vk:auditL |           |                                             |
-| ogEvent\> |           |                                             |
-|           |           |                                             |
-| \<svk:ti  |           |                                             |
-| me\>2009- |           |                                             |
-| 09-22T11: |           |                                             |
-| 52:00\</s |           |                                             |
-| vk:time\> |           |                                             |
-|           |           |                                             |
-| \<svk:use |           |                                             |
-| r\>Jörgen |           |                                             |
-| Pe        |           |                                             |
-| rsson\</s |           |                                             |
-| vk:user\> |           |                                             |
-|           |           |                                             |
-| \<s       |           |                                             |
-| vk:scope\ |           |                                             |
-| >ärendeme |           |                                             |
-| ning\</sv |           |                                             |
-| k:scope\> |           |                                             |
-|           |           |                                             |
-| \<svk:ac  |           |                                             |
-| tion\>upd |           |                                             |
-| ate\</svk |           |                                             |
-| :action\> |           |                                             |
-|           |           |                                             |
-| \<svk:val |           |                                             |
-| ueBeforeC |           |                                             |
-| hange\>Up |           |                                             |
-| phandling |           |                                             |
-| av        |           |                                             |
-| frysboxa  |           |                                             |
-| r\</svk:v |           |                                             |
-| alueBefor |           |                                             |
-| eChange\> |           |                                             |
-|           |           |                                             |
-| \<svk:va  |           |                                             |
-| lueAfterC |           |                                             |
-| hange\>Up |           |                                             |
-| phandling |           |                                             |
-| av        |           |                                             |
-| kylsk     |           |                                             |
-| åp\</svk: |           |                                             |
-| valueAfte |           |                                             |
-| rChange\> |           |                                             |
-|           |           |                                             |
-| \</s      |           |                                             |
-| vk:auditL |           |                                             |
-| ogEvent\> |           |                                             |
-|           |           |                                             |
-| \<s       |           |                                             |
-| vk:auditL |           |                                             |
-| ogEvent\> |           |                                             |
-|           |           |                                             |
-| \<svk:ti  |           |                                             |
-| me\>2009- |           |                                             |
-| 09-22T12: |           |                                             |
-| 10:00\</s |           |                                             |
-| vk:time\> |           |                                             |
-|           |           |                                             |
-| \<s       |           |                                             |
-| vk:user\> |           |                                             |
-| Jörgen    |           |                                             |
-| Persson   |           |                                             |
-| \</s      |           |                                             |
-| vk:user\> |           |                                             |
-|           |           |                                             |
-| \<s       |           |                                             |
-| vk:scope\ |           |                                             |
-| >ärendest |           |                                             |
-| atus\</sv |           |                                             |
-| k:scope\> |           |                                             |
-|           |           |                                             |
-| \<svk:ac  |           |                                             |
-| tion\>upd |           |                                             |
-| ate\</svk |           |                                             |
-| :action\> |           |                                             |
-|           |           |                                             |
-| \<        |           |                                             |
-| svk:value |           |                                             |
-| BeforeCha |           |                                             |
-| nge\>Öppe |           |                                             |
-| t\</svk:v |           |                                             |
-| alueBefor |           |                                             |
-| eChange\> |           |                                             |
-|           |           |                                             |
-| \<sv      |           |                                             |
-| k:valueAf |           |                                             |
-| terChange |           |                                             |
-| \>Makuler |           |                                             |
-| at\</svk: |           |                                             |
-| valueAfte |           |                                             |
-| rChange\> |           |                                             |
-|           |           |                                             |
-| \</s      |           |                                             |
-| vk:auditL |           |                                             |
-| ogEvent\> |           |                                             |
-|           |           |                                             |
-| \</sv     |           |                                             |
-| k:auditLo |           |                                             |
-| gEvents\> |           |                                             |
-|           |           |                                             |
-| \</svk:er |           |                                             |
-| msSvkAggr |           |                                             |
-| egation\> |           |                                             |
-+-----------+-----------+---------------------------------------------+
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Element</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>erms-svk:61</td>
+<td>Tilläggsin­formation</td>
+<td><p>De element som inte ingår i ERMS utan är tillägg i Svenska
+kyrkans anpassning är samlade i elementet Tilläggsinformation.</p>
+<p>XML-element: additionalInformation/additionalXMLData/<br />
+svk:ermsSvkArende/svk:ermsSvkAggregation</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:62</td>
+<td>Initiativ</td>
+<td><p>Anger om initiativ till ärendets öppnande är externt (genom en
+inkommande handling), eller om ärendet har öppnats på eget (internt)
+initiativ.</p>
+<p>Värdet väljs från värdelistan <a
+href="#_SVK-VÄRDELISTA_9_–">SVK-värdelista 9</a>.</p>
+<p>Möjliga värden: ”externt”eller ”eget”</p>
+<p>XML-element: svk:initiative<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:63</td>
+<td>Relaterade projekt</td>
+<td><p>Samlingselement med referenser till projekt som ärendet relaterar
+till.</p>
+<p>XML-element: svk:relatedProjects</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:64</td>
+<td>Relaterat projekt</td>
+<td><p>Referens till projekt som ärendet relaterar till.</p>
+<p>Elementet kan upprepas.</p>
+<p>XML-element: svk:relatedProject</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:65</td>
+<td>Projektnamn</td>
+<td><p>Det relaterade projektets namn.</p>
+<p>Obligatoriskt om elementet Relaterat projekt används.</p>
+<p>XML-element: svk:name<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:66</td>
+<td>Identifikator</td>
+<td><p>Projektnummer eller annan identifikator för projektet.</p>
+<p>Obligatoriskt om elementet Relaterat projekt används.</p>
+<p>XML-element: svk:identificator<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:67</td>
+<td>Internt ID</td>
+<td><p>Projektets id-nummer i det levererande systemet</p>
+<p>XML-element: svk:deliveringSystemId<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 15 – Relaterat projekt</p>
+<p>&lt;svk:ermsSvkAggregation&gt;</p>
+<p>&lt;svk:relatedProjects&gt;</p>
+<p>&lt;svk:relatedProject&gt;</p>
+<p>&lt;svk:name&gt;Omläggning av kyrktaket 2009&lt;/svk:name&gt;</p>
+<p>&lt;svk:identificator&gt;P 2009:1&lt;/svk:identificator&gt;</p>
+<p>&lt;svk:deliveringSystemId&gt;34958&lt;/svk:deliveringSystemId&gt;</p>
+<p>&lt;/svk:relatedProject&gt;</p>
+<p>&lt;/svk:relatedProjects&gt;</p>
+<p>&lt;/svk:ermsSvkAggregation&gt;</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:68</td>
+<td>Relaterade fastigheter</td>
+<td><p>Samlingselement med referenser till fastigheter eller byggnader
+som ärendet relaterar till.</p>
+<p>XML-element: svk:relatedRealEstates</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:69</td>
+<td>Relaterad fastighet</td>
+<td><p>Referens till fastighet eller byggnad som ärendet relaterar
+till.</p>
+<p>Elementet kan upprepas.</p>
+<p>XML-element: svk:relatedRealEstate</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:70</td>
+<td>Fastighetsnam</td>
+<td><p>Fastighetens eller byggnadens namn.</p>
+<p>Obligatoriskt om elementet Relaterad fastighet används.</p>
+<p>XML-element: svk:name<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:71</td>
+<td>Identifikator</td>
+<td><p>Fastighetsnummer eller annan identifikator för fastigheten eller
+byggnaden.</p>
+<p>XML-element: svk:identificator<br />
+Datatyp: token</p>
+<p>Obligatoriskt om elementet Relaterad fastighet används.</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:72</td>
+<td>Internt ID</td>
+<td><p>Fastighetens eller byggnadens id-nummer i det levererande
+systemet.</p>
+<p>XML-element: svk:deliveringSystemId<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 16 – Relaterad fastighet</p>
+<p>&lt;svk:ermsSvkAggregation&gt;</p>
+<p>&lt;svk:relatedRealEstates&gt;</p>
+<p>&lt;svk:relatedRealEstate&gt;</p>
+<p>&lt;svk:name&gt;Omläggning av kyrktaket 2009&lt;/svk:name&gt;</p>
+<p>&lt;svk:identificator&gt;P 2009:1&lt;/svk:identificator&gt;</p>
+<p>&lt;svk:deliveringSystemId&gt;34958&lt;/svk:deliveringSystemId&gt;</p>
+<p>&lt;/svk:relatedRealEstate&gt;</p>
+<p>&lt;/svk:relatedRealEstates&gt;</p>
+<p>&lt;/svk:ermsSvkAggregation&gt;</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:73</td>
+<td>Anteckningar</td>
+<td><p>Samlingselement för anteckningar kopplade till ett ärende.</p>
+<p>XLM-element: svk:svkNotes</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:74</td>
+<td>Anteckning</td>
+<td><p>Enskild anteckning kopplad till ärendet.</p>
+<p>Elementet kan upprepas.</p>
+<p>XML-element: svk:svkNote</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:75</td>
+<td>Typ av anteckning</td>
+<td><p>Obligatoriskt om elementet Anteckning används.</p>
+<p>Värdet väljs från <a href="#_SVK-VÄRDELISTA_10_–">SVK-värdelista
+10</a>.</p>
+<p>XML-element: svk:svkNote/@typeOfNote<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:76</td>
+<td>Text</td>
+<td><p>Anteckningens lydelse.</p>
+<p>Obligatoriskt om elementet Anteckning används.</p>
+<p>XML-element: svk:noteText<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:77</td>
+<td>Skapare av anteckning</td>
+<td><p>Person som har gjort anteckningen.</p>
+<p>Obligatoriskt om elementet Anteckning används.</p>
+<p>XML-element: svk:noteAuthor<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:78</td>
+<td>Datum för anteckning</td>
+<td><p>Datum och tid när anteckningen gjordes.</p>
+<p>Obligatoriskt om elementet Anteckning används.</p>
+<p>XML-element: svk:noteDate<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 17 – Anteckningar</p>
+<p>&lt;svk:ermsSvkAggregation&gt;</p>
+<p>&lt;svk:svkNotes&gt;</p>
+<p>&lt;svk:svkNote typeOfNote="generell anteckning"&gt;</p>
+<p>&lt;svk:noteText&gt;Detta är en anteckning&lt;/svk:noteText&gt;</p>
+<p>&lt;svk:noteAuthor&gt;Jörgen Persson&lt;/svk:noteAuthor&gt;</p>
+<p>&lt;svk:noteDate&gt;2019-02-23T00:00:00&lt;/svk:noteDate&gt;</p>
+<p>&lt;/svk:svkNote&gt;</p>
+<p>&lt;/svk:svkNotes&gt;</p>
+<p>&lt;/svk:ermsSvkAggregation&gt;</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:79</td>
+<td>Ändringslogg</td>
+<td><p>Samlingselement för loggningsuppgifter.</p>
+<p>XML-element: svk:auditLogEvents</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:80</td>
+<td>Händelse</td>
+<td><p>Enskild händelse i ändringsloggen.</p>
+<p>Obligatoriskt om elementet Ändringslogg används.</p>
+<p>XML-element: svk:auditLogEvent</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:81</td>
+<td>Tid</td>
+<td><p>Datum och tid då ändringen gjordes.</p>
+<p>Obligatoriskt om elementet Händelse används.</p>
+<p>XML-element: svk:time<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:82</td>
+<td>Användare</td>
+<td><p>Namn på personen som gjorde ändringen.</p>
+<p>Obligatoriskt om elementet Händelse används.</p>
+<p>XML-element: svk:user<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:83</td>
+<td>Tillämpnings­område</td>
+<td><p>Beskrivning av det som ändringen avser.</p>
+<p>Obligatoriskt om elementet Händelse används.</p>
+<p>Värdet väljs från <a href="#_SVK-VÄRDELISTA_11_–">SVK-värdelista
+11</a>.</p>
+<p>XML-element: svk:scope<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:84</td>
+<td>Händelse</td>
+<td><p>Beskrivning av ändringen.</p>
+<p>Obligatoriskt om elementet Händelse används.</p>
+<p>Värdet väljs från <a href="#_SVK-VÄRDELISTA_12_–">SVK-värdelista
+12</a>.</p>
+<p>XML-element: svk:action<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:85</td>
+<td>Värde före ändring</td>
+<td><p>Om ett värde har ändrats, anges här lydelsen före ändringen.</p>
+<p>XML-element: svk:valueBeforeChange<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:86</td>
+<td>Värde efter ändring</td>
+<td><p>Om ett värde har ändrats, anges här lydelsen efter ändringen.</p>
+<p>XML-element: svk:valueAfterChange<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 18 – Ändringslogg</p>
+<p>&lt;svk:ermsSvkAggregation&gt;</p>
+<p>&lt;svk:auditLogEvents&gt;</p>
+<p>&lt;svk:auditLogEvent&gt;</p>
+<p>&lt;svk:time&gt;2009-09-22T11:47:00&lt;/svk:time&gt;</p>
+<p>&lt;svk:user&gt; Jörgen Persson&lt;/svk:user&gt;</p>
+<p>&lt;svk:scope&gt;ärende&lt;/svk:scope&gt;</p>
+<p>&lt;svk:action&gt;create&lt;/svk:action&gt;</p>
+<p>&lt;/svk:auditLogEvent&gt;</p>
+<p>&lt;svk:auditLogEvent&gt;</p>
+<p>&lt;svk:time&gt;2009-09-22T11:52:00&lt;/svk:time&gt;</p>
+<p>&lt;svk:user&gt;Jörgen Persson&lt;/svk:user&gt;</p>
+<p>&lt;svk:scope&gt;ärendemening&lt;/svk:scope&gt;</p>
+<p>&lt;svk:action&gt;update&lt;/svk:action&gt;</p>
+<p>&lt;svk:valueBeforeChange&gt;Upphandling av
+frysboxar&lt;/svk:valueBeforeChange&gt;</p>
+<p>&lt;svk:valueAfterChange&gt;Upphandling av
+kylskåp&lt;/svk:valueAfterChange&gt;</p>
+<p>&lt;/svk:auditLogEvent&gt;</p>
+<p>&lt;svk:auditLogEvent&gt;</p>
+<p>&lt;svk:time&gt;2009-09-22T12:10:00&lt;/svk:time&gt;</p>
+<p>&lt;svk:user&gt; Jörgen Persson &lt;/svk:user&gt;</p>
+<p>&lt;svk:scope&gt;ärendestatus&lt;/svk:scope&gt;</p>
+<p>&lt;svk:action&gt;update&lt;/svk:action&gt;</p>
+<p>&lt;svk:valueBeforeChange&gt;Öppet&lt;/svk:valueBeforeChange&gt;</p>
+<p>&lt;svk:valueAfterChange&gt;Makulerat&lt;/svk:valueAfterChange&gt;</p>
+<p>&lt;/svk:auditLogEvent&gt;</p>
+<p>&lt;/svk:auditLogEvents&gt;</p>
+<p>&lt;/svk:ermsSvkAggregation&gt;</p></td>
+</tr>
+</tbody>
+</table>
 
 Information om ärendehandlingar
 
-[]{#_Tabell_4._Ärendehandlingar .anchor}Tabell 4. Ärendehandlingar
+<span id="_Tabell_4._Ärendehandlingar" class="anchor"></span>Tabell 4.
+Ärendehandlingar
 
-+------------+------------+--------------------------------------------+
-| ID         | Element    |                                            |
-+============+============+============================================+
-| e          | Handling   | Samlingselement med information om en i    |
-| rms-svk:87 |            | ärendet registrerad handling.              |
-|            |            |                                            |
-| (ERMS129)  |            | Elementet kan upprepas.                    |
-|            |            |                                            |
-|            |            | XML-element: record                        |
-+------------+------------+--------------------------------------------+
-| e          | Ide        | Identifikator för dokumentet i form av     |
-| rms-svk:88 | ntifikator | UUID. Identifikatorn anges automatiskt     |
-|            |            | redan i det levererande systemet eller vid |
-| (ERMS130)  |            | överföring till e-arkivet.                 |
-|            |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | XML-element: record/@systemIdentifier\     |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Ha         | Övergripande typ av handling. Motsvarar    |
-| rms-svk:89 | ndlingstyp | inte handlingstyp i                        |
-|            |            | arkivredovisning/dokumenthanteringsplan.   |
-| (ERMS131)  |            |                                            |
-|            |            | Obligatoriskt. Värdet väljs från           |
-|            |            | [SVK-värdelista                            |
-|            |            | 13](#_SVK-VÄRDELISTA_13_–).                |
-|            |            |                                            |
-|            |            | Oavsett handlingstyp kan värdet            |
-|            |            | "ärendedokument" alltid användas.          |
-|            |            |                                            |
-|            |            | XML-element: record/@recordType\           |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Form       | Anger om handlingen bara finns i fysisk    |
-| rms-svk:90 |            | form, bara i digital form eller både och.  |
-|            |            |                                            |
-| (ERMS132)  |            | Värdet väljs från [SVK-värdelista          |
-|            |            | 14](#_SVK-VÄRDELISTA_14_–).                |
-|            |            |                                            |
-|            |            | XML-element: recordPhysicalOrDigital\      |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 19 |            |                                            |
-| --         |            |                                            |
-| Handling   |            |                                            |
-|            |            |                                            |
-| \<record\  |            |                                            |
-| systemId   |            |                                            |
-| entifier=\ |            |                                            |
-| "8dbbdc56- |            |                                            |
-| 8ada-4ad5- |            |                                            |
-| a1ec-b8131 |            |                                            |
-| a1086a2\"\ |            |                                            |
-| record     |            |                                            |
-| PhysicalOr |            |                                            |
-| Digital=\" |            |                                            |
-| digital\"\ |            |                                            |
-| r          |            |                                            |
-| ecordType= |            |                                            |
-| \"ärendedo |            |                                            |
-| kument\"\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Doku       | En kombination av Ärendenummer             |
-| rms-svk:91 | ment­nummer | (erms-svk:25) och dokumentets löpnummer    |
-|            |            | (erms-svk:102) med kolon emellan.          |
-| (ERMS146)  |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | Exempel: S 2010-0034:1                     |
-|            |            |                                            |
-|            |            | XML-element: objectId\                     |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Intern     | Befintligt id i det levererande systemet   |
-| rms-svk:92 | ide        |                                            |
-|            | ntifi­kator | Om elementet Intern identifikator används, |
-| (ERMS148,  |            | måste attributet extraIdType ha värdet     |
-| ERMS149)   |            | "deliveringSystemId".                      |
-|            |            |                                            |
-|            |            | XML-element: extraId\                      |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 20 |            |                                            |
-| --         |            |                                            |
-| Doku       |            |                                            |
-| mentnummer |            |                                            |
-| och Intern |            |                                            |
-| ide        |            |                                            |
-| ntifikator |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \<o        |            |                                            |
-| bjectId\>C |            |                                            |
-| 1995       |            |                                            |
-| -0032:1\</ |            |                                            |
-| objectId\> |            |                                            |
-|            |            |                                            |
-| \<extraId  |            |                                            |
-| ext        |            |                                            |
-| raIdType=\ |            |                                            |
-| "deliverin |            |                                            |
-| gSystemId\ |            |                                            |
-| "\>34565\< |            |                                            |
-| /extraId\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </record\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | I          | Handlingens informationsklass.             |
-| rms-svk:93 | nforma­tion |                                            |
-|            | sklass­ning | XML-element: informationClass\             |
-| (ERMS133)  |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Säkerhet   | Handlingens säkerhetsklass.                |
-| rms-svk:94 | s­klassning |                                            |
-|            |            | XML-element: securityClass\                |
-| (ERMS134)  |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Klas       | Namnet på den process i den officiella     |
-| rms-svk:95 | sificering | klassificeringsstrukturen som har angivits |
-|            |            | som klassificering av ärendet och de       |
-| (ERMS196)  |            | ingående handlingarna.                     |
-|            |            |                                            |
-|            |            | XML-element: classification\               |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| e          | Klassifi   | Koden för den process som angivits under   |
-| rms-svk:96 | ce­ringskod | Klassificering                             |
-|            |            |                                            |
-| (ERMS75)   |            | XML-element:                               |
-|            |            | classification/@classificationCode\        |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 21 |            |                                            |
-| --         |            |                                            |
-| Klas       |            |                                            |
-| sificering |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \<clas     |            |                                            |
-| sification |            |                                            |
-| classifica |            |                                            |
-| tionCode=\ |            |                                            |
-| "2.7\"\>Ge |            |                                            |
-| servic     |            |                                            |
-| e\</classi |            |                                            |
-| fication\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </record\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Nyckelord  | Samlingselement för enskilda nyckelord.    |
-| rms-svk:97 |            |                                            |
-|            |            | XML-element: keywords                      |
-| (ERMS152)  |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Nyckelord  | Enstaka nyckelord.                         |
-| rms-svk:98 |            |                                            |
-|            |            | Elementet kan upprepas.                    |
-| (ERMS153)  |            |                                            |
-|            |            | XML-element: keyword\                      |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 22 |            |                                            |
-| --         |            |                                            |
-| Nyckelord  |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| keywords\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <keyword\> |            |                                            |
-| församling |            |                                            |
-| sordning\< |            |                                            |
-| /keyword\> |            |                                            |
-|            |            |                                            |
-| \<k        |            |                                            |
-| eyword\>ky |            |                                            |
-| rkorådet\< |            |                                            |
-| /keyword\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </record\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| e          | Titel      | Titel eller en beskrivning av handlingen.  |
-| rms-svk:99 |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | XML-element: title\                        |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| er         | Annan      | Används enbart för Offentlig titel i       |
-| ms-svk:100 | titel      | leveranser från Public 360°.               |
-|            |            |                                            |
-|            |            | Om elementet Annan titel används måste     |
-|            |            | attributet titleType ha värdet             |
-|            |            | "publicTitle".                             |
-|            |            |                                            |
-|            |            | XML-element: otherTitle\                   |
-|            |            | \@titleType="publicTitle"\                 |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 23 |            |                                            |
-| -- Titel   |            |                                            |
-| och Annan  |            |                                            |
-| titel      |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \<title\>H |            |                                            |
-| andlingens |            |                                            |
-| titel      |            |                                            |
-| \</title\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| otherTitle |            |                                            |
-| titleTy    |            |                                            |
-| pe="public |            |                                            |
-| Title"\>En |            |                                            |
-| offentlig  |            |                                            |
-| titel\</ot |            |                                            |
-| herTitle\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </record\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| er         | Status     | Handlingens status.                        |
-| ms-svk:101 |            |                                            |
-|            |            | Obligatoriskt. Värdet väljs från           |
-|            |            | [SVK-värdelista 7](#_SVK-VÄRDELISTA_7_–).  |
-|            |            |                                            |
-|            |            | Värdet kan vara antingen "closed", vilket  |
-|            |            | innebär att dokumentet är registrerat som  |
-|            |            | inkommet eller upprättat, eller            |
-|            |            | "obliterated", vilket betyder att det är   |
-|            |            | makulerat.                                 |
-|            |            |                                            |
-|            |            | Exempel:                                   |
-|            |            |                                            |
-|            |            | \<record\>                                 |
-|            |            |                                            |
-|            |            | \<status                                   |
-|            |            | []{.mark}value="[closed]{.mark}"/\>        |
-|            |            |                                            |
-|            |            | \</record\>                                |
-|            |            |                                            |
-|            |            | XML-element: status/@value\                |
-|            |            | Datatype: string                           |
-+------------+------------+--------------------------------------------+
-| er         | Löpnummer  | Handlingens löpnummer i ärendet.           |
-| ms-svk:102 |            |                                            |
-|            |            | Obligatoriskt. Måste vara unikt i          |
-|            |            | respektive ärende.                         |
-|            |            |                                            |
-|            |            | XML-element: runningNumber\                |
-|            |            | Datatyp: integer                           |
-+------------+------------+--------------------------------------------+
-| er         | Dokume     | Referens till och/eller från annan         |
-| ms-svk:103 | nt­referens | handling.                                  |
-|            |            |                                            |
-|            |            | Om möjligt anges den andra handlingens     |
-|            |            | Dokumentnummer enligt specifikationen i    |
-|            |            | detta dokument, annars en hänvisning till  |
-|            |            | dokumentet i annat format eller fritext.   |
-|            |            |                                            |
-|            |            | Elementet kan upprepas.                    |
-|            |            |                                            |
-|            |            | Om elementet Dokumentreferens används,     |
-|            |            | måste attributet relationType ha värdet    |
-|            |            | "reference".                               |
-|            |            |                                            |
-|            |            | XML-element: relation\                     |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 24 |            |                                            |
-| --         |            |                                            |
-| Dokume     |            |                                            |
-| ntreferens |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \<relation |            |                                            |
-| relationT  |            |                                            |
-| ype=\"refe |            |                                            |
-| rence\"\>F |            |                                            |
-| 2019       |            |                                            |
-| -0454:4\</ |            |                                            |
-| relation\> |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| er         | Sekretess  | Samlingselement för uppgift om sekretess.  |
-| ms-svk:104 |            |                                            |
-|            |            | Elementet kan upprepas.                    |
-|            |            |                                            |
-|            |            | Om elementet Sekretess används måste       |
-|            |            | attributet restrictionType ha värdet       |
-|            |            | "confidential".                            |
-|            |            |                                            |
-|            |            | XML-element: restriction                   |
-+------------+------------+--------------------------------------------+
-| er         | F          | Fritext som beskriver sekretessen.         |
-| ms-svk:105 | örklarande |                                            |
-|            | text       | XML-element: explanatoryText\              |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| er         | Lagrum     | Hänvisning till paragraf i kyrkoordningens |
-| ms-svk:106 |            | 54 kapitel, till Offentlighets- och        |
-|            |            | sekretesslagen eller till annat lagrum som |
-|            |            | stöder den angivna sekretessen.            |
-|            |            |                                            |
-|            |            | Obligatoriskt om elementet Sekretess       |
-|            |            | används.                                   |
-|            |            |                                            |
-|            |            | XML-element: regulation\                   |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| er         | Sekr       | Datum då sekretessmarkeringen gjordes.     |
-| ms-svk:107 | etess­datum |                                            |
-|            |            | Om elementet Sekretessdatum används, måste |
-|            |            | attributet dateTyp ha värdet "created"     |
-|            |            |                                            |
-|            |            | XML-element: dates/date\                   |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| Exempel 25 |            |                                            |
-| --         |            |                                            |
-| Sekretess  |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \<r        |            |                                            |
-| estriction |            |                                            |
-| rest       |            |                                            |
-| rictionTyp |            |                                            |
-| e=\"confid |            |                                            |
-| ential\"\> |            |                                            |
-|            |            |                                            |
-| \<explan   |            |                                            |
-| atoryText\ |            |                                            |
-| >Sekretess |            |                                            |
-| enligt     |            |                                            |
-| KO         |            |                                            |
-| \</explana |            |                                            |
-| toryText\> |            |                                            |
-|            |            |                                            |
-| \<regu     |            |                                            |
-| lation\>KO |            |                                            |
-| 54:2\</re  |            |                                            |
-| gulation\> |            |                                            |
-|            |            |                                            |
-| \<dates\>  |            |                                            |
-|            |            |                                            |
-| \<date     |            |                                            |
-| dateType=\ |            |                                            |
-| "created\" |            |                                            |
-| \>2020-01- |            |                                            |
-| 02T00:00:0 |            |                                            |
-| 0\</date\> |            |                                            |
-|            |            |                                            |
-| \</dates\> |            |                                            |
-|            |            |                                            |
-| \</res     |            |                                            |
-| triction\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </record\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| er         | Riktning   | Anger dokumentets riktning.                |
-| ms-svk:108 |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | Värdet väljs från [SVK-värdelista          |
-|            |            | 15](#_SVK-VÄRDELISTA_15_–).                |
-|            |            |                                            |
-|            |            | Kan vara något av värdena:                 |
-|            |            |                                            |
-|            |            | "incoming" -- en inkommen handling         |
-|            |            |                                            |
-|            |            | "outgoing" -- en genom expediering         |
-|            |            | upprättad handling                         |
-|            |            |                                            |
-|            |            | "internal" -- en på annat sätt upprättad   |
-|            |            | handling                                   |
-|            |            |                                            |
-|            |            | XML-element:                               |
-|            |            | direction/@directionDefinition\            |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 26 |            |                                            |
-| --         |            |                                            |
-| Riktning   |            |                                            |
-|            |            |                                            |
-| 1\)        |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <direction |            |                                            |
-| direc      |            |                                            |
-| tionDefini |            |                                            |
-| tion=\"inc |            |                                            |
-| oming\"/\> |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| 2\)        |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <direction |            |                                            |
-| direc      |            |                                            |
-| tionDefini |            |                                            |
-| tion=\"out |            |                                            |
-| going\"/\> |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| 3\)        |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <direction |            |                                            |
-| direction  |            |                                            |
-| Definition |            |                                            |
-| =\"other\" |            |                                            |
-| otherDirec |            |                                            |
-| tionDefini |            |                                            |
-| tion=\"int |            |                                            |
-| ernal\"/\> |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| er         | Aktörer    | Samlingselement för alla agerande parter.  |
-| ms-svk:109 |            |                                            |
-|            |            | XML-element: agents                        |
-+------------+------------+--------------------------------------------+
-| er         | Skapare    | Den som har skapat handlingen i systemet.  |
-| ms-svk:110 |            |                                            |
-|            |            | Om elementet Skapare används, måste        |
-|            |            | agentType ha värdet "creator".             |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| er         | Ansvarig   | Den som ägde eller hade ansvar för         |
-| ms-svk:111 |            | handlingen innan ärendet avslutades.       |
-|            |            |                                            |
-|            |            | Om elementet Ansvarig används, måste       |
-|            |            | agentType ha värdet "responsible_person".  |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| er         | Avsändare  | Avsändare av en inkommen handling.         |
-| ms-svk:112 |            |                                            |
-|            |            | Obligatoriskt om Riktning har värdet       |
-|            |            | "incoming"                                 |
-|            |            |                                            |
-|            |            | Elementet kan upprepas                     |
-|            |            |                                            |
-|            |            | Om elementet Avsändare används, måste      |
-|            |            | agentType ha värdet "sender".              |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| er         | Mottagare  | Mottagare av en utgående handling.         |
-| ms-svk:113 |            |                                            |
-|            |            | Obligatoriskt om Riktning har värdet       |
-|            |            | "outgoing"                                 |
-|            |            |                                            |
-|            |            | Elementet kan upprepas                     |
-|            |            |                                            |
-|            |            | Om elementet Mottagare används, måste      |
-|            |            | agentType ha värdet "receiver".            |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| er         | Annan      | Annan typ av aktör än de ovan              |
-| ms-svk:114 | aktör      | specificerade.                             |
-|            |            |                                            |
-|            |            | Elementet kan upprepas                     |
-|            |            |                                            |
-|            |            | Om elementet Annan aktör används, måste    |
-|            |            | agentType ha värdet "agent".               |
-|            |            |                                            |
-|            |            | Namn och användarnamn anges i              |
-|            |            | underelementen name (obligatoriskt) och    |
-|            |            | idNumber (frivilligt). Se exemplet nedan.  |
-|            |            |                                            |
-|            |            | Om idNumber används hämtas värdet från     |
-|            |            | [SVK-värdelista 8](#_SVK-VÄRDELISTA_8_–).  |
-|            |            |                                            |
-|            |            | XML-element: agent\                        |
-|            |            | name (string)\                             |
-|            |            | idNumber (string)                          |
-+------------+------------+--------------------------------------------+
-| Exempel 27 |            |                                            |
-| -- Aktörer |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \<agents\> |            |                                            |
-|            |            |                                            |
-| \<agent    |            |                                            |
-| age        |            |                                            |
-| ntType=\"c |            |                                            |
-| reator\"\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| name\>Anna |            |                                            |
-| Andersso   |            |                                            |
-| n\</name\> |            |                                            |
-|            |            |                                            |
-| \<idNumber |            |                                            |
-| idNumbe    |            |                                            |
-| rType=\"us |            |                                            |
-| ername\"\> |            |                                            |
-| svkanan\</ |            |                                            |
-| idNumber\> |            |                                            |
-|            |            |                                            |
-| \</agent\> |            |                                            |
-|            |            |                                            |
-| \<agent    |            |                                            |
-| agen       |            |                                            |
-| tType=\"re |            |                                            |
-| sponsible_ |            |                                            |
-| person\"\> |            |                                            |
-|            |            |                                            |
-| \<n        |            |                                            |
-| ame\>Johan |            |                                            |
-| Göransso   |            |                                            |
-| n\</name\> |            |                                            |
-|            |            |                                            |
-| \<idNumber |            |                                            |
-| idNumbe    |            |                                            |
-| rType=\"us |            |                                            |
-| ername\"\> |            |                                            |
-| svkjogo\</ |            |                                            |
-| idNumber\> |            |                                            |
-|            |            |                                            |
-| \</agent\> |            |                                            |
-|            |            |                                            |
-| Om det är  |            |                                            |
-| en         |            |                                            |
-| inkommande |            |                                            |
-| handling:  |            |                                            |
-|            |            |                                            |
-| \<agent    |            |                                            |
-| ag         |            |                                            |
-| entType=\" |            |                                            |
-| sender\"\> |            |                                            |
-|            |            |                                            |
-| \<na       |            |                                            |
-| me\>Försäk |            |                                            |
-| ringskassa |            |                                            |
-| n\</name\> |            |                                            |
-|            |            |                                            |
-| \</agent\> |            |                                            |
-|            |            |                                            |
-| Om det är  |            |                                            |
-| en         |            |                                            |
-| utgående   |            |                                            |
-| handling:  |            |                                            |
-|            |            |                                            |
-| \<agent    |            |                                            |
-| agen       |            |                                            |
-| tType=\"re |            |                                            |
-| ceiver\"\> |            |                                            |
-|            |            |                                            |
-| \<na       |            |                                            |
-| me\>Försäk |            |                                            |
-| ringskassa |            |                                            |
-| n\</name\> |            |                                            |
-|            |            |                                            |
-| \</agent\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </agents\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </record\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| er         | B          | Beskrivning av handlingen                  |
-| ms-svk:115 | eskrivning |                                            |
-|            |            | XML-element: description\                  |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| er         | Datum      | Samlingselement för alla datum som rör     |
-| ms-svk:116 |            | handlingen                                 |
-|            |            |                                            |
-|            |            | Alla datum har datatypen xs:dateTime i     |
-|            |            | UTC-format, vilket betyder att både datum  |
-|            |            | och klocklag ned till sekundnivå ska       |
-|            |            | anges. Om klockslag saknas används         |
-|            |            | noll-tecken. Tidszon anges inte men        |
-|            |            | förutsätts vara Europe/Stockholm.          |
-|            |            |                                            |
-|            |            | \[År\]-\[Måna                              |
-|            |            | d\]-\[Dag\]T\[Timme\]:\[Minut\]:\[Sekund\] |
-|            |            |                                            |
-|            |            | Exempel:                                   |
-|            |            |                                            |
-|            |            | 2018-03-04T15:15:22\                       |
-|            |            | 2020-09-17T00:00:00                        |
-|            |            |                                            |
-|            |            | XML-element: dates                         |
-+------------+------------+--------------------------------------------+
-| er         | Skapat     | Datum och tid då handlingen skapades i     |
-| ms-svk:117 |            | systemet. Här avses ett av systemet        |
-|            |            | automatiskt satt datum.                    |
-|            |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | Om uppgiften saknas i diariesystemet,      |
-|            |            | används samma datum som i Registrerat.     |
-|            |            |                                            |
-|            |            | Om elementet Skapat används, måste         |
-|            |            | dateType ha värdet "created".              |
-|            |            |                                            |
-|            |            | XML-element: date/@dateType="created"\     |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| er         | R          | Datum och tid då handlingen registrerades  |
-| ms-svk:118 | egistrerat | (diariefördes) som inkommen, utgående      |
-|            |            | eller på annat sätt färdigställd.          |
-|            |            |                                            |
-|            |            | Obligatoriskt.                             |
-|            |            |                                            |
-|            |            | Uppgiften relaterar till elementet         |
-|            |            | Riktning. Om Riktning t.ex. har värdet     |
-|            |            | "outgoing", anges här datum för            |
-|            |            | expediering. Om Riktning i stället har     |
-|            |            | värdet "incoming", anges här datum då      |
-|            |            | handlingen inkom.                          |
-|            |            |                                            |
-|            |            | Om elementet Registrerat används, måste    |
-|            |            | dateType ha värdet "originated".           |
-|            |            |                                            |
-|            |            | XML-element: date/@dateType="originated\   |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| er         | An         | Datum då handlingen inkom, om annat än     |
-| ms-svk:119 | komstdatum | Registrerat.                               |
-|            |            |                                            |
-|            |            | Om elementet Ankomstdatum används, måste   |
-|            |            | dateType ha värdet "received".             |
-|            |            |                                            |
-|            |            | XML-element: date/@dateType="received"\    |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| er         | Expedie    | Datum då handlingen expedierades, om annat |
-| ms-svk:120 | rings­datum | än Registrerat.                            |
-|            |            |                                            |
-|            |            | Om elementet Expedieringsdatum används,    |
-|            |            | måste dateType ha värdet "expedited".      |
-|            |            |                                            |
-|            |            | XML-element: date/@dateType="expedited"\   |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| Exempel 28 |            |                                            |
-| -- Datum   |            |                                            |
-|            |            |                                            |
-| \<record\> |            |                                            |
-|            |            |                                            |
-| \<dates\>  |            |                                            |
-|            |            |                                            |
-| \<date     |            |                                            |
-| dateType=\ |            |                                            |
-| "created\" |            |                                            |
-| \>2020-02- |            |                                            |
-| 02T12:32:1 |            |                                            |
-| 5\</date\> |            |                                            |
-|            |            |                                            |
-| \<date     |            |                                            |
-| dat        |            |                                            |
-| eType=\"or |            |                                            |
-| iginated\" |            |                                            |
-| \>2020-02- |            |                                            |
-| 02T00:00:0 |            |                                            |
-| 0\</date\> |            |                                            |
-|            |            |                                            |
-| \<date     |            |                                            |
-| d          |            |                                            |
-| ateType=\" |            |                                            |
-| received\" |            |                                            |
-| \>2020-01- |            |                                            |
-| 14T00:00:0 |            |                                            |
-| 0\</date\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| er         | Kommentar  | Kommentar till handlingen.                 |
-| ms-svk:121 |            |                                            |
-|            |            | Kommentaren utgörs av en enda              |
-|            |            | sammanhängande text och är inte möjlig att |
-|            |            | upprepa. Se exemplet nedan.                |
-|            |            |                                            |
-|            |            | För upprepade kommentarer eller            |
-|            |            | anteckningar används i stället elementet   |
-|            |            | svkNotes, se [Tabell                       |
-|            |            | 5](#_Tabell_5._Svenska).                   |
-|            |            |                                            |
-|            |            | Om elementet Kommentar används, måste      |
-|            |            | noteType ha värdet "comment"               |
-|            |            |                                            |
-|            |            | XML-element: notes/note\                   |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| er         | Datum för  | Datum då kommentaren skapades.             |
-| ms-svk:122 | kommentar  |                                            |
-|            |            | XML-element: notes/note/@noteDate\         |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| er         | Utökad     | Utökad XML-data är en del av Svenska       |
-| ms-svk:123 | XML-data   | kyrkans anpassning av ERMS.                |
-|            |            |                                            |
-|            |            | Se [Tabell 5](#_Tabell_5._Svenska).        |
-|            |            |                                            |
-|            |            | XML-element: additionalXMLData             |
-+------------+------------+--------------------------------------------+
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Element</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>erms-svk:87</p>
+<p>(ERMS129)</p></td>
+<td>Handling</td>
+<td><p>Samlingselement med information om en i ärendet registrerad
+handling.</p>
+<p>Elementet kan upprepas.</p>
+<p>XML-element: record</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:88</p>
+<p>(ERMS130)</p></td>
+<td>Identifikator</td>
+<td><p>Identifikator för dokumentet i form av UUID. Identifikatorn anges
+automatiskt redan i det levererande systemet eller vid överföring till
+e-arkivet.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: record/@systemIdentifier<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:89</p>
+<p>(ERMS131)</p></td>
+<td>Handlingstyp</td>
+<td><p>Övergripande typ av handling. Motsvarar inte handlingstyp i
+arkivredovisning/dokumenthanteringsplan.</p>
+<p>Obligatoriskt. Värdet väljs från <a
+href="#_SVK-VÄRDELISTA_13_–">SVK-värdelista 13</a>.</p>
+<p>Oavsett handlingstyp kan värdet ”ärendedokument” alltid användas.</p>
+<p>XML-element: record/@recordType<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:90</p>
+<p>(ERMS132)</p></td>
+<td>Form</td>
+<td><p>Anger om handlingen bara finns i fysisk form, bara i digital form
+eller både och.</p>
+<p>Värdet väljs från <a href="#_SVK-VÄRDELISTA_14_–">SVK-värdelista
+14</a>.</p>
+<p>XML-element: recordPhysicalOrDigital<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 19 – Handling</p>
+<p>&lt;record<br />
+systemIdentifier="8dbbdc56-8ada-4ad5-a1ec-b8131a1086a2"<br />
+recordPhysicalOrDigital="digital"<br />
+recordType="ärendedokument"&gt;</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:91</p>
+<p>(ERMS146)</p></td>
+<td>Dokument­nummer</td>
+<td><p>En kombination av Ärendenummer (erms-svk:25) och dokumentets
+löpnummer (erms-svk:102) med kolon emellan.</p>
+<p>Obligatoriskt.</p>
+<p>Exempel: S 2010-0034:1</p>
+<p>XML-element: objectId<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:92</p>
+<p>(ERMS148, ERMS149)</p></td>
+<td>Intern identifi­kator</td>
+<td><p>Befintligt id i det levererande systemet</p>
+<p>Om elementet Intern identifikator används, måste attributet
+extraIdType ha värdet ”deliveringSystemId”.</p>
+<p>XML-element: extraId<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 20 – Dokumentnummer och Intern
+identifikator</p>
+<p>&lt;record&gt;</p>
+<p>&lt;objectId&gt;C 1995-0032:1&lt;/objectId&gt;</p>
+<p>&lt;extraId
+extraIdType="deliveringSystemId"&gt;34565&lt;/extraId&gt;</p>
+<p>&lt;/record&gt;</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:93</p>
+<p>(ERMS133)</p></td>
+<td>Informa­tionsklass­ning</td>
+<td><p>Handlingens informationsklass.</p>
+<p>XML-element: informationClass<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:94</p>
+<p>(ERMS134)</p></td>
+<td>Säkerhets­klassning</td>
+<td><p>Handlingens säkerhetsklass.</p>
+<p>XML-element: securityClass<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:95</p>
+<p>(ERMS196)</p></td>
+<td>Klassificering</td>
+<td><p>Namnet på den process i den officiella klassificeringsstrukturen
+som har angivits som klassificering av ärendet och de ingående
+handlingarna.</p>
+<p>XML-element: classification<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:96</p>
+<p>(ERMS75)</p></td>
+<td>Klassifice­ringskod</td>
+<td><p>Koden för den process som angivits under Klassificering</p>
+<p>XML-element: classification/@classificationCode<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 21 – Klassificering</p>
+<p>&lt;record&gt;</p>
+<p>&lt;classification classificationCode="2.7"&gt;Ge
+service&lt;/classification&gt;</p>
+<p>&lt;/record&gt;</p></td>
+</tr>
+<tr class="even">
+<td><p>erms-svk:97</p>
+<p>(ERMS152)</p></td>
+<td>Nyckelord</td>
+<td><p>Samlingselement för enskilda nyckelord.</p>
+<p>XML-element: keywords</p></td>
+</tr>
+<tr class="odd">
+<td><p>erms-svk:98</p>
+<p>(ERMS153)</p></td>
+<td>Nyckelord</td>
+<td><p>Enstaka nyckelord.</p>
+<p>Elementet kan upprepas.</p>
+<p>XML-element: keyword<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 22 – Nyckelord</p>
+<p>&lt;record&gt;</p>
+<p>&lt;keywords&gt;</p>
+<p>&lt;keyword&gt;församlingsordning&lt;/keyword&gt;</p>
+<p>&lt;keyword&gt;kyrkorådet&lt;/keyword&gt;</p>
+<p>&lt;/record&gt;</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:99</td>
+<td>Titel</td>
+<td><p>Titel eller en beskrivning av handlingen.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: title<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:100</td>
+<td>Annan titel</td>
+<td><p>Används enbart för Offentlig titel i leveranser från Public
+360°.</p>
+<p>Om elementet Annan titel används måste attributet titleType ha värdet
+”publicTitle”.</p>
+<p>XML-element: otherTitle<br />
+@titleType=”publicTitle”<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 23 – Titel och Annan titel</p>
+<p>&lt;record&gt;</p>
+<p>&lt;title&gt;Handlingens titel&lt;/title&gt;</p>
+<p>&lt;otherTitle titleType=”publicTitle”&gt;En offentlig
+titel&lt;/otherTitle&gt;</p>
+<p>&lt;/record&gt;</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:101</td>
+<td>Status</td>
+<td><p>Handlingens status.</p>
+<p>Obligatoriskt. Värdet väljs från <a
+href="#_SVK-VÄRDELISTA_7_–">SVK-värdelista 7</a>.</p>
+<p>Värdet kan vara antingen ”closed”, vilket innebär att dokumentet är
+registrerat som inkommet eller upprättat, eller ”obliterated”, vilket
+betyder att det är makulerat.</p>
+<p>Exempel:</p>
+<p>&lt;record&gt;</p>
+<p>&lt;status <mark></mark>value=”<mark>closed</mark>”/&gt;</p>
+<p>&lt;/record&gt;</p>
+<p>XML-element: status/@value<br />
+Datatype: string</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:102</td>
+<td>Löpnummer</td>
+<td><p>Handlingens löpnummer i ärendet.</p>
+<p>Obligatoriskt. Måste vara unikt i respektive ärende.</p>
+<p>XML-element: runningNumber<br />
+Datatyp: integer</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:103</td>
+<td>Dokument­referens</td>
+<td><p>Referens till och/eller från annan handling.</p>
+<p>Om möjligt anges den andra handlingens Dokumentnummer enligt
+specifikationen i detta dokument, annars en hänvisning till dokumentet i
+annat format eller fritext.</p>
+<p>Elementet kan upprepas.</p>
+<p>Om elementet Dokumentreferens används, måste attributet relationType
+ha värdet ”reference”.</p>
+<p>XML-element: relation<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 24 – Dokumentreferens</p>
+<p>&lt;record&gt;</p>
+<p>&lt;relation relationType="reference"&gt;F
+2019-0454:4&lt;/relation&gt;</p>
+<p>&lt;record&gt;</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:104</td>
+<td>Sekretess</td>
+<td><p>Samlingselement för uppgift om sekretess.</p>
+<p>Elementet kan upprepas.</p>
+<p>Om elementet Sekretess används måste attributet restrictionType ha
+värdet ”confidential”.</p>
+<p>XML-element: restriction</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:105</td>
+<td>Förklarande text</td>
+<td><p>Fritext som beskriver sekretessen.</p>
+<p>XML-element: explanatoryText<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:106</td>
+<td>Lagrum</td>
+<td><p>Hänvisning till paragraf i kyrkoordningens 54 kapitel, till
+Offentlighets- och sekretesslagen eller till annat lagrum som stöder den
+angivna sekretessen.</p>
+<p>Obligatoriskt om elementet Sekretess används.</p>
+<p>XML-element: regulation<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:107</td>
+<td>Sekretess­datum</td>
+<td><p>Datum då sekretessmarkeringen gjordes.</p>
+<p>Om elementet Sekretessdatum används, måste attributet dateTyp ha
+värdet ”created”</p>
+<p>XML-element: dates/date<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 25 – Sekretess</p>
+<p>&lt;record&gt;</p>
+<p>&lt;restriction restrictionType="confidential"&gt;</p>
+<p>&lt;explanatoryText&gt;Sekretess enligt
+KO&lt;/explanatoryText&gt;</p>
+<p>&lt;regulation&gt;KO 54:2&lt;/regulation&gt;</p>
+<p>&lt;dates&gt;</p>
+<p>&lt;date dateType="created"&gt;2020-01-02T00:00:00&lt;/date&gt;</p>
+<p>&lt;/dates&gt;</p>
+<p>&lt;/restriction&gt;</p>
+<p>&lt;/record&gt;</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:108</td>
+<td>Riktning</td>
+<td><p>Anger dokumentets riktning.</p>
+<p>Obligatoriskt.</p>
+<p>Värdet väljs från <a href="#_SVK-VÄRDELISTA_15_–">SVK-värdelista
+15</a>.</p>
+<p>Kan vara något av värdena:</p>
+<p>”incoming” – en inkommen handling</p>
+<p>”outgoing” – en genom expediering upprättad handling</p>
+<p>”internal” – en på annat sätt upprättad handling</p>
+<p>XML-element: direction/@directionDefinition<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 26 – Riktning</p>
+<p>1)</p>
+<p>&lt;record&gt;</p>
+<p>&lt;direction directionDefinition="incoming"/&gt;</p>
+<p>&lt;record&gt;</p>
+<p>2)</p>
+<p>&lt;record&gt;</p>
+<p>&lt;direction directionDefinition="outgoing"/&gt;</p>
+<p>&lt;record&gt;</p>
+<p>3)</p>
+<p>&lt;record&gt;</p>
+<p>&lt;direction directionDefinition="other"
+otherDirectionDefinition="internal"/&gt;</p>
+<p>&lt;record&gt;</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:109</td>
+<td>Aktörer</td>
+<td><p>Samlingselement för alla agerande parter.</p>
+<p>XML-element: agents</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:110</td>
+<td>Skapare</td>
+<td><p>Den som har skapat handlingen i systemet.</p>
+<p>Om elementet Skapare används, måste agentType ha värdet
+”creator”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:111</td>
+<td>Ansvarig</td>
+<td><p>Den som ägde eller hade ansvar för handlingen innan ärendet
+avslutades.</p>
+<p>Om elementet Ansvarig används, måste agentType ha värdet
+”responsible_person”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:112</td>
+<td>Avsändare</td>
+<td><p>Avsändare av en inkommen handling.</p>
+<p>Obligatoriskt om Riktning har värdet ”incoming”</p>
+<p>Elementet kan upprepas</p>
+<p>Om elementet Avsändare används, måste agentType ha värdet
+”sender”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:113</td>
+<td>Mottagare</td>
+<td><p>Mottagare av en utgående handling.</p>
+<p>Obligatoriskt om Riktning har värdet ”outgoing”</p>
+<p>Elementet kan upprepas</p>
+<p>Om elementet Mottagare används, måste agentType ha värdet
+”receiver”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:114</td>
+<td>Annan aktör</td>
+<td><p>Annan typ av aktör än de ovan specificerade.</p>
+<p>Elementet kan upprepas</p>
+<p>Om elementet Annan aktör används, måste agentType ha värdet
+”agent”.</p>
+<p>Namn och användarnamn anges i underelementen name (obligatoriskt) och
+idNumber (frivilligt). Se exemplet nedan.</p>
+<p>Om idNumber används hämtas värdet från <a
+href="#_SVK-VÄRDELISTA_8_–">SVK-värdelista 8</a>.</p>
+<p>XML-element: agent<br />
+name (string)<br />
+idNumber (string)</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 27 – Aktörer</p>
+<p>&lt;record&gt;</p>
+<p>&lt;agents&gt;</p>
+<p>&lt;agent agentType="creator"&gt;</p>
+<p>&lt;name&gt;Anna Andersson&lt;/name&gt;</p>
+<p>&lt;idNumber idNumberType="username"&gt;svkanan&lt;/idNumber&gt;</p>
+<p>&lt;/agent&gt;</p>
+<p>&lt;agent agentType="responsible_person"&gt;</p>
+<p>&lt;name&gt;Johan Göransson&lt;/name&gt;</p>
+<p>&lt;idNumber idNumberType="username"&gt;svkjogo&lt;/idNumber&gt;</p>
+<p>&lt;/agent&gt;</p>
+<p>Om det är en inkommande handling:</p>
+<p>&lt;agent agentType="sender"&gt;</p>
+<p>&lt;name&gt;Försäkringskassan&lt;/name&gt;</p>
+<p>&lt;/agent&gt;</p>
+<p>Om det är en utgående handling:</p>
+<p>&lt;agent agentType="receiver"&gt;</p>
+<p>&lt;name&gt;Försäkringskassan&lt;/name&gt;</p>
+<p>&lt;/agent&gt;</p>
+<p>&lt;/agents&gt;</p>
+<p>&lt;/record&gt;</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:115</td>
+<td>Beskrivning</td>
+<td><p>Beskrivning av handlingen</p>
+<p>XML-element: description<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:116</td>
+<td>Datum</td>
+<td><p>Samlingselement för alla datum som rör handlingen</p>
+<p>Alla datum har datatypen xs:dateTime i UTC-format, vilket betyder att
+både datum och klocklag ned till sekundnivå ska anges. Om klockslag
+saknas används noll-tecken. Tidszon anges inte men förutsätts vara
+Europe/Stockholm.</p>
+<p>[År]-[Månad]-[Dag]T[Timme]:[Minut]:[Sekund]</p>
+<p>Exempel:</p>
+<p>2018-03-04T15:15:22<br />
+2020-09-17T00:00:00</p>
+<p>XML-element: dates</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:117</td>
+<td>Skapat</td>
+<td><p>Datum och tid då handlingen skapades i systemet. Här avses ett av
+systemet automatiskt satt datum.</p>
+<p>Obligatoriskt.</p>
+<p>Om uppgiften saknas i diariesystemet, används samma datum som i
+Registrerat.</p>
+<p>Om elementet Skapat används, måste dateType ha värdet ”created”.</p>
+<p>XML-element: date/@dateType=”created”<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:118</td>
+<td>Registrerat</td>
+<td><p>Datum och tid då handlingen registrerades (diariefördes) som
+inkommen, utgående eller på annat sätt färdigställd.</p>
+<p>Obligatoriskt.</p>
+<p>Uppgiften relaterar till elementet Riktning. Om Riktning t.ex. har
+värdet ”outgoing”, anges här datum för expediering. Om Riktning i
+stället har värdet ”incoming”, anges här datum då handlingen inkom.</p>
+<p>Om elementet Registrerat används, måste dateType ha värdet
+”originated”.</p>
+<p>XML-element: date/@dateType=”originated<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:119</td>
+<td>Ankomstdatum</td>
+<td><p>Datum då handlingen inkom, om annat än Registrerat.</p>
+<p>Om elementet Ankomstdatum används, måste dateType ha värdet
+”received”.</p>
+<p>XML-element: date/@dateType=”received”<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:120</td>
+<td>Expedierings­datum</td>
+<td><p>Datum då handlingen expedierades, om annat än Registrerat.</p>
+<p>Om elementet Expedieringsdatum används, måste dateType ha värdet
+”expedited”.</p>
+<p>XML-element: date/@dateType=”expedited”<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 28 – Datum</p>
+<p>&lt;record&gt;</p>
+<p>&lt;dates&gt;</p>
+<p>&lt;date dateType="created"&gt;2020-02-02T12:32:15&lt;/date&gt;</p>
+<p>&lt;date
+dateType="originated"&gt;2020-02-02T00:00:00&lt;/date&gt;</p>
+<p>&lt;date
+dateType="received"&gt;2020-01-14T00:00:00&lt;/date&gt;</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:121</td>
+<td>Kommentar</td>
+<td><p>Kommentar till handlingen.</p>
+<p>Kommentaren utgörs av en enda sammanhängande text och är inte möjlig
+att upprepa. Se exemplet nedan.</p>
+<p>För upprepade kommentarer eller anteckningar används i stället
+elementet svkNotes, se <a href="#_Tabell_5._Svenska">Tabell 5</a>.</p>
+<p>Om elementet Kommentar används, måste noteType ha värdet
+”comment”</p>
+<p>XML-element: notes/note<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:122</td>
+<td>Datum för kommentar</td>
+<td><p>Datum då kommentaren skapades.</p>
+<p>XML-element: notes/note/@noteDate<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:123</td>
+<td>Utökad XML-data</td>
+<td><p>Utökad XML-data är en del av Svenska kyrkans anpassning av
+ERMS.</p>
+<p>Se <a href="#_Tabell_5._Svenska">Tabell 5</a>.</p>
+<p>XML-element: additionalXMLData</p></td>
+</tr>
+</tbody>
+</table>
 
-[]{#_Tabell_5._Svenska .anchor}
+<span id="_Tabell_5._Svenska" class="anchor"></span>
 
 Tabell 5. Svenska kyrkans tilläggsinformation om ärendehandlingar
 
-+------------+------------+--------------------------------------------+
-| ID         | Element    |                                            |
-+============+============+============================================+
-| er         | Tilläggs­i  | De element som inte ingår i ERMS utan är   |
-| ms-svk:124 | nformation | tillägg i Svenska kyrkans anpassning är    |
-|            |            | samlade i elementet Tilläggsinformation.   |
-|            |            |                                            |
-|            |            | XML-element:                               |
-|            |            | additionalInformation/additionaXMLData/\   |
-|            |            | svk:ermsSvkArende/svk:ermsSvkRecord        |
-+------------+------------+--------------------------------------------+
-| er         | Relaterade | Samlingselement med referenser till        |
-| ms-svk:125 | projekt    | projekt som handlingen relaterar till.     |
-|            |            |                                            |
-|            |            | XML-element: svk:relatedProjects           |
-+------------+------------+--------------------------------------------+
-| er         | Relaterat  | Referens till projekt som handlingen       |
-| ms-svk:126 | projekt    | relaterar till.                            |
-|            |            |                                            |
-|            |            | Elementet kan upprepas.                    |
-|            |            |                                            |
-|            |            | XML-element: svk:relatedProject            |
-+------------+------------+--------------------------------------------+
-| er         | P          | Det relaterade projektets namn.            |
-| ms-svk:127 | rojektnamn |                                            |
-|            |            | Obligatoriskt om elementet Relaterat       |
-|            |            | projekt används.                           |
-|            |            |                                            |
-|            |            | XML-element: svk:name\                     |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Ide        | Projektnummer eller annan identifikator    |
-| ms-svk:128 | ntifikator | för projektet.                             |
-|            |            |                                            |
-|            |            | Obligatoriskt om elementet Relaterat       |
-|            |            | projekt används.                           |
-|            |            |                                            |
-|            |            | XML-element: svk:identificatory\           |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Internt ID | Projektets id-nummer i det levererande     |
-| ms-svk:129 |            | systemet                                   |
-|            |            |                                            |
-|            |            | XML-element: svk:deliveringSystemId\       |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| Exempel 29 |            |                                            |
-| --         |            |                                            |
-| Relaterat  |            |                                            |
-| projekt    |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <svk:ermsS |            |                                            |
-| vkRecord\> |            |                                            |
-|            |            |                                            |
-| \<s        |            |                                            |
-| vk:related |            |                                            |
-| Projects\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| svk:relate |            |                                            |
-| dProject\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| svk:name\> |            |                                            |
-| Omläggning |            |                                            |
-| av         |            |                                            |
-| kyrktaket  |            |                                            |
-| 2009\</    |            |                                            |
-| svk:name\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| svk:identi |            |                                            |
-| ficator\>P |            |                                            |
-| 2009:1\<   |            |                                            |
-| /svk:ident |            |                                            |
-| ificator\> |            |                                            |
-|            |            |                                            |
-| \<svk:de   |            |                                            |
-| liveringSy |            |                                            |
-| stemId\>34 |            |                                            |
-| 958\</svk: |            |                                            |
-| delivering |            |                                            |
-| SystemId\> |            |                                            |
-|            |            |                                            |
-| \</        |            |                                            |
-| svk:relate |            |                                            |
-| dProject\> |            |                                            |
-|            |            |                                            |
-| \</s       |            |                                            |
-| vk:related |            |                                            |
-| Projects\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| /svk:ermsS |            |                                            |
-| vkRecord\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| er         | Relaterade | Samlingselement med referenser till        |
-| ms-svk:130 | f          | fastigheter eller byggnader som handlingen |
-|            | astigheter | relaterar till.                            |
-|            |            |                                            |
-|            |            | XML-element: svk:relatedRealEstates        |
-+------------+------------+--------------------------------------------+
-| er         | Relaterad  | Referens till fastighet eller byggnad som  |
-| ms-svk:131 | fastighet  | handlingen relaterar till.                 |
-|            |            |                                            |
-|            |            | Elementet kan upprepas.                    |
-|            |            |                                            |
-|            |            | XML-element: svk:relatedRealEstate         |
-+------------+------------+--------------------------------------------+
-| er         | Fas        | Fastighetens eller byggnadens namn.        |
-| ms-svk:132 | tighetsnam |                                            |
-|            |            | Obligatoriskt om elementet Relaterad       |
-|            |            | fastighet används.                         |
-|            |            |                                            |
-|            |            | XML-element: svk:name\                     |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Ide        | Fastighetsnummer eller annan identifikator |
-| ms-svk:133 | ntifikator | för fastigheten eller byggnaden.           |
-|            |            |                                            |
-|            |            | Obligatoriskt om elementet Relaterad       |
-|            |            | fastighet används.                         |
-|            |            |                                            |
-|            |            | XML-element: svk:identificatory\           |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Internt ID | Fastighetens eller byggnadens id-nummer i  |
-| ms-svk:134 |            | det levererande systemet.                  |
-|            |            |                                            |
-|            |            | XML-element: svk:deliveringSystemId\       |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| Exempel 30 |            |                                            |
-| --         |            |                                            |
-| Relaterad  |            |                                            |
-| fastighet  |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <svk:ermsS |            |                                            |
-| vkRecord\> |            |                                            |
-|            |            |                                            |
-| \<svk:     |            |                                            |
-| relatedRea |            |                                            |
-| lEstates\> |            |                                            |
-|            |            |                                            |
-| \<svk      |            |                                            |
-| :relatedRe |            |                                            |
-| alEstate\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| svk:name\> |            |                                            |
-| Omläggning |            |                                            |
-| av         |            |                                            |
-| kyrktaket  |            |                                            |
-| 2009\</    |            |                                            |
-| svk:name\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| svk:identi |            |                                            |
-| ficator\>P |            |                                            |
-| 2009:1\<   |            |                                            |
-| /svk:ident |            |                                            |
-| ificator\> |            |                                            |
-|            |            |                                            |
-| \<svk:de   |            |                                            |
-| liveringSy |            |                                            |
-| stemId\>34 |            |                                            |
-| 958\</svk: |            |                                            |
-| delivering |            |                                            |
-| SystemId\> |            |                                            |
-|            |            |                                            |
-| \</svk     |            |                                            |
-| :relatedRe |            |                                            |
-| alEstate\> |            |                                            |
-|            |            |                                            |
-| \</svk:    |            |                                            |
-| relatedRea |            |                                            |
-| lEstates\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| /svk:ermsS |            |                                            |
-| vkRecord\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| er         | An         | Samlingselement för anteckningar kopplade  |
-| ms-svk:135 | teckningar | till en handling.                          |
-|            |            |                                            |
-|            |            | XLM-element: svk:svkNotes                  |
-+------------+------------+--------------------------------------------+
-| e          | Anteckning | Enskild anteckning kopplad till            |
-| rms-svk136 |            | handlingen.                                |
-|            |            |                                            |
-|            |            | XML-element: svk:svkNote                   |
-+------------+------------+--------------------------------------------+
-| er         | Typ av     | Obligatoriskt om elementet Anteckning      |
-| ms-svk:137 | anteckning | används.                                   |
-|            |            |                                            |
-|            |            | Värdet väljs från [SVK-värdelista          |
-|            |            | 10](#_SVK-VÄRDELISTA_10_–).                |
-|            |            |                                            |
-|            |            | XML-element: svk:svkNote/@typeOfNote\      |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Text       | Anteckningens lydelse.                     |
-| ms-svk:138 |            |                                            |
-|            |            | Obligatoriskt om elementet Anteckning      |
-|            |            | används.                                   |
-|            |            |                                            |
-|            |            | XML-defintion: svk:noteText\               |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| er         | Skapare av | Namn på den person som har gjort           |
-| ms-svk:139 | anteckning | anteckningen.                              |
-|            |            |                                            |
-|            |            | Obligatoriskt om elementet Anteckning      |
-|            |            | används.                                   |
-|            |            |                                            |
-|            |            | XML-element: svk:noteAuthor\               |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Datum för  | Datum och tid när anteckningen gjordes.    |
-| ms-svk:140 | anteckning |                                            |
-|            |            | Obligatoriskt om elementet Anteckning      |
-|            |            | används.                                   |
-|            |            |                                            |
-|            |            | XML-element: svk:noteDate\                 |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| Exempel 31 |            |                                            |
-| --         |            |                                            |
-| An         |            |                                            |
-| teckningar |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <svk:ermsS |            |                                            |
-| vkRecord\> |            |                                            |
-|            |            |                                            |
-| \<svk:     |            |                                            |
-| svkNotes\> |            |                                            |
-|            |            |                                            |
-| \<s        |            |                                            |
-| vk:svkNote |            |                                            |
-| t          |            |                                            |
-| ypeOfNote= |            |                                            |
-| \"Generell |            |                                            |
-| ante       |            |                                            |
-| ckning\"\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <svk:noteT |            |                                            |
-| ext\>Detta |            |                                            |
-| är en      |            |                                            |
-| anteckn    |            |                                            |
-| ing\</svk: |            |                                            |
-| noteText\> |            |                                            |
-|            |            |                                            |
-| \<sv       |            |                                            |
-| k:noteAuth |            |                                            |
-| or\>Jörgen |            |                                            |
-| Persso     |            |                                            |
-| n\</svk:no |            |                                            |
-| teAuthor\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| svk:noteDa |            |                                            |
-| te\>2019-0 |            |                                            |
-| 2-23T00:00 |            |                                            |
-| :00\</svk: |            |                                            |
-| noteDate\> |            |                                            |
-|            |            |                                            |
-| \</svk     |            |                                            |
-| :svkNote\> |            |                                            |
-|            |            |                                            |
-| \</svk:    |            |                                            |
-| svkNotes\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| /svk:ermsS |            |                                            |
-| vkRecord\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| er         | Avtalsi    | Samlingselement för extra information om   |
-| ms-svk:141 | nfor­mation | registrerade avtal.                        |
-|            |            |                                            |
-|            |            | XML-element: svk:contractInfo              |
-+------------+------------+--------------------------------------------+
-| er         | Avsändares | Referens till avtalspartners exemplar av   |
-| ms-svk:142 | referens   | avtalsdokumentet.                          |
-|            |            |                                            |
-|            |            | XML-element: svk:externalReference         |
-|            |            |                                            |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Avropat    | Avropat värde.                             |
-| ms-svk:143 | värde      |                                            |
-|            |            | Kan endast anges i heltal.                 |
-|            |            |                                            |
-|            |            | XML-element: svk:callOffValue\             |
-|            |            | Datatyp: integer                           |
-+------------+------------+--------------------------------------------+
-| er         | Valuta     | Valutaslag för Avropat värde.              |
-| ms-svk:144 |            |                                            |
-|            |            | Valutakod enligt ISO 4217. "SEK" är        |
-|            |            | förvalt värde och behöver inte anges       |
-|            |            | specifikt.                                 |
-|            |            |                                            |
-|            |            | XML-element: svk:callOffValue/@currency\   |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Kont       | Kontraktsvärde.                            |
-| ms-svk:145 | raktsvärde |                                            |
-|            |            | Kan endast anges i heltal.                 |
-|            |            |                                            |
-|            |            | XML-element: svk:contractValue\            |
-|            |            | Datatyp: integer                           |
-+------------+------------+--------------------------------------------+
-| er         | Valuta     | Valutaslag för Kontraktsvärde.             |
-| ms-svk:146 |            |                                            |
-|            |            | Valutakod enligt ISO 4217. "SEK" är        |
-|            |            | förvalt värde och behöver inte anges       |
-|            |            | specifikt.                                 |
-|            |            |                                            |
-|            |            | XML-element: svk:callOffValue/@currency\   |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Avtalstyp  | Typ av avtal.                              |
-| ms-svk:147 |            |                                            |
-|            |            | Värdet väljs från [SVK-värdelista          |
-|            |            | 16](#_SVK-VÄRDELISTA_16_–).                |
-|            |            |                                            |
-|            |            | XML-element: svk:typeOfAgreement\          |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Giltigt    | Datum från vilket avtalet är giltigt.      |
-| ms-svk:148 | från       |                                            |
-|            |            | Om elementet Giltigt från används, måste   |
-|            |            | attributet dateType ha värdet "start".     |
-|            |            |                                            |
-|            |            | XML-element: dates/date\                   |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| er         | Giltigt    | Datum till vilket avtalet är giltigt.      |
-| ms-svk:149 | till       |                                            |
-|            |            | Om elementet Giltigt till används, måste   |
-|            |            | attributet dateType ha värdet "end".       |
-|            |            |                                            |
-|            |            | XML-element: dates/date\                   |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| Exempel 32 |            |                                            |
-| --         |            |                                            |
-| Avtalsi    |            |                                            |
-| nformation |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <svk:ermsS |            |                                            |
-| vkRecord\> |            |                                            |
-|            |            |                                            |
-| \<svk:cont |            |                                            |
-| ractInfo\> |            |                                            |
-|            |            |                                            |
-| \<svk:ex   |            |                                            |
-| ternalRefe |            |                                            |
-| rence\>ref |            |                                            |
-| 3453\</svk |            |                                            |
-| :externalR |            |                                            |
-| eference\> |            |                                            |
-|            |            |                                            |
-| \<svk:ca   |            |                                            |
-| llOffValue |            |                                            |
-| curr       |            |                                            |
-| ency=\"SEK |            |                                            |
-| \"\>34000\ |            |                                            |
-| </svk:call |            |                                            |
-| OffValue\> |            |                                            |
-|            |            |                                            |
-| \<svk:con  |            |                                            |
-| tractValue |            |                                            |
-| curre      |            |                                            |
-| ncy=\"SEK\ |            |                                            |
-| "\>45000\< |            |                                            |
-| /svk:contr |            |                                            |
-| actValue\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| svk:typeOf |            |                                            |
-| Agreement\ |            |                                            |
-| >Avtal\</s |            |                                            |
-| vk:typeOfA |            |                                            |
-| greement\> |            |                                            |
-|            |            |                                            |
-| \<dates\>  |            |                                            |
-|            |            |                                            |
-| \<date     |            |                                            |
-| dateType   |            |                                            |
-| =\"start\" |            |                                            |
-| \>2018-02- |            |                                            |
-| 12T00:00:0 |            |                                            |
-| 0\</date\> |            |                                            |
-|            |            |                                            |
-| \<date     |            |                                            |
-| dateTy     |            |                                            |
-| pe=\"end\" |            |                                            |
-| \>2019-02- |            |                                            |
-| 12T00:00:0 |            |                                            |
-| 0\</date\> |            |                                            |
-|            |            |                                            |
-| \</dates\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| </svk:cont |            |                                            |
-| ractInfo\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| /svk:ermsS |            |                                            |
-| vkRecord\> |            |                                            |
-+------------+------------+--------------------------------------------+
-| er         | Bifogad    | Uppgifter om fil som är kopplad till den   |
-| ms-svk:150 | fil        | registrerade handlingen.                   |
-|            |            |                                            |
-|            |            | Se [Tabell 6](#_Tabell_6._Bifogade).       |
-+------------+------------+--------------------------------------------+
-| er         | Än         | Samlingselement för loggningsuppgifter.    |
-| ms-svk:151 | dringslogg |                                            |
-|            |            | XML-element: svk:auditLogEvents            |
-+------------+------------+--------------------------------------------+
-| er         | Händelse   | Enskild händelse i ändringsloggen.         |
-| ms-svk:152 |            |                                            |
-|            |            | Obligatoriskt om elementet Ändringslogg    |
-|            |            | används.                                   |
-|            |            |                                            |
-|            |            | XML-element: svk:auditLogEvent             |
-+------------+------------+--------------------------------------------+
-| er         | Tid        | Datum och tid då ändringen gjordes.        |
-| ms-svk:153 |            |                                            |
-|            |            | Obligatoriskt om elementet Händelse        |
-|            |            | används.                                   |
-|            |            |                                            |
-|            |            | XML-element: svk:time\                     |
-|            |            | Datatyp: dateTime                          |
-+------------+------------+--------------------------------------------+
-| er         | Användare  | Namn på den person som gjorde ändringen.   |
-| ms-svk:154 |            |                                            |
-|            |            | Obligatoriskt om elementet Händelse        |
-|            |            | används.                                   |
-|            |            |                                            |
-|            |            | XML-element: svk:user\                     |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Tillämpn   | Beskrivning av det som ändringen avser.    |
-| ms-svk:155 | ings­område |                                            |
-|            |            | Obligatoriskt om elementet Händelse        |
-|            |            | används.                                   |
-|            |            |                                            |
-|            |            | Värdet väljs från [SVK-värdelista          |
-|            |            | 11](#_SVK-VÄRDELISTA_11_–).                |
-|            |            |                                            |
-|            |            | XML-element: svk:scope\                    |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Händelse   | Beskrivning av ändring.                    |
-| ms-svk:156 |            |                                            |
-|            |            | Obligatoriskt om elementet Händelse        |
-|            |            | används.                                   |
-|            |            |                                            |
-|            |            | Värdet väljs från värdelistan              |
-|            |            | [SVK-värdelista                            |
-|            |            | 12](#_SVK-VÄRDELISTA_12_–).                |
-|            |            |                                            |
-|            |            | XML-element: svk:action\                   |
-|            |            | Datatyp: token                             |
-+------------+------------+--------------------------------------------+
-| er         | Värde före | Om ett värde har ändrats, anges här        |
-| ms-svk:157 | ändring    | lydelsen före ändringen.                   |
-|            |            |                                            |
-|            |            | XML-element: svk:valueBeforeChange\        |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| er         | Värde      | Om ett värde har ändrats, anges här        |
-| ms-svk:158 | efter      | lydelsen efter ändringen.                  |
-|            | ändring    |                                            |
-|            |            | XML-element: svk:valueAfterChange\         |
-|            |            | Datatyp: string                            |
-+------------+------------+--------------------------------------------+
-| Exempel 33 |            |                                            |
-| --         |            |                                            |
-| Än         |            |                                            |
-| dringslogg |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <svk:ermsS |            |                                            |
-| vkRecord\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| svk:auditL |            |                                            |
-| ogEvents\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <svk:audit |            |                                            |
-| LogEvent\> |            |                                            |
-|            |            |                                            |
-| \<sv       |            |                                            |
-| k:time\>20 |            |                                            |
-| 09-09-22T1 |            |                                            |
-| 1:47:00\</ |            |                                            |
-| svk:time\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| svk:user\> |            |                                            |
-| Jörgen     |            |                                            |
-| Persson\</ |            |                                            |
-| svk:user\> |            |                                            |
-|            |            |                                            |
-| \<s        |            |                                            |
-| vk:scope\> |            |                                            |
-| ärende\</s |            |                                            |
-| vk:scope\> |            |                                            |
-|            |            |                                            |
-| \<svk      |            |                                            |
-| :action\>c |            |                                            |
-| reate\</sv |            |                                            |
-| k:action\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| /svk:audit |            |                                            |
-| LogEvent\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <svk:audit |            |                                            |
-| LogEvent\> |            |                                            |
-|            |            |                                            |
-| \<sv       |            |                                            |
-| k:time\>20 |            |                                            |
-| 09-09-22T1 |            |                                            |
-| 1:52:00\</ |            |                                            |
-| svk:time\> |            |                                            |
-|            |            |                                            |
-| \<svk:us   |            |                                            |
-| er\>Jörgen |            |                                            |
-| Persson\</ |            |                                            |
-| svk:user\> |            |                                            |
-|            |            |                                            |
-| \<svk:sco  |            |                                            |
-| pe\>ärende |            |                                            |
-| mening\</s |            |                                            |
-| vk:scope\> |            |                                            |
-|            |            |                                            |
-| \<svk      |            |                                            |
-| :action\>u |            |                                            |
-| pdate\</sv |            |                                            |
-| k:action\> |            |                                            |
-|            |            |                                            |
-| \<svk:     |            |                                            |
-| valueBefor |            |                                            |
-| eChange\>U |            |                                            |
-| pphandling |            |                                            |
-| av         |            |                                            |
-| frysb      |            |                                            |
-| oxar\</svk |            |                                            |
-| :valueBefo |            |                                            |
-| reChange\> |            |                                            |
-|            |            |                                            |
-| \<svk      |            |                                            |
-| :valueAfte |            |                                            |
-| rChange\>U |            |                                            |
-| pphandling |            |                                            |
-| av         |            |                                            |
-| ky         |            |                                            |
-| lskåp\</sv |            |                                            |
-| k:valueAft |            |                                            |
-| erChange\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| /svk:audit |            |                                            |
-| LogEvent\> |            |                                            |
-|            |            |                                            |
-| \          |            |                                            |
-| <svk:audit |            |                                            |
-| LogEvent\> |            |                                            |
-|            |            |                                            |
-| \<sv       |            |                                            |
-| k:time\>20 |            |                                            |
-| 09-09-22T1 |            |                                            |
-| 2:10:00\</ |            |                                            |
-| svk:time\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| svk:user\> |            |                                            |
-| Jörgen     |            |                                            |
-| Persson    |            |                                            |
-| \</        |            |                                            |
-| svk:user\> |            |                                            |
-|            |            |                                            |
-| \<s        |            |                                            |
-| vk:scope\> |            |                                            |
-| status\</s |            |                                            |
-| vk:scope\> |            |                                            |
-|            |            |                                            |
-| \<svk      |            |                                            |
-| :action\>u |            |                                            |
-| pdate\</sv |            |                                            |
-| k:action\> |            |                                            |
-|            |            |                                            |
-| \<svk:     |            |                                            |
-| valueBefor |            |                                            |
-| eChange\>Ö |            |                                            |
-| ppet\</svk |            |                                            |
-| :valueBefo |            |                                            |
-| reChange\> |            |                                            |
-|            |            |                                            |
-| \<svk:va   |            |                                            |
-| lueAfterCh |            |                                            |
-| ange\>Maku |            |                                            |
-| lerat\</sv |            |                                            |
-| k:valueAft |            |                                            |
-| erChange\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| /svk:audit |            |                                            |
-| LogEvent\> |            |                                            |
-|            |            |                                            |
-| \</        |            |                                            |
-| svk:auditL |            |                                            |
-| ogEvents\> |            |                                            |
-|            |            |                                            |
-| \<         |            |                                            |
-| /svk:ermsS |            |                                            |
-| vkRecord\> |            |                                            |
-+------------+------------+--------------------------------------------+
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Element</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>erms-svk:124</td>
+<td>Tilläggs­information</td>
+<td><p>De element som inte ingår i ERMS utan är tillägg i Svenska
+kyrkans anpassning är samlade i elementet Tilläggsinformation.</p>
+<p>XML-element: additionalInformation/additionaXMLData/<br />
+svk:ermsSvkArende/svk:ermsSvkRecord</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:125</td>
+<td>Relaterade projekt</td>
+<td><p>Samlingselement med referenser till projekt som handlingen
+relaterar till.</p>
+<p>XML-element: svk:relatedProjects</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:126</td>
+<td>Relaterat projekt</td>
+<td><p>Referens till projekt som handlingen relaterar till.</p>
+<p>Elementet kan upprepas.</p>
+<p>XML-element: svk:relatedProject</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:127</td>
+<td>Projektnamn</td>
+<td><p>Det relaterade projektets namn.</p>
+<p>Obligatoriskt om elementet Relaterat projekt används.</p>
+<p>XML-element: svk:name<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:128</td>
+<td>Identifikator</td>
+<td><p>Projektnummer eller annan identifikator för projektet.</p>
+<p>Obligatoriskt om elementet Relaterat projekt används.</p>
+<p>XML-element: svk:identificatory<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:129</td>
+<td>Internt ID</td>
+<td><p>Projektets id-nummer i det levererande systemet</p>
+<p>XML-element: svk:deliveringSystemId<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 29 – Relaterat projekt</p>
+<p>&lt;svk:ermsSvkRecord&gt;</p>
+<p>&lt;svk:relatedProjects&gt;</p>
+<p>&lt;svk:relatedProject&gt;</p>
+<p>&lt;svk:name&gt;Omläggning av kyrktaket 2009&lt;/svk:name&gt;</p>
+<p>&lt;svk:identificator&gt;P 2009:1&lt;/svk:identificator&gt;</p>
+<p>&lt;svk:deliveringSystemId&gt;34958&lt;/svk:deliveringSystemId&gt;</p>
+<p>&lt;/svk:relatedProject&gt;</p>
+<p>&lt;/svk:relatedProjects&gt;</p>
+<p>&lt;/svk:ermsSvkRecord&gt;</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:130</td>
+<td>Relaterade fastigheter</td>
+<td><p>Samlingselement med referenser till fastigheter eller byggnader
+som handlingen relaterar till.</p>
+<p>XML-element: svk:relatedRealEstates</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:131</td>
+<td>Relaterad fastighet</td>
+<td><p>Referens till fastighet eller byggnad som handlingen relaterar
+till.</p>
+<p>Elementet kan upprepas.</p>
+<p>XML-element: svk:relatedRealEstate</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:132</td>
+<td>Fastighetsnam</td>
+<td><p>Fastighetens eller byggnadens namn.</p>
+<p>Obligatoriskt om elementet Relaterad fastighet används.</p>
+<p>XML-element: svk:name<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:133</td>
+<td>Identifikator</td>
+<td><p>Fastighetsnummer eller annan identifikator för fastigheten eller
+byggnaden.</p>
+<p>Obligatoriskt om elementet Relaterad fastighet används.</p>
+<p>XML-element: svk:identificatory<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:134</td>
+<td>Internt ID</td>
+<td><p>Fastighetens eller byggnadens id-nummer i det levererande
+systemet.</p>
+<p>XML-element: svk:deliveringSystemId<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td colspan="3"><p>Exempel 30 – Relaterad fastighet</p>
+<p>&lt;svk:ermsSvkRecord&gt;</p>
+<p>&lt;svk:relatedRealEstates&gt;</p>
+<p>&lt;svk:relatedRealEstate&gt;</p>
+<p>&lt;svk:name&gt;Omläggning av kyrktaket 2009&lt;/svk:name&gt;</p>
+<p>&lt;svk:identificator&gt;P 2009:1&lt;/svk:identificator&gt;</p>
+<p>&lt;svk:deliveringSystemId&gt;34958&lt;/svk:deliveringSystemId&gt;</p>
+<p>&lt;/svk:relatedRealEstate&gt;</p>
+<p>&lt;/svk:relatedRealEstates&gt;</p>
+<p>&lt;/svk:ermsSvkRecord&gt;</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:135</td>
+<td>Anteckningar</td>
+<td><p>Samlingselement för anteckningar kopplade till en handling.</p>
+<p>XLM-element: svk:svkNotes</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk136</td>
+<td>Anteckning</td>
+<td><p>Enskild anteckning kopplad till handlingen.</p>
+<p>XML-element: svk:svkNote</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:137</td>
+<td>Typ av anteckning</td>
+<td><p>Obligatoriskt om elementet Anteckning används.</p>
+<p>Värdet väljs från <a href="#_SVK-VÄRDELISTA_10_–">SVK-värdelista
+10</a>.</p>
+<p>XML-element: svk:svkNote/@typeOfNote<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:138</td>
+<td>Text</td>
+<td><p>Anteckningens lydelse.</p>
+<p>Obligatoriskt om elementet Anteckning används.</p>
+<p>XML-defintion: svk:noteText<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:139</td>
+<td>Skapare av anteckning</td>
+<td><p>Namn på den person som har gjort anteckningen.</p>
+<p>Obligatoriskt om elementet Anteckning används.</p>
+<p>XML-element: svk:noteAuthor<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:140</td>
+<td>Datum för anteckning</td>
+<td><p>Datum och tid när anteckningen gjordes.</p>
+<p>Obligatoriskt om elementet Anteckning används.</p>
+<p>XML-element: svk:noteDate<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 31 – Anteckningar</p>
+<p>&lt;svk:ermsSvkRecord&gt;</p>
+<p>&lt;svk:svkNotes&gt;</p>
+<p>&lt;svk:svkNote typeOfNote="Generell anteckning"&gt;</p>
+<p>&lt;svk:noteText&gt;Detta är en anteckning&lt;/svk:noteText&gt;</p>
+<p>&lt;svk:noteAuthor&gt;Jörgen Persson&lt;/svk:noteAuthor&gt;</p>
+<p>&lt;svk:noteDate&gt;2019-02-23T00:00:00&lt;/svk:noteDate&gt;</p>
+<p>&lt;/svk:svkNote&gt;</p>
+<p>&lt;/svk:svkNotes&gt;</p>
+<p>&lt;/svk:ermsSvkRecord&gt;</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:141</td>
+<td>Avtalsinfor­mation</td>
+<td><p>Samlingselement för extra information om registrerade avtal.</p>
+<p>XML-element: svk:contractInfo</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:142</td>
+<td>Avsändares referens</td>
+<td><p>Referens till avtalspartners exemplar av avtalsdokumentet.</p>
+<p>XML-element: svk:externalReference</p>
+<p>Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:143</td>
+<td>Avropat värde</td>
+<td><p>Avropat värde.</p>
+<p>Kan endast anges i heltal.</p>
+<p>XML-element: svk:callOffValue<br />
+Datatyp: integer</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:144</td>
+<td>Valuta</td>
+<td><p>Valutaslag för Avropat värde.</p>
+<p>Valutakod enligt ISO 4217. ”SEK” är förvalt värde och behöver inte
+anges specifikt.</p>
+<p>XML-element: svk:callOffValue/@currency<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:145</td>
+<td>Kontraktsvärde</td>
+<td><p>Kontraktsvärde.</p>
+<p>Kan endast anges i heltal.</p>
+<p>XML-element: svk:contractValue<br />
+Datatyp: integer</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:146</td>
+<td>Valuta</td>
+<td><p>Valutaslag för Kontraktsvärde.</p>
+<p>Valutakod enligt ISO 4217. ”SEK” är förvalt värde och behöver inte
+anges specifikt.</p>
+<p>XML-element: svk:callOffValue/@currency<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:147</td>
+<td>Avtalstyp</td>
+<td><p>Typ av avtal.</p>
+<p>Värdet väljs från <a href="#_SVK-VÄRDELISTA_16_–">SVK-värdelista
+16</a>.</p>
+<p>XML-element: svk:typeOfAgreement<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:148</td>
+<td>Giltigt från</td>
+<td><p>Datum från vilket avtalet är giltigt.</p>
+<p>Om elementet Giltigt från används, måste attributet dateType ha
+värdet ”start”.</p>
+<p>XML-element: dates/date<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:149</td>
+<td>Giltigt till</td>
+<td><p>Datum till vilket avtalet är giltigt.</p>
+<p>Om elementet Giltigt till används, måste attributet dateType ha
+värdet ”end”.</p>
+<p>XML-element: dates/date<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 32 – Avtalsinformation</p>
+<p>&lt;svk:ermsSvkRecord&gt;</p>
+<p>&lt;svk:contractInfo&gt;</p>
+<p>&lt;svk:externalReference&gt;ref3453&lt;/svk:externalReference&gt;</p>
+<p>&lt;svk:callOffValue
+currency="SEK"&gt;34000&lt;/svk:callOffValue&gt;</p>
+<p>&lt;svk:contractValue
+currency="SEK"&gt;45000&lt;/svk:contractValue&gt;</p>
+<p>&lt;svk:typeOfAgreement&gt;Avtal&lt;/svk:typeOfAgreement&gt;</p>
+<p>&lt;dates&gt;</p>
+<p>&lt;date dateType="start"&gt;2018-02-12T00:00:00&lt;/date&gt;</p>
+<p>&lt;date dateType="end"&gt;2019-02-12T00:00:00&lt;/date&gt;</p>
+<p>&lt;/dates&gt;</p>
+<p>&lt;/svk:contractInfo&gt;</p>
+<p>&lt;/svk:ermsSvkRecord&gt;</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:150</td>
+<td>Bifogad fil</td>
+<td><p>Uppgifter om fil som är kopplad till den registrerade
+handlingen.</p>
+<p>Se <a href="#_Tabell_6._Bifogade">Tabell 6</a>.</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:151</td>
+<td>Ändringslogg</td>
+<td><p>Samlingselement för loggningsuppgifter.</p>
+<p>XML-element: svk:auditLogEvents</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:152</td>
+<td>Händelse</td>
+<td><p>Enskild händelse i ändringsloggen.</p>
+<p>Obligatoriskt om elementet Ändringslogg används.</p>
+<p>XML-element: svk:auditLogEvent</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:153</td>
+<td>Tid</td>
+<td><p>Datum och tid då ändringen gjordes.</p>
+<p>Obligatoriskt om elementet Händelse används.</p>
+<p>XML-element: svk:time<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:154</td>
+<td>Användare</td>
+<td><p>Namn på den person som gjorde ändringen.</p>
+<p>Obligatoriskt om elementet Händelse används.</p>
+<p>XML-element: svk:user<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:155</td>
+<td>Tillämpnings­område</td>
+<td><p>Beskrivning av det som ändringen avser.</p>
+<p>Obligatoriskt om elementet Händelse används.</p>
+<p>Värdet väljs från <a href="#_SVK-VÄRDELISTA_11_–">SVK-värdelista
+11</a>.</p>
+<p>XML-element: svk:scope<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:156</td>
+<td>Händelse</td>
+<td><p>Beskrivning av ändring.</p>
+<p>Obligatoriskt om elementet Händelse används.</p>
+<p>Värdet väljs från värdelistan <a
+href="#_SVK-VÄRDELISTA_12_–">SVK-värdelista 12</a>.</p>
+<p>XML-element: svk:action<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:157</td>
+<td>Värde före ändring</td>
+<td><p>Om ett värde har ändrats, anges här lydelsen före ändringen.</p>
+<p>XML-element: svk:valueBeforeChange<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:158</td>
+<td>Värde efter ändring</td>
+<td><p>Om ett värde har ändrats, anges här lydelsen efter ändringen.</p>
+<p>XML-element: svk:valueAfterChange<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 33 – Ändringslogg</p>
+<p>&lt;svk:ermsSvkRecord&gt;</p>
+<p>&lt;svk:auditLogEvents&gt;</p>
+<p>&lt;svk:auditLogEvent&gt;</p>
+<p>&lt;svk:time&gt;2009-09-22T11:47:00&lt;/svk:time&gt;</p>
+<p>&lt;svk:user&gt; Jörgen Persson&lt;/svk:user&gt;</p>
+<p>&lt;svk:scope&gt;ärende&lt;/svk:scope&gt;</p>
+<p>&lt;svk:action&gt;create&lt;/svk:action&gt;</p>
+<p>&lt;/svk:auditLogEvent&gt;</p>
+<p>&lt;svk:auditLogEvent&gt;</p>
+<p>&lt;svk:time&gt;2009-09-22T11:52:00&lt;/svk:time&gt;</p>
+<p>&lt;svk:user&gt;Jörgen Persson&lt;/svk:user&gt;</p>
+<p>&lt;svk:scope&gt;ärendemening&lt;/svk:scope&gt;</p>
+<p>&lt;svk:action&gt;update&lt;/svk:action&gt;</p>
+<p>&lt;svk:valueBeforeChange&gt;Upphandling av
+frysboxar&lt;/svk:valueBeforeChange&gt;</p>
+<p>&lt;svk:valueAfterChange&gt;Upphandling av
+kylskåp&lt;/svk:valueAfterChange&gt;</p>
+<p>&lt;/svk:auditLogEvent&gt;</p>
+<p>&lt;svk:auditLogEvent&gt;</p>
+<p>&lt;svk:time&gt;2009-09-22T12:10:00&lt;/svk:time&gt;</p>
+<p>&lt;svk:user&gt; Jörgen Persson &lt;/svk:user&gt;</p>
+<p>&lt;svk:scope&gt;status&lt;/svk:scope&gt;</p>
+<p>&lt;svk:action&gt;update&lt;/svk:action&gt;</p>
+<p>&lt;svk:valueBeforeChange&gt;Öppet&lt;/svk:valueBeforeChange&gt;</p>
+<p>&lt;svk:valueAfterChange&gt;Makulerat&lt;/svk:valueAfterChange&gt;</p>
+<p>&lt;/svk:auditLogEvent&gt;</p>
+<p>&lt;/svk:auditLogEvents&gt;</p>
+<p>&lt;/svk:ermsSvkRecord&gt;</p></td>
+</tr>
+</tbody>
+</table>
 
 Information om bifogade filer
 
@@ -3352,832 +2297,1144 @@ record/additionalInformation/appendix.
 I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 record/additional­Information/additionalXMLData/ermsSvkRecord/svkAppendix.
 
-[]{#_Tabell_6._Bifogade .anchor}Tabell 6. Bifogade filer
+<span id="_Tabell_6._Bifogade" class="anchor"></span>Tabell 6. Bifogade
+filer
 
-+-----------+-------------+--------------------------------------------+
-| ID        | Element     |                                            |
-+===========+=============+============================================+
-| erm       | Bifogad fil | Samlingselement för uppgifter om en fil    |
-| s-svk:159 |             | som är kopplad till en registrerad         |
-|           |             | handling.                                  |
-|           |             |                                            |
-|           |             | XML-element:                               |
-|           |             | svk:ermsSvkRecord/svk:svkAppendix          |
-+-----------+-------------+--------------------------------------------+
-| erm       | Appendix    | Samlingselement för den information om     |
-| s-svk:160 |             | filen som följer ERMS-standard.            |
-|           |             |                                            |
-|           |             | XML-element: appendix                      |
-+-----------+-------------+--------------------------------------------+
-| erm       | G           | Med gallringsbar avses här att den         |
-| s-svk:161 | allringsbar | bifogade filen kan gallras innan           |
-|           |             | dokumentet i sig gallras. Kan gälla t.ex.  |
-|           |             | filer som bevaras i produktionsformat      |
-|           |             |                                            |
-|           |             | Värdet kan vara: true, false, 1 (som       |
-|           |             | motsvarar true) eller 0 (som motsvarar     |
-|           |             | false).                                    |
-|           |             |                                            |
-|           |             | XML-element: appendix/@disposable\         |
-|           |             | Datatyp: boolean                           |
-+-----------+-------------+--------------------------------------------+
-| erm       | Namn        | Filens namn.                               |
-| s-svk:162 |             |                                            |
-|           |             | Obligatoriskt.                             |
-|           |             |                                            |
-|           |             | XML-element: appendix/@name\               |
-|           |             | Datatyp: string                            |
-+-----------+-------------+--------------------------------------------+
-| erm       | Beskrivning | Beskrivning av filen.                      |
-| s-svk:163 |             |                                            |
-|           |             | XML-element: appendix/@description\        |
-|           |             | Datatyp: string                            |
-+-----------+-------------+--------------------------------------------+
-| erm       | Filformat   | Filens format.                             |
-| s-svk:164 |             |                                            |
-|           |             | Obligatoriskt.                             |
-|           |             |                                            |
-|           |             | Anges i form av filnamnsändelse (max fyra  |
-|           |             | tecken) utan punkt och med små bokstäver.  |
-|           |             |                                            |
-|           |             | Exempel: pdf, png, txt                     |
-|           |             |                                            |
-|           |             | XML-element: appendix/@fileFormat\         |
-|           |             | Datatyp: string                            |
-+-----------+-------------+--------------------------------------------+
-| erm       | Origin      | Om filen är konverterad till arkivformat,  |
-| s-svk:165 | alfil­format | anges här originalfilens format.           |
-|           |             |                                            |
-|           |             | Anges i form av filnamnsändelse utan punkt |
-|           |             | och med små bokstäver.                     |
-|           |             |                                            |
-|           |             | Exempel: docx, xlsx, msg                   |
-|           |             |                                            |
-|           |             | XML-element: appendix/@originalFileFormat\ |
-|           |             | Datatyp: string                            |
-+-----------+-------------+--------------------------------------------+
-| erm       | Sökväg      | Relativ sökväg till filens placering i     |
-| s-svk:166 |             | informationspaketet.                       |
-|           |             |                                            |
-|           |             | Obligatoriskt.                             |
-|           |             |                                            |
-|           |             | Exempel: files/document_01.pdf             |
-|           |             |                                            |
-|           |             | XML-element: appendix/@path\               |
-|           |             | Datatyp: string                            |
-+-----------+-------------+--------------------------------------------+
-| erm       | Uppgift om  | Anger om det har funnits en e-signatur som |
-| s-svk:167 | e-signatur  | gallrats före leverans.                    |
-|           |             |                                            |
-|           |             | Värdet kan vara: true, false, 1 (som       |
-|           |             | motsvarar true) eller 0 (som motsvarar     |
-|           |             | false).                                    |
-|           |             |                                            |
-|           |             | XML-element:                               |
-|           |             | appendix/@eSignatureHasExisted\            |
-|           |             | Datatyp: boolean                           |
-+-----------+-------------+--------------------------------------------+
-| erm       | E-signatur  | Samlingselement för information om         |
-| s-svk:168 |             | befintlig e-signatur.                      |
-|           |             |                                            |
-|           |             | XML-element: eSignature                    |
-+-----------+-------------+--------------------------------------------+
-| erm       | E-signatur  | Anger om det finns en e-signatur.          |
-| s-svk:169 | finns       |                                            |
-|           |             | Obligatoriskt om elementent E-signatur     |
-|           |             | används.                                   |
-|           |             |                                            |
-|           |             | Värdet kan vara: true, false, 1 (som       |
-|           |             | motsvarar true) eller 0 (som motsvarar     |
-|           |             | false).                                    |
-|           |             |                                            |
-|           |             | XML-element: eSignature/@present\          |
-|           |             | Datatyp: boolean                           |
-+-----------+-------------+--------------------------------------------+
-| erm       | Verifik     | Datum och tid då e-signaturen senast       |
-| s-svk:170 | ations­datum | verifierades.                              |
-|           |             |                                            |
-|           |             | XML-element:                               |
-|           |             | eSignature/@dateSignatureIsVerified\       |
-|           |             | Datatyp: dateTime                          |
-+-----------+-------------+--------------------------------------------+
-| erm       | Signatur    | Element för filens e-signatur med dess     |
-| s-svk:171 |             | eget XML-schema.                           |
-|           |             |                                            |
-|           |             | Leveransöverenskommelsen ska innehålla     |
-|           |             | information om hur e-signaturer lagras och |
-|           |             | om vilket schema som används.              |
-|           |             |                                            |
-|           |             | XML-element: signature                     |
-+-----------+-------------+--------------------------------------------+
-| Exempel   |             |                                            |
-| 34 --     |             |                                            |
-| Bifogad   |             |                                            |
-| fil       |             |                                            |
-|           |             |                                            |
-| \         |             |                                            |
-| <svk:svkA |             |                                            |
-| ppendix\> |             |                                            |
-|           |             |                                            |
-| \<svk     |             |                                            |
-| :appendix |             |                                            |
-| name=\"   |             |                                            |
-| ansökan\" |             |                                            |
-| path=\"f  |             |                                            |
-| iler/ansö |             |                                            |
-| kan.pdf\" |             |                                            |
-| fi        |             |                                            |
-| leFormat= |             |                                            |
-| \"pdf\"\> |             |                                            |
-|           |             |                                            |
-| \<e       |             |                                            |
-| Signature |             |                                            |
-| present   |             |                                            |
-| =\"true\" |             |                                            |
-| datee     |             |                                            |
-| Signature |             |                                            |
-| IsVerifie |             |                                            |
-| d=\"2020- |             |                                            |
-| 03-04T00: |             |                                            |
-| 00:00\"\> |             |                                            |
-|           |             |                                            |
-| \<si      |             |                                            |
-| gnature\> |             |                                            |
-|           |             |                                            |
-| \<        |             |                                            |
-| Signature |             |                                            |
-| xmlns=\"h |             |                                            |
-| ttp://www |             |                                            |
-| .w3.org/2 |             |                                            |
-| 000/09/xm |             |                                            |
-| ldsig#\"\ |             |                                            |
-| xs        |             |                                            |
-| i:schemaL |             |                                            |
-| ocation=\ |             |                                            |
-| "http://w |             |                                            |
-| ww.w3.org |             |                                            |
-| /2000/09/ |             |                                            |
-| xmldsig#\ |             |                                            |
-| https://  |             |                                            |
-| www.w3.or |             |                                            |
-| g/TR/2002 |             |                                            |
-| /REC-xmld |             |                                            |
-| sig-core- |             |                                            |
-| 20020212/ |             |                                            |
-| xmldsig-c |             |                                            |
-| ore-schem |             |                                            |
-| a.xsd\"\> |             |                                            |
-|           |             |                                            |
-| \<Sig     |             |                                            |
-| nedInfo\> |             |                                            |
-|           |             |                                            |
-| \<Cano    |             |                                            |
-| nicalizat |             |                                            |
-| ionMethod |             |                                            |
-| Algori    |             |                                            |
-| thm=\"htt |             |                                            |
-| p://www.w |             |                                            |
-| 3.org/TR/ |             |                                            |
-| 2001/REC- |             |                                            |
-| xml-c14n- |             |                                            |
-| 2001      |             |                                            |
-| 0315\"/\> |             |                                            |
-|           |             |                                            |
-| \<Signat  |             |                                            |
-| ureMethod |             |                                            |
-| Algor     |             |                                            |
-| ithm=\"ht |             |                                            |
-| tp://www. |             |                                            |
-| w3.org/20 |             |                                            |
-| 00/09/xml |             |                                            |
-| dsig#rsa- |             |                                            |
-| sha1\"/\> |             |                                            |
-|           |             |                                            |
-| \<        |             |                                            |
-| Reference |             |                                            |
-| URI=\"#o  |             |                                            |
-| bject\"\> |             |                                            |
-|           |             |                                            |
-| \<Dig     |             |                                            |
-| estMethod |             |                                            |
-| A         |             |                                            |
-| lgorithm= |             |                                            |
-| \"http:// |             |                                            |
-| www.w3.or |             |                                            |
-| g/2000/09 |             |                                            |
-| /xmldsig# |             |                                            |
-| sha1\"/\> |             |                                            |
-|           |             |                                            |
-| \<Dig     |             |                                            |
-| estValue\ |             |                                            |
-| >OPnpF/ZN |             |                                            |
-| LDxJ/I+1F |             |                                            |
-| 3iHhlmSwg |             |                                            |
-| o=\</Dige |             |                                            |
-| stValue\> |             |                                            |
-|           |             |                                            |
-| \</Re     |             |                                            |
-| ference\> |             |                                            |
-|           |             |                                            |
-| \</Sig    |             |                                            |
-| nedInfo\> |             |                                            |
-|           |             |                                            |
-| \         |             |                                            |
-| <Signatur |             |                                            |
-| eValue\>n |             |                                            |
-| ihUFQg4mD |             |                                            |
-| hLgecvhIc |             |                                            |
-| Kb9Gz8VRT |             |                                            |
-| Olw+adiZO |             |                                            |
-| BBXgK4Jod |             |                                            |
-| Ee5aFfCqm |             |                                            |
-| 8WcRIT8GL |             |                                            |
-|           |             |                                            |
-| L         |             |                                            |
-| XSk8PsUP4 |             |                                            |
-| //SsKqUBQ |             |                                            |
-| kpotcAqQA |             |                                            |
-| htz2v9kCW |             |                                            |
-| doUDnAOtF |             |                                            |
-| Zkd/CnsZ1 |             |                                            |
-| sge0ndha4 |             |                                            |
-|           |             |                                            |
-| 0wWDV+nOW |             |                                            |
-| yJxkYgicv |             |                                            |
-| B8POYtSml |             |                                            |
-| dLLepPGMz |             |                                            |
-| +J7/Uws=\ |             |                                            |
-| </Signatu |             |                                            |
-| reValue\> |             |                                            |
-|           |             |                                            |
-| \<        |             |                                            |
-| KeyInfo\> |             |                                            |
-|           |             |                                            |
-| \<K       |             |                                            |
-| eyValue\> |             |                                            |
-|           |             |                                            |
-| \<RSAK    |             |                                            |
-| eyValue\> |             |                                            |
-|           |             |                                            |
-| \<Modul   |             |                                            |
-| us\>4IlzO |             |                                            |
-| Y3Y9fXoh3 |             |                                            |
-| Y5f06wBbt |             |                                            |
-| Tg94Pt6vc |             |                                            |
-| fcd1KQ0FL |             |                                            |
-| m0S36aGJt |             |                                            |
-|           |             |                                            |
-| TSb       |             |                                            |
-| 6pYKfyX7P |             |                                            |
-| qCUQ8wgL6 |             |                                            |
-| xUJ5GRPEs |             |                                            |
-| u9gyz8Zob |             |                                            |
-| wfZsGCsvu |             |                                            |
-| 40CWoT9fc |             |                                            |
-| FBZPfXro1 |             |                                            |
-|           |             |                                            |
-| Vtlh/     |             |                                            |
-| xl/yYHm+G |             |                                            |
-| zqh0Bw76x |             |                                            |
-| tLHSfLfpV |             |                                            |
-| OrmZdwKmS |             |                                            |
-| FKMTvNXOF |             |                                            |
-| d0V18=\</ |             |                                            |
-| Modulus\> |             |                                            |
-|           |             |                                            |
-| \<        |             |                                            |
-| Exponent\ |             |                                            |
-| >AQAB\</E |             |                                            |
-| xponent\> |             |                                            |
-|           |             |                                            |
-| \</RSAK   |             |                                            |
-| eyValue\> |             |                                            |
-|           |             |                                            |
-| \</K      |             |                                            |
-| eyValue\> |             |                                            |
-|           |             |                                            |
-| \</       |             |                                            |
-| KeyInfo\> |             |                                            |
-|           |             |                                            |
-| \<Object  |             |                                            |
-| I         |             |                                            |
-| d=\"objec |             |                                            |
-| t\"\>some |             |                                            |
-| text      |             |                                            |
-|           |             |                                            |
-| with      |             |                                            |
-| spaces    |             |                                            |
-| and       |             |                                            |
-| CR-LF.\<  |             |                                            |
-| /Object\> |             |                                            |
-|           |             |                                            |
-| \</Si     |             |                                            |
-| gnature\> |             |                                            |
-|           |             |                                            |
-| \</si     |             |                                            |
-| gnature\> |             |                                            |
-|           |             |                                            |
-| \</eSi    |             |                                            |
-| gnature\> |             |                                            |
-|           |             |                                            |
-| \</svk:a  |             |                                            |
-| ppendix\> |             |                                            |
-|           |             |                                            |
-| \<        |             |                                            |
-| /svk:svkA |             |                                            |
-| ppendix\> |             |                                            |
-+-----------+-------------+--------------------------------------------+
-| erm       | Fil         | Samlingselement för utökad information om  |
-| s-svk:172 | information | filen.                                     |
-|           |             |                                            |
-|           |             | (Tillägg till ERMS-standard)               |
-|           |             |                                            |
-|           |             | XML-element: svk:fileInfo                  |
-+-----------+-------------+--------------------------------------------+
-| erm       | Skapad      | Datum och tid då filen skapades            |
-| s-svk:173 |             | (systeminformation).                       |
-|           |             |                                            |
-|           |             | XML-element: svk:dateCreated\              |
-|           |             | Datatyp: dateTime                          |
-+-----------+-------------+--------------------------------------------+
-| erm       | Senast      | Datum och tid då filen senast ändrades     |
-| s-svk:174 | ändrad      | (systeminformation).                       |
-|           |             |                                            |
-|           |             | XML-element: svk:dateLastEdited\           |
-|           |             | Datatyp: dateTime                          |
-+-----------+-------------+--------------------------------------------+
-| erm       | Ver         | Om flera versioner av samma fil är         |
-| s-svk:175 | sions­nummer | kopplade till handlingen, anges unikt      |
-|           |             | versionsnummer här.                        |
-|           |             |                                            |
-|           |             | Versionsnumreringen kan enbart anges med   |
-|           |             | heltal.                                    |
-|           |             |                                            |
-|           |             | XML-element: svk:versionNumber\            |
-|           |             | Datatyp: integer                           |
-+-----------+-------------+--------------------------------------------+
-| erm       | Variant     | Om flera varianter av samma version är     |
-| s-svk:176 |             | kopplade till handlingen, anges unik       |
-|           |             | variant här.                               |
-|           |             |                                            |
-|           |             | Värdet väljs från värdelistan              |
-|           |             | [SVK-värdelista                            |
-|           |             | 17](#_SVK-VÄRDELISTA_17_–).                |
-|           |             |                                            |
-|           |             | XML-element: svk:variant\                  |
-|           |             | Datatyp: token                             |
-+-----------+-------------+--------------------------------------------+
-| Exempel   |             |                                            |
-| 35 --     |             |                                            |
-| Filin     |             |                                            |
-| formation |             |                                            |
-|           |             |                                            |
-| \         |             |                                            |
-| <svk:svkA |             |                                            |
-| ppendix\> |             |                                            |
-|           |             |                                            |
-| \<svk:f   |             |                                            |
-| ileInfo\> |             |                                            |
-|           |             |                                            |
-| \<sv      |             |                                            |
-| k:dateCre |             |                                            |
-| ated\>201 |             |                                            |
-| 0-02-01T0 |             |                                            |
-| 0:00:00\< |             |                                            |
-| /svk:date |             |                                            |
-| Created\> |             |                                            |
-|           |             |                                            |
-| \         |             |                                            |
-| <svk:date |             |                                            |
-| LastEdite |             |                                            |
-| d\>2010-0 |             |                                            |
-| 2-01T00:0 |             |                                            |
-| 0:00\</sv |             |                                            |
-| k:dateLas |             |                                            |
-| tEdited\> |             |                                            |
-|           |             |                                            |
-| \<svk:ve  |             |                                            |
-| rsionNumb |             |                                            |
-| er\>1\</s |             |                                            |
-| vk:versio |             |                                            |
-| nNumber\> |             |                                            |
-|           |             |                                            |
-| \<svk:v   |             |                                            |
-| ariant\>p |             |                                            |
-| reservati |             |                                            |
-| on\</svk: |             |                                            |
-| variant\> |             |                                            |
-|           |             |                                            |
-| \</svk:f  |             |                                            |
-| ileInfo\> |             |                                            |
-+-----------+-------------+--------------------------------------------+
-| erm       | Ä           | Samlingselement för loggningsuppgifter.    |
-| s-svk:177 | ndringslogg |                                            |
-|           |             | XML-element: svk:auditLogEvents            |
-+-----------+-------------+--------------------------------------------+
-| erm       | Händelse    | Enskild händelse i ändringsloggen.         |
-| s-svk:178 |             |                                            |
-|           |             | Obligatorisk om elementet Ändringslogg     |
-|           |             | används.                                   |
-|           |             |                                            |
-|           |             | XML-element: svk:auditLogEvent             |
-+-----------+-------------+--------------------------------------------+
-| erm       | Tid         | Datum och tid då ändringen gjordes.        |
-| s-svk:179 |             |                                            |
-|           |             | Obligatorisk om elementet Händelse         |
-|           |             | används.                                   |
-|           |             |                                            |
-|           |             | XML-element: svk:time\                     |
-|           |             | Datatyp: dateTime                          |
-+-----------+-------------+--------------------------------------------+
-| erm       | Användare   | Namn på personen som gjorde ändringen.     |
-| s-svk:180 |             |                                            |
-|           |             | Obligatorisk om elementet Händelse         |
-|           |             | används.                                   |
-|           |             |                                            |
-|           |             | XML-element: svk:user\                     |
-|           |             | Datatyp: token                             |
-+-----------+-------------+--------------------------------------------+
-| erm       | Tillämp     | Beskrivning av det som ändringen avser.    |
-| s-svk:181 | nings­område |                                            |
-|           |             | Obligatorisk om elementet Händelse         |
-|           |             | används.                                   |
-|           |             |                                            |
-|           |             | Värdet väljs från [SVK-värdelista          |
-|           |             | 11](#_SVK-VÄRDELISTA_11_–).                |
-|           |             |                                            |
-|           |             | XML-element: svk:scope\                    |
-|           |             | Datatyp: token                             |
-+-----------+-------------+--------------------------------------------+
-| erm       | Händelse    | Beskrivning av ändring.                    |
-| s-svk:182 |             |                                            |
-|           |             | Obligatorisk om elementet Händelse         |
-|           |             | används.                                   |
-|           |             |                                            |
-|           |             | Värdet väljs från värdelistan              |
-|           |             | [SVK-värdelista                            |
-|           |             | 12](#_SVK-VÄRDELISTA_12_–).                |
-|           |             |                                            |
-|           |             | XML-element: svk:action\                   |
-|           |             | Datatype: token                            |
-+-----------+-------------+--------------------------------------------+
-| erm       | Värde före  | Om ett värde har ändrats, anges här        |
-| s-svk:183 | ändring     | lydelsen före ändringen.                   |
-|           |             |                                            |
-|           |             | XML-element: svk:valueBeforeChange\        |
-|           |             | Datatyp: string                            |
-+-----------+-------------+--------------------------------------------+
-| erm       | Värde efter | Om ett värde har ändrats, anges här        |
-| s-svk:184 | ändring     | lydelsen efter ändringen.                  |
-|           |             |                                            |
-|           |             | XML-element: svk:valueAfterChange\         |
-|           |             | Datatyp: string                            |
-+-----------+-------------+--------------------------------------------+
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Element</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>erms-svk:159</td>
+<td>Bifogad fil</td>
+<td><p>Samlingselement för uppgifter om en fil som är kopplad till en
+registrerad handling.</p>
+<p>XML-element: svk:ermsSvkRecord/svk:svkAppendix</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:160</td>
+<td>Appendix</td>
+<td><p>Samlingselement för den information om filen som följer
+ERMS-standard.</p>
+<p>XML-element: appendix</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:161</td>
+<td>Gallringsbar</td>
+<td><p>Med gallringsbar avses här att den bifogade filen kan gallras
+innan dokumentet i sig gallras. Kan gälla t.ex. filer som bevaras i
+produktionsformat</p>
+<p>Värdet kan vara: true, false, 1 (som motsvarar true) eller 0 (som
+motsvarar false).</p>
+<p>XML-element: appendix/@disposable<br />
+Datatyp: boolean</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:162</td>
+<td>Namn</td>
+<td><p>Filens namn.</p>
+<p>Obligatoriskt.</p>
+<p>XML-element: appendix/@name<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:163</td>
+<td>Beskrivning</td>
+<td><p>Beskrivning av filen.</p>
+<p>XML-element: appendix/@description<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:164</td>
+<td>Filformat</td>
+<td><p>Filens format.</p>
+<p>Obligatoriskt.</p>
+<p>Anges i form av filnamnsändelse (max fyra tecken) utan punkt och med
+små bokstäver.</p>
+<p>Exempel: pdf, png, txt</p>
+<p>XML-element: appendix/@fileFormat<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:165</td>
+<td>Originalfil­format</td>
+<td><p>Om filen är konverterad till arkivformat, anges här
+originalfilens format.</p>
+<p>Anges i form av filnamnsändelse utan punkt och med små bokstäver.</p>
+<p>Exempel: docx, xlsx, msg</p>
+<p>XML-element: appendix/@originalFileFormat<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:166</td>
+<td>Sökväg</td>
+<td><p>Relativ sökväg till filens placering i informationspaketet.</p>
+<p>Obligatoriskt.</p>
+<p>Exempel: files/document_01.pdf</p>
+<p>XML-element: appendix/@path<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:167</td>
+<td>Uppgift om e-signatur</td>
+<td><p>Anger om det har funnits en e-signatur som gallrats före
+leverans.</p>
+<p>Värdet kan vara: true, false, 1 (som motsvarar true) eller 0 (som
+motsvarar false).</p>
+<p>XML-element: appendix/@eSignatureHasExisted<br />
+Datatyp: boolean</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:168</td>
+<td>E-signatur</td>
+<td><p>Samlingselement för information om befintlig e-signatur.</p>
+<p>XML-element: eSignature</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:169</td>
+<td>E-signatur finns</td>
+<td><p>Anger om det finns en e-signatur.</p>
+<p>Obligatoriskt om elementent E-signatur används.</p>
+<p>Värdet kan vara: true, false, 1 (som motsvarar true) eller 0 (som
+motsvarar false).</p>
+<p>XML-element: eSignature/@present<br />
+Datatyp: boolean</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:170</td>
+<td>Verifikations­datum</td>
+<td><p>Datum och tid då e-signaturen senast verifierades.</p>
+<p>XML-element: eSignature/@dateSignatureIsVerified<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:171</td>
+<td>Signatur</td>
+<td><p>Element för filens e-signatur med dess eget XML-schema.</p>
+<p>Leveransöverenskommelsen ska innehålla information om hur
+e-signaturer lagras och om vilket schema som används.</p>
+<p>XML-element: signature</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 34 – Bifogad fil</p>
+<p>&lt;svk:svkAppendix&gt;</p>
+<p>&lt;svk:appendix name="ansökan" path="filer/ansökan.pdf"
+fileFormat="pdf"&gt;</p>
+<p>&lt;eSignature present="true"
+dateeSignatureIsVerified="2020-03-04T00:00:00"&gt;</p>
+<p>&lt;signature&gt;</p>
+<p>&lt;Signature xmlns="http://www.w3.org/2000/09/xmldsig#"<br />
+xsi:schemaLocation="http://www.w3.org/2000/09/xmldsig#<br />
+https://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"&gt;</p>
+<p>&lt;SignedInfo&gt;</p>
+<p>&lt;CanonicalizationMethod
+Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n- 20010315"/&gt;</p>
+<p>&lt;SignatureMethod
+Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/&gt;</p>
+<p>&lt;Reference URI="#object"&gt;</p>
+<p>&lt;DigestMethod
+Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/&gt;</p>
+<p>&lt;DigestValue&gt;OPnpF/ZNLDxJ/I+1F3iHhlmSwgo=&lt;/DigestValue&gt;</p>
+<p>&lt;/Reference&gt;</p>
+<p>&lt;/SignedInfo&gt;</p>
+<p>&lt;SignatureValue&gt;nihUFQg4mDhLgecvhIcKb9Gz8VRTOlw+adiZOBBXgK4JodEe5aFfCqm8WcRIT8GL</p>
+<p>LXSk8PsUP4//SsKqUBQkpotcAqQAhtz2v9kCWdoUDnAOtFZkd/CnsZ1sge0ndha4</p>
+<p>0wWDV+nOWyJxkYgicvB8POYtSmldLLepPGMz+J7/Uws=&lt;/SignatureValue&gt;</p>
+<p>&lt;KeyInfo&gt;</p>
+<p>&lt;KeyValue&gt;</p>
+<p>&lt;RSAKeyValue&gt;</p>
+<p>&lt;Modulus&gt;4IlzOY3Y9fXoh3Y5f06wBbtTg94Pt6vcfcd1KQ0FLm0S36aGJt</p>
+<p>TSb6pYKfyX7PqCUQ8wgL6xUJ5GRPEsu9gyz8ZobwfZsGCsvu40CWoT9fcFBZPfXro1</p>
+<p>Vtlh/xl/yYHm+Gzqh0Bw76xtLHSfLfpVOrmZdwKmSFKMTvNXOFd0V18=&lt;/Modulus&gt;</p>
+<p>&lt;Exponent&gt;AQAB&lt;/Exponent&gt;</p>
+<p>&lt;/RSAKeyValue&gt;</p>
+<p>&lt;/KeyValue&gt;</p>
+<p>&lt;/KeyInfo&gt;</p>
+<p>&lt;Object Id="object"&gt;some text</p>
+<p>with spaces and CR-LF.&lt;/Object&gt;</p>
+<p>&lt;/Signature&gt;</p>
+<p>&lt;/signature&gt;</p>
+<p>&lt;/eSignature&gt;</p>
+<p>&lt;/svk:appendix&gt;</p>
+<p>&lt;/svk:svkAppendix&gt;</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:172</td>
+<td>Filinformation</td>
+<td><p>Samlingselement för utökad information om filen.</p>
+<p>(Tillägg till ERMS-standard)</p>
+<p>XML-element: svk:fileInfo</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:173</td>
+<td>Skapad</td>
+<td><p>Datum och tid då filen skapades (systeminformation).</p>
+<p>XML-element: svk:dateCreated<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:174</td>
+<td>Senast ändrad</td>
+<td><p>Datum och tid då filen senast ändrades (systeminformation).</p>
+<p>XML-element: svk:dateLastEdited<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:175</td>
+<td>Versions­nummer</td>
+<td><p>Om flera versioner av samma fil är kopplade till handlingen,
+anges unikt versionsnummer här.</p>
+<p>Versionsnumreringen kan enbart anges med heltal.</p>
+<p>XML-element: svk:versionNumber<br />
+Datatyp: integer</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:176</td>
+<td>Variant</td>
+<td><p>Om flera varianter av samma version är kopplade till handlingen,
+anges unik variant här.</p>
+<p>Värdet väljs från värdelistan <a
+href="#_SVK-VÄRDELISTA_17_–">SVK-värdelista 17</a>.</p>
+<p>XML-element: svk:variant<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td colspan="3"><p>Exempel 35 – Filinformation</p>
+<p>&lt;svk:svkAppendix&gt;</p>
+<p>&lt;svk:fileInfo&gt;</p>
+<p>&lt;svk:dateCreated&gt;2010-02-01T00:00:00&lt;/svk:dateCreated&gt;</p>
+<p>&lt;svk:dateLastEdited&gt;2010-02-01T00:00:00&lt;/svk:dateLastEdited&gt;</p>
+<p>&lt;svk:versionNumber&gt;1&lt;/svk:versionNumber&gt;</p>
+<p>&lt;svk:variant&gt;preservation&lt;/svk:variant&gt;</p>
+<p>&lt;/svk:fileInfo&gt;</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:177</td>
+<td>Ändringslogg</td>
+<td><p>Samlingselement för loggningsuppgifter.</p>
+<p>XML-element: svk:auditLogEvents</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:178</td>
+<td>Händelse</td>
+<td><p>Enskild händelse i ändringsloggen.</p>
+<p>Obligatorisk om elementet Ändringslogg används.</p>
+<p>XML-element: svk:auditLogEvent</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:179</td>
+<td>Tid</td>
+<td><p>Datum och tid då ändringen gjordes.</p>
+<p>Obligatorisk om elementet Händelse används.</p>
+<p>XML-element: svk:time<br />
+Datatyp: dateTime</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:180</td>
+<td>Användare</td>
+<td><p>Namn på personen som gjorde ändringen.</p>
+<p>Obligatorisk om elementet Händelse används.</p>
+<p>XML-element: svk:user<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:181</td>
+<td>Tillämpnings­område</td>
+<td><p>Beskrivning av det som ändringen avser.</p>
+<p>Obligatorisk om elementet Händelse används.</p>
+<p>Värdet väljs från <a href="#_SVK-VÄRDELISTA_11_–">SVK-värdelista
+11</a>.</p>
+<p>XML-element: svk:scope<br />
+Datatyp: token</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:182</td>
+<td>Händelse</td>
+<td><p>Beskrivning av ändring.</p>
+<p>Obligatorisk om elementet Händelse används.</p>
+<p>Värdet väljs från värdelistan <a
+href="#_SVK-VÄRDELISTA_12_–">SVK-värdelista 12</a>.</p>
+<p>XML-element: svk:action<br />
+Datatype: token</p></td>
+</tr>
+<tr class="odd">
+<td>erms-svk:183</td>
+<td>Värde före ändring</td>
+<td><p>Om ett värde har ändrats, anges här lydelsen före ändringen.</p>
+<p>XML-element: svk:valueBeforeChange<br />
+Datatyp: string</p></td>
+</tr>
+<tr class="even">
+<td>erms-svk:184</td>
+<td>Värde efter ändring</td>
+<td><p>Om ett värde har ändrats, anges här lydelsen efter ändringen.</p>
+<p>XML-element: svk:valueAfterChange<br />
+Datatyp: string</p></td>
+</tr>
+</tbody>
+</table>
 
-[]{#_Värdelistor .anchor}Värdelistor
+<span id="_Värdelistor" class="anchor"></span>Värdelistor
 
-[]{#_SVK-VÄRDELISTA_1_– .anchor}SVK-värdelista 1 -- Typ av identifikator
-(erms-svk:2)
+<span id="_SVK-VÄRDELISTA_1_–" class="anchor"></span>SVK-värdelista 1 –
+Typ av identifikator (erms-svk:2)
 
-  ------------------------------------------------------------------------
-  Giltiga värden        Kommentar                           Källa
-  --------------------- ----------------------------------- --------------
-  aid                   ArkivbildarID                       ERMS-SVK
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>aid</td>
+<td>ArkivbildarID</td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>arkivbildare</td>
+<td>Arkivbildarens namn</td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>organisationsnummer</td>
+<td>Tio siffror utan bindestreck.</td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>ärendenummer</td>
+<td>Ärendets beteckning (t.ex. F 2020-0435)</td>
+<td>ERMS-SVK</td>
+</tr>
+</tbody>
+</table>
 
-  arkivbildare          Arkivbildarens namn                 ERMS-SVK
-
-  organisationsnummer   Tio siffror utan bindestreck.       ERMS-SVK
-
-  ärendenummer          Ärendets beteckning (t.ex. F        ERMS-SVK
-                        2020-0435)                          
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_2_– .anchor}SVK-värdelista 2 --
+<span id="_SVK-VÄRDELISTA_2_–" class="anchor"></span>SVK-värdelista 2 –
 Klassificeringsstruktur (erms-svk:4)
 
-  ------------------------------------------------------------------------
-  Giltiga värden        Kommentar                           Källa
-  --------------------- ----------------------------------- --------------
-  KlaSL2016_1.0         Klassificeringsstruktur för lokal   ERMS-SVK
-                        nivå 1.0                            
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>KlaSL2016_1.0</td>
+<td>Klassificeringsstruktur för lokal nivå 1.0</td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>KlaSN2018_1.0</td>
+<td>Klassificeringsstruktur för nationell nivå 1.0</td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>KlaSS2016_1.0</td>
+<td>Klassificeringsstruktur för regional nivå 1.0</td>
+<td>ERMS-SVK</td>
+</tr>
+</tbody>
+</table>
 
-  KlaSN2018_1.0         Klassificeringsstruktur för         ERMS-SVK
-                        nationell nivå 1.0                  
+<span id="_SVK-VÄRDELISTA_3_–" class="anchor"></span>SVK-värdelista 3 –
+XML-dokumentets status (erms-svk:7)
 
-  KlaSS2016_1.0         Klassificeringsstruktur för         ERMS-SVK
-                        regional nivå 1.0                   
-  ------------------------------------------------------------------------
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cancelled</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>created</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>deleted</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>derived</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>new</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>revised</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>unknown</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>updated</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+</tbody>
+</table>
 
-[]{#_SVK-VÄRDELISTA_3_– .anchor}SVK-värdelista 3 -- XML-dokumentets
-status (erms-svk:7)
+<span id="_SVK-VÄRDELISTA_4_–" class="anchor"></span>SVK-värdelista 4 –
+Typ av ID (erms-svk:10)
 
-  ------------------------------------------------------------------------
-  Giltiga värden        Kommentar                           Källa
-  --------------------- ----------------------------------- --------------
-  cancelled                                                 ERMS
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>aid</td>
+<td>ArkivbildarID</td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>organisationsnummer</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+</tbody>
+</table>
 
-  created                                                   ERMS
+<span id="_SVK-VÄRDELISTA_5_–" class="anchor"></span>SVK-värdelista 5 –
+Typ av underhållshändelse (erms-svk:16)
 
-  deleted                                                   ERMS
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cancelled</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>created</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>deleted</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>derived</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>revised</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>unknown</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>updated</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+</tbody>
+</table>
 
-  derived                                                   ERMS
+<span id="_SVK-VÄRDELISTA_6_–" class="anchor"></span>SVK-värdelista 6 –
+Typ av utförare/aktör, agentType (erms-svk:19 m.fl. )
 
-  new                                                       ERMS
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>agent</td>
+<td>Används i betydelsen ”Annan aktör”.</td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>closer</td>
+<td>Den som avslutar ett ärende.</td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>counterpart</td>
+<td>Ärendepart, extern part i ett ärende.</td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>creator</td>
+<td>Skapare av ERMS-fil eller post i diariesystem.</td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>deliverer</td>
+<td>Ansvarig för leverans till e-arkivet.</td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>editor</td>
+<td>Används i betydelsen “Medhandläggare”.</td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>receiver</td>
+<td>Mottagare av en utgående handling.</td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>responsible_person</td>
+<td>Ansvarig för ett ärende eller handling.</td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>sender</td>
+<td>Avsändare av en inkommen handling.</td>
+<td>ERMS</td>
+</tr>
+</tbody>
+</table>
 
-  revised                                                   ERMS
+<span id="_SVK-VÄRDELISTA_7_–" class="anchor"></span>SVK-värdelista 7 –
+Ärende- och handlingsstatus (erms-svk:35, erms-svk:101)
 
-  unknown                                                   ERMS
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>closed</td>
+<td>Om ärende: avslutat, stängt. Om handling: registrerad i betydelsen
+inkommen eller upprättad.</td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>obliterated</td>
+<td>Makulerad.</td>
+<td>ERMS</td>
+</tr>
+</tbody>
+</table>
 
-  updated                                                   ERMS
-  ------------------------------------------------------------------------
+<span id="_SVK-VÄRDELISTA_8_–" class="anchor"></span>SVK-värdelista 8 –
+Typ av idNumber (erms-svk :3–48, erms-svk:110–114)
 
-[]{#_SVK-VÄRDELISTA_4_– .anchor}SVK-värdelista 4 -- Typ av ID
-(erms-svk:10)
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>användarnamn</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>organisationsnummer</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>personnummer</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+</tbody>
+</table>
 
-  ------------------------------------------------------------------------
-  Giltiga värden        Kommentar                           Källa
-  --------------------- ----------------------------------- --------------
-  aid                   ArkivbildarID                       ERMS-SVK
+<span id="_SVK-VÄRDELISTA_9_–" class="anchor"></span>SVK-värdelista 9 –
+Initiativ (erms-svk:62)
 
-  organisationsnummer                                       ERMS-SVK
-  ------------------------------------------------------------------------
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>eget</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>externt</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+</tbody>
+</table>
 
-[]{#_SVK-VÄRDELISTA_5_– .anchor}SVK-värdelista 5 -- Typ av
-underhållshändelse (erms-svk:16)
+<span id="_SVK-VÄRDELISTA_10_–" class="anchor"></span>SVK-värdelista 10
+– Typ av anteckning (erms-svk:75, erms-svk:137)
 
-  ------------------------------------------------------------------------
-  Giltiga värden        Kommentar                           Källa
-  --------------------- ----------------------------------- --------------
-  cancelled                                                 ERMS
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 48%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>arkivanteckning</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>generell anteckning</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>intern anteckning</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>expedieringsanteckning</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>chattanteckning</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+</tbody>
+</table>
 
-  created                                                   ERMS
+<span id="_SVK-VÄRDELISTA_11_–" class="anchor"></span>
 
-  deleted                                                   ERMS
-
-  derived                                                   ERMS
-
-  revised                                                   ERMS
-
-  unknown                                                   ERMS
-
-  updated                                                   ERMS
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_6_– .anchor}SVK-värdelista 6 -- Typ av
-utförare/aktör, agentType (erms-svk:19 m.fl. )
-
-  ------------------------------------------------------------------------
-  Giltiga värden        Kommentar                           Källa
-  --------------------- ----------------------------------- --------------
-  agent                 Används i betydelsen "Annan aktör". ERMS
-
-  closer                Den som avslutar ett ärende.        ERMS-SVK
-
-  counterpart           Ärendepart, extern part i ett       ERMS
-                        ärende.                             
-
-  creator               Skapare av ERMS-fil eller post i    ERMS
-                        diariesystem.                       
-
-  deliverer             Ansvarig för leverans till          ERMS
-                        e-arkivet.                          
-
-  editor                Används i betydelsen                ERMS
-                        "Medhandläggare".                   
-
-  receiver              Mottagare av en utgående handling.  ERMS
-
-  responsible_person    Ansvarig för ett ärende eller       ERMS
-                        handling.                           
-
-  sender                Avsändare av en inkommen handling.  ERMS
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_7_– .anchor}SVK-värdelista 7 -- Ärende- och
-handlingsstatus (erms-svk:35, erms-svk:101)
-
-  ------------------------------------------------------------------------
-  Giltiga värden        Kommentar                           Källa
-  --------------------- ----------------------------------- --------------
-  closed                Om ärende: avslutat, stängt. Om     ERMS
-                        handling: registrerad i betydelsen  
-                        inkommen eller upprättad.           
-
-  obliterated           Makulerad.                          ERMS
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_8_– .anchor}SVK-värdelista 8 -- Typ av idNumber
-(erms-svk :3--48, erms-svk:110--114)
-
-  ------------------------------------------------------------------------
-  Giltiga värden        Kommentar                           Källa
-  --------------------- ----------------------------------- --------------
-  användarnamn                                              ERMS-SVK
-
-  organisationsnummer                                       ERMS-SVK
-
-  personnummer                                              ERMS-SVK
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_9_– .anchor}SVK-värdelista 9 -- Initiativ
-(erms-svk:62)
-
-  ------------------------------------------------------------------------
-  Giltiga värden        Kommentar                           Källa
-  --------------------- ----------------------------------- --------------
-  eget                                                      ERMS-SVK
-
-  externt                                                   ERMS-SVK
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_10_– .anchor}SVK-värdelista 10 -- Typ av anteckning
-(erms-svk:75, erms-svk:137)
-
-  --------------------------------------------------------------------------
-  Giltiga värden           Kommentar                          Källa
-  ------------------------ ---------------------------------- --------------
-  arkivanteckning                                             ERMS-SVK
-
-  generell anteckning                                         ERMS-SVK
-
-  intern anteckning                                           ERMS-SVK
-
-  expedieringsanteckning                                      ERMS-SVK
-
-  chattanteckning                                             ERMS-SVK
-  --------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_11_– .anchor}
-
-SVK-värdelista 11 -- Tillämpningsområde (erms-svk:83, erms-svk:155,
+SVK-värdelista 11 – Tillämpningsområde (erms-svk:83, erms-svk:155,
 erms-svk:181)
 
-  ------------------------------------------------------------------------
-  Giltiga värden         Kommentar                          Källa
-  ---------------------- ---------------------------------- --------------
-  ankomstdatum                                              ERMS-SVK
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 48%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ankomstdatum</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>ansvarig</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>anteckning</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>avsändare</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>beskrivning</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>beslut</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>dokumentnummer</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>dokumentreferens</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>dokumentstatus</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>dokumenttitel</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>expedieringsdatum</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>fastighet</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>fil</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>form</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>handling</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>handlingstyp</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>initiativ</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>klassificering</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>kommentar</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>medhandläggare</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>mottagare</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>nyckelord</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>projekt</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>riktning</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>sekretess</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>ärende</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>ärendemening</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>ärendenummer</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>ärendepart</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>ärendereferens</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>ärendestatus</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+</tbody>
+</table>
 
-  ansvarig                                                  ERMS-SVK
+<span id="_SVK-VÄRDELISTA_12_–" class="anchor"></span>SVK-värdelista 12
+– Händelse (erms-svk:84, erms-svk:156, svk-erms:182)
 
-  anteckning                                                ERMS-SVK
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 48%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>create</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>read</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td>update</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>delete</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+</tbody>
+</table>
 
-  avsändare                                                 ERMS-SVK
+<span id="_SVK-VÄRDELISTA_13_–" class="anchor"></span>
 
-  beskrivning                                               ERMS-SVK
+SVK-värdelista 13 – Handlingstyp (erms-svk:89)
 
-  beslut                                                    ERMS-SVK
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 48%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ärendedokument</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="even">
+<td>avtalsdokument</td>
+<td></td>
+<td>ERMS-SVK</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
-  dokumentnummer                                            ERMS-SVK
+<span id="_SVK-VÄRDELISTA_14_–" class="anchor"></span>SVK-värdelista 14
+– Form (erms-svk:90)
 
-  dokumentreferens                                          ERMS-SVK
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 48%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>physical</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>digital</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>physical_and_digital</td>
+<td></td>
+<td>ERMS</td>
+</tr>
+</tbody>
+</table>
 
-  dokumentstatus                                            ERMS-SVK
+<span id="_SVK-VÄRDELISTA_15_–" class="anchor"></span>SVK-värdelista 15
+– Riktning (erms-svk:108)
 
-  dokumenttitel                                             ERMS-SVK
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 48%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>incoming</td>
+<td>Om inkommen handling.</td>
+<td>ERMS</td>
+</tr>
+<tr class="even">
+<td>outgoing</td>
+<td>Om handling som upprättats genom expediering.</td>
+<td>ERMS</td>
+</tr>
+<tr class="odd">
+<td>internal</td>
+<td>Om handling som upprättats på annat sätt.</td>
+<td>SVK-ERMS</td>
+</tr>
+</tbody>
+</table>
 
-  expedieringsdatum                                         ERMS-SVK
+<span id="_SVK-VÄRDELISTA_16_–" class="anchor"></span>SVK-värdelista 16
+– Avtalstyp (erms-svk:147)
 
-  fastighet                                                 ERMS-SVK
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 48%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>avtal</td>
+<td></td>
+<td>SVK-ERMS</td>
+</tr>
+<tr class="even">
+<td>kontrakt</td>
+<td></td>
+<td>SVK-ERMS</td>
+</tr>
+<tr class="odd">
+<td>licens</td>
+<td></td>
+<td>SVK-ERMS</td>
+</tr>
+<tr class="even">
+<td>uppgörelse</td>
+<td></td>
+<td>SVK-ERMS</td>
+</tr>
+<tr class="odd">
+<td>överenskommelse</td>
+<td></td>
+<td>SVK-ERMS</td>
+</tr>
+</tbody>
+</table>
 
-  fil                                                       ERMS-SVK
+<span id="_SVK-VÄRDELISTA_17_–" class="anchor"></span>SVK-värdelista 17
+– Variant (erms-svk:147)
 
-  form                                                      ERMS-SVK
-
-  handling                                                  ERMS-SVK
-
-  handlingstyp                                              ERMS-SVK
-
-  initiativ                                                 ERMS-SVK
-
-  klassificering                                            ERMS-SVK
-
-  kommentar                                                 ERMS-SVK
-
-  medhandläggare                                            ERMS-SVK
-
-  mottagare                                                 ERMS-SVK
-
-  nyckelord                                                 ERMS-SVK
-
-  projekt                                                   ERMS-SVK
-
-  riktning                                                  ERMS-SVK
-
-  sekretess                                                 ERMS-SVK
-
-  ärende                                                    ERMS-SVK
-
-  ärendemening                                              ERMS-SVK
-
-  ärendenummer                                              ERMS-SVK
-
-  ärendepart                                                ERMS-SVK
-
-  ärendereferens                                            ERMS-SVK
-
-  ärendestatus                                              ERMS-SVK
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_12_– .anchor}SVK-värdelista 12 -- Händelse
-(erms-svk:84, erms-svk:156, svk-erms:182)
-
-  ------------------------------------------------------------------------
-  Giltiga värden         Kommentar                          Källa
-  ---------------------- ---------------------------------- --------------
-  create                                                    ERMS-SVK
-
-  read                                                      ERMS-SVK
-
-  update                                                    ERMS-SVK
-
-  delete                                                    ERMS-SVK
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_13_– .anchor}
-
-SVK-värdelista 13 -- Handlingstyp (erms-svk:89)
-
-  ------------------------------------------------------------------------
-  Giltiga värden         Kommentar                          Källa
-  ---------------------- ---------------------------------- --------------
-  ärendedokument                                            ERMS-SVK
-
-  avtalsdokument                                            ERMS-SVK
-
-                                                            
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_14_– .anchor}SVK-värdelista 14 -- Form (erms-svk:90)
-
-  ------------------------------------------------------------------------
-  Giltiga värden         Kommentar                          Källa
-  ---------------------- ---------------------------------- --------------
-  physical                                                  ERMS
-
-  digital                                                   ERMS
-
-  physical_and_digital                                      ERMS
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_15_– .anchor}SVK-värdelista 15 -- Riktning
-(erms-svk:108)
-
-  ------------------------------------------------------------------------
-  Giltiga värden         Kommentar                          Källa
-  ---------------------- ---------------------------------- --------------
-  incoming               Om inkommen handling.              ERMS
-
-  outgoing               Om handling som upprättats genom   ERMS
-                         expediering.                       
-
-  internal               Om handling som upprättats på      SVK-ERMS
-                         annat sätt.                        
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_16_– .anchor}SVK-värdelista 16 -- Avtalstyp
-(erms-svk:147)
-
-  ------------------------------------------------------------------------
-  Giltiga värden         Kommentar                          Källa
-  ---------------------- ---------------------------------- --------------
-  avtal                                                     SVK-ERMS
-
-  kontrakt                                                  SVK-ERMS
-
-  licens                                                    SVK-ERMS
-
-  uppgörelse                                                SVK-ERMS
-
-  överenskommelse                                           SVK-ERMS
-  ------------------------------------------------------------------------
-
-[]{#_SVK-VÄRDELISTA_17_– .anchor}SVK-värdelista 17 -- Variant
-(erms-svk:147)
-
-  ------------------------------------------------------------------------
-  Giltiga värden         Kommentar                          Källa
-  ---------------------- ---------------------------------- --------------
-  arkivformat                                               
-
-  offentligt format                                         
-
-  produktionsformat                                         
-
-  signerat dokument                                         
-
-  visningsformat                                            
-  ------------------------------------------------------------------------
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 48%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giltiga värden</th>
+<th>Kommentar</th>
+<th>Källa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>arkivformat</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>offentligt format</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>produktionsformat</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>signerat dokument</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>visningsformat</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 Appendix
 
-[]{#_XML-schema_ERMS-SVK-ARENDE.xsd .anchor}XML-schema
-ERMS-SVK-ARENDE.xsd
+<span id="_XML-schema_ERMS-SVK-ARENDE.xsd"
+class="anchor"></span>XML-schema ERMS-SVK-ARENDE.xsd
 
-[]{#_XML-schema:_ERMS-SVK-ARENDE-element .anchor}XML-schema:
-ERMS-SVK-ARENDE-element.xsd
+<span id="_XML-schema:_ERMS-SVK-ARENDE-element"
+class="anchor"></span>XML-schema: ERMS-SVK-ARENDE-element.xsd
 
-[]{#_Schematron:_ERMS-SVK-ARENDE.sch .anchor}Schematron:
-ERMS-SVK-ARENDE.sch
+<span id="_Schematron:_ERMS-SVK-ARENDE.sch"
+class="anchor"></span>Schematron: ERMS-SVK-ARENDE.sch
 
 Exempel på XML-fil
 

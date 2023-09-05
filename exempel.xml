@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<erms
+	xmlns="https://DILCIS.eu/XML/ERMS"
+	xmlns:svk="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://DILCIS.eu/XML/ERMS https://citserms.dilcis.eu/schema/ERMS.xsd">
+	<control>
+		<identification identificationType="COSAI">SE/P345/PA45/P 2020-0045</identification>
+		<classificationSchema>
+			<textualDescriptionOfClassificationSchema>
+				<p>Klassificeringsstruktur för lokal nivå 2018, ver. 1.0</p>
+			</textualDescriptionOfClassificationSchema>
+		</classificationSchema>
+		<maintenanceInformation>
+			<maintenanceStatus value="new"/>
+			<maintenanceAgency>
+				<agencyCode type="COSAI">SE/NN456</agencyCode>
+				<agencyName>Kyrkostyrelsen</agencyName>
+			</maintenanceAgency>
+			<maintenanceHistory>
+				<maintenanceEvent>
+					<eventType value="created"/>
+					<eventDateTime>2001-12-17T09:30:47</eventDateTime>
+					<agent agentType="deliverer">
+						<name>Public360</name>
+						<organisation>Tietoevry</organisation>
+					</agent>
+				</maintenanceEvent>
+			</maintenanceHistory>
+		</maintenanceInformation>
+	</control>
+	<aggregations>
+		<aggregation systemIdentifier="3b9fbc5f-3eaf-4521-9726-0f142feb04c3" aggregationType="caseFile">
+			<objectId>C 1995-0032</objectId>
+			<extraId extraIdType="deliveringSystemId">34565</extraId>
+			<classification classificationCode="1.2">Styra verksamheten</classification>
+			<keywords>
+				<keyword>församlingsordning</keyword>
+			</keywords>
+			<title>Församlingsordning 2019</title>
+			<otherTitle titleType="description">Församlingsordning 2019 med allt vad det innebär</otherTitle>
+			<otherTitle titleType="public">Församlingsordning utan det hemliga 2019</otherTitle>
+			<status value="closed"/>
+			<relation relationType="reference">C 1995-0031</relation>
+			<additionalInformation>
+				<additionalXMLData>
+					<svk:ermsSvkArende>
+						<svk:ermsSvkAggregation>
+							<svk:initiative>eget</svk:initiative>
+							<svk:relatedProjects>
+								<svk:relatedProject>
+									<svk:name>Omläggning av kyrktaket 2009</svk:name>
+									<svk:identificator>P 2009:1</svk:identificator>
+									<svk:deliveringSystemId>34958</svk:deliveringSystemId>
+								</svk:relatedProject>
+							</svk:relatedProjects>
+							<svk:relatedRealEstates>
+								<svk:relatedRealEstate>
+									<svk:name>Kyrkan</svk:name>
+								</svk:relatedRealEstate>
+							</svk:relatedRealEstates>
+							<svk:svkNotes>
+								<svk:svkNote typeOfNote="generell anteckning">
+									<svk:noteText>Detta är en anteckning</svk:noteText>
+									<svk:noteAuthor>Jörgen Persson</svk:noteAuthor>
+									<svk:noteDate>2019-02-23T00:00:00</svk:noteDate>
+								</svk:svkNote>
+							</svk:svkNotes>
+							<svk:auditLogEvents>
+								<svk:auditLogEvent>
+									<svk:time>2009-09-22T11:47:00</svk:time>
+									<svk:user>Henrik Vitalis (khus/henvital)</svk:user>
+									<svk:scope>ärende</svk:scope>
+									<svk:action>create</svk:action>
+								</svk:auditLogEvent>
+								<svk:auditLogEvent>
+									<svk:time>2009-09-22T11:52:00</svk:time>
+									<svk:user>Henrik Vitalis (khus/henvital)</svk:user>
+									<svk:scope>ärendemening</svk:scope>
+									<svk:action>update</svk:action>
+									<svk:valueBeforeChange>Upphandling av frysboxar</svk:valueBeforeChange>
+									<svk:valueAfterChange>Upphandling av kylskåp</svk:valueAfterChange>
+								</svk:auditLogEvent>
+								<svk:auditLogEvent>
+									<svk:time>2009-09-22T12:10:00</svk:time>
+									<svk:user>Henrik Vitalis (khus/henvital)</svk:user>
+									<svk:scope>status</svk:scope>
+									<svk:action>update</svk:action>
+									<svk:valueBeforeChange>Öppet</svk:valueBeforeChange>
+									<svk:valueAfterChange>Makulerat</svk:valueAfterChange>
+								</svk:auditLogEvent>
+							</svk:auditLogEvents>
+						</svk:ermsSvkAggregation>
+					</svk:ermsSvkArende>
+				</additionalXMLData>
+			</additionalInformation>
+			<restriction restrictionType="confidential">
+				<explanatoryText>Sekretess enligt KO</explanatoryText>
+				<regulation>KO 54:2</regulation>
+				<dates>
+					<date dateType="created">2020-01-02T00:00:00</date>
+				</dates>
+			</restriction>
+			<agents>	
+				<agent agentType="creator"> <!-- registrator som skapat ärendet -->
+					<name>Henrik Vitalis</name>
+					<idNumber idNumberType="username">henvital</idNumber>
+				</agent>
+				<agent agentType="responsible_person">  <!-- Ansvarig handläggare -->
+					<name>Henrik Vitalis</name>
+					<idNumber idNumberType="username">henvital</idNumber>
+				</agent>
+				<agent agentType="editor"> <!-- medhandläggare -->
+					<name>Nils Högman</name>
+					<idNumber idNumberType="username">nilhogma</idNumber>
+				</agent>
+				<agent agentType="counterpart"> <!-- motpart/avsändare/mottagare -->
+					<name>Försäkringskassan</name>
+				</agent>
+				<agent agentType="other" otherAgentType="closer"> <!-- registrator som stängt ärendet -->
+					<name>Erik Gustavsson</name>
+					<idNumber idNumberType="username">erigust</idNumber>
+				</agent>
+			</agents>
+			<description></description>
+			<dates>
+				<date dateType="created">2020-05-22T00:00:00</date> <!-- skapat i systemet -->
+				<date dateType="opened">2020-05-20T00:00:00</date> <!-- ärendet officiellt öppnat -->
+				<date dateType="closed">2020-05-30T00:00:00</date> <!-- ärendet officiellt avslutat -->
+			</dates>
+			<action>
+				<actionText>Beslutades att lägga frågan till handlingarna (Kr prot. 29/4 2010 § 3)</actionText>
+				<actionType>beslut</actionType>
+				<dates>
+					<actionDate dateType="decision_date">2020-05-20T00:00:00</actionDate>
+				</dates>
+				<agents>
+					<agent agentType="other" otherAgentType="decisionMaker">
+						<name>Kyrkorådet</name>
+					</agent>
+				</agents>
+			</action>
+			<physicalLocations>
+				<physicalLocation></physicalLocation>
+			</physicalLocations>
+			<notes><note noteType="comment" noteDate="2019-02-21T00:00:00">Detta är ett mirgerat ärende</note></notes>
+			<record systemIdentifier="8dbbdc56-8ada-4ad5-a1ec-b8131a1086a2" recordPhysicalOrDigital="digitial" recordType="Avtal">
+				<objectId>C 1995-0032:1</objectId>
+				<extraId extraIdType="deliveringSystemId">34565</extraId>
+				<classification classificationCode="1.2">Styra verksamheten</classification>
+				<keywords>
+					<keyword>församlingsordning</keyword>
+					<keyword>kyrkorådet</keyword>
+				</keywords>
+				<title>Ansökan om räntebidrag</title>
+				<otherTitle titleType="description">Ansökan om räntebidrag: Spanienhuset och traktorn</otherTitle>
+				<otherTitle titleType="public">Ansökan</otherTitle>
+				<status value="expedited"/>
+				<runningNumber>1</runningNumber>
+				<relation relationType="reference">C 1992-0234</relation>
+				<restriction restrictionType="confidential">
+					<explanatoryText>Sekretess enligt KO</explanatoryText>
+					<regulation>KO 54:2</regulation>
+				</restriction>
+				<disposal disposable="true">
+					<disposalMandate>SvKB 2019:1 11 kap. 32 §</disposalMandate>
+					<dates>
+						<disposalDate dateType="action_due">2025-01-01T00:00:00</disposalDate>
+					</dates>
+				</disposal>
+				<direction directionDefinition="other" otherDirectionDefinition="internal"/>
+				<agents>
+					<agent agentType="sender">
+						<name>Registrator Johansson</name>
+					</agent>
+					<agent agentType="responsible_person">
+						<name>Amanda Handläggare</name>
+					</agent>
+					<agent agentType="sender">
+						<name>Jörgen Avsändare</name>
+					</agent>
+					<agent agentType="receiver">
+						<name>Henrik Mottagare</name>
+					</agent>
+				</agents>
+				<description></description>
+				<dates>
+					<date dateType="created">2020-02-02T00:00:00</date> <!-- skapat i systemet -->
+					<date dateType="expedited">2020-02-02T00:00:00</date> <!-- expedierat/skickat -->
+					<date dateType="received">2020-02-02T00:00:00</date> <!-- inkommet -->
+				</dates>
+				<action>
+					<actionText></actionText>
+				</action>
+				<notes></notes>
+				<eSignatures></eSignatures>
+				<additionalInformation>
+					<additionalXMLData>
+						<svk:ermsSvkArende>
+							<svk:ermsSvkRecord>
+								<svk:contractInfo>
+									<svk:externalReference>ref3453</svk:externalReference>
+									<svk:callOffValue currency="SEK">34</svk:callOffValue>
+									<svk:contractValue currency="SEK">45</svk:contractValue>
+									<svk:typeOfAgreement>avtal</svk:typeOfAgreement>
+									<dates>
+										<date dateType="start">2018-02-12T00:00:00</date>
+										<date dateType="end">2019-02-12T00:00:00</date>
+									</dates>
+								</svk:contractInfo>
+								<svk:workflows>
+									<svk:workflow>
+										<svk:workflowStatus>godkänd</svk:workflowStatus>
+										<svk:initiatedBy agentType="creator">
+											<name>Henrik Vitalis</name>
+											<organisation>Avdelningen för kulturarv</organisation>
+											<idNumber idNumberType="username">henvital</idNumber>
+										</svk:initiatedBy>
+										<svk:initiatedDate dateType="created">2023-08-12T00:00:00</svk:initiatedDate>
+										<svk:message>Kan ni vänligen godkänna detta.</svk:message>
+									</svk:workflow>
+									<svk:workflowRecipients>
+										<svk:workflowRecipient>
+											<svk:recipient agentType="recipient">
+												<name>Harald Löfgren</name>
+												<role>aas</role>
+											</svk:recipient>
+											<svk:recipientStatus>godkänd</svk:recipientStatus>
+											<svk:completedDate dateType="closed">2023-08-12T00:00:00</svk:completedDate>
+											<svk:completedBy agentType="recipient">
+												<name>Harald Löfgren</name>
+											</svk:completedBy>
+										</svk:workflowRecipient>
+									</svk:workflowRecipients>
+								</svk:workflows>
+								<svk:svkAppendix>
+									<svk:appendix name="ansökan" path="file:///filer/ansökan.pdf" fileFormat="PDF">
+										<eSignature present="true" dateeSignatureIsVerified="2020-03-04T00:00:00">
+											<signature>
+												<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+													xsi:schemaLocation="http://www.w3.org/2000/09/xmldsig#
+																		https://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd">
+													<SignedInfo>
+													  <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+													  <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+													  <Reference URI="#object">
+														<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+														<DigestValue>OPnpF/ZNLDxJ/I+1F3iHhlmSwgo=</DigestValue>
+													  </Reference>
+													</SignedInfo>
+													<SignatureValue>nihUFQg4mDhLgecvhIcKb9Gz8VRTOlw+adiZOBBXgK4JodEe5aFfCqm8WcRIT8GL
+													LXSk8PsUP4//SsKqUBQkpotcAqQAhtz2v9kCWdoUDnAOtFZkd/CnsZ1sge0ndha4
+													0wWDV+nOWyJxkYgicvB8POYtSmldLLepPGMz+J7/Uws=</SignatureValue>
+													<KeyInfo>
+													  <KeyValue>
+														<RSAKeyValue>
+														  <Modulus>4IlzOY3Y9fXoh3Y5f06wBbtTg94Pt6vcfcd1KQ0FLm0S36aGJtTSb6pYKfyX7PqC
+														  UQ8wgL6xUJ5GRPEsu9gyz8ZobwfZsGCsvu40CWoT9fcFBZPfXro1Vtlh/xl/yYHm
+														  +Gzqh0Bw76xtLHSfLfpVOrmZdwKmSFKMTvNXOFd0V18=</Modulus>
+														  <Exponent>AQAB</Exponent>
+														</RSAKeyValue>
+													  </KeyValue>
+													</KeyInfo>
+													<Object Id="object">some text
+													  with spaces and CR-LF.</Object>
+												</Signature>
+											</signature>
+										</eSignature>
+									</svk:appendix>
+									<svk:fileInfo>
+										<svk:dateCreated>2010-02-01T00:00:00</svk:dateCreated>
+										<svk:dateLastEdited>2010-02-01T00:00:00</svk:dateLastEdited>
+										<svk:versionNumber>1</svk:versionNumber>
+										<svk:variant>preservation</svk:variant>
+									</svk:fileInfo>
+								</svk:svkAppendix>
+							</svk:ermsSvkRecord>
+						</svk:ermsSvkArende>
+					</additionalXMLData>
+				</additionalInformation>
+			</record>
+		</aggregation>
+	</aggregations>
+</erms>

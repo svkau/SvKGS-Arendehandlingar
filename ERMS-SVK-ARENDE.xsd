@@ -53,6 +53,7 @@ Version:	0.1
 				</xs:element>
 			</xs:choice>
 			<xs:attribute name="schemaVersion" type="xs:decimal" fixed="1.0"/>
+			<xs:attribute name="elementSchemaVersion" type="xs:decimal" use="required"/>
 			<xs:attribute name="ermsSchemaVersion" type="xs:token" use="required"/>
 			<xs:attribute name="schematronVersion" type="xs:decimal" use="required"/>
 		</xs:complexType>

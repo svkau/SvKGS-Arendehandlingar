@@ -4,6 +4,7 @@ Namn:		ERMS-SVK-ARENDE.sch
 Version:	0.1
 Ändrad:		2023-09-05
 Ändrad av:	Henrik Vitalis
+-->
 
 <!-- Inklusive Svenska kyrkans anpassningar -->
 <!-- E-ARK ERMS Schematron rules version 2.1 -->
@@ -13,8 +14,9 @@ Version:	0.1
 <schema xmlns="http://purl.oclc.org/dsdl/schematron"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" queryBinding="xslt2">
     <ns uri="http://www.loc.gov/mads/rdf/v1#" prefix="madsrdf"/>
-    <ns uri="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE" prefix="erms"/>
-    <ns uri="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE-element" prefix="svk"/>
+	<ns uri="https://DILCIS.eu/XML/ERMS" prefix="erms"/>
+    <ns uri="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE" prefix="svk"/>
+    <!-- <ns uri="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE-element" prefix="svk"/> -->
 
 
     <!-- CO-OCCURRENCE CONSTRAINTS -->
@@ -45,7 +47,7 @@ Version:	0.1
             <assert test="normalize-space(@otherRestrictionType)"> If the value of attribute <emph>restrictionType</emph> is 'other_type', then the <emph>otherRestrictionType</emph> attribute should be used </assert>
         </rule>
         <rule context="*[@relationType = 'own_relation_definition']">
-            <assert test="normalize-space(@oherRelationType)"> If the value of attribute <emph>relationType</emph> is 'own_relation_definition', then the <emph>otherRelationType</emph> attribute should be used </assert>
+            <assert test="normalize-space(@otherRelationType)"> If the value of attribute <emph>relationType</emph> is 'own_relation_definition', then the <emph>otherRelationType</emph> attribute should be used </assert>
         </rule>
     </pattern>
 

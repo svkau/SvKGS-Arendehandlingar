@@ -208,8 +208,7 @@
 										</elm:initiatedBy>
 										<elm:initiatedDate dateType="created">2023-08-12T00:00:00</elm:initiatedDate>
 										<elm:message>Kan ni vänligen godkänna detta.</elm:message>
-									</elm:workflow>
-									<elm:workflowRecipients>
+										<elm:workflowRecipients>
 										<elm:workflowRecipient>
 											<elm:recipient agentType="recipient">
 												<name>Harald Löfgren</name>
@@ -222,9 +221,10 @@
 											</elm:completedBy>
 										</elm:workflowRecipient>
 									</elm:workflowRecipients>
+									</elm:workflow>
 								</elm:workflows>
 								<elm:svkAppendix>
-									<elm:appendix name="ansökan" path="filer/ansökan.pdf" fileFormat="pdf">
+									<appendix name="ansökan" path="filer/ansökan.pdf" fileFormat="pdf">
 										<eSignature present="true" dateeSignatureIsVerified="2020-03-04T00:00:00">
 											<signature>
 												<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
@@ -256,7 +256,7 @@
 												</Signature>
 											</signature>
 										</eSignature>
-									</elm:appendix>
+									</appendix>
 									<elm:fileInfo>
 										<elm:dateCreated>2010-02-01T00:00:00</elm:dateCreated>
 										<elm:dateLastEdited>2010-02-01T00:00:00</elm:dateLastEdited>

@@ -2,10 +2,12 @@
 <erms
 	xmlns="https://DILCIS.eu/XML/ERMS"
 	xmlns:svk="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE"
+	xmlns:elm="https://xml.svenskakyrkan.se/ERMS-SVK-element"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="https://DILCIS.eu/XML/ERMS https://citserms.dilcis.eu/schema/ERMS.xsd">
+	xsi:schemaLocation="https://DILCIS.eu/XML/ERMS https://citserms.dilcis.eu/schema/ERMS.xsd
+	https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE https://raw.githubusercontent.com/svkau/SvKGS-Arendehandlingar/main/ERMS-SVK-ARENDE.xsd">
 	<control>
-		<identification identificationType="COSAI">SE/P345/PA45/P 2020-0045</identification>
+		<identification identificationType="aid">SE/P345/PA45/P 2020-0045</identification>
 		<classificationSchema>
 			<textualDescriptionOfClassificationSchema>
 				<p>Klassificeringsstruktur för lokal nivå 2018, ver. 1.0</p>
@@ -14,7 +16,7 @@
 		<maintenanceInformation>
 			<maintenanceStatus value="new"/>
 			<maintenanceAgency>
-				<agencyCode type="COSAI">SE/NN456</agencyCode>
+				<agencyCode type="aid">SE/NN456</agencyCode>
 				<agencyName>Kyrkostyrelsen</agencyName>
 			</maintenanceAgency>
 			<maintenanceHistory>
@@ -44,52 +46,50 @@
 			<relation relationType="reference">C 1995-0031</relation>
 			<additionalInformation>
 				<additionalXMLData>
-					<svk:ermsSvkArende>
+					<svk:ermsSvkArende ermsSchemaVersion="2.1.2" elementSchemaVersion="1.0" schematronVersion="1.0">
 						<svk:ermsSvkAggregation>
-							<svk:initiative>eget</svk:initiative>
-							<svk:relatedProjects>
-								<svk:relatedProject>
-									<svk:name>Omläggning av kyrktaket 2009</svk:name>
-									<svk:identificator>P 2009:1</svk:identificator>
-									<svk:deliveringSystemId>34958</svk:deliveringSystemId>
-								</svk:relatedProject>
-							</svk:relatedProjects>
-							<svk:relatedRealEstates>
-								<svk:relatedRealEstate>
-									<svk:name>Kyrkan</svk:name>
-								</svk:relatedRealEstate>
-							</svk:relatedRealEstates>
-							<svk:svkNotes>
-								<svk:svkNote typeOfNote="generell anteckning">
-									<svk:noteText>Detta är en anteckning</svk:noteText>
-									<svk:noteAuthor>Jörgen Persson</svk:noteAuthor>
-									<svk:noteDate>2019-02-23T00:00:00</svk:noteDate>
-								</svk:svkNote>
-							</svk:svkNotes>
-							<svk:auditLogEvents>
-								<svk:auditLogEvent>
-									<svk:time>2009-09-22T11:47:00</svk:time>
-									<svk:user>Henrik Vitalis (khus/henvital)</svk:user>
-									<svk:scope>ärende</svk:scope>
-									<svk:action>create</svk:action>
-								</svk:auditLogEvent>
-								<svk:auditLogEvent>
-									<svk:time>2009-09-22T11:52:00</svk:time>
-									<svk:user>Henrik Vitalis (khus/henvital)</svk:user>
-									<svk:scope>ärendemening</svk:scope>
-									<svk:action>update</svk:action>
-									<svk:valueBeforeChange>Upphandling av frysboxar</svk:valueBeforeChange>
-									<svk:valueAfterChange>Upphandling av kylskåp</svk:valueAfterChange>
-								</svk:auditLogEvent>
-								<svk:auditLogEvent>
-									<svk:time>2009-09-22T12:10:00</svk:time>
-									<svk:user>Henrik Vitalis (khus/henvital)</svk:user>
-									<svk:scope>status</svk:scope>
-									<svk:action>update</svk:action>
-									<svk:valueBeforeChange>Öppet</svk:valueBeforeChange>
-									<svk:valueAfterChange>Makulerat</svk:valueAfterChange>
-								</svk:auditLogEvent>
-							</svk:auditLogEvents>
+							<elm:initiative>eget</elm:initiative>
+							<elm:relatedObjects>
+								<elm:relatedObject objectType="project">
+									<elm:name>Omläggning av kyrktaket 2009</elm:name>
+									<elm:identificator>P 2009:1</elm:identificator>
+									<elm:deliveringSystemId>34958</elm:deliveringSystemId>
+								</elm:relatedObject>
+								<elm:relatedObject objectType="realEstate">
+									<elm:name>Kyrkan</elm:name>
+								</elm:relatedObject>
+							</elm:relatedObjects>
+							<elm:svkNotes>
+								<elm:svkNote typeOfNote="generell anteckning">
+									<elm:noteText>Detta är en anteckning</elm:noteText>
+									<elm:noteAuthor>Jörgen Persson</elm:noteAuthor>
+									<elm:noteDate>2019-02-23T00:00:00</elm:noteDate>
+								</elm:svkNote>
+							</elm:svkNotes>
+							<elm:auditLogEvents>
+								<elm:auditLogEvent>
+									<elm:time>2009-09-22T11:47:00</elm:time>
+									<elm:user>Henrik Vitalis (khus/henvital)</elm:user>
+									<elm:scope>ärende</elm:scope>
+									<elm:action>create</elm:action>
+								</elm:auditLogEvent>
+								<elm:auditLogEvent>
+									<elm:time>2009-09-22T11:52:00</elm:time>
+									<elm:user>Henrik Vitalis (khus/henvital)</elm:user>
+									<elm:scope>ärendemening</elm:scope>
+									<elm:action>update</elm:action>
+									<elm:valueBeforeChange>Upphandling av frysboxar</elm:valueBeforeChange>
+									<elm:valueAfterChange>Upphandling av kylskåp</elm:valueAfterChange>
+								</elm:auditLogEvent>
+								<elm:auditLogEvent>
+									<elm:time>2009-09-22T12:10:00</elm:time>
+									<elm:user>Henrik Vitalis (khus/henvital)</elm:user>
+									<elm:scope>status</elm:scope>
+									<elm:action>update</elm:action>
+									<elm:valueBeforeChange>Öppet</elm:valueBeforeChange>
+									<elm:valueAfterChange>Makulerat</elm:valueAfterChange>
+								</elm:auditLogEvent>
+							</elm:auditLogEvents>
 						</svk:ermsSvkAggregation>
 					</svk:ermsSvkArende>
 				</additionalXMLData>
@@ -122,7 +122,6 @@
 					<idNumber idNumberType="username">erigust</idNumber>
 				</agent>
 			</agents>
-			<description></description>
 			<dates>
 				<date dateType="created">2020-05-22T00:00:00</date> <!-- skapat i systemet -->
 				<date dateType="opened">2020-05-20T00:00:00</date> <!-- ärendet officiellt öppnat -->
@@ -140,10 +139,7 @@
 					</agent>
 				</agents>
 			</action>
-			<physicalLocations>
-				<physicalLocation></physicalLocation>
-			</physicalLocations>
-			<notes><note noteType="comment" noteDate="2019-02-21T00:00:00">Detta är ett mirgerat ärende</note></notes>
+			<notes><note noteType="comment" noteDate="2019-02-21T00:00:00">Detta är ett migrerat ärende</note></notes>
 			<record systemIdentifier="8dbbdc56-8ada-4ad5-a1ec-b8131a1086a2" recordPhysicalOrDigital="digitial" recordType="Avtal">
 				<objectId>C 1995-0032:1</objectId>
 				<extraId extraIdType="deliveringSystemId">34565</extraId>
@@ -183,58 +179,52 @@
 						<name>Henrik Mottagare</name>
 					</agent>
 				</agents>
-				<description></description>
 				<dates>
 					<date dateType="created">2020-02-02T00:00:00</date> <!-- skapat i systemet -->
 					<date dateType="expedited">2020-02-02T00:00:00</date> <!-- expedierat/skickat -->
 					<date dateType="received">2020-02-02T00:00:00</date> <!-- inkommet -->
 				</dates>
-				<action>
-					<actionText></actionText>
-				</action>
-				<notes></notes>
-				<eSignatures></eSignatures>
 				<additionalInformation>
 					<additionalXMLData>
-						<svk:ermsSvkArende>
+						<svk:ermsSvkArende ermsSchemaVersion="2.1.2" elementSchemaVersion="1.0" schematronVersion="1.0">
 							<svk:ermsSvkRecord>
-								<svk:contractInfo>
-									<svk:externalReference>ref3453</svk:externalReference>
-									<svk:callOffValue currency="SEK">34</svk:callOffValue>
-									<svk:contractValue currency="SEK">45</svk:contractValue>
-									<svk:typeOfAgreement>avtal</svk:typeOfAgreement>
+								<elm:contractInfo>
+									<elm:externalReference>ref3453</elm:externalReference>
+									<elm:callOffValue>34</elm:callOffValue>
+									<elm:contractValue>45</elm:contractValue>
+									<elm:typeOfAgreement>avtal</elm:typeOfAgreement>
 									<dates>
 										<date dateType="start">2018-02-12T00:00:00</date>
 										<date dateType="end">2019-02-12T00:00:00</date>
 									</dates>
-								</svk:contractInfo>
-								<svk:workflows>
-									<svk:workflow>
-										<svk:workflowStatus>godkänd</svk:workflowStatus>
-										<svk:initiatedBy agentType="creator">
+								</elm:contractInfo>
+								<elm:workflows>
+									<elm:workflow>
+										<elm:workflowStatus>godkänd</elm:workflowStatus>
+										<elm:initiatedBy agentType="creator">
 											<name>Henrik Vitalis</name>
 											<organisation>Avdelningen för kulturarv</organisation>
 											<idNumber idNumberType="username">henvital</idNumber>
-										</svk:initiatedBy>
-										<svk:initiatedDate dateType="created">2023-08-12T00:00:00</svk:initiatedDate>
-										<svk:message>Kan ni vänligen godkänna detta.</svk:message>
-									</svk:workflow>
-									<svk:workflowRecipients>
-										<svk:workflowRecipient>
-											<svk:recipient agentType="recipient">
+										</elm:initiatedBy>
+										<elm:initiatedDate dateType="created">2023-08-12T00:00:00</elm:initiatedDate>
+										<elm:message>Kan ni vänligen godkänna detta.</elm:message>
+									</elm:workflow>
+									<elm:workflowRecipients>
+										<elm:workflowRecipient>
+											<elm:recipient agentType="recipient">
 												<name>Harald Löfgren</name>
 												<role>aas</role>
-											</svk:recipient>
-											<svk:recipientStatus>godkänd</svk:recipientStatus>
-											<svk:completedDate dateType="closed">2023-08-12T00:00:00</svk:completedDate>
-											<svk:completedBy agentType="recipient">
+											</elm:recipient>
+											<elm:recipientStatus>godkänd</elm:recipientStatus>
+											<elm:completedDate dateType="closed">2023-08-12T00:00:00</elm:completedDate>
+											<elm:completedBy agentType="recipient">
 												<name>Harald Löfgren</name>
-											</svk:completedBy>
-										</svk:workflowRecipient>
-									</svk:workflowRecipients>
-								</svk:workflows>
-								<svk:svkAppendix>
-									<svk:appendix name="ansökan" path="file:///filer/ansökan.pdf" fileFormat="PDF">
+											</elm:completedBy>
+										</elm:workflowRecipient>
+									</elm:workflowRecipients>
+								</elm:workflows>
+								<elm:svkAppendix>
+									<elm:appendix name="ansökan" path="filer/ansökan.pdf" fileFormat="pdf">
 										<eSignature present="true" dateeSignatureIsVerified="2020-03-04T00:00:00">
 											<signature>
 												<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
@@ -266,14 +256,14 @@
 												</Signature>
 											</signature>
 										</eSignature>
-									</svk:appendix>
-									<svk:fileInfo>
-										<svk:dateCreated>2010-02-01T00:00:00</svk:dateCreated>
-										<svk:dateLastEdited>2010-02-01T00:00:00</svk:dateLastEdited>
-										<svk:versionNumber>1</svk:versionNumber>
-										<svk:variant>preservation</svk:variant>
-									</svk:fileInfo>
-								</svk:svkAppendix>
+									</elm:appendix>
+									<elm:fileInfo>
+										<elm:dateCreated>2010-02-01T00:00:00</elm:dateCreated>
+										<elm:dateLastEdited>2010-02-01T00:00:00</elm:dateLastEdited>
+										<elm:versionNumber>1</elm:versionNumber>
+										<elm:variant>preservation</elm:variant>
+									</elm:fileInfo>
+								</elm:svkAppendix>
 							</svk:ermsSvkRecord>
 						</svk:ermsSvkArende>
 					</additionalXMLData>

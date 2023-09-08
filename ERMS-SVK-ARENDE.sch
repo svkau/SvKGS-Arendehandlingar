@@ -55,50 +55,73 @@ Version:	0.1
 
 		<pattern id="svk_rules">
 		<rule context="//erms:control">
-		    <!-- ERMS-SVK2-3 -->
-		    <assert test="count(erms:identification[@identificationType='arkivbildare'])=1">Det måste finnas en Identifikator av typen "arkivbildare" (ERMS-SVK2-3).</assert>
-		    <assert test="count(erms:identification[@identificationType='ärendenummer'])=1">Det måste finnas en Identifikator av typen "ärendenummer" (ERMS-SVK2-3).</assert>
+		    <!-- ERMS-SVK:1-2 -->
+		    <assert test="count(erms:identification[@identificationType='arkivbildare'])=1">Det måste finnas en Identifikator av typen "arkivbildare" (ERMS-SVK:1-2).</assert>
+		    <assert test="count(erms:identification[@identificationType='ärendenummer'])=1">Det måste finnas en Identifikator av typen "ärendenummer" (ERMS-SVK:1-2).</assert>
+			<assert test="count(erms:identification[@identificationType='organisationsnummer'])=1 or count(erms:identification[@identificationType='aid'])=1">
+				Det måste finnas en Identifikator av typen "ärendenummer" (ERMS-SVK:1-2).</assert>
+			<assert test="matches(erms:identification[@identificationType='organisationsnummer'], '[0-9]{10}')">Organisationsnummer måste skrivas med 10 siffror utan bindestreck.</assert>
 		</rule>
 
 		<rule context="erms:control/erms:classificationSchema/erms:textualDescriptionOfClassificationSchema/erms:p">
-		    <!-- ERMS-SVK5 -->
-		    <assert test=".='KlaSL2016_1.0' or .='KlaSN2018_1.0' or .='KlaSS2016_1.0'">Klassificeringsstruktur måste väljas från SVK-VÄRDELISTA 2 (ERMS-SVK5).</assert>
+		    <!-- ERMS-SVK:4 -->
+		    <assert test=".='KlaSL2016_1.0' or .='KlaSN2018_1.0' or .='KlaSS2016_1.0'">Klassificeringsstruktur måste väljas från SVK-VÄRDELISTA 2 (ERMS-SVK:4).</assert>
+		</rule>
+
+		<rule context="erms:control/erms:maintenanceInformation/erms:maintenanceAgency/erms:agencyCode">
+			<!-- ERMS-SVK:10 -->
+			<assert test="@type='aid' or @type='organisationsnummer'">Typ av ID måste väljas från SVK-VÄRDELISTA 4 (ERMS-SVK:10).</assert>
+		</rule>
+
+		<rule context="erms:control/erms:maintenanceInformation/erms:maintenanceAgency/erms:agencyCode[@type='organisationsnummer']">
+			<!-- ERMS-SVK:10 -->
+			<assert test="matches(@type, '[0-9]{10}')">Organisationsnummer måste skrivas med 10 siffror utan bindestreck.</assert>
 		</rule>
 
 		<rule context="//erms:aggregations">
-		    <!-- ERMS-SVK20 -->
-		    <assert test="count(*)=1">XML-filen får inte innehålla mer än en ärendeakt (ERMS-SVK20).</assert>
+		    <!-- ERMS-SVK:22 -->
+		    <assert test="count(*)=1">XML-filen får inte innehålla mer än en ärendeakt (ERMS-SVK:22).</assert>
 		</rule>
 
 		<rule context="//erms:aggregation">
-		    <!-- ERMS-SVK22 -->
-		    <assert test="@aggregationType='caseFile'">Typen av aggregation ska alltid vara "caseFile" (ERMS-SVK22).</assert>
+		    <!-- ERMS-SVK:24 -->
+		    <assert test="@aggregationType='caseFile'">Typen av aggregation ska alltid vara "caseFile" (ERMS-SVK:24).</assert>
 		</rule>
 
 		<rule context="//erms:aggregation/erms:objectId">
-		    <!-- ERMS-SVK23 -->
-			<assert test="matches(., '[A-Ö]+ \d{4}-\d{4}')">Ärendenumret ska ha formatet [diariekod] [årtal]-[löpnummer]. Löpnumret ska bestå av fyra siffror och fylls vid behov ut med nollor (ERMS-SVK23).</assert>
+		    <!-- ERMS-SVK:25 -->
+			<assert test="matches(., '[A-Ö]+ \d{4}-\d{4}')">Ärendenumret ska ha formatet [diariekod] [årtal]-[löpnummer]. Löpnumret ska bestå av fyra siffror och fylls vid behov ut med nollor (ERMS-SVK:25).</assert>
+		</rule>
+
+		<rule context="//erms:aggregation">
+			<!-- ERMS-SVK:26 -->
+			<assert test="count(erms:extraId[@extraIdType='organisationsnummer'])=1 or count(erms:extraId[@extraIdType]='aid')=1">
+				Arkivansvarigs ID är obligatoriskt. Värdet för extraIdType måste väljas från SVK-VÄRDELISTA 4 (ERMS-SVK:26).</assert>
+		</rule>
+
+		<rule context="//erms:aggregation/extraId[@extraIdType='organisationsnummer]">
+				<assert test="matches(@extraIdtTpe, '[0-9]{10}')">Organisationsnummer måste skrivas med 10 siffror utan bindestreck.</assert>
 		</rule>
 
 		<!-- Om Intern identifikator används måste attributet extraIdType finnas med och ha värdet deliveringSystemId -->
 		<rule context="//erms:aggregation/erms:extraId">
-		    <!-- ERMS-SVK24 -->
-			<assert test="@extraIdType = 'deliveringSystemId'">Om elementet Intern identifikator används, måste attributet extraIdType ha värdet 'deliveringSystemId' (ERMS-SVK24).</assert>
+		    <!-- ERMS-SVK:27 -->
+			<assert test="@extraIdType = 'deliveringSystemId'">Om elementet Intern identifikator används, måste attributet extraIdType ha värdet 'deliveringSystemId' (ERMS-SVK:27).</assert>
 		</rule>
 
 		<rule context= "//erms:aggregation/erms:otherTitle">
-		    <!-- ERMS-SVK32 -->
-			<assert test="@titleType = 'publicTitle'">Om elementet Annan titel används, måste attributet titleType ha värdet 'publicTitle' (ERMS-SVK32).</assert>
+		    <!-- ERMS-SVK:35 -->
+			<assert test="@titleType = 'publicTitle'">Om elementet otherTitle används, måste attributet titleType ha värdet 'publicTitle' (ERMS-SVK:35).</assert>
 		</rule>
 
 		<rule context="//erms:aggregation/erms:status">
-		    <!-- ERMS-SVK33 -->
-			<assert test="@value = 'closed' or @value = 'obliterated'">Ärendestatus får enbart ha något av värdena 'closed' eller 'obliterated' (ERMS-SVK33).</assert>
+		    <!-- ERMS-SVK:36 -->
+			<assert test="@value = 'closed' or @value = 'obliterated'">Ärendestatus får enbart ha något av värdena 'closed' eller 'obliterated' (ERMS-SVK:36).</assert>
 		</rule>
 
 		<rule context="//erms:aggregation/erms:relation">
-		    <!-- ERMS-SVK34 -->
-		    <assert test="@relationType = 'reference'">Om elementet Ärendereferens används, måste attributet relationTyp ha värdet 'reference' (ERMS-SVK34).</assert>
+		    <!-- ERMS-SVK:37 -->
+		    <assert test="@relationType = 'reference'">Om elementet Ärendereferens används, måste attributet relationTyp ha värdet 'reference' (ERMS-SVK:37).</assert>
 		</rule>
 
 		<rule context="//erms:aggregation/erms:restriction">

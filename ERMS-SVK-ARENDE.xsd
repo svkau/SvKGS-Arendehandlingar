@@ -11,7 +11,8 @@ Version:	0.1
 	xmlns="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE"
 	xmlns:erms="https://DILCIS.eu/XML/ERMS"
 	xmlns:svk = "https://xml.svenskakyrkan.se/ERMS-SVK-element"
-	targetNamespace="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	targetNamespace="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE" elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0">
 	
 	<xs:import namespace="https://DILCIS.eu/XML/ERMS" schemaLocation="https://citserms.dilcis.eu/schema/ERMS.xsd"/>
 	<xs:import namespace="https://xml.svenskakyrkan.se/ERMS-SVK-element"
@@ -52,9 +53,9 @@ Version:	0.1
 					</xs:complexType>
 				</xs:element>
 			</xs:choice>
-			<xs:attribute name="schemaVersion" type="xs:decimal" fixed="1.0"/>
-			<xs:attribute name="elementSchemaVersion" type="xs:decimal" use="required"/>
+			<xs:attribute name="schemaVersion" type="xs:decimal" use="required"/>
 			<xs:attribute name="ermsSchemaVersion" type="xs:token" use="required"/>
+			<xs:attribute name="elementSchemaVersion" type="xs:decimal" use="required"/>
 			<xs:attribute name="schematronVersion" type="xs:decimal" use="required"/>
 		</xs:complexType>
 	</xs:element>

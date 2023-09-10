@@ -706,6 +706,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 		<keyword>församlingsordning</keyword>
 		<keyword>kyrkorådet</keyword>
 	</keywords>
+</aggregation>
 ```
 
 ---
@@ -1164,7 +1165,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 **Exempel 13 – Beslut i ärendet**
 
-````xml
+```xml
 <aggregation>
 	<action>
 		<actionText>Beslutets lydelse</actionText>
@@ -1180,3 +1181,617 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 	</action>
 </aggregation>
 ```
+
+**ERMS-SVK:60** (ERMS212, ERMS50)
+
+*Kommentar*
+
+> Kommentar till ärendet.
+ 
+> Kommentaren utgörs av en enda sammanhängande text och är inte möjlig att upprepa. Se exemplet nedan.
+> 
+> För upprepade kommentarer eller anteckningar används i stället elementet `svkNotes`, se Tabell 3.
+>
+> Om elementet *Kommentar* används, måste `noteType` ha värdet ”comment”.
+
+> **XML-element:**	`notes/note`<br/>
+> **Datatyp:**	string
+
+---
+
+**ERMS-SVK:61** (ERMS51)
+
+*Datum för kommentar*
+
+> Datum då kommentaren skapades.
+
+> **XML-element:**	`notes/note/@noteDate`<br/>
+> **Datatyp:**	dateTime
+
+---
+
+**Exempel 14 – Kommentar**
+
+```xml
+<aggregation>
+	<notes>
+		<note noteType="comment" noteDate="2019-02-21T00:00:00">Detta är en kommentar</note>
+	</notes>
+</aggregation>
+```
+
+---
+
+**ERMS-SVK:62**
+
+*Tilläggsinformation*
+
+> De element som inte ingår i ERMS utan är tillägg i Svenska kyrkans anpassning är samlade i elementet *Tilläggsinformation*.
+
+> Obligatoriskt.
+
+> **XML-element:** `additionalInformation/additionalXMLData/svk:ermsSvkArende/svk:ermsSvkAggregation`<br/>
+
+---
+
+**ERMS-SVK:63**
+
+*Schemaversioner*
+
+> Anger vilka versioner av ERMS-SVK-ARENDE.xsd, ERMS.xsd, ERMS-SVK-element.xsd
+> och ERMS-SVK-ARENDE.sch som XML-dokumentet är kompatibelt med.
+
+> Obligatoriskt.
+
+> **XML-element:**<br/>
+> `svk:ermsSvkArende/`<br/>
+> `@SchemaVersion="1.0"` (decimal)<br/>
+> `@ermsSchemaVersion="2.1.2"` (token)<br/>
+> `@elementSchemaVersion="1.0"` (decimal)<br/>
+> `@schematronVersion="1.0">` (decimal)
+
+---
+
+**ERMS-SVK:64**
+
+*Initiativ*
+
+> Anger om initiativ till ärendets öppnande är externt
+> (genom en inkommande handling), eller om ärendet har öppnats på eget (internt) initiativ.
+
+> Värdet väljs från värdelistan SVK-värdelista 9.
+> Möjliga värden: ”externt”eller ”eget”.
+
+> **XML-element:** `svk:initiative`<br/>
+> **Datatyp:** token
+
+---
+
+**ERMS-SVK:65**
+
+*Relaterade objekt*
+
+> Samlingselement med referenser till objekt som ärendet relaterar till.
+
+> Objekten kan vara projekt eller fastigheter.
+
+> **XML-element:** `svk:relatedObjects`<br/>
+
+---
+
+**ERMS-SVK:66**
+
+*Relaterat objekt*
+
+> Referens till objekt som ärendet relaterar till.
+
+> Elementet kan upprepas.
+
+> **XML-element:** `svk:relatedObject`<br/>
+
+---
+
+**ERMS-SVK:67**
+
+*Typ av objekt*
+
+> Anger vilken typ av objekt det är fråga om.
+
+> Obligatoriskt om elementet *Relaterat objekt* används. Värdet väljs från SVK-värdelista 18.
+
+> **XML-element:** `svk:relatedObject/@typeOfObject`<br/>
+> **Datatyp:** token
+
+---
+
+**ERMS-SVK:68**
+
+*Objektnamn*
+
+> Det relaterade objektets namn.
+
+> Obligatoriskt om elementet *Relaterat objekt* används.
+
+> **XML-element:** `svk:objectName`<br/>
+> **Datatyp:** token
+
+---
+
+**ERMS-SVK:69**
+
+*ObjektID*
+
+> Projektnummer, fastighetsbeteckning eller annan identifikator för objektet.
+
+> Obligatoriskt om elementet *Relaterat objekt* används.
+
+> **XML-element:** `svk:objectId`<br/>
+> **Datatyp:** token
+
+---
+
+**ERMS-SVK:70**
+
+*Internt ID*
+
+> Objektets id-nummer i det levererande systemet.
+
+> **XML-element:** `svk:deliveringSystemId`<br/>
+> **Datatyp:** token
+
+---
+
+**Exempel 15 – Relaterat objekt**
+
+```xml
+<svk:ermsSvkAggregation>
+	<svk:relatedObject>
+		<svk:relatedObject typeOfObject="project">
+			<svk:objectName>Omläggning av kyrktaket 2009</svk:objectName>
+			<svk:objectId>P 2009:1</svk:objectId>
+			<svk:deliveringSystemId>34958</svk:deliveringSystemId>
+		</svk:relatedObject>
+	</svk:relatedObjects >
+</svk:ermsSvkAggregation>
+```
+
+---
+
+**ERMS-SVK:71**
+
+*Anteckningar*
+
+> Samlingselement för anteckningar kopplade till ett ärende.
+
+> **XML-element:** `svk:svkNotes`<br/>
+
+---
+
+**ERMS-SVK:72**
+
+*Anteckning*
+
+> Enskild anteckning kopplad till ärendet.
+
+> Elementet kan upprepas.
+
+> **XML-element:** `svk:svkNote`<br/>
+
+---
+
+**ERMS-SVK:73**
+
+*Typ av anteckning*
+
+> Kategorisering av anteckningen.
+
+> Obligatoriskt om elementet *Anteckning* används. Värdet väljs från SVK-värdelista 10.
+
+> **XML-element:** `svk:svkNote/@typeOfNote`<br/>
+> **Datatyp:** token
+
+---
+
+**ERMS-SVK:74**
+
+*Text*
+
+> Anteckningens lydelse.
+
+> Obligatoriskt om elementet *Anteckning* används.
+
+> **XML-element:** `svk:noteText`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:75**
+
+*Skapare av anteckning*
+
+> Person som har gjort anteckningen.
+
+> Obligatoriskt om elementet *Anteckning* används.
+
+> **XML-element:** `svk:noteAuthor`<br/>
+> **Datatyp:** token
+
+---
+
+**ERMS-SVK:76**
+
+*Datum för anteckning*
+
+> Datum och tid när anteckningen gjordes.
+
+> Obligatoriskt om elementet *Anteckning* används.
+
+> **XML-element:** `svk:noteDate`<br/>
+> **Datatyp:** dateTime
+
+---
+
+**Exempel 17 – Anteckningar**
+
+```xml
+<svk:ermsSvkAggregation>
+	<svk:svkNotes>
+		<svk:svkNote typeOfNote="generell anteckning">
+			<svk:noteText>Detta är en anteckning</svk:noteText>
+			<svk:noteAuthor>Jörgen Persson</svk:noteAuthor>
+			<svk:noteDate>2019-02-23T00:00:00</svk:noteDate>
+		</svk:svkNote>
+	</svk:svkNotes>
+</svk:ermsSvkAggregation>
+```
+
+---
+
+**ERMS-SVK:77**
+
+*Ändringslogg*
+
+> Samlingselement för loggningsuppgifter.
+
+> **XML-element:** `svk:auditLogEvents`<br/>
+
+---
+
+**ERMS-SVK:78**
+
+*Händelse*
+
+> Enskild händelse i ändringsloggen.
+
+> Obligatoriskt om elementet *Ändringslogg* används.
+
+> **XML-element:** `svk:auditLogEvent`<br/>
+
+---
+
+**ERMS-SVK:79**
+
+*Tid*
+
+> Datum och tid då ändringen gjordes.
+
+> Obligatoriskt om elementet *Händelse* används.
+
+> **XML-element:** `svk:eventTime`<br/>
+> **Datatyp:** dateTime
+
+---
+
+**ERMS-SVK:80**
+
+*Användare*
+
+> Namn på personen som gjorde ändringen.
+
+> Obligatoriskt om elementet *Händelse* används.
+
+> **XML-element:** `svk:user`<br/>
+> **Datatyp:** token
+
+---
+
+**ERMS-SVK:81**
+
+*Tillämpningsområde*
+
+> Beskrivning av det som ändringen avser.
+
+> Obligatoriskt om elementet *Händelse* används. Värdet väljs från SVK-värdelista 11.
+
+> **XML-element:** `svk:scope`<br/>
+> **Datatyp:** token
+
+---
+
+**ERMS-SVK:82**
+
+*Åtgärd*
+
+> Beskrivning av ändringen.
+
+> Obligatoriskt om elementet *Händelse* används. Värdet väljs från SVK-värdelista 12.
+
+> **XML-element:** `svk:action`<br/>
+> **Datatyp:** token
+
+---
+
+**ERMS-SVK:83**
+
+*Värde före ändring*
+
+> Om ett värde har ändrats, anges här lydelsen före ändringen.
+
+> **XML-element:** `svk:valueBeforeChange`<br/>
+> **Datatyp:** token
+
+---
+
+**ERMS-SVK:84**
+
+*Värde efter ändring*
+
+> Om ett värde har ändrats, anges här lydelsen efter ändringen.
+
+> **XML-element:** `svk:valueAfterChange`<br/>
+> **Datatyp:** token
+
+---
+
+**Exempel 18 – Ändringslogg**
+
+```xml
+<svk:ermsSvkAggregation>
+	<svk:auditLogEvents>
+		<svk:auditLogEvent>
+			<svk:time>2009-09-22T11:47:00</svk:time>
+			<svk:user> Jörgen Persson</svk:user>
+			<svk:scope>ärende</svk:scope>
+			<svk:action>create</svk:action>
+		</svk:auditLogEvent>
+		<svk:auditLogEvent>
+			<svk:time>2009-09-22T11:52:00</svk:time>
+			<svk:user>Jörgen Persson</svk:user>
+			<svk:scope>ärendemening</svk:scope>
+			<svk:action>update</svk:action>
+			<svk:valueBeforeChange>Upphandling av frysboxar</svk:valueBeforeChange>
+			<svk:valueAfterChange>Upphandling av kylskåp</svk:valueAfterChange>
+		</svk:auditLogEvent>
+		<svk:auditLogEvent>
+			<svk:time>2009-09-22T12:10:00</svk:time>
+			<svk:user> Jörgen Persson </svk:user>
+			<svk:scope>ärendestatus</svk:scope>
+			<svk:action>update</svk:action>
+			<svk:valueBeforeChange>Öppet</svk:valueBeforeChange>
+			<svk:valueAfterChange>Makulerat</svk:valueAfterChange>
+		</svk:auditLogEvent>
+	</svk:auditLogEvents>
+</svk:ermsSvkAggregation>
+```
+
+## 3.3. Information om ärendehandlingar
+
+### Tabell 4. Ärendehandlingar
+
+**ERMS-SVK:85** (ERMS129)
+
+*Handling*
+
+> Samlingselement med information om en i ärendet registrerad handling.
+
+> Obligatoriskt. Elementet kan upprepas.
+
+> **XML-element:** `record`<br/>
+
+---
+
+**ERMS-SVK:86** (ERMS130)
+
+*Identifikator*
+
+> Identifikator för dokumentet i form av UUID. Identifikatorn anges
+> automatiskt redan i det levererande systemet eller vid överföring till e-arkivet.
+
+> Obligatoriskt.
+
+> **XML-element:** `record/@systemIdentifier`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:87** (ERMS131)
+
+*Handlingstyp*
+
+> Övergripande typ av handling. Motsvarar inte handlingstyp i arkivredovisning/dokumenthanteringsplan.
+
+> Obligatoriskt. Värdet väljs från SVK-värdelista 13.
+> 
+> Oavsett handlingstyp kan värdet ”ärendedokument” alltid användas.
+
+> **XML-element:** `record/@recordType`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:88** (ERMS132)
+
+*Form*
+
+> Anger om handlingen bara finns i fysisk form, bara i digital form eller både och.
+
+> Värdet väljs från SVK-värdelista 14.
+
+> **XML-element:** `recordPhysicalOrDigital`<br/>
+> **Datatyp:** string
+
+---
+
+**Exempel 19 – Handling**
+
+```xml
+<record
+	systemIdentifier="8dbbdc56-8ada-4ad5-a1ec-b8131a1086a2"
+	recordPhysicalOrDigital="digital"
+	recordType="ärendedokument">
+```
+
+**ERMS-SVK:89** (ERMS146)
+
+*Handlingsnummer*
+
+> En kombination av *Ärendenummer* (ERMS-SVK:25) och handlingens *Löpnummer*
+> (ERMS-SVK:102) med kolon emellan.
+
+> Obligatoriskt.
+> 
+> Exempel: `S 2010-0034:1`
+
+> **XML-element:** `objectId`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:90** (ERMS148-149)
+
+*Intern identifikator*
+
+> Befintligt id i det levererande systemet.
+
+> Om elementet *Intern identifikator* används, måste attributet `extraIdType` ha
+> värdet ”deliveringSystemId”.
+
+> **XML-element:** `objectId`<br/>
+> **Datatyp:** string
+
+---
+
+**Exempel 20 – Handlingsnummer och Intern identifikator**
+
+```xml
+<record>
+	<objectId>C 1995-0032:1</objectId>
+	<extraId extraIdType="deliveringSystemId">34565</extraId>
+```
+
+**ERMS-SVK:91** (ERMS133)
+
+*Informationsklassning*
+
+> Handlingens informationsklass.
+
+> **XML-element:** `informationClass`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:92** (ERMS134)
+
+*Säkerhetsklassning*
+
+> Handlingens säkerhetsklass.
+
+> **XML-element:** `securityClass`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:93** (ERMS196)
+
+*Klassificering*
+
+> Namnet på den process i den officiella klassificeringsstrukturen som har
+> angivits som klassificering av ärendet och de ingående handlingarna.
+
+> **XML-element:** `classification`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:94** (ERMS75)
+
+*Klassificeringskod*
+
+> Koden för den process som angivits under *Klassificering*.
+
+> **XML-element:** `classification/@classificationCode`<br/>
+> **Datatyp:** string
+
+---
+
+**Exempel 21 – Klassificering**
+
+```xml
+<record>
+	<classification classificationCode="2.7">Ge service</classification>
+</record>
+```
+
+---
+
+**ERMS-SVK:95** (ERMS152)
+
+*Nyckelord*
+
+> Samlingselement för enskilda nyckelord.
+
+> **XML-element:** `keywords`<br/>
+
+---
+
+**ERMS-SVK:96** (ERMS153)
+
+*Nyckelord*
+
+> Enskilda nyckelord.
+
+> Elementet kan upprepas.
+
+> **XML-element:** `keyword`<br/>
+> **Datatyp:** string
+
+---
+
+**Exempel 22 – Nyckelord**
+
+```xml
+<record>
+    <keywords>
+        <keyword>församlingsordning</keyword>
+        <keyword>kyrkorådet</keyword>
+    </keywords>
+</record>
+```
+---
+
+**ERMS-SVK:97** (ERMS)
+
+*Titel*
+
+> Titel eller en beskrivning av handlingen.
+
+> Obligatoriskt.
+
+> **XML-element:** `title`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:98** (ERMS)
+
+*Titel*
+
+> Titel eller en beskrivning av handlingen.
+
+> Obligatoriskt.
+
+> **XML-element:** `title`<br/>
+> **Datatyp:** string
+
+---
+

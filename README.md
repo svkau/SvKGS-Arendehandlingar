@@ -1646,7 +1646,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 *Handlingsnummer*
 
 > En kombination av *Ärendenummer* (ERMS-SVK:25) och handlingens *Löpnummer*
-> (ERMS-SVK:102) med kolon emellan.
+> (ERMS-SVK:100) med kolon emellan.
 
 > Obligatoriskt.
 > 
@@ -1784,14 +1784,503 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 **ERMS-SVK:98** (ERMS)
 
-*Titel*
+*Offentlig titel*
 
-> Titel eller en beskrivning av handlingen.
+> Används enbart för Offentlig titel i leveranser från Public 360°.
 
-> Obligatoriskt.
+> Om elementet Annan titel används måste attributet titleType ha
+> värdet ”publicTitle”.
 
-> **XML-element:** `title`<br/>
+> **XML-element:** `otherTitle`<br/>
 > **Datatyp:** string
 
 ---
+
+**Exempel 23 – Titel och Offentlig titel**
+
+```xml
+<record>
+	<title>Handlingens titel</title>
+	<otherTitle titleType="publicTitle">En offentlig titel</otherTitle>
+</record>
+```
+
+---
+
+**ERMS-SVK:99** (ERMS)
+
+*Status*
+
+> Handlingens status.
+
+> Obligatoriskt. Värdet väljs från SVK-värdelista 7.
+> 
+> Värdet kan vara antingen ”closed”, vilket innebär att dokumentet är registrerat
+> som inkommet eller upprättat, eller ”obliterated”, vilket betyder att det är
+> makulerat.
+
+```xml
+<record>
+	<status value="closed"/>
+</record>
+````
+
+> **XML-element:** `status/@value`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:100** (ERMS)
+
+*Löpnummer*
+
+> Handlingens löpnummer i ärendet.
+> Obligatoriskt. Måste vara unikt i respektive ärende.
+
+> **XML-element:** `runningNumber`<br/>
+> **Datatyp:** integer
+
+---
+
+**ERMS-SVK:101** (ERMS)
+
+*Dokumentreferens*
+
+> Referens till och/eller från annan handling.
+
+> Elementet kan upprepas.
+> 
+> Om möjligt anges den andra handlingens Dokumentnummer enligt specifikationen
+> i detta dokument, annars en hänvisning till dokumentet i annat format eller
+> fritext.
+> 
+> Om elementet Dokumentreferens används, måste attributet
+> `relationType` ha värdet ”reference”.
+
+> **XML-element:** `relation`<br/>
+> **Datatyp:** string
+
+---
+
+**Exempel 24 – Dokumentreferens**
+
+```xml
+<record>
+	<relation relationType="reference">F 2019-0454:4</relation>
+</record>
+```
+
+---
+
+**ERMS-SVK:102** (ERMS)
+
+*Sekretess*
+
+> Samlingselement för uppgift om sekretess.
+
+> Elementet kan upprepas.
+> 
+> Om elementet *Sekretess* används måste attributet `restrictionType` ha värdet ”confidential”.
+
+> **XML-element:** `relation`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:103** (ERMS)
+
+*Förklarande text*
+
+> Fritext som beskriver sekretessen.
+
+> **XML-element:** `explanatoryText`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:104** (ERMS)
+
+*Lagrum*
+
+> Hänvisning till paragraf i kyrkoordningens 54 kapitel, till Offentlighets-
+> och sekretesslagen eller till annat lagrum som stöder den angivna sekretessen.
+
+> Obligatoriskt om elementet Sekretess används.
+
+> **XML-element:** `regulation`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:105** (ERMS)
+
+*Sekretessdatum*
+
+> Datum från och med vilket sekretessen anses gälla.
+
+> Om elementet *Sekretessdatum* används, måste attributet `dateTyp` ha värdet ”created”
+
+
+> **XML-element:** `dates/date`<br/>
+> **Datatyp:** dateTime
+
+---
+
+**Exempel 25 – Sekretess**
+
+```xml
+<record>
+	<restriction restrictionType="confidential">
+		<explanatoryText>Sekretess enligt KO</explanatoryText>
+		<regulation>KO 54:2</regulation>
+		<dates>
+			<date dateType="created">2020-01-02T00:00:00</date>
+		</dates>
+	</restriction>
+</record>
+```
+---
+
+**ERMS-SVK:106** (ERMS)
+
+*Riktning*
+
+> Anger handlingens riktning.
+
+> Obligatoriskt. Värdet väljs från SVK-värdelista 15.
+> 
+>Kan vara något av värdena:
+> 1.	”incoming” – en inkommen handling
+> 2.	”outgoing” – en genom expediering upprättad handling
+> 3.	”internal” – en på annat sätt upprättad handling
+
+> **XML-element:** `direction/@directionDefinition`<br/>
+> **Datatyp:** string
+
+---
+
+**Exempel 26 – Riktning**
+
+1.
+```xml
+<record>
+	<direction directionDefinition="incoming"/>
+</record>
+```
+
+2.
+```xml
+<record>
+	<direction directionDefinition="outgoing"/>
+</record>
+```
+
+3.
+```xml
+<record>
+	<direction directionDefinition="other" otherDirectionDefinition="internal"/>
+</record>
+```
+
+---
+
+**ERMS-SVK:107** (ERMS)
+
+*Aktörer*
+
+> Samlingselement för alla agerande parter.
+
+> Obligatoriskt. Värdet väljs från SVK-värdelista 15.
+
+> **XML-element:** `direction/@directionDefinition`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:107** (ERMS)
+
+*Aktörer*
+
+> Samlingselement för alla agerande parter.
+
+> **XML-element:** `direction/@directionDefinition`<br/>
+
+---
+
+**ERMS-SVK:108** (ERMS)
+
+*Skapare*
+
+> Den som har skapat handlingen i systemet.
+
+> Om elementet *Skapare* används, måste `agentType` ha värdet ”creator”.
+> 
+> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
+> `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+
+> **XML-element:**<br/>
+> `agent`<br/>
+> `name` (string)<br/>
+> `idNumber` (string)<br/>
+
+---
+
+**ERMS-SVK:109** (ERMS)
+
+*Ansvarig*
+
+> Den som ägde eller hade ansvar för handlingen innan ärendet avslutades.
+
+> Om elementet *Ansvarig* används, måste `agentType` ha värdet ”responsible_person”.
+> 
+> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
+> `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+
+> **XML-element:**<br/>
+> `agent`<br/>
+> `name` (string)<br/>
+> `idNumber` (string)<br/>
+
+---
+
+**ERMS-SVK:110** (ERMS)
+
+*Avsändare*
+
+> Avsändare av en inkommen handling.
+
+> Obligatoriskt om *Riktning* har värdet ”incoming”. Elementet kan upprepas.
+ 
+> Om elementet *Avsändare* används, måste `agentType` ha värdet ”sender”.
+> 
+> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
+> `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+
+> **XML-element:**<br/>
+> `agent`<br/>
+> `name` (string)<br/>
+> `idNumber` (string)<br/>
+
+---
+
+**ERMS-SVK:111** (ERMS)
+
+*Mottagare*
+
+> Mottagare av en utgående handling.
+
+> Obligatoriskt om *Riktning* har värdet ”outgoing”. Elementet kan upprepas.
+ 
+> Om elementet *Mottagare* används, måste `agentType` ha värdet ”receiver”.
+> 
+> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
+> `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+
+> **XML-element:**<br/>
+> `agent`<br/>
+> `name` (string)<br/>
+> `idNumber` (string)<br/>
+
+---
+
+**ERMS-SVK:112** (ERMS)
+
+*Annan aktör*
+
+> Annan typ av aktör än de ovan specificerade.
+
+> Elementet kan upprepas.
+ 
+> Om elementet *Annan aktör* används, måste `agentType` ha värdet ”agent”.
+> 
+> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
+> `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+
+> **XML-element:**<br/>
+> `agent`<br/>
+> `name` (string)<br/>
+> `idNumber` (string)<br/>
+
+---
+
+**Exempel 27 – Aktörer**
+
+```xml
+<record>
+    <agents>
+        <agent agentType="creator">
+            <name>Anna Andersson</name>
+            <idNumber idNumberType="username">svkanan</idNumber>
+        </agent>
+        <agent agentType="responsible_person">
+            <name>Johan Göransson</name>
+            <idNumber idNumberType="username">svkjogo</idNumber>
+        </agent>
+        <!-- Om det är en inkommande handling: -->
+        <agent agentType="sender">
+            <name>Försäkringskassan</name>
+        </agent>
+        <!-- Om det är en utgående handling: -->
+        <agent agentType="receiver">
+            <name>Försäkringskassan</name>
+        </agent>
+    </agents>
+</record>
+```
+
+---
+
+**ERMS-SVK:113** (ERMS)
+
+*Beskrivning*
+
+> Beskrivning av handlingen.
+
+> **XML-element:** `description`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:114** (ERMS)
+
+*Datum*
+
+> Samlingselement för alla datum som rör handlingen.
+
+> **XML-element:** `dates`<br/>
+
+---
+
+**ERMS-SVK:115** (ERMS)
+
+*Skapat*
+
+> Datum och tid då handlingen skapades i systemet.
+> Här avses ett av systemet automatiskt satt datum.
+
+> Obligatoriskt
+
+> Om uppgiften saknas i diariesystemet, används samma datum som i *Registrerat*.
+> 
+> Om elementet *Skapat* används, måste `dateType` ha värdet ”created”.
+
+
+> **XML-element:** `date/@dateType=”created”`<br/>
+> **Datatyp:** dateTime
+
+---
+
+**ERMS-SVK:116** (ERMS)
+
+*Registrerat*
+
+> Datum och tid då handlingen registrerades (diariefördes) som inkommen,
+> utgående eller på annat sätt färdigställd.
+
+> Obligatoriskt
+
+> Uppgiften relaterar till elementet *Riktning*. Om *Riktning* t.ex. har värdet ”outgoing”,
+> anges här datum för expediering. Om *Riktning* i stället har värdet ”incoming”,
+> anges här datum då handlingen inkom.
+> 
+> Om elementet *Registrerat* används, måste `dateType` ha värdet ”originated”.
+
+> **XML-element:** `date/@dateType=”originated”`<br/>
+> **Datatyp:** dateTime
+
+---
+
+**ERMS-SVK:117** (ERMS)
+
+*Ankomstdatum*
+
+> Datum då handlingen inkom (om annat än *Registrerat*).
+ 
+> Om elementet *Ankomstdatum* används, måste `dateType` ha värdet ”received”.
+
+> **XML-element:** `date/@dateType=”received”`<br/>
+> **Datatyp:** dateTime
+
+---
+
+**ERMS-SVK:118** (ERMS)
+
+*Expedieringsdatum*
+
+> Datum då handlingen expedierades (om annat än *Registrerat*).
+ 
+> Om elementet *Expedieringsdatum* används, måste `dateType` ha värdet ”expedited”.
+
+> **XML-element:** `date/@dateType=”expedited”`<br/>
+> **Datatyp:** dateTime
+
+---
+
+**Exempel 28 – Datum**
+
+```xml
+<record>
+	<dates>
+		<date dateType="created">2020-02-02T12:32:15</date>
+		<date dateType="originated">2020-02-02T00:00:00</date>
+		<date dateType="received">2020-01-14T00:00:00</date>
+	</dates>
+</record>
+```
+
+---
+
+**ERMS-SVK:119** (ERMS)
+
+*Kommentar*
+
+> Kommentar till handlingen.
+ 
+> Kommentaren utgörs av en enda sammanhängande text och är inte möjlig att upprepa. Se exemplet nedan.
+>
+> För upprepade kommentarer eller anteckningar används i stället elementet *svkNotes*, se Tabell 5.
+> 
+> Om elementet *Kommentar* används, måste `noteType` ha värdet ”comment”.
+
+> **XML-element:** `notes/note`<br/>
+> **Datatyp:** string
+
+---
+
+**ERMS-SVK:120** (ERMS)
+
+*Datum för kommentar*
+
+> Datum då kommentaren skapades.
+
+> **XML-element:** `notes/note/@noteDate`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:121
+
+*Utökad XML-data*
+
+> *Utökad XML-data* är en del av Svenska kyrkans anpassning av ERMS.
+
+> Obligatoriskt.
+> 
+> Se Tabell 5.
+
+> **XML-element:** `additionalXMLData`<br/>
+
+---
+
+### Tabell 5. Svenska kyrkans tilläggsinformation om ärendehandlingar
 

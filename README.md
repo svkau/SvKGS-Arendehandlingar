@@ -194,9 +194,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:1** (ERMS1)
+#### ERMS-SVK:1
 
-*Identifikator*
+(ERMS1)
+
+***Identifikator***
 
 > Identifierar ERMS-dokumentet
 
@@ -209,9 +211,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:2** (ERMS2)
+#### ERMS-SVK:2
 
-*Typ av identifikator*
+(ERMS2)
+
+***Typ av identifikator***
 
 > Beskrivning av identifikatorn.
 
@@ -222,22 +226,24 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**xempel 1 – Identifikator**
+#### Exempel 1 – Identifikator
 
 ```xml
 <control>
     <identification identificationType="arkivbildare">Sunne pastorat</identification>
-	<identification identificationType="organisationsnummer">1234567890</identification>
-	<identification identificationType="aid">5610</identification>
-	<identification identificationType="ärendenummer">P 2019-0254</identification>
+    <identification identificationType="organisationsnummer">1234567890</identification>
+    <identification identificationType="aid">5610</identification>
+    <identification identificationType="ärendenummer">P 2019-0254</identification>
 </control>
 ```
 
 ---
 
-**ERMS-SVK:3** (ERMS3)
+#### ERMS-SVK:3
 
-*Informationsklassning*
+(ERMS3)
+
+***Informationsklassning***
 
 > Informationsklass som baseras på säkerhetsklassificering.
 
@@ -246,9 +252,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:4** (ERMS4-6)
+#### ERMS-SVK:4
 
-*Klassificeringsstruktur*
+(ERMS4-6)
+
+***Klassificeringsstruktur***
 
 > Den klassificeringsstruktur som har använts vid klassificering av det aktuella ärendet.
 
@@ -259,7 +267,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 2 – Klassificeringsstruktur**
+#### Exempel 2 – Klassificeringsstruktur
 
 ```xml
 <control>
@@ -270,9 +278,13 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 	</classificationSchema>
 </control>
 ```
-**ERMS-SVK:5** (ERMS8)
+---
 
-*Säkerhetsklassning*
+#### ERMS-SVK:5
+
+(ERMS8)
+
+***Säkerhetsklassning***
 
 > Säkerhetsklass.
 
@@ -281,9 +293,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:6** (ERMS10)
+#### ERMS-SVK:6
 
-*Underhåll*
+(ERMS10)
+
+***Underhåll***
 
 > Samlingselement för underhållsinformation som används för att beskriva XML-dokumentets tillkomst och eventuella ändringar.
 
@@ -293,9 +307,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:7** (ERMS11)
+#### ERMS-SVK:7
 
-*Status*
+(ERMS11)
+
+***Status***
 
 > XML-dokumentets status.
 
@@ -308,9 +324,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:8** (ERMS12)
+#### ERMS-SVK:8
 
-*Skapare*
+(ERMS12)
+
+***Skapare***
 
 > Samlingselement med beskrivning av den instans som har skapat XML-dokumentet.
 
@@ -320,9 +338,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:9** (ERMS13)
+#### ERMS-SVK:9
 
-*Skapare ID*
+(ERMS13)
+
+***Skapare ID***
 
 > Identifierande kod för den instans som har skapat XML-dokumentet.
 
@@ -333,9 +353,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:10** (ERMS14)
+#### ERMS-SVK:10
 
-*Typ av ID*
+(ERMS14)
+
+***Typ av ID***
 
 > Beskriver vilken typ av kod som har använts för att identifiera skaparen av XML-dokumentet.
 
@@ -346,9 +368,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:11** (ERMS15)
+#### ERMS-SVK:11
 
-*Alternativt ID*
+(ERMS15)
+
+***Alternativt ID***
 
 > Ytterligare en identifierande kod som kan användas vid behov.
 
@@ -357,9 +381,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:12** (ERMS16)
+#### ERMS-SVK:12
 
-*Typ av alternativt IDID*
+(ERMS16)
+
+***Typ av alternativt IDID***
 
 > Samma som ovan (ERMS-SVK:10)
 
@@ -370,9 +396,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:13** (ERMS17)
+#### ERMS-SVK:13
 
-*Skapare Namn*
+(ERMS17)
+
+***Skapare Namn***
 
 > Namn på den instans som har skapat XML-dokumentet.
 
@@ -383,9 +411,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:14** (ERMS19)
+#### ERMS-SVK:14
 
-*Underhållshistoria*
+(ERMS19)
+
+***Underhållshistoria***
 
 >Samlingselement för dokumentets underhållshistoria.
 
@@ -395,9 +425,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:15** (ERMS20)
+#### ERMS-SVK:15
 
-*Underhållshändelse*
+(ERMS20)
+
+***Underhållshändelse***
 
 > En händelse i dokumentets underhållshistoria.
 
@@ -409,9 +441,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:16** (ERMS21)
+#### ERMS-SVK:16
 
-*Typ av händelse*
+(ERMS21)
+
+***Typ av händelse***
 
 > Typ av underhållshändelse.
 
@@ -422,9 +456,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:17** (ERMS22)
+#### ERMS-SVK:17
 
-*Datum för händelse*
+(ERMS22)
+
+***Datum för händelse***
 
 > Datum då underhållshändelsen inträffade.
 
@@ -435,9 +471,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:18** (ERMS23)
+#### ERMS-SVK:18
 
-*Utförare*
+(ERMS23)
+
+***Utförare***
 
 > Den agent som har utfört handlingen.
 
@@ -447,9 +485,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:19** (ERMS93)
+#### ERMS-SVK:19
 
-*Typ av utförare*
+(ERMS93)
+
+***Typ av utförare***
 
 > Anger vilken egenskap utföraren har i förhållande till den utförda handlingen.
 
@@ -460,9 +500,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:20** (ERMS95)
+#### ERMS-SVK:20
 
-*Namn*
+(ERMS95)
+
+***Namn***
 
 > Namn på den person eller organisation som har utfört handlingen.
 
@@ -473,9 +515,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:21** (ERMS99)
+#### ERMS-SVK:21
 
-*Organisation*
+(ERMS99)
+
+***Organisation***
 
 > Organisationstillhörighet.
 
@@ -486,7 +530,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 3 – Underhåll**
+#### Exempel 3 – Underhåll
 
 ```xml
 <control>
@@ -518,9 +562,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:22** (ERMS198)
+#### ERMS-SVK:22
 
-*Ärendeakt*
+(ERMS198)
+
+***Ärendeakt***
 
 > Samlingsobjekt för ärendeakten med ingående dokument och filer.
 
@@ -532,9 +578,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:23** (ERMS199)
+#### ERMS-SVK:23
 
-*Identifikator*
+(ERMS199)
+
+***Identifikator***
 
 > Identifikator för ärendeakten i form av UUID. Identifikatorn anges automatiskt redan i det levererande systemet eller vid överföring till e-arkivet.
 
@@ -545,9 +593,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:24** (ERMS200)
+#### ERMS-SVK:24
 
-*Typ av aggregation*
+(ERMS200)
+
+***Typ av aggregation***
 
 > Typ av aggregation, vilket i den här specifikationen alltid är ”caseFile”, det vill säga ”ärendeakt”.
 
@@ -558,7 +608,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 4 – Ärendeakt**
+#### Exempel 4 – Ärendeakt
 
 ```xml
 <aggregation systemIdentifier="3b9fbc5f-3eaf-4521-9726-0f142feb04c3" aggregationType="caseFile">
@@ -566,9 +616,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:25** (ERMS218)
+#### ERMS-SVK:25
 
-*Ärendenummer*
+(ERMS218)
+
+***Ärendenummer***
 
 > Ärendets officiella nummer, ”diarienumret”.
 
@@ -583,9 +635,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:26** (ERMS219)
+#### ERMS-SVK:26
 
-*Arkivansvarigs ID*
+(ERMS219)
+
+***Arkivansvarigs ID***
 
 > Ett unikt ID för den arkivansvariga enheten.
 
@@ -596,9 +650,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:27** (ERMS219)
+#### ERMS-SVK:27
 
-*Intern identifikator*
+(ERMS219)
+
+***Intern identifikator***
 
 > Befintligt id i det levererande systemet.
 
@@ -609,7 +665,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 5 – Ärendenummer och Intern identifikator**
+#### Exempel 5 – Ärendenummer och Intern identifikator
 
 ```xml
 <aggregation>
@@ -621,9 +677,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:28** (ERMS202)
+#### ERMS-SVK:28
 
-*Informationsklassning*
+(ERMS202)
+
+***Informationsklassning***
 
 > Ärendets informationsklass.
 
@@ -632,9 +690,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:29** (ERMS203)
+#### ERMS-SVK:29
 
-*Säkerhetsklassning*
+(ERMS203)
+
+***Säkerhetsklassning***
 
 > Ärendets säkerhetsklass.
 
@@ -643,9 +703,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:30** (ERMS208)
+#### ERMS-SVK:30
 
-*Klassificering*
+(ERMS208)
+
+***Klassificering***
 
 > Namnet på den process i den officiella klassificeringsstrukturen som har angivits som klassificering av ärendet och de ingående handlingarna.
 
@@ -654,9 +716,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:31** (ERMS75)
+#### ERMS-SVK:31
 
-*Klassificeringskod*
+(ERMS75)
+
+***Klassificeringskod***
 
 > Namnet på den process i den officiella klassificeringsstrukturen som har angivits som klassificering av ärendet och de ingående handlingarna.
 
@@ -665,7 +729,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 6 – Klassificering**
+#### Exempel 6 – Klassificering
 
 ```xml
 <aggregation>
@@ -675,9 +739,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:32** (ERMS223)
+#### ERMS-SVK:32
 
-*Nyckelord*
+(ERMS223)
+
+***Nyckelord***
 
 > Samlingselement för enskilda nyckelord.
 
@@ -685,9 +751,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:33** (ERMS224)
+#### ERMS-SVK:33
 
-*Nyckelord*
+(ERMS224)
+
+***Nyckelord***
 
 > Enskilt nyckelord.
 
@@ -698,7 +766,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 7 – Nyckelord**
+#### Exempel 7 – Nyckelord**
 
 ```xml
 <aggregation>
@@ -711,9 +779,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:34** (ERMS209)
+#### ERMS-SVK:34
 
-*Ärendemening*
+(ERMS209)
+
+***Ärendemening***
 
 > Ärendemening, ärendets titel.
 
@@ -722,9 +792,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:35** (ERMS210)
+#### ERMS-SVK:35
 
-*Offentlig titel*
+(ERMS210)
+
+***Offentlig titel***
 
 > Används endast för Offentlig titel i leveranser från Public 360°.
 
@@ -735,7 +807,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 8 – Ärendemening och Annan titel**
+#### Exempel 8 – Ärendemening och Annan titel**
 
 ```xml
 <aggregation>
@@ -746,9 +818,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:36** (ERMS239)
+#### ERMS-SVK:36
 
-*Ärendestatus*
+(ERMS239)
+
+***Ärendestatus***
 
 > Ärendets status.
 
@@ -767,9 +841,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:37** (ERMS52-53)
+#### ERMS-SVK:37
 
-*Ärendereferens*
+(ERMS52-53)
+
+***Ärendereferens***
 
 > Referens till och/eller från annat ärende.
 
@@ -785,7 +861,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 9 – Ärendereferens**
+#### Exempel 9 – Ärendereferens
 
 ```xml
 <aggregation>
@@ -795,9 +871,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:38** (ERMS252, ERMS43)
+#### ERMS-SVK:38
 
-*Utökad XML-data*
+(ERMS252, ERMS43)
+
+***Utökad XML-data***
 
 > Utökad XML-data är en del av Svenska kyrkans anpassning av ERMS.
 
@@ -809,9 +887,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:39** (ERMS253, ERMS57)
+#### ERMS-SVK:39
 
-*Sekretess*
+(ERMS253, ERMS57)
+
+***Sekretess***
 
 >Samlingselement för uppgift om sekretess.
 
@@ -823,9 +903,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:40** (ERMS253, ERMS57)
+#### ERMS-SVK:40
 
-*Förklarande text*
+(ERMS253, ERMS57)
+
+***Förklarande text***
 
 >Fritext som beskriver sekretessen.
 
@@ -834,9 +916,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:41** (ERMS59)
+#### ERMS-SVK:41
 
-*Lagrum*
+(ERMS59)
+
+***Lagrum***
 
 >Hänvisning till paragraf i kyrkoordningens 54 kapitel, till Offentlighets- och sekretesslagen
 > eller till annat lagrum som stöder den angivna sekretessen.
@@ -846,9 +930,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:42** (ERMS62)
+#### ERMS-SVK:42
 
-*Sekretessdatum*
+(ERMS62)
+
+***Sekretessdatum***
 
 >Datum från och med vilket sekretessen anses gälla.
 
@@ -859,7 +945,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 10 – Sekretess**
+#### Exempel 10 – Sekretess
 
 ```xml
 <aggregation>
@@ -875,9 +961,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:43** (ERMS230-235)
+#### ERMS-SVK:43
 
-*Aktörer*
+(ERMS230-235)
+
+***Aktörer***
 
 >Samlingselement för alla agerande parter i ärendet.
 
@@ -885,9 +973,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:44** (ERMS230)
+#### ERMS-SVK:44
 
-*Skapare*
+(ERMS230)
+
+***Skapare***
 
 >Den som har skapat ärendet i systemet.
 
@@ -901,9 +991,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:45**
+#### ERMS-SVK:45
 
-*Handläggare*
+***Handläggare***
 
 >Ansvarig handläggare för ärendet.
 
@@ -917,9 +1007,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:46** (ERMS232)
+#### ERMS-SVK:46
 
-*Medhandläggare*
+(ERMS232)
+
+***Medhandläggare***
 
 >Eventuella medhandläggare utöver den ansvariga.
 
@@ -935,9 +1027,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:47**
+#### ERMS-SVK:47
 
-*Ärendepart*
+***Ärendepart***
 
 >Extern part i ärendet.
 
@@ -953,9 +1045,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:48**
+#### ERMS-SVK:48
 
-*Annan aktör*
+***Annan aktör***
 
 >Annan typ av aktör eller kontakt kopplad till ärendet.
 
@@ -971,9 +1063,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:49**
+#### ERMS-SVK:49
 
-*Avslutare*
+***Avslutare***
 
 >Den som har avslutat eller makulerat ärendet.
 
@@ -988,7 +1080,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 11 – Aktörer**
+#### Exempel 11 – Aktörer
 
 ```xml
 <aggregation>
@@ -1014,9 +1106,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:50** (ERMS211)
+#### ERMS-SVK:50
 
-*Beskrivning*
+(ERMS211)
+
+***Beskrivning***
 
 >En beskrivning av ärendet utöver *Ärendemening*.
 
@@ -1025,9 +1119,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:51** (ERMS204-206)
+#### ERMS-SVK:51
 
-*Datum*
+(ERMS204-206)
+
+***Datum***
 
 >Samlingselement för datum som gäller för ärendet.
 
@@ -1035,9 +1131,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:52** (ERMS232)
+#### ERMS-SVK:52
 
-*Skapat*
+(ERMS232)
+
+***Skapat***
 
 >Datum då ärendet skapades i systemet. Här avses ett av systemet automatiskt satt datum.
 
@@ -1052,9 +1150,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:53**
+#### ERMS-SVK:53
 
-*Öppnat*
+***Öppnat***
 
 >Datum då ärendet officiellt öppnades.
 
@@ -1067,9 +1165,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:54**
+#### ERMS-SVK:54
 
-*Avslutat*
+***Avslutat***
 
 >Datum då ärendet avslutades eller makulerades.
 
@@ -1082,7 +1180,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 12 – Datum**
+#### Exempel 12 – Datum
 
 ```xml
 <aggregation>
@@ -1096,9 +1194,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:55** (ERMS240)
+#### ERMS-SVK:55
 
-*Beslut i ärendet*
+(ERMS240)
+
+***Beslut i ärendet***
 
 >Samlingselement som används för uppgifter om beslut som har fattats i ärendet och
 > som i diariesystemet har registrerats separat och inte som en vanlig handling.
@@ -1109,9 +1209,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:56** (ERMS84)
+#### ERMS-SVK:56
 
-*Beslutstext*
+(ERMS84)
+
+***Beslutstext***
 
 >Beslutets lydelse samt ev. referens till protokoll.
 
@@ -1122,9 +1224,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:57** (ERMS87)
+#### ERMS-SVK:57
 
-*Typ av händelse*
+(ERMS87)
+
+***Typ av händelse***
 
 > Obligatoriskt om elementet *Beslut i ärendet* används.
 > 
@@ -1135,9 +1239,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:58** (ERMS89, ERMS47)
+#### ERMS-SVK:58
 
-*Beslutsdatum*
+(ERMS89, ERMS47)
+
+***Beslutsdatum***
 
 > Datum då beslutet fattades.
  
@@ -1148,9 +1254,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:59** (ERMS90-91, 93)
+#### ERMS-SVK:59
 
-*Beslutsfattare*
+(ERMS90-91, 93)
+
+***Beslutsfattare***
 
 > Namn på person eller organ som har fattat beslutet.
  
@@ -1163,7 +1271,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 13 – Beslut i ärendet**
+#### Exempel 13 – Beslut i ärendet
 
 ```xml
 <aggregation>
@@ -1182,9 +1290,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 </aggregation>
 ```
 
-**ERMS-SVK:60** (ERMS212, ERMS50)
+#### ERMS-SVK:60
 
-*Kommentar*
+(ERMS212, ERMS50)
+
+***Kommentar***
 
 > Kommentar till ärendet.
  
@@ -1199,9 +1309,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:61** (ERMS51)
+#### ERMS-SVK:61
 
-*Datum för kommentar*
+(ERMS51)
+
+***Datum för kommentar***
 
 > Datum då kommentaren skapades.
 
@@ -1210,7 +1322,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 14 – Kommentar**
+#### Exempel 14 – Kommentar
 
 ```xml
 <aggregation>
@@ -1222,9 +1334,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:62**
+#### ERMS-SVK:62
 
-*Tilläggsinformation*
+***Tilläggsinformation***
 
 > De element som inte ingår i ERMS utan är tillägg i Svenska kyrkans anpassning är samlade i elementet *Tilläggsinformation*.
 
@@ -1234,9 +1346,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:63**
+#### ERMS-SVK:63
 
-*Schemaversioner*
+***Schemaversioner***
 
 > Anger vilka versioner av ERMS-SVK-ARENDE.xsd, ERMS.xsd, ERMS-SVK-element.xsd
 > och ERMS-SVK-ARENDE.sch som XML-dokumentet är kompatibelt med.
@@ -1252,9 +1364,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:64**
+#### ERMS-SVK:64
 
-*Initiativ*
+***Initiativ***
 
 > Anger om initiativ till ärendets öppnande är externt
 > (genom en inkommande handling), eller om ärendet har öppnats på eget (internt) initiativ.
@@ -1267,9 +1379,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:65**
+#### ERMS-SVK:65
 
-*Relaterade objekt*
+***Relaterade objekt***
 
 > Samlingselement med referenser till objekt som ärendet relaterar till.
 
@@ -1279,9 +1391,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:66**
+#### ERMS-SVK:66
 
-*Relaterat objekt*
+***Relaterat objekt***
 
 > Referens till objekt som ärendet relaterar till.
 
@@ -1291,9 +1403,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:67**
+#### ERMS-SVK:67
 
-*Typ av objekt*
+***Typ av objekt***
 
 > Anger vilken typ av objekt det är fråga om.
 
@@ -1304,9 +1416,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:68**
+#### ERMS-SVK:68
 
-*Objektnamn*
+***Objektnamn***
 
 > Det relaterade objektets namn.
 
@@ -1317,9 +1429,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:69**
+#### ERMS-SVK:69
 
-*ObjektID*
+***ObjektID***
 
 > Projektnummer, fastighetsbeteckning eller annan identifikator för objektet.
 
@@ -1330,9 +1442,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:70**
+#### ERMS-SVK:70
 
-*Internt ID*
+***Internt ID***
 
 > Objektets id-nummer i det levererande systemet.
 
@@ -1341,7 +1453,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 15 – Relaterat objekt**
+#### Exempel 15 – Relaterat objekt
 
 ```xml
 <svk:ermsSvkAggregation>
@@ -1357,9 +1469,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:71**
+#### ERMS-SVK:71
 
-*Anteckningar*
+***Anteckningar***
 
 > Samlingselement för anteckningar kopplade till ett ärende.
 
@@ -1367,9 +1479,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:72**
+#### ERMS-SVK:72
 
-*Anteckning*
+***Anteckning***
 
 > Enskild anteckning kopplad till ärendet.
 
@@ -1379,9 +1491,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:73**
+#### ERMS-SVK:73
 
-*Typ av anteckning*
+***Typ av anteckning***
 
 > Kategorisering av anteckningen.
 
@@ -1392,9 +1504,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:74**
+#### ERMS-SVK:74
 
-*Text*
+***Text***
 
 > Anteckningens lydelse.
 
@@ -1405,9 +1517,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:75**
+#### ERMS-SVK:75
 
-*Skapare av anteckning*
+***Skapare av anteckning***
 
 > Person som har gjort anteckningen.
 
@@ -1418,9 +1530,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:76**
+#### ERMS-SVK:76
 
-*Datum för anteckning*
+***Datum för anteckning***
 
 > Datum och tid när anteckningen gjordes.
 
@@ -1431,7 +1543,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 17 – Anteckningar**
+#### Exempel 17 – Anteckningar
 
 ```xml
 <svk:ermsSvkAggregation>
@@ -1447,9 +1559,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:77**
+#### ERMS-SVK:77
 
-*Ändringslogg*
+***Ändringslogg***
 
 > Samlingselement för loggningsuppgifter.
 
@@ -1457,9 +1569,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:78**
+#### ERMS-SVK:78
 
-*Händelse*
+***Händelse***
 
 > Enskild händelse i ändringsloggen.
 
@@ -1469,9 +1581,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:79**
+#### ERMS-SVK:79
 
-*Tid*
+***Tid***
 
 > Datum och tid då ändringen gjordes.
 
@@ -1482,9 +1594,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:80**
+#### ERMS-SVK:80
 
-*Användare*
+***Användare***
 
 > Namn på personen som gjorde ändringen.
 
@@ -1495,9 +1607,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:81**
+#### ERMS-SVK:81
 
-*Tillämpningsområde*
+***Tillämpningsområde***
 
 > Beskrivning av det som ändringen avser.
 
@@ -1508,9 +1620,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:82**
+#### ERMS-SVK:82
 
-*Åtgärd*
+***Åtgärd***
 
 > Beskrivning av ändringen.
 
@@ -1521,9 +1633,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:83**
+#### ERMS-SVK:83
 
-*Värde före ändring*
+***Värde före ändring***
 
 > Om ett värde har ändrats, anges här lydelsen före ändringen.
 
@@ -1532,9 +1644,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:84**
+#### ERMS-SVK:84**
 
-*Värde efter ändring*
+***Värde efter ändring***
 
 > Om ett värde har ändrats, anges här lydelsen efter ändringen.
 
@@ -1543,7 +1655,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 18 – Ändringslogg**
+#### Exempel 18 – Ändringslogg
 
 ```xml
 <svk:ermsSvkAggregation>
@@ -1578,9 +1690,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ### Tabell 4. Ärendehandlingar
 
-**ERMS-SVK:85** (ERMS129)
+#### ERMS-SVK:85
 
-*Handling*
+(ERMS129)
+
+***Handling***
 
 > Samlingselement med information om en i ärendet registrerad handling.
 
@@ -1590,9 +1704,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:86** (ERMS130)
+#### ERMS-SVK:86
 
-*Identifikator*
+(ERMS130)
+
+***Identifikator***
 
 > Identifikator för dokumentet i form av UUID. Identifikatorn anges
 > automatiskt redan i det levererande systemet eller vid överföring till e-arkivet.
@@ -1604,11 +1720,13 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:87** (ERMS131)
+#### ERMS-SVK:87
 
-*Handlingstyp*
+(ERMS131)
 
-> Övergripande typ av handling. Motsvarar inte handlingstyp i arkivredovisning/dokumenthanteringsplan.
+***Handlingstyp***
+
+> Övergripande typ av handling. Motsvarar **inte** handlingstyp i arkivredovisning/dokumenthanteringsplan.
 
 > Obligatoriskt. Värdet väljs från SVK-värdelista 13.
 > 
@@ -1619,9 +1737,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:88** (ERMS132)
+#### ERMS-SVK:88
 
-*Form*
+(ERMS132)
+
+***Form***
 
 > Anger om handlingen bara finns i fysisk form, bara i digital form eller både och.
 
@@ -1632,7 +1752,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 19 – Handling**
+#### Exempel 19 – Handling
 
 ```xml
 <record
@@ -1641,9 +1761,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 	recordType="ärendedokument">
 ```
 
-**ERMS-SVK:89** (ERMS146)
+#### ERMS-SVK:89
 
-*Handlingsnummer*
+(ERMS146)
+
+***Handlingsnummer***
 
 > En kombination av *Ärendenummer* (ERMS-SVK:25) och handlingens *Löpnummer*
 > (ERMS-SVK:100) med kolon emellan.
@@ -1657,9 +1779,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:90** (ERMS148-149)
+#### ERMS-SVK:90
 
-*Intern identifikator*
+(ERMS148-149)
+
+***Intern identifikator***
 
 > Befintligt id i det levererande systemet.
 
@@ -1671,7 +1795,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 20 – Handlingsnummer och Intern identifikator**
+#### Exempel 20 – Handlingsnummer och Intern identifikator
 
 ```xml
 <record>
@@ -1679,9 +1803,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 	<extraId extraIdType="deliveringSystemId">34565</extraId>
 ```
 
-**ERMS-SVK:91** (ERMS133)
+#### ERMS-SVK:91
 
-*Informationsklassning*
+(ERMS133)
+
+***Informationsklassning***
 
 > Handlingens informationsklass.
 
@@ -1690,9 +1816,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:92** (ERMS134)
+#### ERMS-SVK:92
 
-*Säkerhetsklassning*
+(ERMS134)
+
+***Säkerhetsklassning***
 
 > Handlingens säkerhetsklass.
 
@@ -1701,9 +1829,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:93** (ERMS196)
+#### ERMS-SVK:93
 
-*Klassificering*
+(ERMS196)
+
+***Klassificering***
 
 > Namnet på den process i den officiella klassificeringsstrukturen som har
 > angivits som klassificering av ärendet och de ingående handlingarna.
@@ -1713,9 +1843,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:94** (ERMS75)
+#### ERMS-SVK:94
 
-*Klassificeringskod*
+(ERMS75)
+
+***Klassificeringskod***
 
 > Koden för den process som angivits under *Klassificering*.
 
@@ -1724,7 +1856,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 21 – Klassificering**
+#### Exempel 21 – Klassificering
 
 ```xml
 <record>
@@ -1734,9 +1866,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:95** (ERMS152)
+#### ERMS-SVK:95
 
-*Nyckelord*
+(ERMS152)
+
+***Nyckelord***
 
 > Samlingselement för enskilda nyckelord.
 
@@ -1744,9 +1878,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:96** (ERMS153)
+#### ERMS-SVK:96
 
-*Nyckelord*
+(ERMS153)
+
+***Nyckelord***
 
 > Enskilda nyckelord.
 
@@ -1757,7 +1893,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 22 – Nyckelord**
+#### Exempel 22 – Nyckelord
 
 ```xml
 <record>
@@ -1769,9 +1905,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 ```
 ---
 
-**ERMS-SVK:97** (ERMS)
+#### ERMS-SVK:97
 
-*Titel*
+(ERMS)
+
+***Titel***
 
 > Titel eller en beskrivning av handlingen.
 
@@ -1782,9 +1920,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:98** (ERMS)
+#### ERMS-SVK:98
 
-*Offentlig titel*
+(ERMS)
+
+***Offentlig titel***
 
 > Används enbart för Offentlig titel i leveranser från Public 360°.
 
@@ -1796,7 +1936,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 23 – Titel och Offentlig titel**
+#### Exempel 23 – Titel och Offentlig titel
 
 ```xml
 <record>
@@ -1807,9 +1947,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:99** (ERMS)
+#### ERMS-SVK:99
 
-*Status*
+(ERMS)
+
+***Status***
 
 > Handlingens status.
 
@@ -1830,9 +1972,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:100** (ERMS)
+#### ERMS-SVK:100
 
-*Löpnummer*
+(ERMS)
+
+***Löpnummer***
 
 > Handlingens löpnummer i ärendet.
 > Obligatoriskt. Måste vara unikt i respektive ärende.
@@ -1842,9 +1986,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:101** (ERMS)
+#### ERMS-SVK:101
 
-*Dokumentreferens*
+(ERMS)
+
+***Dokumentreferens***
 
 > Referens till och/eller från annan handling.
 
@@ -1862,7 +2008,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 24 – Dokumentreferens**
+#### Exempel 24 – Dokumentreferens
 
 ```xml
 <record>
@@ -1872,9 +2018,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:102** (ERMS)
+#### ERMS-SVK:102
 
-*Sekretess*
+(ERMS)
+
+***Sekretess***
 
 > Samlingselement för uppgift om sekretess.
 
@@ -1887,9 +2035,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:103** (ERMS)
+#### ERMS-SVK:103
 
-*Förklarande text*
+(ERMS)
+
+***Förklarande text***
 
 > Fritext som beskriver sekretessen.
 
@@ -1898,9 +2048,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:104** (ERMS)
+#### ERMS-SVK:104
 
-*Lagrum*
+(ERMS)
+
+***Lagrum****
 
 > Hänvisning till paragraf i kyrkoordningens 54 kapitel, till Offentlighets-
 > och sekretesslagen eller till annat lagrum som stöder den angivna sekretessen.
@@ -1912,9 +2064,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:105** (ERMS)
+#### ERMS-SVK:105
 
-*Sekretessdatum*
+(ERMS)
+
+***Sekretessdatum***
 
 > Datum från och med vilket sekretessen anses gälla.
 
@@ -1926,7 +2080,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 25 – Sekretess**
+#### Exempel 25 – Sekretess
 
 ```xml
 <record>
@@ -1941,9 +2095,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 ```
 ---
 
-**ERMS-SVK:106** (ERMS)
+#### ERMS-SVK:106
 
-*Riktning*
+(ERMS)
+
+***Riktning***
 
 > Anger handlingens riktning.
 
@@ -1959,7 +2115,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 26 – Riktning**
+#### Exempel 26 – Riktning
 
 1.
 ```xml
@@ -1984,9 +2140,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:107** (ERMS)
+#### ERMS-SVK:107
 
-*Aktörer*
+(ERMS)
+
+***Aktörer***
 
 > Samlingselement för alla agerande parter.
 
@@ -1997,9 +2155,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:107** (ERMS)
+#### ERMS-SVK:107
 
-*Aktörer*
+(ERMS)
+
+***Aktörer***
 
 > Samlingselement för alla agerande parter.
 
@@ -2007,9 +2167,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:108** (ERMS)
+#### ERMS-SVK:108
 
-*Skapare*
+(ERMS)
+
+***Skapare***
 
 > Den som har skapat handlingen i systemet.
 
@@ -2027,9 +2189,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:109** (ERMS)
+#### ERMS-SVK:109
 
-*Ansvarig*
+(ERMS)
+
+***Ansvarig***
 
 > Den som ägde eller hade ansvar för handlingen innan ärendet avslutades.
 
@@ -2047,9 +2211,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:110** (ERMS)
+#### ERMS-SVK:110
 
-*Avsändare*
+(ERMS)
+
+***Avsändare***
 
 > Avsändare av en inkommen handling.
 
@@ -2069,9 +2235,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:111** (ERMS)
+#### ERMS-SVK:111
 
-*Mottagare*
+(ERMS)
+
+***Mottagare***
 
 > Mottagare av en utgående handling.
 
@@ -2091,9 +2259,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:112** (ERMS)
+#### ERMS-SVK:112
 
-*Annan aktör*
+(ERMS)
+
+***Annan aktör***
 
 > Annan typ av aktör än de ovan specificerade.
 
@@ -2113,7 +2283,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 27 – Aktörer**
+#### Exempel 27 – Aktörer
 
 ```xml
 <record>
@@ -2140,9 +2310,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:113** (ERMS)
+#### ERMS-SVK:113
 
-*Beskrivning*
+(ERMS)
+
+***Beskrivning***
 
 > Beskrivning av handlingen.
 
@@ -2151,9 +2323,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:114** (ERMS)
+#### ERMS-SVK:114
 
-*Datum*
+(ERMS)
+
+***Datum***
 
 > Samlingselement för alla datum som rör handlingen.
 
@@ -2161,9 +2335,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:115** (ERMS)
+#### ERMS-SVK:115
 
-*Skapat*
+(ERMS)
+
+***Skapat***
 
 > Datum och tid då handlingen skapades i systemet.
 > Här avses ett av systemet automatiskt satt datum.
@@ -2180,9 +2356,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:116** (ERMS)
+#### ERMS-SVK:116
 
-*Registrerat*
+(ERMS)
+
+***Registrerat***
 
 > Datum och tid då handlingen registrerades (diariefördes) som inkommen,
 > utgående eller på annat sätt färdigställd.
@@ -2200,9 +2378,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:117** (ERMS)
+#### ERMS-SVK:117
 
-*Ankomstdatum*
+(ERMS)
+
+***Ankomstdatum***
 
 > Datum då handlingen inkom (om annat än *Registrerat*).
  
@@ -2213,9 +2393,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:118** (ERMS)
+#### ERMS-SVK:118
 
-*Expedieringsdatum*
+(ERMS)
+
+***Expedieringsdatum***
 
 > Datum då handlingen expedierades (om annat än *Registrerat*).
  
@@ -2226,7 +2408,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**Exempel 28 – Datum**
+#### Exempel 28 – Datum
 
 ```xml
 <record>
@@ -2240,9 +2422,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:119** (ERMS)
+#### ERMS-SVK:119
 
-*Kommentar*
+(ERMS)
+
+***Kommentar***
 
 > Kommentar till handlingen.
  
@@ -2257,9 +2441,11 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-**ERMS-SVK:120** (ERMS)
+#### ERMS-SVK:120
 
-*Datum för kommentar*
+(ERMS)
+
+***Datum för kommentar***
 
 > Datum då kommentaren skapades.
 
@@ -2270,7 +2456,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 #### ERMS-SVK:121
 
-*Utökad XML-data*
+***Utökad XML-data***
 
 > *Utökad XML-data* är en del av Svenska kyrkans anpassning av ERMS.
 

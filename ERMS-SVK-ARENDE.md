@@ -763,7 +763,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 7 – Nyckelord**
+#### Exempel 7 – Nyckelord
 
 ```xml
 <aggregation>
@@ -804,7 +804,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 8 – Ärendemening och Annan titel**
+#### Exempel 8 – Ärendemening och Offentlig titel
 
 ```xml
 <aggregation>
@@ -1540,7 +1540,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 17 – Anteckningar
+#### Exempel 16 – Anteckningar
 
 ```xml
 <svk:ermsSvkAggregation>
@@ -1641,7 +1641,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### ERMS-SVK:84**
+#### ERMS-SVK:84
 
 ***Värde efter ändring***
 
@@ -1652,7 +1652,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 18 – Ändringslogg
+#### Exempel 17 – Ändringslogg
 
 ```xml
 <svk:ermsSvkAggregation>
@@ -1749,7 +1749,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 19 – Handling
+#### Exempel 18 – Handling
 
 ```xml
 <record
@@ -1792,7 +1792,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 20 – Handlingsnummer och Intern identifikator
+#### Exempel 19 – Handlingsnummer och Intern identifikator
 
 ```xml
 <record>
@@ -1853,7 +1853,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 21 – Klassificering
+#### Exempel 20 – Klassificering
 
 ```xml
 <record>
@@ -1890,7 +1890,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 22 – Nyckelord
+#### Exempel 21 – Nyckelord
 
 ```xml
 <record>
@@ -1933,7 +1933,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 23 – Titel och Offentlig titel
+#### Exempel 22 – Titel och Offentlig titel
 
 ```xml
 <record>
@@ -2005,7 +2005,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 24 – Dokumentreferens
+#### Exempel 23 – Dokumentreferens
 
 ```xml
 <record>
@@ -2077,7 +2077,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 25 – Sekretess
+#### Exempel 24 – Sekretess
 
 ```xml
 <record>
@@ -2112,7 +2112,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 26 – Riktning
+#### Exempel 25 – Riktning
 
 1.
 ```xml
@@ -2280,7 +2280,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 27 – Aktörer
+#### Exempel 26 – Aktörer
 
 ```xml
 <record>
@@ -2405,7 +2405,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### Exempel 28 – Datum
+#### Exempel 27 – Datum
 
 ```xml
 <record>
@@ -2466,3 +2466,330 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 ---
 
 ### Tabell 5. Svenska kyrkans tilläggsinformation om ärendehandlingar
+
+#### ERMS-SVK:122
+
+***Tilläggsinformation***
+
+> De element som inte ingår i ERMS utan är tillägg i Svenska kyrkans anpassning är samlade i elementet *Tilläggsinformation*.
+
+> Obligatoriskt.
+
+> **XML-element:** `additionalInformation/additionalXMLData/svk:ermsSvkArende/svk:ermsSvkRecord`<br/>
+
+---
+
+#### ERMS-SVK:123
+
+***Relaterade objekt***
+
+> Samlingselement med referenser till objekt som ärendet relaterar till.
+
+> Objekten kan vara projekt eller fastigheter.
+
+> **XML-element:** `svk:relatedObjects`<br/>
+
+---
+
+#### ERMS-SVK:124
+
+***Relaterat objekt***
+
+> Referens till objekt som ärendet relaterar till.
+
+> Elementet kan upprepas.
+
+> **XML-element:** `svk:relatedObject`<br/>
+
+---
+
+#### ERMS-SVK:125
+
+***Typ av objekt***
+
+> Anger vilken typ av objekt det är fråga om.
+
+> Obligatoriskt om elementet *Relaterat objekt* används. Värdet väljs från SVK-värdelista 18.
+
+> **XML-element:** `svk:relatedObject/@typeOfObject`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:126
+
+***Objektnamn***
+
+> Det relaterade objektets namn.
+
+> Obligatoriskt om elementet *Relaterat objekt* används.
+
+> **XML-element:** `svk:objectName`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:127
+
+***ObjektID***
+
+> Projektnummer, fastighetsbeteckning eller annan identifikator för objektet.
+
+> Obligatoriskt om elementet *Relaterat objekt* används.
+
+> **XML-element:** `svk:objectId`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:128
+
+***Internt ID***
+
+> Objektets id-nummer i det levererande systemet.
+
+> **XML-element:** `svk:deliveringSystemId`<br/>
+> **Datatyp:** token
+
+---
+
+#### Exempel 28 – Relaterat objekt
+
+```xml
+<svk:ermsSvkRecord>
+	<svk:relatedObject>
+		<svk:relatedObject typeOfObject="project">
+			<svk:objectName>Omläggning av kyrktaket 2009</svk:objectName>
+			<svk:objectId>P 2009:1</svk:objectId>
+			<svk:deliveringSystemId>34958</svk:deliveringSystemId>
+		</svk:relatedObject>
+	</svk:relatedObjects >
+</svk:ermsSvkRecord>
+```
+
+---
+
+#### ERMS-SVK:129
+
+***Anteckningar***
+
+> Samlingselement för anteckningar kopplade till en handling.
+
+> **XML-element:** `svk:svkNotes`<br/>
+
+---
+
+#### ERMS-SVK:130
+
+***Anteckning***
+
+> Enskild anteckning kopplad till handlingen.
+
+> Elementet kan upprepas.
+
+> **XML-element:** `svk:svkNote`<br/>
+
+---
+
+#### ERMS-SVK:131
+
+***Typ av anteckning***
+
+> Kategorisering av anteckningen.
+
+> Obligatoriskt om elementet *Anteckning* används. Värdet väljs från SVK-värdelista 10.
+
+> **XML-element:** `svk:svkNote/@typeOfNote`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:132
+
+***Text***
+
+> Anteckningens lydelse.
+
+> Obligatoriskt om elementet *Anteckning* används.
+
+> **XML-element:** `svk:noteText`<br/>
+> **Datatyp:** string
+
+---
+
+#### ERMS-SVK:133
+
+***Skapare av anteckning***
+
+> Person som har gjort anteckningen.
+
+> Obligatoriskt om elementet *Anteckning* används.
+
+> **XML-element:** `svk:noteAuthor`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:134
+
+***Datum för anteckning***
+
+> Datum och tid när anteckningen gjordes.
+
+> Obligatoriskt om elementet *Anteckning* används.
+
+> **XML-element:** `svk:noteDate`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### Exempel 29 – Anteckningar
+
+```xml
+<svk:ermsSvkRecord>
+	<svk:svkNotes>
+		<svk:svkNote typeOfNote="generell anteckning">
+			<svk:noteText>Detta är en anteckning</svk:noteText>
+			<svk:noteAuthor>Jörgen Persson</svk:noteAuthor>
+			<svk:noteDate>2019-02-23T00:00:00</svk:noteDate>
+		</svk:svkNote>
+	</svk:svkNotes>
+</svk:ermsSvkRecord>
+```
+
+---
+
+#### ERMS-SVK:135
+
+***Avtalsinformation***
+
+> Samlingselement för extra information om registrerade avtal.
+
+> **XML-element:** `svk:contractInfo`<br/>
+
+---
+
+#### ERMS-SVK:136
+
+***Avsändares referens***
+
+> Referens till avtalspartners exemplar av avtalsdokumentet.
+
+> **XML-element:** `svk:externalReference`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:137
+
+***Avropat värde***
+
+> Avropat värde.
+
+> Kan endast anges i heltal.
+
+> **XML-element:** `svk:callOffValue`<br/>
+> **Datatyp:** integer
+
+---
+
+#### ERMS-SVK:138
+
+***Valuta***
+
+> Valutaslag för *Avropat värde*.
+
+> Valutakod enligt [ISO 4217](https://sv.wikipedia.org/wiki/ISO_4217).
+> ”SEK” är förvalt värde och behöver inte anges specifikt.
+
+> **XML-element:** `svk:callOffValue/@currency`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:139
+
+***Kontraktsvärde***
+
+> Kontraktsvärde.
+
+> Kan endast anges i heltal.
+
+> **XML-element:** `svk:contractValue`<br/>
+> **Datatyp:** integer
+
+---
+
+#### ERMS-SVK:140
+
+***Valuta***
+
+> Valutaslag för *Kontraktsvärde*.
+
+> Valutakod enligt [ISO 4217](https://sv.wikipedia.org/wiki/ISO_4217).
+> ”SEK” är förvalt värde och behöver inte anges specifikt.
+
+> **XML-element:** `svk:contractValue/@currency`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:141
+
+***Avtalstyp***
+
+> Typ av avtal.
+
+> Värdet väljs från SVK-värdelista 16.
+
+> **XML-element:** `svk:typeOfAgreement`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:142
+
+***Giltigt från***
+
+> Datum från vilket avtalet är giltigt.
+
+> Om elementet *Giltigt från* används, måste attributet `dateType` ha värdet ”start”.
+
+> **XML-element:** `svk:dates/date/@datetype="start"`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:143
+
+***Giltigt till***
+
+> Datum fram till vilket avtalet är giltigt.
+
+> Om elementet *Giltigt till* används, måste attributet `dateType` ha värdet ”end”.
+
+> **XML-element:** `svk:dates/date/@datetype="end"`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### Exempel 30 – Avtalsinformation
+
+```xml
+<svk:ermsSvkRecord>
+	<svk:contractInfo>
+		<svk:externalReference>ref3453</svk:externalReference>
+		<svk:callOffValue currency="SEK">34000</svk:callOffValue>
+		<svk:contractValue currency="SEK">45000</svk:contractValue>
+		<svk:typeOfAgreement>Avtal</svk:typeOfAgreement>
+		<dates>
+			<date dateType="start">2018-02-12T00:00:00</date>
+			<date dateType="end">2019-02-12T00:00:00</date>
+		</dates>
+	</svk:contractInfo>
+</svk:ermsSvkRecord>
+```
+
+---
+
+

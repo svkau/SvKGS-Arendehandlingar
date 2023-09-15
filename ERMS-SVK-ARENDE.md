@@ -2882,8 +2882,10 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
 
-> **XML-element:** `svk:workflowPriority`<br/>
-> **Datatyp:** token
+> **XML-element:** `svk:workflowInitiatedBy`<br/>
+> name (string)<br/>
+> idNumber (string)
+
 
 ---
 
@@ -2971,8 +2973,10 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
 
-> **XML-element:** `svk:workflowNoteTo/@agentype="sender"`<br/>
-> **Datatyp:** dateTime
+> **XML-element:**<br/>
+> `svk:workflowNoteFrom`<br/>
+> `name` (string)<br/>
+> `idNumber` (string)<br/>
 
 ---
 
@@ -2988,8 +2992,10 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
 
-> **XML-element:** `svk:workflowNoteTo/@agentype="receiver"`<br/>
-> **Datatyp:** dateTime
+> **XML-element:**<br/>
+> `svk:workflowNoteTo`<br/>
+> `name` (string)<br/>
+> `idNumber` (string)<br/>
 
 ---
 
@@ -3009,7 +3015,19 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ***Mottagare***
 
-> Person som ingår i arbetsflödet.
+> Personer som ingår i arbetsflödet.
+
+> Obligatoriskt.
+
+> **XML-element:** `svk:workflowRecipient`<br/>
+
+---
+
+#### ERMS-SVK:161
+
+***Mottagarens namn***
+
+> Namn (och identifikator) för mottagaren.
 
 > Obligatoriskt. Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
@@ -3022,7 +3040,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### ERMS-SVK:161
+#### ERMS-SVK:162
 
 ***Status från mottagare***
 
@@ -3032,5 +3050,409 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > **XML-element:** `svk:recipientStatus`<br/>
 > **Datatyp:** token
+
+---
+
+#### ERMS-SVK:163
+
+***Slutfört datum***
+
+> Datum då den enskilda mottagaren har slutfört sin del i arbetsflödet.
+
+> Obligatoriskt.
+> 
+> Attributet `dateType` måste ha värdet "finished".
+
+> **XML-element:** `svk:CompletedDate/@dateType="finished"`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:164
+
+***Slutfört av***
+
+> Den person som slutfört sin del i arbetsflödet (i regel samma person som är mottagare).
+
+> Obligatoriskt. Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
+> `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Attributet `agentType` måste ha värdet ”other” och attributet `otherAgentType` måste
+> ha värdet *closing_person*.
+> 
+> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+
+> **XML-element:**<br/>
+> `svk:workflowRecipient`<br/>
+> `name` (string)<br/>
+> `idNumber` (string)<br/>
+
+---
+
+#### ERMS-SVK:165
+
+***På uppdrag av***
+
+> Om den person som slutfört sin del i arbetsflödet, har gjort det på
+> uppdrag av någon annan, anges denna person här.
+
+> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
+> `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Attributet `agentType` måste ha värdet ”other” och attributet `otherAgentType` måste
+> ha värdet *delegator*.
+> 
+> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+
+> **XML-element:**<br/>
+> `svk:workflowRecipient`<br/>
+> `name` (string)<br/>
+> `idNumber` (string)<br/>
+
+---
+
+#### ERMS-SVK:166
+
+***Mottagarkommentar***
+
+> Kommentar som mottagaren kan lämna i anslutning till sin del i arbetsflödet.
+
+> **XML-element:** `svk:reciepientComment`<br/>
+> **Datatyp:** string
+
+---
+
+#### Exempel 31 – Arbetsflöden
+
+```xml
+<svk:ermsSvkRecord>
+    <svk:workflows>
+        <svk:workflow typeOfWorkflow="approval">
+            <svk:workflowName>Godkännande</svk:workflowName>
+            <svk:workflowStatus>approved</svk:workflowStatus>
+            <svk:priority>normal</svk:priority>
+            <svk:initiatedBy agentType="creator">
+                <name>Bo Mattsson</name>
+            </svk:initiatedBy>
+            <svk:workflowInitiatedDate dateType="created">2022-01-14T00:00:00</svk:workflowInitiatedDate>
+            <svk:workflowMessage>Översändes för godkännande.</svk:workflowMessage>
+            <svk:workflowNotes>
+                <svk:workflowNote>
+                    <svk:workflowNoteText>Nu är det bråttom!</svk:workflowNoteText>
+                    <svk:workflowNoteDate dateType="created">2022-02-28T00:00:00</svk:workflowNoteDate>
+                    <svk:workflowNoteFrom agentype="sender">
+                        <name>Bo Mattsson</name>
+                    </svk:workflowNoteFrom>
+                    <svk:workflowNoteTo agentype="receiver">
+                        <name>Patrik Andersson</name>
+                    </svk:workflowNoteTo>
+                </svk:workflowNote>
+            </svk:workflowNotes>
+            <svk:workflowRecipients>
+                <svk:workflowRecipient>
+                    <svk:recipient>
+                        <name>Patrik Andersson</name>
+                    </svk:recipient>
+                    <svk:recipientStatus>approved</svk:recipientStatus>
+                    <svk:CompletedDate dateType="finished">2022-03-01T00:00:00</svk:CompletedDate>
+                    <svk:completedBy agentType="vad">
+                        <name>Patrik Andersson</name>
+                        <idNumber type="username">knet\patand</idNumber>
+                    </svk:completedBy>
+                    <svk:recipientComment>Det ser bra ut! Jag godkänner.</svk:recipientComment>
+                </svk:workflowRecipient>
+            </svk:workflowRecipients>
+        </svk:workflow>
+    </svk:workflows>
+</svk:ermsSvkRecord>
+```
+
+---
+
+#### ERMS-SVK:167
+
+***Bifogad fil***
+
+> Uppgifter om fil som är kopplad till den registrerade handlingen.
+
+> Elementet kan upprepas.
+> 
+> Se Tabell 6.
+
+> **XML-element:** `svk:ermsSvkRecord/svk:svkAppendix`<br/>
+
+---
+
+#### ERMS-SVK:168
+
+***Ändringslogg***
+
+> Samlingselement för loggningsuppgifter.
+
+> **XML-element:** `svk:auditLogEvents`<br/>
+
+---
+
+#### ERMS-SVK:169
+
+***Händelse***
+
+> Enskild händelse i ändringsloggen.
+
+> Obligatoriskt om elementet *Ändringslogg* används.
+
+> **XML-element:** `svk:auditLogEvent`<br/>
+
+---
+
+#### ERMS-SVK:170
+
+***Tid***
+
+> Datum och tid då ändringen gjordes.
+
+> Obligatoriskt om elementet *Händelse* används.
+
+> **XML-element:** `svk:eventTime`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:171
+
+***Användare***
+
+> Namn på personen som gjorde ändringen.
+
+> Obligatoriskt om elementet *Händelse* används.
+
+> **XML-element:** `svk:user`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:172
+
+***Tillämpningsområde***
+
+> Beskrivning av det som ändringen avser.
+
+> Obligatoriskt om elementet *Händelse* används. Värdet väljs från SVK-värdelista 11.
+
+> **XML-element:** `svk:scope`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:173
+
+***Åtgärd***
+
+> Beskrivning av ändringen.
+
+> Obligatoriskt om elementet *Händelse* används. Värdet väljs från SVK-värdelista 12.
+
+> **XML-element:** `svk:action`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:174
+
+***Värde före ändring***
+
+> Om ett värde har ändrats, anges här lydelsen före ändringen.
+
+> **XML-element:** `svk:valueBeforeChange`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:175
+
+***Värde efter ändring***
+
+> Om ett värde har ändrats, anges här lydelsen efter ändringen.
+
+> **XML-element:** `svk:valueAfterChange`<br/>
+> **Datatyp:** token
+
+---
+
+## 3.4. Information om bifogade filer
+
+I ERMS används för bifogade filer elementet record/additionalInformation/appendix.
+
+I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
+`record/additionalInformation/additionalXMLData/ermsSvkArende/ermsSvkRecord/svkAppendix`.
+
+#### ERMS-SVK:176
+
+***Bifogad fil***
+
+> Samlingselement för uppgifter om en fil som är kopplad till en registrerad handling.
+
+> Elementet kan upprepas.
+
+> **XML-element:** `svk:svkAppendix`<br/>
+
+---
+
+#### ERMS-SVK:177
+
+***Appendix***
+
+> Samlingselement för den information om filen som följer ERMS-standard.
+
+> **XML-element:** `appendix`<br/>
+
+---
+
+#### ERMS-SVK:178
+
+***Gallringsbar***
+
+> Med gallringsbar avses här att den bifogade filen kan gallras innan handlingen i sig gallras.
+
+> Det kan gälla t.ex. filer som bevaras i produktionsformat, om det också finns en
+> motsvarande fil i bevarandeformat.
+>
+> Värdet kan vara: true, false, 1 (som motsvarar true) eller 0 (som motsvarar false).
+
+> **XML-element:** `appendix/@disposable`<br/>
+> **Datatyp:** boolean
+
+---
+
+#### ERMS-SVK:179
+
+***Namn***
+
+> Filens namn.
+
+> Obligatoriskt.
+
+> **XML-element:** `appendix/@name`<br/>
+> **Datatyp:** string
+
+---
+
+#### ERMS-SVK:180
+
+***Beskrivning***
+
+> Beskrivning av filen.
+
+> **XML-element:** `appendix/@description`<br/>
+> **Datatyp:** string
+
+---
+
+#### ERMS-SVK:181
+
+***Filformat***
+
+> Filens format.
+
+> Obligatoriskt.
+> 
+> Anges i form av filnamnsändelse (max fyra tecken) utan punkt och med små bokstäver.
+>
+> Exempel: pdf, png, txt
+
+> **XML-element:** `appendix/@fileFormat`<br/>
+> **Datatyp:** string
+
+---
+
+#### ERMS-SVK:182
+
+***Originalfilformat***
+
+> Om filen är konverterad till arkivformat, anges här originalfilens format.
+ 
+> Anges i form av filnamnsändelse (max fyra tecken) utan punkt och med små bokstäver.
+>
+> Exempel: docx, xlsx, msg
+
+> **XML-element:** `appendix/@originalFileFormat`<br/>
+> **Datatyp:** string
+
+---
+
+#### ERMS-SVK:183
+
+***Sökväg***
+
+> Relativ sökväg till filens placering i arkivpaketet.
+ 
+> Obligatoriskt.
+> 
+> Exempel: files/document_01.pdf
+
+> **XML-element:** `appendix/@path`<br/>
+> **Datatyp:** string
+
+---
+
+#### ERMS-SVK:184
+
+***Uppgift om e-signatur***
+
+> Anger om det har funnits en e-signatur som har gallrats före leverans.
+ 
+> Värdet kan vara: true, false, 1 (som motsvarar true) eller 0 (som motsvarar false).
+
+> **XML-element:** `appendix/@eSignatureHasExisted`<br/>
+> **Datatyp:** boolean
+
+---
+
+#### ERMS-SVK:185
+
+***E-signatur***
+
+> Samlingselement för information om befintlig e-signatur.
+ 
+> **XML-element:** `eSignature`<br/>
+
+---
+
+#### ERMS-SVK:186
+
+***E-signatur finns***
+
+> Anger om det finns en e-signatur.
+
+> Obligatoriskt om elementet *E-signatur* används.
+ 
+> Värdet kan vara: true, false, 1 (som motsvarar true) eller 0 (som motsvarar false).
+
+> **XML-element:** `eSignature/@present`<br/>
+> **Datatyp:** boolean
+
+---
+
+#### ERMS-SVK:187
+
+***Verifikationsdatum***
+
+> Datum och tid då e-signaturen senast verifierades.
+
+> **XML-element:** `eSignature/@dateSignatureIsVerified`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:188
+
+***Signatur***
+
+> Element för filens e-signatur med dess eget XML-schema.
+
+> Leveransöverenskommelsen ska innehålla information om hur
+> e-signaturer lagras och om vilket schema som används.
+
+> **XML-element:** `signature`<br/>
 
 ---

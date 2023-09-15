@@ -109,7 +109,7 @@ Schemat används för att validera de delat av XML-dokumentet som följer ERMS-s
 **ERMS-SVK-element.xsd**<br/>
 I detta schema definieras alla element som är Svenska kyrkans tillägg till ERMS. Schemat är alltså inte
 specifikt för *SvKGS Ärendehandlingar* utan används i andra anpassningar av ERMS.
-Schemat är publikt tillgängligt på [Github](https://github.com/svkau/SvKGS-Arendehandlingar).
+Schemat är publikt tillgängligt på [Github](https://github.com/svkau/ERMS-SVK-element.xsd).
 
 **ERMS-SVK-ARENDE.xsd**<br/>
 Schemat reglerar själva strukturen på den del av XML-dokumentet som utgörs av Svenska kyrkans tillägg

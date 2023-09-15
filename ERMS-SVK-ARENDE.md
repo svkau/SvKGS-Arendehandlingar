@@ -2897,8 +2897,140 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Attributet dateType måste ha värdet ”created”.
 
-> **XML-element:** `svk:workflowPriority`<br/>
-> **Datatyp:** token
+> **XML-element:** `svk:workflowInitiatedDate/@dateType=”created”`<br/>
+> **Datatyp:** dateTime
 
 ---
 
+#### ERMS-SVK:152
+
+***Meddelande***
+
+> Meddelande knutet till arbetsflödet.
+
+> **XML-element:** `svk:workflowMessage`<br/>
+> **Datatyp:** string
+
+---
+
+#### ERMS-SVK:153
+
+***Anteckningar***
+
+> Samlingselement för löpande anteckningar förda under arbetsflödets gång.
+
+> **XML-element:** `svk:workflowNotes`<br/>
+
+---
+
+#### ERMS-SVK:154
+
+***Anteckning***
+
+> Enskild anteckning
+
+> **XML-element:** `svk:workflowNote`<br/>
+
+---
+
+#### ERMS-SVK:155
+
+***Text***
+
+> Anteckningens lydelse.
+
+> Obligatoriskt om *Anteckning* används.
+
+> **XML-element:** `svk:workflowNoteText`<br/>
+> **Datatyp:** string
+
+---
+
+#### ERMS-SVK:156
+
+***Datum för anteckning***
+
+> Datum då anteckningen skapades.
+
+> Obligatoriskt om *Anteckning* används.
+
+> **XML-element:** `svk:workflowNoteDate/@dateType="created"`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:157
+
+***Skickad från***
+
+> Den person som har skapat anteckningen (och skickat den till någon annan).
+
+> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Attributet `agentType` måste ha värdet ”sender”.
+> 
+> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+
+> **XML-element:** `svk:workflowNoteTo/@agentype="sender"`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:158
+
+***Skickad till***
+
+> Den person som anteckningen har skickats till.
+
+> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Attributet `agentType` måste ha värdet ”receiver”.
+> 
+> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+
+> **XML-element:** `svk:workflowNoteTo/@agentype="receiver"`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:159
+
+***Arbetsflödesmottagare***
+
+> Samlingselement för de personer som ingår i arbetsflödet och som t.ex. ska godkänna ett dokument.
+
+> Obligatoriskt.
+
+> **XML-element:** `svk:workflowRecipients`<br/>
+
+---
+
+#### ERMS-SVK:160
+
+***Mottagare***
+
+> Person som ingår i arbetsflödet.
+
+> Obligatoriskt. Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Attributet `agentType` måste ha värdet ”recipient”.
+> 
+> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+
+> **XML-element:** `svk:workflowRecipient/@agentype="recipient"`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:161
+
+***Status från mottagare***
+
+> Flödets status hos den enskilde mottagaren.
+
+> Obligatoriskt. Värdet väljs från SVK-värdelista 20.
+
+> **XML-element:** `svk:recipientStatus`<br/>
+> **Datatyp:** token
+
+---

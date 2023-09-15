@@ -2794,4 +2794,111 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
+#### ERMS-SVK:144
+
+***Arbetsflöden***
+
+> Samlingselement för arbetsflöden kopplade till handlingen.
+
+> **XML-element:** `svk:workflows`<br/>
+
+---
+
+#### ERMS-SVK:145
+
+***Arbetsflöde***
+
+> Ett enskilt arbetsflöde kopplat till handlingen.
+
+> Obligatoriskt om *Arbetsflöden* används.
+
+> **XML-element:** `svk:workflow`<br/>
+
+---
+
+#### ERMS-SVK:146
+
+***Typ av arbetsflöde***
+
+> Typ av arbetsflöde.
+
+> Obligatoriskt. Värdet väljs från SVK-värdelista 19.
+> 
+> Attributet `typeOfWorkflow` kan enbart ha värdet ”approval”.
+
+> **XML-element:** `svk:workflow/@typeOfWorkflow="approval"`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:147
+
+***Namn***
+
+> Namn på arbetsflödet.
+
+> **XML-element:** `svk:workflowName`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:148
+
+***Status***
+
+> Arbetsflödets status.
+
+> Obligatoriskt. Värdet väljs från SVK-värdelista 20.
+
+> **XML-element:** `svk:workflowStatus`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:149
+
+***Prioritet***
+
+> Arbetsflödets prioritet.
+
+> Värdet väljs från SVK-värdelista 21.
+
+> **XML-element:** `svk:workflowPriority`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:150
+
+***Initierat av***
+
+> Den person som har startat arbetsflödet.
+
+> Obligatoriskt.
+> 
+> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
+> 
+> Attributet `agentType` måste ha värdet ”creator”.
+> 
+> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+
+> **XML-element:** `svk:workflowPriority`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:151
+
+***Initierat datum***
+
+> Datum då arbetsflödet startades.
+
+> Obligatoriskt.
+> 
+> Attributet dateType måste ha värdet ”created”.
+
+> **XML-element:** `svk:workflowPriority`<br/>
+> **Datatyp:** token
+
+---
 

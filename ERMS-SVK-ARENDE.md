@@ -1,4 +1,4 @@
-![title](https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/cd221ec9-201b-4a6b-bc9c-4649614bc0fb)
+![title](https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/5efcf75d-271a-4d08-976f-39840df0ff08)
 
 # SvKGS-Ärendehandlingar
 

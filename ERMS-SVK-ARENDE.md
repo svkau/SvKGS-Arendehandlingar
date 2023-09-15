@@ -1,3 +1,5 @@
+![title](https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/cd221ec9-201b-4a6b-bc9c-4649614bc0fb)
+
 # SvKGS-Ärendehandlingar
 
 ***Version 0.1***
@@ -62,7 +64,7 @@ Dessa redovisas nedan i detta dokument.
 Det XML-dokument som innehåller information om en ärendeakt och de ingående handlingarna definieras i ett XML-schema.
 Se avsnittet Scheman nedan. Detta är XML-dokumentets grundläggande uppbyggnad:
 
-![figur_01.png](assets/figur_01.png)
+![figur_01](https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/0f2e491d-dc32-4565-9e4d-c27bf7c0bd76)
 
 *Figur 1. Grundläggande struktur i ett XML-dokument.*
 
@@ -80,7 +82,7 @@ Observera att det tillagda elementet `svkAppendix` används i *SvKGS Ärendehand
 I tabellerna nedan finns de element som bör eller måste finnas i ett XML-dokument enligt *SvKGS Ärendehandlingar*.
 Tabellerna följer strukturen i XML-dokumentet:
 
-![figur_02.png](assets/figur_02.png)
+![figur_02](https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/d8e9664f-a7a5-40a5-994d-28731a558577)
 
 *Figur 2. Översikt av tabeller med dataelement.*
 
@@ -172,7 +174,7 @@ En XML-fil får enbart innehålla ett enda ärende, men leveransen kan bestå av
 Filerna samlas i en mapp, och om leveransen innehåller dokumentfiler samlas dessa i en undermapp.
 Varje sådant leveranspaket får bara innehålla ärenden från en och samma arkivbildare och ett och samma diarium.
 
-![figur_03.png](assets/figur_03.png)
+![figur_03](https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/98ae301d-a05f-4f40-aef9-2f77683210d6)
 
 *Figur 3. Mappstruktur för ärendeleverans. Namn på mappar och filer är enbart exempel.*
 

@@ -46,17 +46,17 @@
 			<relation relationType="reference">C 1995-0031</relation>
 			<additionalInformation>
 				<additionalXMLData>
-					<svk:ermsSvkArende ermsSchemaVersion="2.1.2" elementSchemaVersion="1.0" schematronVersion="1.0">
+					<svk:ermsSvkArende schemaVersion="1.0" ermsSchemaVersion="2.1.2" elementSchemaVersion="1.0" schematronVersion="1.0">
 						<svk:ermsSvkAggregation>
 							<elm:initiative>eget</elm:initiative>
 							<elm:relatedObjects>
-								<elm:relatedObject objectType="project">
-									<elm:name>Omläggning av kyrktaket 2009</elm:name>
-									<elm:identificator>P 2009:1</elm:identificator>
+								<elm:relatedObject typeOfObject="project">
+									<elm:objectName>Omläggning av kyrktaket 2009</elm:objectName>
+									<elm:objectId>P 2009:1</elm:objectId>
 									<elm:deliveringSystemId>34958</elm:deliveringSystemId>
 								</elm:relatedObject>
-								<elm:relatedObject objectType="realEstate">
-									<elm:name>Kyrkan</elm:name>
+								<elm:relatedObject typeOfObject="realEstate">
+									<elm:objectName>Kyrkan</elm:objectName>
 								</elm:relatedObject>
 							</elm:relatedObjects>
 							<elm:svkNotes>
@@ -68,13 +68,13 @@
 							</elm:svkNotes>
 							<elm:auditLogEvents>
 								<elm:auditLogEvent>
-									<elm:time>2009-09-22T11:47:00</elm:time>
+									<elm:eventTime>2009-09-22T11:47:00</elm:eventTime>
 									<elm:user>Henrik Vitalis (khus/henvital)</elm:user>
 									<elm:scope>ärende</elm:scope>
 									<elm:action>create</elm:action>
 								</elm:auditLogEvent>
 								<elm:auditLogEvent>
-									<elm:time>2009-09-22T11:52:00</elm:time>
+									<elm:eventTime>2009-09-22T11:52:00</elm:eventTime>
 									<elm:user>Henrik Vitalis (khus/henvital)</elm:user>
 									<elm:scope>ärendemening</elm:scope>
 									<elm:action>update</elm:action>
@@ -82,7 +82,7 @@
 									<elm:valueAfterChange>Upphandling av kylskåp</elm:valueAfterChange>
 								</elm:auditLogEvent>
 								<elm:auditLogEvent>
-									<elm:time>2009-09-22T12:10:00</elm:time>
+									<elm:eventTime>2009-09-22T12:10:00</elm:eventTime>
 									<elm:user>Henrik Vitalis (khus/henvital)</elm:user>
 									<elm:scope>status</elm:scope>
 									<elm:action>update</elm:action>
@@ -101,7 +101,7 @@
 					<date dateType="created">2020-01-02T00:00:00</date>
 				</dates>
 			</restriction>
-			<agents>	
+			<agents>
 				<agent agentType="creator"> <!-- registrator som skapat ärendet -->
 					<name>Henrik Vitalis</name>
 					<idNumber idNumberType="username">henvital</idNumber>
@@ -186,7 +186,7 @@
 				</dates>
 				<additionalInformation>
 					<additionalXMLData>
-						<svk:ermsSvkArende ermsSchemaVersion="2.1.2" elementSchemaVersion="1.0" schematronVersion="1.0">
+						<svk:ermsSvkArende schemaVersion="1.0" ermsSchemaVersion="2.1.2" elementSchemaVersion="1.0" schematronVersion="1.0">
 							<svk:ermsSvkRecord>
 								<elm:contractInfo>
 									<elm:externalReference>ref3453</elm:externalReference>
@@ -200,25 +200,25 @@
 								</elm:contractInfo>
 								<elm:workflows>
 									<elm:workflow>
-										<elm:workflowStatus>godkänd</elm:workflowStatus>
-										<elm:initiatedBy agentType="creator">
+										<elm:workflowStatus>approved</elm:workflowStatus>
+										<elm:workflowInitiatedBy agentType="creator">
 											<name>Henrik Vitalis</name>
 											<organisation>Avdelningen för kulturarv</organisation>
 											<idNumber idNumberType="username">henvital</idNumber>
-										</elm:initiatedBy>
-										<elm:initiatedDate dateType="created">2023-08-12T00:00:00</elm:initiatedDate>
-										<elm:message>Kan ni vänligen godkänna detta.</elm:message>
+										</elm:workflowInitiatedBy>
+										<elm:workflowInitiatedDate dateType="created">2023-08-12T00:00:00</elm:workflowInitiatedDate>
+										<elm:workflowMessage>Kan ni vänligen godkänna detta.</elm:workflowMessage>
 										<elm:workflowRecipients>
 										<elm:workflowRecipient>
 											<elm:recipient agentType="recipient">
 												<name>Harald Löfgren</name>
 												<role>aas</role>
 											</elm:recipient>
-											<elm:recipientStatus>godkänd</elm:recipientStatus>
-											<elm:completedDate dateType="closed">2023-08-12T00:00:00</elm:completedDate>
-											<elm:completedBy agentType="recipient">
+											<elm:recipientStatus>approved</elm:recipientStatus>
+											<elm:recipientCompletedDate dateType="closed">2023-08-12T00:00:00</elm:recipientCompletedDate>
+											<elm:recipientCompletedBy agentType="recipient">
 												<name>Harald Löfgren</name>
-											</elm:completedBy>
+											</elm:recipientCompletedBy>
 										</elm:workflowRecipient>
 									</elm:workflowRecipients>
 									</elm:workflow>

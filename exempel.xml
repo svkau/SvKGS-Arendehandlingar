@@ -216,8 +216,8 @@
 												<elm:recipientCompletedDate dateType="closed">2023-08-12T00:00:00</elm:recipientCompletedDate>
 												<elm:recipientCompletedBy agentType="recipient">
 													<name>Peter Jonsson</name>
-													<idNumber idNumberType="username">petjon</idNumber>
 													<organisation>Avdelningen för kulturarv</organisation>
+													<idNumber idNumberType="username">petjon</idNumber>
 													<role>Avdelningschef</role>
 												</elm:recipientCompletedBy>
 											</elm:workflowRecipient>

@@ -984,7 +984,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1000,7 +1000,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1020,7 +1020,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1038,7 +1038,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1056,7 +1056,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1073,7 +1073,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1281,7 +1281,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 			<actionDate dateType="decision_date">2020-05-20T00:00:00</actionDate>
 		</dates>
 		<agents>
-			<agent agentType="other" otherAgentType="authorising_person">
+			<agent agentType="authorising_person">
 				<name>Kyrkorådet</name>
 			</agent>
 		</agents>
@@ -1332,6 +1332,8 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 ```
 
 ---
+
+## Tabell 3. Svenska kyrkans tilläggsinformation om ärendeakter.
 
 #### ERMS-SVK:62
 
@@ -2179,7 +2181,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
 > `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
 
 > **XML-element:**<br/>
 > `agent`<br/>
@@ -2201,7 +2203,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
 > `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
 
 > **XML-element:**<br/>
 > `agent`<br/>
@@ -2225,7 +2227,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
 > `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
 
 > **XML-element:**<br/>
 > `agent`<br/>

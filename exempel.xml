@@ -7,7 +7,9 @@
 	xsi:schemaLocation="https://DILCIS.eu/XML/ERMS https://citserms.dilcis.eu/schema/ERMS.xsd
 	https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE https://raw.githubusercontent.com/svkau/SvKGS-Arendehandlingar/main/ERMS-SVK-ARENDE.xsd">
 	<control>
-		<identification identificationType="aid">SE/P345/PA45/P 2020-0045</identification>
+		<identification identificationType="arkivbildare">Sunne pastorat</identification>
+    	<identification identificationType="organisationsnummer">1234567890</identification>
+    	<identification identificationType="ärendenummer">P 2019-0254</identification>
 		<classificationSchema>
 			<textualDescriptionOfClassificationSchema>
 				<p>Klassificeringsstruktur för lokal nivå 2018, ver. 1.0</p>
@@ -16,7 +18,7 @@
 		<maintenanceInformation>
 			<maintenanceStatus value="new"/>
 			<maintenanceAgency>
-				<agencyCode type="aid">SE/NN456</agencyCode>
+				<agencyCode type="organisationsnummer">0987654321</agencyCode>
 				<agencyName>Kyrkostyrelsen</agencyName>
 			</maintenanceAgency>
 			<maintenanceHistory>
@@ -33,15 +35,17 @@
 	</control>
 	<aggregations>
 		<aggregation systemIdentifier="3b9fbc5f-3eaf-4521-9726-0f142feb04c3" aggregationType="caseFile">
-			<objectId>C 1995-0032</objectId>
+			<objectId>F 2019-0032</objectId>
+			<extraId extraIdType="organisationsnummer">1234567890</extraId>
 			<extraId extraIdType="deliveringSystemId">34565</extraId>
 			<classification classificationCode="1.2">Styra verksamheten</classification>
 			<keywords>
 				<keyword>församlingsordning</keyword>
+				<keyword>kyrkorådet</keyword>
 			</keywords>
-			<title>Församlingsordning 2019</title>
-			<otherTitle titleType="description">Församlingsordning 2019 med allt vad det innebär</otherTitle>
-			<otherTitle titleType="public">Församlingsordning utan det hemliga 2019</otherTitle>
+			<title>Det här är ett exempel på en ärendemening.</title>
+			<otherTitle titleType="description">Acta har en kompletterande titel/beskrivning</otherTitle>
+			<otherTitle titleType="public">Public 360 har en särskild publik ärendemening.</otherTitle>
 			<status value="closed"/>
 			<relation relationType="reference">C 1995-0031</relation>
 			<additionalInformation>
@@ -57,6 +61,8 @@
 								</elm:relatedObject>
 								<elm:relatedObject typeOfObject="realEstate">
 									<elm:objectName>Kyrkan</elm:objectName>
+									<elm:objectId>Kyrkbacken 1:2</elm:objectId>
+									<elm:deliveringSystemId>34958</elm:deliveringSystemId>
 								</elm:relatedObject>
 							</elm:relatedObjects>
 							<elm:svkNotes>
@@ -69,13 +75,13 @@
 							<elm:auditLogEvents>
 								<elm:auditLogEvent>
 									<elm:eventTime>2009-09-22T11:47:00</elm:eventTime>
-									<elm:user>Henrik Vitalis (khus/henvital)</elm:user>
+									<elm:user>Sara Andersson</elm:user>
 									<elm:scope>ärende</elm:scope>
 									<elm:action>create</elm:action>
 								</elm:auditLogEvent>
 								<elm:auditLogEvent>
 									<elm:eventTime>2009-09-22T11:52:00</elm:eventTime>
-									<elm:user>Henrik Vitalis (khus/henvital)</elm:user>
+									<elm:user>Anna Andersson</elm:user>
 									<elm:scope>ärendemening</elm:scope>
 									<elm:action>update</elm:action>
 									<elm:valueBeforeChange>Upphandling av frysboxar</elm:valueBeforeChange>
@@ -83,7 +89,7 @@
 								</elm:auditLogEvent>
 								<elm:auditLogEvent>
 									<elm:eventTime>2009-09-22T12:10:00</elm:eventTime>
-									<elm:user>Henrik Vitalis (khus/henvital)</elm:user>
+									<elm:user>Anna Andersson</elm:user>
 									<elm:scope>status</elm:scope>
 									<elm:action>update</elm:action>
 									<elm:valueBeforeChange>Öppet</elm:valueBeforeChange>
@@ -102,24 +108,20 @@
 				</dates>
 			</restriction>
 			<agents>
-				<agent agentType="creator"> <!-- registrator som skapat ärendet -->
-					<name>Henrik Vitalis</name>
-					<idNumber idNumberType="username">henvital</idNumber>
+				<agent agentType="creator">
+					<name>Anna Andersson</name>
+					<idNumber idNumberType="username">svkanan</idNumber>
 				</agent>
-				<agent agentType="responsible_person">  <!-- Ansvarig handläggare -->
-					<name>Henrik Vitalis</name>
-					<idNumber idNumberType="username">henvital</idNumber>
+				<agent agentType="responsible_person">
+					<name>Johan Göransson</name>
+					<idNumber idNumberType="username">svkjogo</idNumber>
 				</agent>
-				<agent agentType="editor"> <!-- medhandläggare -->
-					<name>Nils Högman</name>
-					<idNumber idNumberType="username">nilhogma</idNumber>
-				</agent>
-				<agent agentType="counterpart"> <!-- motpart/avsändare/mottagare -->
+				<agent agentType="counterpart">
 					<name>Försäkringskassan</name>
 				</agent>
-				<agent agentType="other" otherAgentType="closer"> <!-- registrator som stängt ärendet -->
+				<agent agentType="other" otherAgentType="closing_person">
 					<name>Erik Gustavsson</name>
-					<idNumber idNumberType="username">erigust</idNumber>
+					<idNumber idNumberType="username">svkergu</idNumber>
 				</agent>
 			</agents>
 			<dates>
@@ -134,13 +136,13 @@
 					<actionDate dateType="decision_date">2020-05-20T00:00:00</actionDate>
 				</dates>
 				<agents>
-					<agent agentType="other" otherAgentType="decisionMaker">
+					<agent agentType="authorising_person">
 						<name>Kyrkorådet</name>
 					</agent>
 				</agents>
 			</action>
-			<notes><note noteType="comment" noteDate="2019-02-21T00:00:00">Detta är ett migrerat ärende</note></notes>
-			<record systemIdentifier="8dbbdc56-8ada-4ad5-a1ec-b8131a1086a2" recordPhysicalOrDigital="digitial" recordType="Avtal">
+			<notes><note noteType="comment" noteDate="2019-02-21T00:00:00">Detta är ett exempel på en kommentar.</note></notes>
+			<record systemIdentifier="8dbbdc56-8ada-4ad5-a1ec-b8131a1086a2" recordPhysicalOrDigital="digitial" recordType="ärendedokument">
 				<objectId>C 1995-0032:1</objectId>
 				<extraId extraIdType="deliveringSystemId">34565</extraId>
 				<classification classificationCode="1.2">Styra verksamheten</classification>
@@ -148,42 +150,36 @@
 					<keyword>församlingsordning</keyword>
 					<keyword>kyrkorådet</keyword>
 				</keywords>
-				<title>Ansökan om räntebidrag</title>
-				<otherTitle titleType="description">Ansökan om räntebidrag: Spanienhuset och traktorn</otherTitle>
-				<otherTitle titleType="public">Ansökan</otherTitle>
-				<status value="expedited"/>
+				<title>Handlingens titel</title>
+				<otherTitle titleType="public">En offentlig titel om det behövs.</otherTitle>
+				<status value="closed"/>
 				<runningNumber>1</runningNumber>
-				<relation relationType="reference">C 1992-0234</relation>
+				<relation relationType="reference">C 1992-0234:7</relation>
 				<restriction restrictionType="confidential">
 					<explanatoryText>Sekretess enligt KO</explanatoryText>
 					<regulation>KO 54:2</regulation>
 				</restriction>
-				<disposal disposable="true">
-					<disposalMandate>SvKB 2019:1 11 kap. 32 §</disposalMandate>
-					<dates>
-						<disposalDate dateType="action_due">2025-01-01T00:00:00</disposalDate>
-					</dates>
-				</disposal>
-				<direction directionDefinition="other" otherDirectionDefinition="internal"/>
+				<direction directionDefinition="outgoing"/>
 				<agents>
-					<agent agentType="sender">
-						<name>Registrator Johansson</name>
+					<agent agentType="creator">
+						<name>Amanda Handläggare</name>
+						<idNumber idNumberType="username">amahan</idNumber>
 					</agent>
 					<agent agentType="responsible_person">
 						<name>Amanda Handläggare</name>
-					</agent>
-					<agent agentType="sender">
-						<name>Jörgen Avsändare</name>
+						<idNumber idNumberType="username">amahan</idNumber>
 					</agent>
 					<agent agentType="receiver">
-						<name>Henrik Mottagare</name>
+						<name>Jörgen Mottagare</name>
 					</agent>
 				</agents>
 				<dates>
 					<date dateType="created">2020-02-02T00:00:00</date> <!-- skapat i systemet -->
-					<date dateType="expedited">2020-02-02T00:00:00</date> <!-- expedierat/skickat -->
-					<date dateType="received">2020-02-02T00:00:00</date> <!-- inkommet -->
+					<date dateType="originated">2020-02-03T00:00:00</date> <!-- registrerat -->
 				</dates>
+				<notes>
+					<note noteDate="2020-02-03T00:00:00">Detta är en kommentar till handlingen.</note>
+				</notes>
 				<additionalInformation>
 					<additionalXMLData>
 						<svk:ermsSvkArende schemaVersion="1.0" ermsSchemaVersion="2.1.2" elementSchemaVersion="1.0" schematronVersion="1.0">
@@ -199,28 +195,33 @@
 									</dates>
 								</elm:contractInfo>
 								<elm:workflows>
-									<elm:workflow>
+									<elm:workflow typeOfWorkflow="approval">
 										<elm:workflowStatus>approved</elm:workflowStatus>
 										<elm:workflowInitiatedBy agentType="creator">
-											<name>Henrik Vitalis</name>
+											<name>Tore Pettersson</name>
 											<organisation>Avdelningen för kulturarv</organisation>
-											<idNumber idNumberType="username">henvital</idNumber>
+											<idNumber idNumberType="username">torpet</idNumber>
 										</elm:workflowInitiatedBy>
 										<elm:workflowInitiatedDate dateType="created">2023-08-12T00:00:00</elm:workflowInitiatedDate>
 										<elm:workflowMessage>Kan ni vänligen godkänna detta.</elm:workflowMessage>
 										<elm:workflowRecipients>
-										<elm:workflowRecipient>
-											<elm:recipient agentType="recipient">
-												<name>Harald Löfgren</name>
-												<role>aas</role>
-											</elm:recipient>
-											<elm:recipientStatus>approved</elm:recipientStatus>
-											<elm:recipientCompletedDate dateType="closed">2023-08-12T00:00:00</elm:recipientCompletedDate>
-											<elm:recipientCompletedBy agentType="recipient">
-												<name>Harald Löfgren</name>
-											</elm:recipientCompletedBy>
-										</elm:workflowRecipient>
-									</elm:workflowRecipients>
+											<elm:workflowRecipient>
+												<elm:recipient agentType="recipient">
+													<name>Peter Jonsson</name>
+													<organisation>Avdelningen för kulturarv</organisation>
+													<idNumber idNumberType="username">petjon</idNumber>
+													<role>Avdelningschef</role>
+												</elm:recipient>
+												<elm:recipientStatus>approved</elm:recipientStatus>
+												<elm:recipientCompletedDate dateType="closed">2023-08-12T00:00:00</elm:recipientCompletedDate>
+												<elm:recipientCompletedBy agentType="recipient">
+													<name>Peter Jonsson</name>
+													<idNumber idNumberType="username">petjon</idNumber>
+													<organisation>Avdelningen för kulturarv</organisation>
+													<role>Avdelningschef</role>
+												</elm:recipientCompletedBy>
+											</elm:workflowRecipient>
+										</elm:workflowRecipients>
 									</elm:workflow>
 								</elm:workflows>
 								<elm:svkAppendix>

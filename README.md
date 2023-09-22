@@ -15,15 +15,15 @@ Riksarkivet)](https://www.riksarkivet.se/fgs-anpassning).
 
 ## Innehåll
 
-- **Specifikation**: [ERMS-SVK-ARENDE.md](ERMS-SVK-ARENDE.md)
-- **Värdelistor**: [ERMS-SVK-ARENDE-vardelistor.md](ERMS-SVK-ARENDE-vardelistor.md)
+- **Specifikation**: [ERMS-SVK-ARENDE.md](ERMS-SVK-ARENDE.md) version 1.0
+- **Värdelistor**: [ERMS-SVK-ARENDE-vardelistor.md](ERMS-SVK-ARENDE-vardelistor.md) version 1.0
 
 ## Tillämpade scheman
 
-[ERMS](https://citserms.dilcis.eu/schema/ERMS.xsd) (ERMS standard, version 2.1.2)
+[ERMS](https://citserms.dilcis.eu/schema/ERMS.xsd) version 2.1.2
 
-[ERMS-SVK-ARENDE](ERMS-SVK-ARENDE.xsd) (Svenska kyrkans anpassning av ERMS, verions 1.0)
+[ERMS-SVK-ARENDE](ERMS-SVK-ARENDE.xsd) version 1.0
 
-[ERMS-SVK-element](https://github.com/svkau/ERMS-SVK/blob/main/ERMS-SVK-element.xsd) (Svenska kyrkans tillagda element, version 1.0)
+[ERMS-SVK-element](https://github.com/svkau/ERMS-SVK/blob/main/ERMS-SVK-element.xsd) version 1.0
 
-[ERMS-SVK-ARENDE.sch](ERMS-SVK-ARENDE.sch) Innehåller schematron-regler för ERMS (version 2.1.2) och ERMS-SVK-ARENDE (verision 1.0)
+[ERMS-SVK-ARENDE.sch](ERMS-SVK-ARENDE.sch) version 1.0 (Innehåller även schematron-regler för ERMS version 2.1.2

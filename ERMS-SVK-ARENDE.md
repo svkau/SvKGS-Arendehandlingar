@@ -89,7 +89,7 @@ Tabellerna följer strukturen i XML-dokumentet:
 ## 2.3. Värdelistor
 
 I många fall är det värde som får anges i ett dataelement begränsat till värden som finns i en specificerad värdelista.
-De värdelistor som ingår i *SvKGS Ärendehandlingar* finns nedan i detta dokument.
+De värdelistor som ingår i *SvKGS Ärendehandlingar* finns i ett eget dokument, [ERMS-SVK-ARENDE-vardelistor.md](ERMS-SVK-ARENDE-vardelistor.md).
 Värdelistorna kan innehålla värden från ERMS eller vara tillagda värden och är därför också en del av
 Svenska kyrkans anpassning av ERMS. Utgångspunkten har varit att så långt som möjligt använda värden från ERMS.
 
@@ -218,7 +218,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Beskrivning av identifikatorn.
 
-> Obligatoriskt. Värdet väljs från SVK-värdelista 1.
+> Obligatoriskt. Värdet väljs från [Värdelista 1](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-1---typ-av-identifikator).
 
 > **XML-element:**	`identification/@identificationType`<br/>
 > **Datatyp:**	string
@@ -259,7 +259,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Den klassificeringsstruktur som har använts vid klassificering av det aktuella ärendet.
 
-> Obligatoriskt. Värdet välj från [värdelista 2](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-1---typ-av-identifikator).
+> Obligatoriskt. Värdet välj från [Värdelista 2](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-2---klassificeringsstruktur).
 
 > **XML-element:**	`classificationSchema/textualDescriptionOfClassificationSchema/p` <br/>
 > **Datatyp:**	string
@@ -314,7 +314,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > XML-dokumentets status.
 
-> Obligatoriskt. Värdet välj från SVK-värdelista 3.
+> Obligatoriskt. Värdet välj från [Värdelista 3](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-3---xml-dokumentets-status).
 >
 > För ett nyskapat dokument är värdet alltid `new`.
 
@@ -360,7 +360,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Beskriver vilken typ av kod som har använts för att identifiera skaparen av XML-dokumentet.
 
-> Obligatoriskt. Värdet väljs från SVK-värdelista 4.
+> Obligatoriskt. Värdet väljs från [Värdelista 4](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-4---typ-av-id).
 
 > **XML-element:**	`agencyCode/@type`<br/>
 > **Datatyp:**	string
@@ -448,7 +448,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Typ av underhållshändelse.
 
-> Obligatoriskt. Värdet väljs från SVK-VÄRDELISTA 5.
+> Obligatoriskt. Värdet väljs från [Värdelista 5](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-5---typ-av-underh%C3%A5llsh%C3%A4ndelse).
 
 > **XML-element:**	`eventType/@value`<br/>
 > **Datatyp:**	token
@@ -492,7 +492,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Anger vilken egenskap utföraren har i förhållande till den utförda handlingen.
 
-> Obligatoriskt. Värdet väljs från SVK-VÄRDELISTA 6.
+> Obligatoriskt. Värdet väljs från [Värdelista 6](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-6---typ-av-akt%C3%B6r-agenttype).
 
 > **XML-element:**	`agent/@agentType`<br/>
 > **Datatyp:**	string
@@ -642,7 +642,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Ett unikt ID för den arkivansvariga enheten.
 
-> Obligatoriskt. Värdet på attributet `extraIdType` hämtas från SVK-värdelista 4.
+> Obligatoriskt. Värdet på attributet `extraIdType` hämtas från [Värdelista 4](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-4---typ-av-id).
 
 > **XML-element:**	`extraId`<br/>
 > **Datatyp:**	string
@@ -825,7 +825,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Ärendets status.
 
-> Obligatoriskt. Värdet väljs från värdelistan SVK-värdelista 7.
+> Obligatoriskt. Värdet väljs från [Värdelista 7](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-7---%C3%A4rende--och-handlingsstatus).
 >
 > Giltiga värden:”closed” (avslutat) eller ”obliterated” (makulerat).
  
@@ -984,7 +984,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1000,7 +1000,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1020,7 +1020,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1038,7 +1038,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1056,7 +1056,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1073,7 +1073,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
 
@@ -1372,7 +1372,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Anger om initiativ till ärendets öppnande är externt
 > (genom en inkommande handling), eller om ärendet har öppnats på eget (internt) initiativ.
 
-> Värdet väljs från värdelistan SVK-värdelista 9.
+> Värdet väljs från [Värdelista 9](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-9---initiativ).
 > Möjliga värden: ”externt”eller ”eget”.
 
 > **XML-element:** `svk:initiative`<br/>
@@ -1410,7 +1410,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Anger vilken typ av objekt det är fråga om.
 
-> Obligatoriskt om elementet *Relaterat objekt* används. Värdet väljs från SVK-värdelista 18.
+> Obligatoriskt om elementet *Relaterat objekt* används. Värdet väljs från [Värdelista 18](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-18---typ-av-objekt).
 
 > **XML-element:** `svk:relatedObject/@typeOfObject`<br/>
 > **Datatyp:** token
@@ -1498,7 +1498,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Kategorisering av anteckningen.
 
-> Obligatoriskt om elementet *Anteckning* används. Värdet väljs från SVK-värdelista 10.
+> Obligatoriskt om elementet *Anteckning* används. Värdet väljs från [Värdelista 10](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-10---typ-av-anteckning).
 
 > **XML-element:** `svk:svkNote/@typeOfNote`<br/>
 > **Datatyp:** token
@@ -1614,7 +1614,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Beskrivning av det som ändringen avser.
 
-> Obligatoriskt om elementet *Händelse* används. Värdet väljs från SVK-värdelista 11.
+> Obligatoriskt om elementet *Händelse* används. Värdet väljs från [Värdelista 11](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-11---till%C3%A4mpningsomr%C3%A5de).
 
 > **XML-element:** `svk:scope`<br/>
 > **Datatyp:** token
@@ -1627,7 +1627,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Beskrivning av ändringen.
 
-> Obligatoriskt om elementet *Händelse* används. Värdet väljs från SVK-värdelista 12.
+> Obligatoriskt om elementet *Händelse* används. Värdet väljs från [Värdelista 12](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-12---%C3%A5tg%C3%A4rd).
 
 > **XML-element:** `svk:action`<br/>
 > **Datatyp:** token
@@ -1729,7 +1729,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Övergripande typ av handling. Motsvarar **inte** handlingstyp i arkivredovisning/dokumenthanteringsplan.
 
-> Obligatoriskt. Värdet väljs från SVK-värdelista 13.
+> Obligatoriskt. Värdet väljs från [Värdelista 13](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-13---handlingstyp).
 > 
 > Oavsett handlingstyp kan värdet ”ärendedokument” alltid användas.
 
@@ -1746,7 +1746,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Anger om handlingen bara finns i fysisk form, bara i digital form eller både och.
 
-> Värdet väljs från SVK-värdelista 14.
+> Värdet väljs från [Värdelista 14](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-14---form).
 
 > **XML-element:** `recordPhysicalOrDigital`<br/>
 > **Datatyp:** string
@@ -1956,7 +1956,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Handlingens status.
 
-> Obligatoriskt. Värdet väljs från SVK-värdelista 7.
+> Obligatoriskt. Värdet väljs från [Värdelista 7](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-7---%C3%A4rende--och-handlingsstatus).
 > 
 > Värdet kan vara antingen ”closed”, vilket innebär att dokumentet är registrerat
 > som inkommet eller upprättat, eller ”obliterated”, vilket betyder att det är
@@ -2104,7 +2104,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Anger handlingens riktning.
 
-> Obligatoriskt. Värdet väljs från SVK-värdelista 15.
+> Obligatoriskt. Värdet väljs från [Värdelista 15](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-15---riktning).
 > 
 >Kan vara något av värdena:
 > 1.	”incoming” – en inkommen handling
@@ -2149,22 +2149,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Samlingselement för alla agerande parter.
 
-> Obligatoriskt. Värdet väljs från SVK-värdelista 15.
+> Obligatoriskt.
 
-> **XML-element:** `direction/@directionDefinition`<br/>
-> **Datatyp:** string
-
----
-
-#### ERMS-SVK:107
-
-(ERMS)
-
-***Aktörer***
-
-> Samlingselement för alla agerande parter.
-
-> **XML-element:** `direction/@directionDefinition`<br/>
+> **XML-element:** `agents`<br/>
 
 ---
 
@@ -2181,7 +2168,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
 > `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**<br/>
 > `agent`<br/>
@@ -2203,7 +2190,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
 > `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**<br/>
 > `agent`<br/>
@@ -2227,7 +2214,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
 > `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet för `idNumberType`från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**<br/>
 > `agent`<br/>
@@ -2251,7 +2238,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
 > `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**<br/>
 > `agent`<br/>
@@ -2275,7 +2262,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Namn och användarnamn anges i underelementen `name` (obligatoriskt) och
 > `idNumber` (frivilligt). Se exemplet nedan.
 > 
-> Om `idNumber` används hämtas värdet från SVK-värdelista 8.
+> Om `idNumber` används hämtas värdet från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**<br/>
 > `agent`<br/>
@@ -2513,7 +2500,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Anger vilken typ av objekt det är fråga om.
 
-> Obligatoriskt om elementet *Relaterat objekt* används. Värdet väljs från SVK-värdelista 18.
+> Obligatoriskt om elementet *Relaterat objekt* används. Värdet väljs från [Värdelista 18](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-18---typ-av-objekt).
 
 > **XML-element:** `svk:relatedObject/@typeOfObject`<br/>
 > **Datatyp:** token
@@ -2601,7 +2588,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Kategorisering av anteckningen.
 
-> Obligatoriskt om elementet *Anteckning* används. Värdet väljs från SVK-värdelista 10.
+> Obligatoriskt om elementet *Anteckning* används. Värdet väljs från [Värdelista 10](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-10---typ-av-anteckning).
 
 > **XML-element:** `svk:svkNote/@typeOfNote`<br/>
 > **Datatyp:** token
@@ -2744,7 +2731,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Typ av avtal.
 
-> Värdet väljs från SVK-värdelista 16.
+> Värdet väljs från [Värdelista 16](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-16---avtalstyp).
 
 > **XML-element:** `svk:typeOfAgreement`<br/>
 > **Datatyp:** token
@@ -2824,7 +2811,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Typ av arbetsflöde.
 
-> Obligatoriskt. Värdet väljs från SVK-värdelista 19.
+> Obligatoriskt. Värdet väljs från [Värdelista 19](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-19---typ-av-arbetsfl%C3%B6de).
 > 
 > Attributet `typeOfWorkflow` kan enbart ha värdet ”approval”.
 
@@ -2850,7 +2837,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Arbetsflödets status.
 
-> Obligatoriskt. Värdet väljs från SVK-värdelista 20.
+> Obligatoriskt. Värdet väljs från [Värdelista 20](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-20---arbetsfl%C3%B6des-status).
 
 > **XML-element:** `svk:workflowStatus`<br/>
 > **Datatyp:** token
@@ -2863,7 +2850,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Arbetsflödets prioritet.
 
-> Värdet väljs från SVK-värdelista 21.
+> Värdet väljs från [Värdelista 21](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-21---arbetsfl%C3%B6des-prioritet).
 
 > **XML-element:** `svk:workflowPriority`<br/>
 > **Datatyp:** token
@@ -2882,7 +2869,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Attributet `agentType` måste ha värdet ”creator”.
 > 
-> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+> Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:** `svk:workflowInitiatedBy`<br/>
 > name (string)<br/>
@@ -2973,7 +2960,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Attributet `agentType` måste ha värdet ”sender”.
 > 
-> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+> Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**<br/>
 > `svk:workflowNoteFrom`<br/>
@@ -2992,7 +2979,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Attributet `agentType` måste ha värdet ”receiver”.
 > 
-> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+> Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**<br/>
 > `svk:workflowNoteTo`<br/>
@@ -3035,7 +3022,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Attributet `agentType` måste ha värdet ”recipient”.
 > 
-> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+> Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:** `svk:workflowRecipient/@agentype="recipient"`<br/>
 > **Datatyp:** dateTime
@@ -3048,7 +3035,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Flödets status hos den enskilde mottagaren.
 
-> Obligatoriskt. Värdet väljs från SVK-värdelista 20.
+> Obligatoriskt. Värdet väljs från [Värdelista 20](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-20---arbetsfl%C3%B6des-status).
 
 > **XML-element:** `svk:recipientStatus`<br/>
 > **Datatyp:** token
@@ -3082,7 +3069,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Attributet `agentType` måste ha värdet ”other” och attributet `otherAgentType` måste
 > ha värdet *closing_person*.
 > 
-> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+> Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**<br/>
 > `svk:workflowRecipient`<br/>
@@ -3104,7 +3091,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Attributet `agentType` måste ha värdet ”other” och attributet `otherAgentType` måste
 > ha värdet *delegator*.
 > 
-> Om *idNumber* används hämtas värdet för `idNumberType` från SVK-värdelista 8.
+> Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 > **XML-element:**<br/>
 > `svk:workflowRecipient`<br/>
@@ -3239,7 +3226,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Beskrivning av det som ändringen avser.
 
-> Obligatoriskt om elementet *Händelse* används. Värdet väljs från SVK-värdelista 11.
+> Obligatoriskt om elementet *Händelse* används. Värdet väljs från [Värdelista 11](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-11---till%C3%A4mpningsomr%C3%A5de).
 
 > **XML-element:** `svk:scope`<br/>
 > **Datatyp:** token
@@ -3252,7 +3239,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Beskrivning av ändringen.
 
-> Obligatoriskt om elementet *Händelse* används. Värdet väljs från SVK-värdelista 12.
+> Obligatoriskt om elementet *Händelse* används. Värdet väljs från [Värdelista 12](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-12---%C3%A5tg%C3%A4rd).
 
 > **XML-element:** `svk:action`<br/>
 > **Datatyp:** token
@@ -3514,7 +3501,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Om flera varianter av samma version är kopplade till handlingen, anges unik variant här.
 
-> Värdet väljs från värdelistan SVK-värdelista 17.
+> Värdet väljs från [Värdelista 17](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-17---variant).
 
 > **XML-element:** `svk:variant`<br/>
 > **Datatyp:** token
@@ -3590,7 +3577,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Beskrivning av det som ändringen avser.
 
-> Obligatoriskt om elementet *Händelse* används. Värdet väljs från SVK-värdelista 11.
+> Obligatoriskt om elementet *Händelse* används. Värdet väljs från [Värdelista 11](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-11---till%C3%A4mpningsomr%C3%A5de).
 
 > **XML-element:** `svk:scope`<br/>
 > **Datatyp:** token
@@ -3603,7 +3590,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Beskrivning av ändringen.
 
-> Obligatoriskt om elementet *Händelse* används. Värdet väljs från SVK-värdelista 12.
+> Obligatoriskt om elementet *Händelse* används. Värdet väljs från [Värdelista 12](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-12---%C3%A5tg%C3%A4rd).
 
 > **XML-element:** `svk:action`<br/>
 > **Datatyp:** token

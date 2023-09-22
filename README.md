@@ -26,4 +26,4 @@ Riksarkivet)](https://www.riksarkivet.se/fgs-anpassning).
 
 [ERMS-SVK-element](https://github.com/svkau/ERMS-SVK/blob/main/ERMS-SVK-element.xsd) version 1.0
 
-[ERMS-SVK-ARENDE.sch](ERMS-SVK-ARENDE.sch) version 1.0 (Innehåller även schematron-regler för ERMS version 2.1.2
+[ERMS-SVK-ARENDE.sch](ERMS-SVK-ARENDE.sch) version 1.0 (Innehåller även schematron-regler för ERMS version 2.1.2)

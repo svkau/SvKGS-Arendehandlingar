@@ -259,7 +259,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Den klassificeringsstruktur som har använts vid klassificering av det aktuella ärendet.
 
-> Obligatoriskt. Värdet välj från SVK-värdelista 2.
+> Obligatoriskt. Värdet välj från [värdelista 2](ERMS-SVK-ARENDE-vardelistor.md).
 
 > **XML-element:**	`classificationSchema/textualDescriptionOfClassificationSchema/p` <br/>
 > **Datatyp:**	string

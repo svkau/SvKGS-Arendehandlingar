@@ -59,7 +59,7 @@ Version:	0.1
 		    <assert test="count(erms:identification[@identificationType='arkivbildare'])=1">Det måste finnas en Identifikator av typen "arkivbildare" (ERMS-SVK:1-2).</assert>
 		    <assert test="count(erms:identification[@identificationType='ärendenummer'])=1">Det måste finnas en Identifikator av typen "ärendenummer" (ERMS-SVK:1-2).</assert>
 			<assert test="count(erms:identification[@identificationType='organisationsnummer'])=1 or count(erms:identification[@identificationType='aid'])=1">
-				Det måste finnas en Identifikator av typen "ärendenummer" (ERMS-SVK:1-2).</assert>
+				Det måste finnas en Identifikator av typen "organisationsnummer" eller "aid" (ERMS-SVK:1-2).</assert>
 			<assert test="matches(erms:identification[@identificationType='organisationsnummer'], '[0-9]{10}')">Organisationsnummer måste skrivas med 10 siffror utan bindestreck.</assert>
 		</rule>
 

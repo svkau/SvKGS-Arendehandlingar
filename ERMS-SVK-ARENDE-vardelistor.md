@@ -217,13 +217,14 @@
 
 (ERMS-SVK:??)
 
-| **Giltiga värden** | **Kommentar** | **Källa** |
-|--------------------|---------------|-----------|
-| arkivformat        |               | ERMS-SVK  |
-| offentligt format  |               | ERMS-SVK  |
-| produktionsformat  |               | ERMS-SVK  |
-| signerat dokument  |               | ERMS-SVK  |
-| visningsformat     |               | ERMS-SVK  |
+| **Giltiga värden** | **Kommentar**     | **Källa** |
+|--------------------|-------------------|-----------|
+| display            | Visningsformat    | ERMS-SVK  |
+| production         | Produktionsformat | ERMS-SVK  |
+| preservation       | Arkivformat       | ERMS-SVK  |
+| public             | Offentligt format | ERMS-SVK  |
+| signed             | Signerat format   | ERMS-SVK  |
+
 
 ## ERMS-SVK-ARENDE-värdelista 18 - Typ av objekt
 

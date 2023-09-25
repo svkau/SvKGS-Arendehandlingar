@@ -1525,8 +1525,10 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Person som har gjort anteckningen.
 
 > Obligatoriskt om elementet *Anteckning* används.
+> 
+> Attributet `agentType` måste ha värdet *creator*.
 
-> **XML-element:** `svk:noteAuthor`<br/>
+> **XML-element:** `svk:agents/agent/@agentType="creator"`<br/>
 > **Datatyp:** token
 
 ---
@@ -1538,8 +1540,10 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Datum och tid när anteckningen gjordes.
 
 > Obligatoriskt om elementet *Anteckning* används.
+> 
+> Attributet `dateType` måste ha värdet *created*
 
-> **XML-element:** `svk:noteDate`<br/>
+> **XML-element:** `dates/date/dateType="created"`<br/>
 > **Datatyp:** dateTime
 
 ---
@@ -1551,8 +1555,14 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 	<svk:svkNotes>
 		<svk:svkNote typeOfNote="generell anteckning">
 			<svk:noteText>Detta är en anteckning</svk:noteText>
-			<svk:noteAuthor>Jörgen Persson</svk:noteAuthor>
-			<svk:noteDate>2019-02-23T00:00:00</svk:noteDate>
+			<svk:agents>
+                <agent agentType="creator">
+                    <name>Jörgen Persson</name>
+                </agent>
+            </svk:agents>
+			<dates>
+                <date dateType="created">2019-02-23T00:00:00</date>
+            </dates>
 		</svk:svkNote>
 	</svk:svkNotes>
 </svk:ermsSvkAggregation>
@@ -2615,8 +2625,10 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Person som har gjort anteckningen.
 
 > Obligatoriskt om elementet *Anteckning* används.
+> 
+> Attributet `agentType` måste ha värdet "creator".
 
-> **XML-element:** `svk:noteAuthor`<br/>
+> **XML-element:** `svk:agents/agent/@agentType="creator"`<br/>
 > **Datatyp:** token
 
 ---
@@ -2628,8 +2640,10 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Datum och tid när anteckningen gjordes.
 
 > Obligatoriskt om elementet *Anteckning* används.
+> 
+> Attributet `dateType` måste ha värdet "created".
 
-> **XML-element:** `svk:noteDate`<br/>
+> **XML-element:** `dates/date/@dateType="created`<br/>
 > **Datatyp:** dateTime
 
 ---
@@ -2641,8 +2655,14 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 	<svk:svkNotes>
 		<svk:svkNote typeOfNote="generell anteckning">
 			<svk:noteText>Detta är en anteckning</svk:noteText>
-			<svk:noteAuthor>Jörgen Persson</svk:noteAuthor>
-			<svk:noteDate>2019-02-23T00:00:00</svk:noteDate>
+			<svk:agents>
+                <agent agentType="creator">
+                    <name>Jörgen Persson</name>
+                </agent>
+            </svk:agents>
+            <dates>
+			    <date dateType="created">2019-02-23T00:00:00</date>
+            </dates>
 		</svk:svkNote>
 	</svk:svkNotes>
 </svk:ermsSvkRecord>
@@ -2871,7 +2891,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:** `svk:workflowInitiatedBy`<br/>
+> **XML-element:** `svk:agents/agent/@agentType="creator"`<br/>
 > name (string)<br/>
 > idNumber (string)
 
@@ -2888,7 +2908,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Attributet dateType måste ha värdet ”created”.
 
-> **XML-element:** `svk:workflowInitiatedDate/@dateType=”created”`<br/>
+> **XML-element:** `dates/date/@dateType=”created”`<br/>
 > **Datatyp:** dateTime
 
 ---
@@ -2944,8 +2964,10 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Datum då anteckningen skapades.
 
 > Obligatoriskt om *Anteckning* används.
+> 
+> Attributet `dateType` måste ha värdet "created".
 
-> **XML-element:** `svk:workflowNoteDate/@dateType="created"`<br/>
+> **XML-element:** `dates/date/@dateType="created"`<br/>
 > **Datatyp:** dateTime
 
 ---
@@ -2962,10 +2984,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**<br/>
-> `svk:workflowNoteFrom`<br/>
-> `name` (string)<br/>
-> `idNumber` (string)<br/>
+> **XML-element:** `svk:agents/agent/@agentType="sender"`<br/>
 
 ---
 
@@ -2981,10 +3000,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**<br/>
-> `svk:workflowNoteTo`<br/>
-> `name` (string)<br/>
-> `idNumber` (string)<br/>
+> **XML-element:** `svk:agents/agent/@agentType="receiver"`<br/>
 
 ---
 
@@ -3024,8 +3040,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:** `svk:workflowRecipient/@agentype="recipient"`<br/>
-> **Datatyp:** dateTime
+> **XML-element:** `svk:agents/agent/@agentype="recipient"`<br/>
 
 ---
 
@@ -3052,7 +3067,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Attributet `dateType` måste ha värdet "finished".
 
-> **XML-element:** `svk:CompletedDate/@dateType="finished"`<br/>
+> **XML-element:** `dates/date/@dateType="finished"`<br/>
 > **Datatyp:** dateTime
 
 ---
@@ -3071,10 +3086,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**<br/>
-> `svk:workflowRecipient`<br/>
-> `name` (string)<br/>
-> `idNumber` (string)<br/>
+> **XML-element:** `svk:agents/agent/@agentType="other" @otherAgentType="executor"`<br/>
 
 ---
 
@@ -3093,10 +3105,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > 
 > Om *idNumber* används hämtas värdet för `idNumberType` från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**<br/>
-> `svk:workflowRecipient`<br/>
-> `name` (string)<br/>
-> `idNumber` (string)<br/>
+> **XML-element:** `svk:agents/agent/@agentType="other" @otherAgentType="delegator"`<br/>
 
 ---
 
@@ -3120,34 +3129,45 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
             <svk:workflowName>Godkännande</svk:workflowName>
             <svk:workflowStatus>approved</svk:workflowStatus>
             <svk:priority>normal</svk:priority>
-            <svk:initiatedBy agentType="creator">
-                <name>Bo Mattsson</name>
-            </svk:initiatedBy>
-            <svk:workflowInitiatedDate dateType="created">2022-01-14T00:00:00</svk:workflowInitiatedDate>
+            <svk:agents>
+                <agent agentType="creator">
+                    <name>Bo Mattsson</name>    
+                </agent>
+            </svk:agents>
+            <dates>
+                <date dateType="created">2022-01-14T00:00:00</date>
+            </dates>
             <svk:workflowMessage>Översändes för godkännande.</svk:workflowMessage>
             <svk:workflowNotes>
                 <svk:workflowNote>
                     <svk:workflowNoteText>Nu är det bråttom!</svk:workflowNoteText>
-                    <svk:workflowNoteDate dateType="created">2022-02-28T00:00:00</svk:workflowNoteDate>
-                    <svk:workflowNoteFrom agentype="sender">
-                        <name>Bo Mattsson</name>
-                    </svk:workflowNoteFrom>
-                    <svk:workflowNoteTo agentype="receiver">
-                        <name>Patrik Andersson</name>
-                    </svk:workflowNoteTo>
+                    <dates>
+                        <date dateType="created">2022-02-28T00:00:00</date>
+                    </dates>
+                    <svk:agents>
+                        <agent agentType="sender">Bo Mattsson</agent>
+                        <agent agentType="receiver">Patrik Andersson</agent>
+                    </svk:agents>
                 </svk:workflowNote>
             </svk:workflowNotes>
             <svk:workflowRecipients>
                 <svk:workflowRecipient>
-                    <svk:recipient>
-                        <name>Patrik Andersson</name>
-                    </svk:recipient>
+                    <svk:agents>
+                        <agent agentType="recipient">
+                            <name>Patrik Andersson</name>
+                        </agent>
+                        <agent agentType="other" otherAgentType="executor">
+                            <name>Patrik Andersson</name>
+                            <idNumber type="username">knet\patand</idNumber>
+                        </agent>
+                        <agent agentType="other" otherAgentType="delegator">
+                            <name>Gudrun Andersson</name>
+                        </agent>
+                    </svk:agents>
+                    <dates>
+                        <date dateType="finished">2022-03-01T00:00:00</date>
+                    </dates>
                     <svk:recipientStatus>approved</svk:recipientStatus>
-                    <svk:CompletedDate dateType="finished">2022-03-01T00:00:00</svk:CompletedDate>
-                    <svk:completedBy agentType="vad">
-                        <name>Patrik Andersson</name>
-                        <idNumber type="username">knet\patand</idNumber>
-                    </svk:completedBy>
                     <svk:recipientComment>Det ser bra ut! Jag godkänner.</svk:recipientComment>
                 </svk:workflowRecipient>
             </svk:workflowRecipients>
@@ -3464,8 +3484,10 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 ***Skapad***
 
 > Datum och tid då filen skapades (systeminformation).
+> 
+> Attributet `dateType` måste ha värdet "created".
 
-> **XML-element:** `svk:dateCreated`<br/>
+> **XML-element:** `dates/date/@dateType="created"`<br/>
 > **Datatyp:** dateTime
 
 ---
@@ -3475,8 +3497,10 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 ***Senast ändrad***
 
 > Datum och tid då filen senast ändrades (systeminformation).
+> 
+> Attributet `dateType` måste ha värdet "modified".
 
-> **XML-element:** `svk:dateLastEdited`<br/>
+> **XML-element:** `dates/date/@dateType="modified"`<br/>
 > **Datatyp:** dateTime
 
 ---

@@ -555,6 +555,145 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
+## 3.2. Element som används för information om både ärendeakter och handlingar
+
+Flera element såväl i ERMS som i *SvKGS Ärendehandlingar* kan användas för att ange information om både
+ärendeakter och handlingar. De kan alltså användas på flera ställen i XML-dokumentet.
+
+### 3.2.1. Aktörer
+
+Elementen `agents` och `agent` används som en standard för att beskriva en person eller en organisation
+som fungerar som aktör i något avseende. Olika typer av aktörer anges genom attributet `agentType` vars
+värde hämtas från ERMS-SVK-ARENDE-värdelista 6.
+
+Om man vill använda ett värde i ERMS-SVK-ARENDE-värdelista 6 som inte ingår i ERMS utan är en
+anpassning i *SvKGS Ärendehandlingar*, måste attributet `agentType` ha värdet "other". I detta
+fall används attributet `otherAgentType` för att ange typ av aktör.
+
+Elementet `agents` är ett samlingselement för ett eller flera element av typen `agent` som i sin tur
+har underelementen `name` (string), `organisation` (string), `idNumber` (string) och `role` (string).
+Av dessa är `name` det enda som är obligatoriskt.
+
+Elementet `idNumber` kan användas för att ange t.ex. personnummer men också användarnamn och andra
+identifikatorer som inte är nummer. Olika typer av `idNumber` anges genom attributet `idNumberType`,
+vars värde hämtas från ERMS-SVK-ARENDE-värdelista 8.
+
+**Exempel:**
+
+```xml
+<agents>
+    <agent agentType="responsible_person">
+        <name>Fredrik Johansson</name>
+        <organisation>Kyrkstadens församling</organisation>
+        <idNumber idNumberType="username">fredjo</idNumber>
+    </agent>
+    <agent agentType="counterpart">
+        <name>Exempelföretaget AB</name>
+        <idNumber idNumberType="organisationsnummer">1234567890</idNumber>
+    </agent>
+    <agent agentType="other" otherAgentType="closing_person">
+        <name>Anna Pettersson</name>
+        <organisation>Kyrkstadens församling</organisation>
+        <idNumber idNumberType="username">annpet</idNumber>
+    </agent>
+</agents>
+```
+
+### 3.2.2. Datum
+
+Elementen `dates` och `date` används som standard för att ange datum i XML-dokumentet. Olika typer av
+datum anges genom attributet `dateType`, vars värde hämtas från ERMS-SVK-ARENDE-värdelista ??.
+
+Om man vill använda ett värde i ERMS-SVK-ARENDE-värdelista ?? som inte ingår i ERMS utan är en
+anpassning i *SvKGS Ärendehandlingar*, måste attributet `dateType` ha värdet "other". I detta
+fall används attributet `otherDateType` för att ange typ av datum.
+
+Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ovan.
+
+**Exempel:**
+
+```xml
+<dates>
+    <date dateType="created">2020-05-20T00:00:00</date>
+    <date dateType="opened">2020-05-22T00:00:00</date>
+    <date dateType="closed">2020-05-30T00:00:00</date>
+</dates>
+```
+
+### Elementlista 2
+
+#### ERMS-SVK:22
+
+(ERMS253, ERMS57)
+
+***Sekretess***
+
+>Samlingselement för uppgift om sekretess.
+
+> Elementet kan upprepas.
+>
+> Om elementet *Sekretess* används måste attributet `restrictionType` ha värdet ”confidential”.
+
+> **XML-element:**	`restriction`<br/>
+
+---
+
+#### ERMS-SVK:23
+
+(ERMS253, ERMS57)
+
+***Förklarande text***
+
+>Fritext som beskriver sekretessen.
+
+> **XML-element:**	`explanatoryText`<br/>
+> **Datatyp:**	string
+
+---
+
+#### ERMS-SVK:24
+
+(ERMS59)
+
+***Lagrum***
+
+>Hänvisning till paragraf i kyrkoordningens 54 kapitel, till Offentlighets- och sekretesslagen
+> eller till annat lagrum som stöder den angivna sekretessen.
+
+> **XML-element:**	`regulation`<br/>
+> **Datatyp:**	string
+
+---
+
+#### ERMS-SVK:25
+
+(ERMS62)
+
+***Sekretessdatum***
+
+>Datum från och med vilket sekretessen anses gälla.
+
+>Om elementet *Sekretessdatum* används, måste attributet `dateType` ha värdet ”created”.
+
+> **XML-element:**	`dates/date`<br/>
+> **Datatyp:**	dateTime
+
+---
+
+#### Exempel 4 – Sekretessanmärkning
+
+```xml
+<restriction restrictionType="confidential">
+    <explanatoryText>Sekretess enligt KO</explanatoryText>
+    <regulation>KO 54:2</regulation>
+    <dates>
+        <date dateType="created">2020-01-02T00:00:00</date>
+    </dates>
+</restriction>
+```
+
+---
+
 ## 3.2. Information om ärendeakter
 
 ### Tabell 2. Ärendeakter
@@ -886,77 +1025,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ---
 
-#### ERMS-SVK:39
+***Sekretessanmärkning***
 
-(ERMS253, ERMS57)
-
-***Sekretess***
-
->Samlingselement för uppgift om sekretess.
-
-> Elementet kan upprepas.
->
-> Om elementet *Sekretess* används måste attributet `restrictionType` ha värdet ”confidential”.
-
-> **XML-element:**	`restriction`<br/>
-
----
-
-#### ERMS-SVK:40
-
-(ERMS253, ERMS57)
-
-***Förklarande text***
-
->Fritext som beskriver sekretessen.
-
-> **XML-element:**	`explanatoryText`<br/>
-> **Datatyp:**	string
-
----
-
-#### ERMS-SVK:41
-
-(ERMS59)
-
-***Lagrum***
-
->Hänvisning till paragraf i kyrkoordningens 54 kapitel, till Offentlighets- och sekretesslagen
-> eller till annat lagrum som stöder den angivna sekretessen.
-
-> **XML-element:**	`regulation`<br/>
-> **Datatyp:**	string
-
----
-
-#### ERMS-SVK:42
-
-(ERMS62)
-
-***Sekretessdatum***
-
->Datum från och med vilket sekretessen anses gälla.
-
->Om elementet *Sekretessdatum* används, måste attributet `dateType` ha värdet ”created”.
-
-> **XML-element:**	`dates/date`<br/>
-> **Datatyp:**	dateTime
-
----
-
-#### Exempel 10 – Sekretess
-
-```xml
-<aggregation>
-	<restriction restrictionType="confidential">
-		<explanatoryText>Sekretess enligt KO</explanatoryText>
-		<regulation>KO 54:2</regulation>
-		<dates>
-			<date dateType="created">2020-01-02T00:00:00</date>
-		</dates>
-	</restriction>
-</aggregation>
-```
+Se ovan ERMS-SVK:??
 
 ---
 
@@ -966,7 +1037,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ***Aktörer***
 
->Samlingselement för alla agerande parter i ärendet.
+> Samlingselement för alla agerande parter i ärendet.
+
+> Se avsnitt [3.2.1. Aktörer] ovan!
 
 > **XML-element:**	`agents`<br/>
 
@@ -978,15 +1051,13 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ***Skapare***
 
->Den som har skapat ärendet i systemet.
+> Den som har skapat ärendet i systemet.
 
->Om elementet *Skapare* används, måste attributet `agentType` ha värdet ”creator”.
-> 
-> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
-> 
+> Om elementet *Skapare* används, måste attributet `agentType` ha värdet ”creator”.
+
 > Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
+> **XML-element:**	`agent/@agentType="creator"`<br/>
 
 ---
 
@@ -994,15 +1065,13 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ***Handläggare***
 
->Ansvarig handläggare för ärendet.
+> Ansvarig handläggare för ärendet.
 
->Om elementet *Handläggare* används, måste attributet `agentType` ha värdet ”responsible_person”.
-> 
-> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
-> 
+> Om elementet *Handläggare* används, måste attributet `agentType` ha värdet ”responsible_person”.
+ 
 > Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
+> **XML-element:**	`agent/@agentType="creator"`
 
 ---
 
@@ -1012,17 +1081,15 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ***Medhandläggare***
 
->Eventuella medhandläggare utöver den ansvariga.
+> Eventuella medhandläggare utöver den ansvariga.
 
 > Elementet kan upprepas.
 > 
->Om elementet *Medhandläggare* används, måste attributet `agentType` ha värdet ”editor”.
-> 
-> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
-> 
+> Om elementet *Medhandläggare* används, måste attributet `agentType` ha värdet ”editor”.
+ 
 > Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
+> **XML-element:**	`agent/@agentType="editor"`
 
 ---
 
@@ -1035,12 +1102,10 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 > Elementet kan upprepas.
 > 
 >Om elementet *Ärendepart* används, måste attributet `agentType` ha värdet ”counterpart”.
-> 
-> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
-> 
+ 
 > Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
+> **XML-element:**	`agent/@agentType="counterpart`
 
 ---
 
@@ -1048,17 +1113,15 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ***Annan aktör***
 
->Annan typ av aktör eller kontakt kopplad till ärendet.
+> Annan typ av aktör eller kontakt kopplad till ärendet.
 
 > Elementet kan upprepas.
 > 
->Om elementet *Annan aktör* används, måste attributet `agentType` ha värdet ”agent”.
-> 
-> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
-> 
+> Om elementet *Annan aktör* används, måste attributet `agentType` ha värdet ”agent”.
+ 
 > Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
+> **XML-element:**	`agent/agentType="agent"`
 
 ---
 
@@ -1066,42 +1129,14 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ***Avslutare***
 
->Den som har avslutat eller makulerat ärendet.
+> Den som har avslutat eller makulerat ärendet.
 
->Om elementet *Avslutare* används, måste attributet `agentType` ha värdet ”other”
+> Om elementet *Avslutare* används, måste attributet `agentType` ha värdet ”other”
 > och `otherAgentType` värdet ”closing_person”.
-> 
-> Namn och användarnamn anges i underelementen `name` (obligatoriskt) och `idNumber` (frivilligt). Se exemplet nedan.
-> 
+
 > Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**	`agent`, `name` (string), `idNumber`<br/>
-
----
-
-#### Exempel 11 – Aktörer
-
-```xml
-<aggregation>
-	<agents>
-		<agent agentType="creator">
-			<name>Anna Andersson</name>
-			<idNumber idNumberType="username">svkanan</idNumber>
-		</agent>
-		<agent agentType="responsible_person">
-			<name>Johan Göransson</name>
-			<idNumber idNumberType="username">svkjogo</idNumber>
-		</agent>
-		<agent agentType="counterpart">
-			<name>Försäkringskassan</name>
-		</agent>
-		<agent agentType="other" otherAgentType="closing_person">
-			<name>Erik Gustavsson</name>
-			<idNumber idNumberType="username">svkergu</idNumber>
-		</agent>
-	</agents>
-</aggregation>
-```
+> **XML-element:**	`agent/@agentType="other" @otherAgentType="closing_person"`
 
 ---
 
@@ -1124,7 +1159,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ***Datum***
 
->Samlingselement för datum som gäller för ärendet.
+> Samlingselement för datum som gäller för ärendet.
+
+> Se avsnitt [3.2.2. Datum] ovan!
 
 > **XML-element:**	`dates`<br/>
 
@@ -1138,7 +1175,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 >Datum då ärendet skapades i systemet. Här avses ett av systemet automatiskt satt datum.
 
->Obligatoriskt.
+> Obligatoriskt.
 > 
 > Om uppgiften saknas i diariesystemet, används samma datum som för *Öppnat*.
 > 
@@ -1153,9 +1190,9 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ***Öppnat***
 
->Datum då ärendet officiellt öppnades.
+> Datum då ärendet officiellt öppnades.
 
->Obligatoriskt.
+> Obligatoriskt.
 > 
 > Om elementet *Öppnat* används, måste `dateType` ha värdet ”opened”.
 
@@ -1168,28 +1205,14 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 ***Avslutat***
 
->Datum då ärendet avslutades eller makulerades.
+> Datum då ärendet avslutades eller makulerades.
 
->Obligatoriskt.
+> Obligatoriskt.
 > 
 > Om elementet *Avslutat* används, måste `dateType` ha värdet ”closed”.
 
 > **XML-element:**	`date/@dateType=”closed”`<br/>
 > **Datatyp:**	dateTime
-
----
-
-#### Exempel 12 – Datum
-
-```xml
-<aggregation>
-	<dates>
-		<date dateType="created">2020-05-20T00:00:00</date>
-		<date dateType="opened">2020-05-22T00:00:00</date>
-		<date dateType="closed">2020-05-30T00:00:00</date>
-	</dates>
-</aggregation>
-```
 
 ---
 

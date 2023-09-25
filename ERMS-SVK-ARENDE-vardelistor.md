@@ -91,11 +91,11 @@
 
 (ERMS-SVK:3–48, ERMS-SVK:110–114)
 
-| **Giltiga värden**  | **Kommentar**                                                          | **Källa** |
-|---------------------|------------------------------------------------------------------------|-----------|
-| användarnamn        | Personens användarnamn i ärendehanteringssystemet.                     | ERMS-SVK  |
-| organisationsnummer | Personens organisationstillhörighet.<br/>Tio siffror utan bindestreck. | ERMS-SVK  |
-| personnummer        | Personens personnummer.<br/>Tolv siffror utan bindestreck.             | ERMS-SVK  |
+| **Giltiga värden**  | **Kommentar**                                              | **Källa** |
+|---------------------|------------------------------------------------------------|-----------|
+| username            | Personens användarnamn i ärendehanteringssystemet.         | ERMS-SVK  |
+| organisationsnummer | Tio siffror utan bindestreck.                              | ERMS-SVK  |
+| personnummer        | Personens personnummer.<br/>Tolv siffror utan bindestreck. | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 9 - Initiativ
 

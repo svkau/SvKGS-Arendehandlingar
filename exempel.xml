@@ -68,8 +68,14 @@
 							<elm:svkNotes>
 								<elm:svkNote typeOfNote="generell anteckning">
 									<elm:noteText>Detta är en anteckning</elm:noteText>
-									<elm:noteAuthor>Jörgen Persson</elm:noteAuthor>
-									<elm:noteDate>2019-02-23T00:00:00</elm:noteDate>
+									<elm:agents>
+										<agent agentType="creator">
+											<name>Jörgen Persson</name>
+										</agent>
+									</elm:agents>
+									<dates>
+										<date dateType="created">2019-02-23T00:00:00</date>
+									</dates>
 								</elm:svkNote>
 							</elm:svkNotes>
 							<elm:auditLogEvents>
@@ -196,30 +202,54 @@
 								</elm:contractInfo>
 								<elm:workflows>
 									<elm:workflow typeOfWorkflow="approval">
+										<elm:workflowName>Godkännande</elm:workflowName>
 										<elm:workflowStatus>approved</elm:workflowStatus>
-										<elm:workflowInitiatedBy agentType="creator">
-											<name>Tore Pettersson</name>
-											<organisation>Avdelningen för kulturarv</organisation>
-											<idNumber idNumberType="username">torpet</idNumber>
-										</elm:workflowInitiatedBy>
-										<elm:workflowInitiatedDate dateType="created">2023-08-12T00:00:00</elm:workflowInitiatedDate>
+										<elm:workflowPriority>normal</elm:workflowPriority>
+										<elm:agents>
+											<agent agentType="creator">
+												<name>Tore Pettersson</name>
+												<organisation>Avdelningen för kulturarv</organisation>
+												<idNumber idNumberType="username">torpet</idNumber>
+											</agent>
+										</elm:agents>
+										<dates>
+											<date dateType="created">2023-08-12T00:00:00</date>
+										</dates>
 										<elm:workflowMessage>Kan ni vänligen godkänna detta.</elm:workflowMessage>
+										<elm:workflowNotes>
+											<elm:workflowNote>
+												<elm:workflowNoteText>En liten anteckning om arbetsflödet.</elm:workflowNoteText>
+												<dates>
+													<date dateType="created">2023-08-12T00:00:00</date>
+												</dates>
+												<elm:agents>
+													<agent agentType="sender">
+														<name>Tore Pettersson</name>
+													</agent>
+													<agent agentType="receiver">
+														<name>Patrik Andersson</name>
+													</agent>
+												</elm:agents>
+											</elm:workflowNote>
+										</elm:workflowNotes>
 										<elm:workflowRecipients>
 											<elm:workflowRecipient>
-												<elm:recipient agentType="recipient">
-													<name>Peter Jonsson</name>
-													<organisation>Avdelningen för kulturarv</organisation>
-													<idNumber idNumberType="username">petjon</idNumber>
-													<role>Avdelningschef</role>
-												</elm:recipient>
+												<elm:agents>
+													<agent agentType="recipient">
+														<name>Patrik Andersson</name>
+														<organisation>Ledningsavdelningen</organisation>
+													</agent>
+													<agent agentType="other" otherAgentType="executor">
+														<name>Patrik Andersson</name>
+														<organisation>Ledningsavdelningen</organisation>
+														<idNumber idNumberType="username">patand</idNumber>
+														<role>Avdelningschef</role>
+													</agent>
+												</elm:agents>
+												<dates>
+													<date dateType="finished">2022-03-01T00:00:00</date>
+												</dates>
 												<elm:recipientStatus>approved</elm:recipientStatus>
-												<elm:recipientCompletedDate dateType="closed">2023-08-12T00:00:00</elm:recipientCompletedDate>
-												<elm:recipientCompletedBy agentType="recipient">
-													<name>Peter Jonsson</name>
-													<organisation>Avdelningen för kulturarv</organisation>
-													<idNumber idNumberType="username">petjon</idNumber>
-													<role>Avdelningschef</role>
-												</elm:recipientCompletedBy>
 											</elm:workflowRecipient>
 										</elm:workflowRecipients>
 									</elm:workflow>
@@ -259,8 +289,10 @@
 										</eSignature>
 									</appendix>
 									<elm:fileInfo>
-										<elm:dateCreated>2010-02-01T00:00:00</elm:dateCreated>
-										<elm:dateLastEdited>2010-02-01T00:00:00</elm:dateLastEdited>
+										<dates>
+											<date dateType="created">2010-02-01T00:00:00</date>
+											<date dateType="modified">2010-02-01T00:00:00</date>
+										</dates>
 										<elm:versionNumber>1</elm:versionNumber>
 										<elm:variant>preservation</elm:variant>
 									</elm:fileInfo>

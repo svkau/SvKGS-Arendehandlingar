@@ -20,10 +20,12 @@ Riksarkivet)](https://www.riksarkivet.se/fgs-anpassning).
 
 ## Tillämpade scheman
 
-[ERMS](https://citserms.dilcis.eu/schema/ERMS.xsd) version 2.1.2
+[ERMS.xsd](https://citserms.dilcis.eu/schema/ERMS.xsd) version 2.1.2
 
-[ERMS-SVK-ARENDE](ERMS-SVK-ARENDE.xsd) version 1.0
+[ERMS.sch](https://citserms.dilcis.eu/schema/ERMS.sch) version 2.1.2
 
-[ERMS-SVK-element](https://github.com/svkau/ERMS-SVK/blob/main/ERMS-SVK-element.xsd) version 1.0
+[ERMS-SVK-ARENDE.xsd](ERMS-SVK-ARENDE.xsd) version 1.0
 
-[ERMS-SVK-ARENDE.sch](ERMS-SVK-ARENDE.sch) version 1.0 (Innehåller även schematron-regler för ERMS version 2.1.2)
+[ERMS-SVK-element.xsd](https://github.com/svkau/ERMS-SVK/blob/main/ERMS-SVK-element.xsd) version 1.0
+
+[ERMS-SVK-ARENDE.sch](ERMS-SVK-ARENDE.sch) version 1.0

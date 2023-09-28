@@ -580,7 +580,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ### Elementlista 2. ERMS standardelement
 
-#### ERMS-SVK:22 - *Sekretess*
+#### ERMS-SVK:22 - *Sekretessmarkering*
 
 (ERMS253, ERMS57)
 
@@ -632,7 +632,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### Exempel 6 – Sekretessanmärkning
+#### Exempel 6 – Sekretessmarkering
 
 ```xml
 <restriction restrictionType="confidential">
@@ -822,9 +822,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:39
-
-***Datum för anteckning***
+#### ERMS-SVK:39 - *Datum för anteckning*
 
 > Datum och tid när anteckningen gjordes.
 
@@ -1093,11 +1091,9 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:55
+#### ERMS-SVK:55 - *Säkerhetsklassning*
 
 (ERMS203)
-
-***Säkerhetsklassning***
 
 > Ärendets säkerhetsklass.
 
@@ -1260,11 +1256,9 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:64
+#### ERMS-SVK:64 - *Utökad XML-data*
 
 (ERMS252, ERMS43)
-
-***Utökad XML-data***
 
 > Utökad XML-data är en del av Svenska kyrkans anpassning av ERMS.
 
@@ -1276,7 +1270,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### *Sekretessanmärkning*
+#### *Sekretessmarkering*
 
 > Se ERMS-SVK:??
 
@@ -2191,7 +2185,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:122 - *Tilläggsinformation*
+#### ERMS-SVK:116 - *Tilläggsinformation*
 
 > De element som inte ingår i ERMS utan är tillägg i Svenska kyrkans anpassning är samlade i elementet *Tilläggsinformation*.
 
@@ -2213,7 +2207,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:116 - *Avtalsinformation*
+#### ERMS-SVK:117 - *Avtalsinformation*
 
 > Samlingselement för extra information om registrerade avtal.
 
@@ -2221,7 +2215,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:117 - *Avsändares referens*
+#### ERMS-SVK:118 - *Avsändares referens*
 
 > Referens till avtalspartners exemplar av avtalsdokumentet.
 
@@ -2230,7 +2224,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:118 - *Avropat värde*
+#### ERMS-SVK:119 - *Avropat värde*
 
 > Avropat värde.
 
@@ -2241,7 +2235,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:119 - *Valuta*
+#### ERMS-SVK:120 - *Valuta*
 
 > Valutaslag för *Avropat värde*.
 
@@ -2253,7 +2247,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:120 - *Kontraktsvärde*
+#### ERMS-SVK:121 - *Kontraktsvärde*
 
 > Kontraktsvärde.
 
@@ -2264,7 +2258,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:121 - *Valuta*
+#### ERMS-SVK:122 - *Valuta*
 
 > Valutaslag för *Kontraktsvärde*.
 
@@ -2276,7 +2270,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:122 - *Avtalstyp*
+#### ERMS-SVK:123 - *Avtalstyp*
 
 > Typ av avtal.
 
@@ -2287,7 +2281,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:123 - *Giltigt från*
+#### ERMS-SVK:124 - *Giltigt från*
 
 > Datum från vilket avtalet är giltigt.
 
@@ -2298,7 +2292,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:124 - *Giltigt till*
+#### ERMS-SVK:125 - *Giltigt till*
 
 > Datum fram till vilket avtalet är giltigt.
 
@@ -2328,7 +2322,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:125 - *Arbetsflöden*
+#### ERMS-SVK:126 - *Arbetsflöden*
 
 > Samlingselement för arbetsflöden kopplade till handlingen.
 
@@ -2336,7 +2330,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:126 - *Arbetsflöde*
+#### ERMS-SVK:127 - *Arbetsflöde*
 
 > Ett enskilt arbetsflöde kopplat till handlingen.
 
@@ -2346,7 +2340,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:127 - *Typ av arbetsflöde*
+#### ERMS-SVK:128 - *Typ av arbetsflöde*
 
 > Typ av arbetsflöde.
 
@@ -2359,7 +2353,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:128 - *Namn*
+#### ERMS-SVK:129 - *Namn*
 
 > Namn på arbetsflödet.
 
@@ -2368,7 +2362,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:129 - *Status*
+#### ERMS-SVK:130 - *Status*
 
 > Arbetsflödets status.
 
@@ -2379,7 +2373,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:130 - *Prioritet*
+#### ERMS-SVK:131 - *Prioritet*
 
 > Arbetsflödets prioritet.
 
@@ -2390,7 +2384,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:131 - *Initierat av*
+#### ERMS-SVK:132 - *Initierat av*
 
 > Den person som har startat arbetsflödet.
 
@@ -2404,7 +2398,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:132 - *Initierat datum*
+#### ERMS-SVK:133 - *Initierat datum*
 
 > Datum då arbetsflödet startades.
 
@@ -2419,7 +2413,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:133 - *Meddelande*
+#### ERMS-SVK:134 - *Meddelande*
 
 > Meddelande knutet till arbetsflödet.
 
@@ -2428,7 +2422,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:134 - *Anteckningar*
+#### ERMS-SVK:135 - *Anteckningar*
 
 > Samlingselement för löpande anteckningar förda under arbetsflödets gång.
 
@@ -2436,7 +2430,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:135 - *Anteckning*
+#### ERMS-SVK:136 - *Anteckning*
 
 > Enskild anteckning
 
@@ -2444,7 +2438,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:136 - *Text*
+#### ERMS-SVK:137 - *Text*
 
 > Anteckningens lydelse.
 
@@ -2455,7 +2449,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:137 - *Datum för anteckning*
+#### ERMS-SVK:138 - *Datum för anteckning*
 
 > Datum då anteckningen skapades.
 
@@ -2470,7 +2464,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:138 - *Skickad från*
+#### ERMS-SVK:139 - *Skickad från*
 
 > Den person som har skapat anteckningen (och skickat den till någon annan).
 
@@ -2482,7 +2476,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:139 - *Skickad till*
+#### ERMS-SVK:140 - *Skickad till*
 
 > Den person som anteckningen har skickats till.
 
@@ -2494,7 +2488,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:140 - *Arbetsflödesmottagare*
+#### ERMS-SVK:141 - *Arbetsflödesmottagare*
 
 > Samlingselement för de personer som ingår i arbetsflödet och som t.ex. ska godkänna ett dokument.
 
@@ -2504,7 +2498,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:141 - *Mottagare*
+#### ERMS-SVK:142 - *Mottagare*
 
 > Personer som ingår i arbetsflödet.
 
@@ -2514,7 +2508,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:142 - *Enskild mottagare*
+#### ERMS-SVK:143 - *Enskild mottagare*
 
 > Uppgifter om en enskild person i arbetsflödet.
 
@@ -2528,7 +2522,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:143 - *Status från mottagare*
+#### ERMS-SVK:144 - *Status från mottagare*
 
 > Flödets status hos den enskilde mottagaren.
 
@@ -2539,7 +2533,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:144 - *Slutfört datum*
+#### ERMS-SVK:145 - *Slutfört datum*
 
 > Datum då den enskilda mottagaren har slutfört sin del i arbetsflödet.
 
@@ -2554,7 +2548,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:145 - *Slutfört av*
+#### ERMS-SVK:146 - *Slutfört av*
 
 > Den person som slutfört sin del i arbetsflödet (i regel samma person som är mottagare).
 
@@ -2569,7 +2563,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:146 - *På uppdrag av*
+#### ERMS-SVK:147 - *På uppdrag av*
 
 > Om den person som slutfört sin del i arbetsflödet, har gjort det på
 > uppdrag av någon annan, anges denna person här.
@@ -2583,7 +2577,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:147 - *Mottagarkommentar*
+#### ERMS-SVK:148 - *Mottagarkommentar*
 
 > Kommentar som mottagaren kan lämna i anslutning till sin del i arbetsflödet.
 
@@ -2650,19 +2644,21 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 ---
 
-#### ERMS-SVK:148 - *Bifogad fil*
+#### ERMS-SVK:149 - *Bifogad fil*
 
 > Uppgifter om fil som är kopplad till den registrerade handlingen.
 
 > Elementet kan upprepas.
 > 
-> Se Tabell 6.
+> Se [Elementlista 8].
 
 > **XML-element:** `svk:ermsSvkRecord/svk:svkAppendix`<br/>
 
 ---
 
-#### *Ändringslogg* (se ERMS-SVK:??)
+#### *Ändringslogg*
+
+> se ERMS-SVK:??
 
 ---
 
@@ -2674,11 +2670,11 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-### Elementlista 7. Bifogad fil
+### Elementlista 8. Bifogad fil
 
 ---
 
-#### ERMS-SVK:149 - *Bifogad fil*
+#### ERMS-SVK:150 - *Bifogad fil*
 
 > Samlingselement för uppgifter om en fil som är kopplad till en registrerad handling.
 
@@ -2688,7 +2684,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:150 - *Appendix*
+#### ERMS-SVK:151 - *Appendix*
 
 > Samlingselement för den information om filen som följer ERMS-standard.
 
@@ -2696,7 +2692,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:151 - *Gallringsbar*
+#### ERMS-SVK:152 - *Gallringsbar*
 
 > Med gallringsbar avses här att den bifogade filen kan gallras innan handlingen i sig gallras.
 
@@ -2710,7 +2706,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:152 - *Namn*
+#### ERMS-SVK:153 - *Namn*
 
 > Filens namn.
 
@@ -2721,7 +2717,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:153 - *Beskrivning*
+#### ERMS-SVK:154 - *Beskrivning*
 
 > Beskrivning av filen.
 
@@ -2730,7 +2726,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:154 - *Filformat*
+#### ERMS-SVK:155 - *Filformat*
 
 > Filens format.
 
@@ -2745,7 +2741,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:155 - *Originalfilformat*
+#### ERMS-SVK:156 - *Originalfilformat*
 
 > Om filen är konverterad till arkivformat, anges här originalfilens format.
  
@@ -2758,7 +2754,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:156 - *Sökväg*
+#### ERMS-SVK:157 - *Sökväg*
 
 > Relativ sökväg till filens placering i arkivpaketet.
  
@@ -2771,7 +2767,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:157 - *Uppgift om e-signatur*
+#### ERMS-SVK:158 - *Uppgift om e-signatur*
 
 > Anger om det har funnits en e-signatur som har gallrats före leverans.
  
@@ -2782,7 +2778,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:158 - *E-signatur*
+#### ERMS-SVK:159 - *E-signatur*
 
 > Samlingselement för information om befintlig e-signatur.
  
@@ -2790,7 +2786,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:159 - *E-signatur finns*
+#### ERMS-SVK:160 - *E-signatur finns*
 
 > Anger om det finns en e-signatur.
 
@@ -2803,7 +2799,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:160 - *Verifikationsdatum*
+#### ERMS-SVK:161 - *Verifikationsdatum*
 
 > Datum och tid då e-signaturen senast verifierades.
 
@@ -2812,7 +2808,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:161 - *Signatur*
+#### ERMS-SVK:162 - *Signatur*
 
 ****
 
@@ -2825,7 +2821,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:162 - *Filinformation*
+#### ERMS-SVK:163 - *Filinformation*
 
 > Samlingselement för utökad information om filen.
 > 
@@ -2835,7 +2831,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:163 - *Skapad*
+#### ERMS-SVK:164 - *Skapad*
 
 > Datum och tid då filen skapades (systeminformation).
 > 
@@ -2846,7 +2842,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:164 - *Senast ändrad*
+#### ERMS-SVK:165 - *Senast ändrad*
 
 > Datum och tid då filen senast ändrades (systeminformation).
 > 
@@ -2857,7 +2853,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:165 - *Versionsnummer*
+#### ERMS-SVK:166 - *Versionsnummer*
 
 > Om flera versioner av samma fil är kopplade till handlingen, anges versionsnummer här.
 > 
@@ -2868,7 +2864,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:166 - *Variant*
+#### ERMS-SVK:167 - *Variant*
 
 > Om flera varianter av samma version är kopplade till handlingen, anges unik variant här.
 

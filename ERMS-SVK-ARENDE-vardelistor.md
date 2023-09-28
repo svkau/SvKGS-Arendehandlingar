@@ -260,3 +260,14 @@
 |--------------------|---------------|-----------|
 |                    |               | ERMS-SVK  |
 |                    |               | ERMS-SVK  |
+
+## ERMS-SVK-ARENDE-värdelista 22 - Datum
+
+(ERMS-SVK:??)
+
+| **Giltiga värden** | **Kommentar** | **Källa** |
+|--------------------|---------------|-----------|
+|                    |               | ERMS-SVK  |
+|                    |               | ERMS-SVK  |
+
+

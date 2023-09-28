@@ -560,13 +560,13 @@ vars värde hämtas från [ERMS-SVK-ARENDE-värdelista 8](ERMS-SVK-ARENDE-vardel
 ### 3.2.2. Datum
 
 Elementen `dates` och `date` används som standard för att ange datum i XML-dokumentet. Olika typer av
-datum anges genom attributet `dateType`, vars värde hämtas från ERMS-SVK-ARENDE-värdelista ??.
+datum anges genom attributet `dateType`, vars värde hämtas från [ERMS-SVK-ARENDE-värdelista 22](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-värdelista-22---datum).
 
-Om man vill använda ett värde i ERMS-SVK-ARENDE-värdelista ?? som inte ingår i ERMS utan är en
+Om man vill använda ett värde i [ERMS-SVK-ARENDE-värdelista 22](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-värdelista-22---datum) som inte ingår i ERMS utan är en
 anpassning i *SvKGS Ärendehandlingar*, måste attributet `dateType` ha värdet "other". I detta
 fall används attributet `otherDateType` för att ange typ av datum.
 
-Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ovan.
+Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25-datatyper)**.
 
 #### Exempel 5 – Datum
 
@@ -577,10 +577,14 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
     <date dateType="closed">2020-05-30T00:00:00</date>
 </dates>
 ```
+---
 
 ### Elementlista 2. ERMS standardelement
 
+---
+
 #### ERMS-SVK:22 - *Sekretessmarkering*
+
 
 (ERMS253, ERMS57)
 
@@ -812,7 +816,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt om elementet *Anteckning* används.
 > 
-> Se avsnitt [2.3.3. Aktörer].
+> Se avsnitt [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 > 
 > Attributet `agentType` måste ha värdet *creator*.
 
@@ -826,7 +830,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt om elementet *Anteckning* används.
 > 
-> Se avsnitt [2.4.3. Datum].
+> Se avsnitt [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum).
 > 
 > Attributet `dateType` måste ha värdet *created*
 
@@ -1061,7 +1065,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Om elementet *Intern identifikator* används, måste attributet `extraIdType` ha värdet ”deliveringSystemId”.
 
-> **XML-element:**	extraId`<br/>
+> **XML-element:**	extraId/@deliveringSystemId`<br/>
 > **Datatyp:**	string
 
 ---
@@ -1136,7 +1140,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 (ERMS223)
 
-> Samlingselement för enskilda nyckelord.
+> Samlingselement för nyckelord.
 
 > **XML-element:**	`keywords`<br/>
 
@@ -1189,7 +1193,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Om elementet `otherTitel` används måste attributet `titleType` ha värdet ”publicTitle”.
 
-> **XML-element:**	`otherTitle`<br/>
+> **XML-element:**	`otherTitle/@titleType="publicTitle"`<br/>
 > **Datatyp:**	string
 
 ---
@@ -1239,7 +1243,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 > 
 > Om elementet *Ärendereferens* används, måste attributet `relationType` ha värdet ”reference”.
 
-> **XML-element:**	`relation`<br/>
+> **XML-element:**	`relation/@relationType="reference"`<br/>
 > **Datatyp:**	string
 
 ---
@@ -1262,7 +1266,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt
 > 
-> Se Tabell 3.
+> Se [Elementlista 5](ERMS-SVK-ARENDE.md#elementlista-5-svenska-kyrkans-tilläggsinformation-om-ärendeakter).
 
 > **XML-element:**	`additionalXMLData`<br/>
 
@@ -1280,7 +1284,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Samlingselement för alla agerande parter i ärendet.
 
-> Se avsnitt [3.2.1. Aktörer] ovan!
+> Se avsnitt [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 
 > **XML-element:**	`agents`<br/>
 
@@ -1390,7 +1394,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Samlingselement för datum som gäller för ärendet.
 
-> Se avsnitt [3.2.2. Datum] ovan!
+> Se avsnitt [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum).
 
 > **XML-element:**	`dates`<br/>
 
@@ -1443,14 +1447,12 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 (ERMS240)
 
-****
-
 >Samlingselement som används för uppgifter om beslut som har fattats i ärendet och
 > som i diariesystemet har registrerats separat och inte som en vanlig handling.
 
 >Elementet kan upprepas.
 > 
-> *SvKGS Ärendehandlingar* har alltsp ett betydligt snävare användningsområde
+> *SvKGS Ärendehandlingar* har alltså ett betydligt snävare användningsområde
 > av elementet `action` än vad som är fallet i ERMS.
 
 > **XML-element:**	`action`<br/>
@@ -1491,7 +1493,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
  
 > Om elementet *Beslutsdatum* används, måste `dateType` ha värdet ”decision_date”.
 >
-> Se avsnittet [2.3 Datum] ovan.
+> Se avsnittet [3.2.2 Datum](ERMS-SVK-ARENDE.md#322-datum).
 
 > **XML-element:**	`dates/date/@dateType=”decision_date”`<br/>
 > **Datatyp:**	dateTime
@@ -1504,7 +1506,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Namn på person eller organ som har fattat beslutet.
  
-> Se avsnittet [2.2 Utförare] ovan.
+> Se avsnittet [3.2.1 Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 > 
 > Om elementet *Beslutsfattare* används, måste `agentType` ha värdet ”authorising_person”.
 
@@ -1534,7 +1536,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 #### *Kommentar*
 
-> Se [ERMS-SVK:??]
+> Se [ERMS-SVK:26](ERMS-SVK-ARENDE.md#erms-svk--26---kommentar).
 
 ---
 
@@ -1583,19 +1585,19 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 #### *Relaterade objekt*
 
-> Se [ERMS-SVK:??].
+> Se [ERMS-SVK:28](ERMS-SVK-ARENDE.md#erms-svk--28---relaterade-objekt).
 
 ---
 
 #### *Anteckningar*
 
-> Se [ERMS-SVK:??].
+> Se [ERMS-SVK:34](ERMS-SVK-ARENDE.md#erms-svk--34---anteckningar).
 
 ---
 
 #### *Ändringslogg*
 
-> Se [ERMS-SVK:??].
+> Se [ERMS-SVK:40](ERMS-SVK-ARENDE.md#erms-svk--40---ändringslogg).
 
 ---
 
@@ -1656,7 +1658,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Värdet väljs från [Värdelista 14](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-14---form).
 
-> **XML-element:** `recordPhysicalOrDigital`<br/>
+> **XML-element:** `record/@recordPhysicalOrDigital`<br/>
 > **Datatyp:** string
 
 ---
@@ -1668,14 +1670,15 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 	systemIdentifier="8dbbdc56-8ada-4ad5-a1ec-b8131a1086a2"
 	recordPhysicalOrDigital="digital"
 	recordType="ärendedokument">
+</record>
 ```
 
 #### ERMS-SVK:89 - *Handlingsnummer*
 
 (ERMS146)
 
-> En kombination av *Ärendenummer* (ERMS-SVK:25) och handlingens *Löpnummer*
-> (ERMS-SVK:100) med kolon emellan.
+> En kombination av *Ärendenummer* ([ERMS-SVK:51](ERMS-SVK-ARENDE.md#erms-svk--51---ärendenummer)) och handlingens *Löpnummer*
+> ([ERMS-SVK:100](ERMS-SVK-ARENDE.md#erms-svk--100---löpnummer)) med kolon emellan.
 
 > Obligatoriskt.
 > 
@@ -1711,8 +1714,6 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 #### ERMS-SVK:91 - *Informationsklassning*
 
 (ERMS133)
-
-****
 
 > Handlingens informationsklass.
 
@@ -1769,7 +1770,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 (ERMS152)
 
-> Samlingselement för enskilda nyckelord.
+> Samlingselement för nyckelord.
 
 > **XML-element:** `keywords`<br/>
 
@@ -1779,7 +1780,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 (ERMS153)
 
-> Enskilda nyckelord.
+> Enskilt nyckelord.
 
 > Elementet kan upprepas.
 
@@ -1819,10 +1820,10 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Används enbart för Offentlig titel i leveranser från Public 360°.
 
-> Om elementet Annan titel används måste attributet titleType ha
+> Om elementet *Annan titel* används måste attributet titleType ha
 > värdet ”publicTitle”.
 
-> **XML-element:** `otherTitle`<br/>
+> **XML-element:** `otherTitle/@titleType="publicTitle"`<br/>
 > **Datatyp:** string
 
 ---
@@ -1866,6 +1867,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 (ERMS)
 
 > Handlingens löpnummer i ärendet.
+ 
 > Obligatoriskt. Måste vara unikt i respektive ärende.
 
 > **XML-element:** `runningNumber`<br/>
@@ -1888,7 +1890,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 > Om elementet Dokumentreferens används, måste attributet
 > `relationType` ha värdet ”reference”.
 
-> **XML-element:** `relation`<br/>
+> **XML-element:** `relation/@relationType="reference"`<br/>
 > **Datatyp:** string
 
 ---
@@ -1905,7 +1907,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 #### *Sekretessmarkering*
 
-> se [ERMS-SVK:??].
+> se [ERMS-SVK:22](ERMS-SVK-ARENDE.md#erms-svk--22---sekretessmarkering).
 
 ---
 
@@ -1960,7 +1962,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt.
 > 
-> Se avsnittet 2.3 Aktörer ovan.
+> Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 
 > **XML-element:** `agents`<br/>
 
@@ -2077,7 +2079,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Samlingselement för alla datum som rör handlingen.
 
-> Se avsnittet 22.3 Datum ovan.
+> Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum) ovan.
 
 > **XML-element:** `dates`<br/>
 
@@ -2163,7 +2165,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 #### *Kommentar*
 
-> se [ERMS-SVK:??].
+> se [ERMS-SVK:26](ERMS-SVK-ARENDE.md#erms-svk--26---kommentar).
 
 ---
 
@@ -2173,7 +2175,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt.
 > 
-> Se Tabell 5.
+> Se [Elementlista 7](ERMS-SVK-ARENDE.md#elementlista-7-svenska-kyrkans-tilläggsinformation-om-ärendehandlingar).
 
 > **XML-element:** `additionalXMLData`<br/>
 
@@ -2195,13 +2197,13 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 #### *Relaterade objekt*
 
-> (se ERMS-SVK:??)
+> Se [ERMS-SVK:28](ERMS-SVK-ARENDE.md#erms-svk--28---relaterade-objekt).
 
 ---
 
 #### *Anteckningar*
 
-> (se ERMS-SVK:??)
+> Se [ERMS-SVK:34](ERMS-SVK-ARENDE.md#erms-svk--34---anteckningar).
 
 ---
 
@@ -2388,7 +2390,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt.
 > 
-> Se avsnittet 2.2. Aktörer ovan. 
+> Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer). 
 > 
 > Attributet `agentType` måste ha värdet ”creator”.
 
@@ -2402,7 +2404,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt.
 > 
-> Se avsnittet [2.3.4. Datum] ovan.
+> Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum).
 > 
 > Attributet dateType måste ha värdet ”created”.
 
@@ -2453,7 +2455,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt om *Anteckning* används.
 > 
-> Se avsnittet [2.3.4. Datum] ovan.
+> Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum).
 > 
 > Attributet `dateType` måste ha värdet "created".
 
@@ -2466,7 +2468,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Den person som har skapat anteckningen (och skickat den till någon annan).
 
-> Se avsnittet [2.2.3. Aktörer] ovan.
+> Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 > 
 > Attributet `agentType` måste ha värdet ”sender”.
 
@@ -2478,7 +2480,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Den person som anteckningen har skickats till.
 
-> Se avsnittet [2.2.3. Aktörer] ovan.
+> Se avsnittet[3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 > 
 > Attributet `agentType` måste ha värdet ”receiver”.
 
@@ -2512,7 +2514,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt.
 > 
-> Se avsnittet [3,3,4 Aktörer] ovan.
+> Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 > 
 > Attributet `agentType` måste ha värdet ”recipient”.
 
@@ -2537,7 +2539,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt.
 >
-> Se avsnittet [2.3.4 Datum] ovan.
+> Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum).
 > 
 > Attributet `dateType` måste ha värdet "finished".
 
@@ -2552,7 +2554,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Obligatoriskt.
 > 
-> Se avsnittet [3,3,4 Aktörer] ovan.
+> Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 > 
 > Attributet `agentType` måste ha värdet ”other” och attributet `otherAgentType` måste
 > ha värdet *closing_person*.
@@ -2566,7 +2568,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 > Om den person som slutfört sin del i arbetsflödet, har gjort det på
 > uppdrag av någon annan, anges denna person här.
 
-> Se avsnittet [3,3,4 Aktörer] ovan.
+> Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 > 
 > Attributet `agentType` måste ha värdet ”other” och attributet `otherAgentType` måste
 > ha värdet *delegator*.
@@ -2648,7 +2650,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 > Elementet kan upprepas.
 > 
-> Se [Elementlista 8].
+> Se [Elementlista 8](ERMS-SVK-ARENDE.md#elementlista-8-bifogad-fil).
 
 > **XML-element:** `svk:ermsSvkRecord/svk:svkAppendix`<br/>
 
@@ -2656,7 +2658,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 #### *Ändringslogg*
 
-> se ERMS-SVK:??
+> se [ERMS-SVK:40](ERMS-SVK-ARENDE.md#erms-svk--40---ändringslogg).
 
 ---
 
@@ -2810,7 +2812,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ****
 
-> Element för filens e-signatur med dess eget XML-schema.
+> Element för filens e-signatur enligt dess eget XML-schema.
 
 > Leveransöverenskommelsen ska innehålla information om hur
 > e-signaturer lagras och om vilket schema som används.
@@ -2889,6 +2891,8 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### *Ändringslogg* (se ERMS-SVK:??)
+#### *Ändringslogg*
+
+> Se [ERMS-SVK:40](ERMS-SVK-ARENDE.md#erms-svk--40---ändringslogg).
 
 ---

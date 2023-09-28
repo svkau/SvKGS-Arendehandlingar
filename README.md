@@ -3,7 +3,7 @@
 
 ## SvKGS-Ärendehandlingar
 
-**Version 1.0**
+**Version 1.0 beta**
 
 *Svenska kyrkans gemensamma specifikationer - Ärendehandlingar* reglerar hur uppgifter i
 ärendehanterings- och diariesystem ska formateras inför leverans till Svenska kyrkans
@@ -20,9 +20,9 @@ Riksarkivet)](https://www.riksarkivet.se/fgs-anpassning).
 
 ## Tillämpade scheman
 
-[ERMS.xsd](https://citserms.dilcis.eu/schema/ERMS.xsd) version 2.1.2
+[ERMS.xsd](https://github.com/DILCISBoard/CITS-ERMS/blob/master/schema/ERMS.xsd) version 2.1.2
 
-[ERMS.sch](https://citserms.dilcis.eu/schema/ERMS.sch) version 2.1.2
+[ERMS.sch](https://github.com/DILCISBoard/CITS-ERMS/blob/master/schema/erms.sch) version 2.1.2
 
 [ERMS-SVK-ARENDE.xsd](ERMS-SVK-ARENDE.xsd) version 1.0
 

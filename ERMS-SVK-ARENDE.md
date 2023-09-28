@@ -1907,7 +1907,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 #### *Sekretessmarkering*
 
-> se [ERMS-SVK:22](ERMS-SVK-ARENDE.md#erms-svk--22---sekretessmarkering).
+> se [ERMS-SVK:22](ERMS-SVK-ARENDE.md#erms-svk22---sekretessmarkering).
 
 ---
 

@@ -1536,7 +1536,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 #### *Kommentar*
 
-> Se [ERMS-SVK:26](ERMS-SVK-ARENDE.md#erms-svk--26---kommentar).
+> Se [ERMS-SVK:26](ERMS-SVK-ARENDE.md#erms-svk26---kommentar).
 
 ---
 
@@ -1585,19 +1585,19 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 #### *Relaterade objekt*
 
-> Se [ERMS-SVK:28](ERMS-SVK-ARENDE.md#erms-svk--28---relaterade-objekt).
+> Se [ERMS-SVK:28](ERMS-SVK-ARENDE.md#erms-svk28---relaterade-objekt).
 
 ---
 
 #### *Anteckningar*
 
-> Se [ERMS-SVK:34](ERMS-SVK-ARENDE.md#erms-svk--34---anteckningar).
+> Se [ERMS-SVK:34](ERMS-SVK-ARENDE.md#erms-svk34---anteckningar).
 
 ---
 
 #### *Ändringslogg*
 
-> Se [ERMS-SVK:40](ERMS-SVK-ARENDE.md#erms-svk--40---ändringslogg).
+> Se [ERMS-SVK:40](ERMS-SVK-ARENDE.md#erms-svk40---ändringslogg).
 
 ---
 
@@ -1677,8 +1677,8 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 (ERMS146)
 
-> En kombination av *Ärendenummer* ([ERMS-SVK:51](ERMS-SVK-ARENDE.md#erms-svk--51---ärendenummer)) och handlingens *Löpnummer*
-> ([ERMS-SVK:100](ERMS-SVK-ARENDE.md#erms-svk--100---löpnummer)) med kolon emellan.
+> En kombination av *Ärendenummer* ([ERMS-SVK:51](ERMS-SVK-ARENDE.md#erms-svk51---ärendenummer)) och handlingens *Löpnummer*
+> ([ERMS-SVK:100](ERMS-SVK-ARENDE.md#erms-svk100---löpnummer)) med kolon emellan.
 
 > Obligatoriskt.
 > 
@@ -2165,7 +2165,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 #### *Kommentar*
 
-> se [ERMS-SVK:26](ERMS-SVK-ARENDE.md#erms-svk--26---kommentar).
+> se [ERMS-SVK:26](ERMS-SVK-ARENDE.md#erms-svk26---kommentar).
 
 ---
 
@@ -2197,13 +2197,13 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 #### *Relaterade objekt*
 
-> Se [ERMS-SVK:28](ERMS-SVK-ARENDE.md#erms-svk--28---relaterade-objekt).
+> Se [ERMS-SVK:28](ERMS-SVK-ARENDE.md#erms-svk28---relaterade-objekt).
 
 ---
 
 #### *Anteckningar*
 
-> Se [ERMS-SVK:34](ERMS-SVK-ARENDE.md#erms-svk--34---anteckningar).
+> Se [ERMS-SVK:34](ERMS-SVK-ARENDE.md#erms-svk34---anteckningar).
 
 ---
 
@@ -2658,7 +2658,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 #### *Ändringslogg*
 
-> se [ERMS-SVK:40](ERMS-SVK-ARENDE.md#erms-svk--40---ändringslogg).
+> se [ERMS-SVK:40](ERMS-SVK-ARENDE.md#erms-svk40---ändringslogg).
 
 ---
 
@@ -2893,6 +2893,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 #### *Ändringslogg*
 
-> Se [ERMS-SVK:40](ERMS-SVK-ARENDE.md#erms-svk--40---ändringslogg).
+> Se [ERMS-SVK:40](ERMS-SVK-ARENDE.md#erms-svk40---ändringslogg).
 
 ---
+

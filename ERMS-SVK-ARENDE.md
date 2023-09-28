@@ -404,7 +404,7 @@ Den underlättare förståelsen av informationen, om XML-filen skulle separeras 
 
 > Obligatoriskt. Elementet kan upprepas.
 > 
-> När XML-dokumentet skapas, får det en *Underhållshändelse* av typen `created`.
+> När XML-dokumentet skapas, får det en *Underhållshändelse* av typen "created".
 
 > **XML-element:**	`maintenanceEvent`
 
@@ -522,7 +522,7 @@ Flera element såväl i ERMS som i *SvKGS Ärendehandlingar* kan användas för 
 
 Elementen `agents` och `agent` används som en standard för att beskriva en person eller en organisation
 som fungerar som aktör i något avseende. Olika typer av aktörer anges genom attributet `agentType` vars
-värde hämtas från ERMS-SVK-ARENDE-värdelista 6.
+värde hämtas från [ERMS-SVK-ARENDE-värdelista 6](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-6---typ-av-akt%C3%B6r-agenttype).
 
 Om man vill använda ett värde i ERMS-SVK-ARENDE-värdelista 6 som inte ingår i ERMS utan är en
 anpassning i *SvKGS Ärendehandlingar*, måste attributet `agentType` ha värdet "other". I detta
@@ -534,7 +534,7 @@ Av dessa är `name` det enda som är obligatoriskt.
 
 Elementet `idNumber` kan användas för att ange t.ex. personnummer men också användarnamn och andra
 identifikatorer som inte är nummer. Olika typer av `idNumber` anges genom attributet `idNumberType`,
-vars värde hämtas från ERMS-SVK-ARENDE-värdelista 8.
+vars värde hämtas från [ERMS-SVK-ARENDE-värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
 #### Exempel 4 – Aktörer
 
@@ -609,8 +609,6 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 
 (ERMS59)
 
-****
-
 >Hänvisning till paragraf i kyrkoordningens 54 kapitel, till Offentlighets- och sekretesslagen
 > eller till annat lagrum som stöder den angivna sekretessen.
 
@@ -657,7 +655,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **2.5. Datatyper** ova
 > I *SvKGS Ärendehandlingar* har elementet `notes` alltså ett mycket snävare användningsområde
 > än vad som är fallet i ERMS.
 > 
-> För upprepade kommentarer eller anteckningar används i stället elementet `svkNotes`, se Tabell 3.
+> För upprepade kommentarer eller anteckningar används i stället elementet `svkNotes`, se [SVK-ERMS:34](#erms-svk34---anteckningar).
 >
 > Om elementet *Kommentar* används, måste `noteType` ha värdet ”comment”.
 

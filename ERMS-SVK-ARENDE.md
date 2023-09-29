@@ -6,7 +6,7 @@
 
 # 1. Inledning
 
-Svenska kyrkans gemensamma specifikationer för elektronisk arkivering beskriver vilken in¬formation som ska
+*Svenska kyrkans gemensamma specifikationer för elektronisk arkivering* beskriver vilken information som ska
 ingå vid leverans till Svenska kyrkans gemensamma e-arkiv och hur denna information ska struktureras.
 
 Leveranser till e-arkivet delas in i informationstyper. Exempel på sådana kan vara ärendeakter med handlingar,
@@ -66,20 +66,31 @@ Se avsnittet Scheman nedan. Detta är XML-dokumentets grundläggande uppbyggnad:
 
 <img src="https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/0f2e491d-dc32-4565-9e4d-c27bf7c0bd76" alt="figur_01" width="70%"/>
 
+- erms (1...1)
+    - control (1...1)
+    - aggregations (1...1)
+      - aggregation (1...1) 
+          - record (1...n)
+            - appendix (1...n)
+
 *Figur 1. Grundläggande struktur i ett XML-dokument.*
 
 Elementet `erms` är dokumentets rot-element. Elementet `control` innehåller underelement med information om
-själva XML-dokumentet (se Tabell 1).
+själva XML-dokumentet (se avsnitt [3.1. Övergripande information om XML-dokumentet](#31-övergripande-information-om-xml-dokumentet)).
 
 Elementet `aggregations` rymmer underelement av typen aggregation, vilket i det här fallet betyder ärendeakt
-(se Tabell 2 och Tabell 3). Notera att det i *SvKGS Ärendehandlingar* endast får finnas en aggregation i varje XML-dokument.
+(se avsnitt [3.3. Information om ärendeakter](#33-information-om-ärendeakter)).
+Notera att det i *SvKGS Ärendehandlingar* endast får finnas en aggregation i varje XML-dokument.
 
-Elementet `aggregation` kan innehålla flera element av typen record, alltså ärendehandlingar (se Tabell 4 och Tabell 5).
-Varje `record` kan innehålla elementet `appendix` som är en bifogad fil till den registrerade handlingen (se Tabell 6).
+Elementet `aggregation` kan innehålla flera element av typen `record`, alltså ärendehandlingar
+(se avsnitt [3.4. Information om ärendehandlingar](#34-information-om-ärendehandlingar)).
+
+Varje `record` kan innehålla flera elementet av typen `appendix` som är en bifogad fil till den registrerade handlingen
+(se avsnitt [3.5. Information om bifogade filer](#35-information-om-bifogade-filer)).
 
 Observera att det tillagda elementet `svkAppendix` används i *SvKGS Ärendehandlingar* i stället för ERMS-elementet `appendix`.
 
-I tabellerna nedan finns de element som bör eller måste finnas i ett XML-dokument enligt *SvKGS Ärendehandlingar*.
+I elementlistorna nedan finns de element som bör eller måste finnas i ett XML-dokument enligt *SvKGS Ärendehandlingar*.
 Tabellerna följer strukturen i XML-dokumentet:
 
 <img src="https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/d8e9664f-a7a5-40a5-994d-28731a558577" alt="figur_02" width="70%"/>
@@ -971,7 +982,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 ---
 
-## 3.2. Information om ärendeakter
+## 3.3. Information om ärendeakter
 
 ---
 
@@ -1601,7 +1612,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 ---
 
-## 3.3. Information om ärendehandlingar
+## 3.4. Information om ärendehandlingar
 
 ---
 
@@ -2662,7 +2673,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 ---
 
-## 3.4. Information om bifogade filer
+## 3.5. Information om bifogade filer
 
 I ERMS används för bifogade filer elementet record/additionalInformation/appendix.
 I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet

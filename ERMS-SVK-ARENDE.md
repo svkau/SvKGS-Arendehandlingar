@@ -64,7 +64,7 @@ Dessa redovisas nedan i detta dokument.
 Det XML-dokument som innehåller information om en ärendeakt och de ingående handlingarna definieras i ett XML-schema.
 Se avsnittet Scheman nedan. Detta är XML-dokumentets grundläggande uppbyggnad:
 
-<img src="https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/0f2e491d-dc32-4565-9e4d-c27bf7c0bd76" alt="figur_01" width="70%"/>
+
 
 - erms (1...1)
     - control (1...1)
@@ -73,7 +73,6 @@ Se avsnittet Scheman nedan. Detta är XML-dokumentets grundläggande uppbyggnad:
           - record (1...n)
             - appendix (1...n)
 
-*Figur 1. Grundläggande struktur i ett XML-dokument.*
 
 Elementet `erms` är dokumentets rot-element. Elementet `control` innehåller underelement med information om
 själva XML-dokumentet (se avsnitt [3.1. Övergripande information om XML-dokumentet](#31-övergripande-information-om-xml-dokumentet)).
@@ -91,11 +90,16 @@ Varje `record` kan innehålla flera elementet av typen `appendix` som är en bif
 Observera att det tillagda elementet `svkAppendix` används i *SvKGS Ärendehandlingar* i stället för ERMS-elementet `appendix`.
 
 I elementlistorna nedan finns de element som bör eller måste finnas i ett XML-dokument enligt *SvKGS Ärendehandlingar*.
-Tabellerna följer strukturen i XML-dokumentet:
 
-<img src="https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/d8e9664f-a7a5-40a5-994d-28731a558577" alt="figur_02" width="70%"/>
+- [Elementlista 1. Kontroll](#elementlista-1-kontroll)
+- [Elementlista 2. ERMS-element för både ärendeakter och handlingar](#elementlista-2-erms-standardelement)
+- [Elementlista 3. Tillagda element för både ärendeakter och handlingar](#elementlista-3-tillagda-element)
+- [Elementlista 4. ERMS-element för ärendeakter](#elementlista-4-ärendeakter)
+- [Elementlista 5. Tillagda element för ärendeakter](#elementlista-5-svenska-kyrkans-tilläggsinformation-om-ärendeakter)
+- [Elementlista 6. ERMS-element för handlingar](#elementlista-6-ärendehandlingar)
+- [Elementlista 7. Tillagda element för handlingar](#elementlista-7-svenska-kyrkans-tilläggsinformation-om-ärendehandlingar)
+- [Elementlista 8. Element för bifogade filer](#elementlista-8-bifogad-fil)
 
-*Figur 2. Översikt av tabeller med dataelement.*
 
 ## 2.3. Värdelistor
 

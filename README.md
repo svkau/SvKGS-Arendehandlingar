@@ -15,8 +15,8 @@ Riksarkivet)](https://www.riksarkivet.se/fgs-anpassning).
 
 ## Innehåll
 
-- **Specifikation**: [ERMS-SVK-ARENDE.md](ERMS-SVK-ARENDE.md) version 1.0
-- **Värdelistor**: [ERMS-SVK-ARENDE-vardelistor.md](ERMS-SVK-ARENDE-vardelistor.md) version 1.0
+- **Specifikation**: [ERMS-SVK-ARENDE.md](ERMS-SVK-ARENDE.md) version 1.0 beta
+- **Värdelistor**: [ERMS-SVK-ARENDE-vardelistor.md](ERMS-SVK-ARENDE-vardelistor.md) version 1.0 beta
 
 ## Tillämpade scheman
 
@@ -24,8 +24,8 @@ Riksarkivet)](https://www.riksarkivet.se/fgs-anpassning).
 
 [ERMS.sch](https://github.com/DILCISBoard/CITS-ERMS/blob/master/schema/erms.sch) version 2.1.2
 
-[ERMS-SVK-ARENDE.xsd](ERMS-SVK-ARENDE.xsd) version 1.0
+[ERMS-SVK-ARENDE.xsd](ERMS-SVK-ARENDE.xsd) version 1.0 beta
 
-[ERMS-SVK-element.xsd](https://github.com/svkau/ERMS-SVK/blob/main/ERMS-SVK-element.xsd) version 1.0
+[ERMS-SVK-element.xsd](https://github.com/svkau/ERMS-SVK/blob/main/ERMS-SVK-element.xsd) version 1.0 beta
 
-[ERMS-SVK-ARENDE.sch](ERMS-SVK-ARENDE.sch) version 1.0
+[ERMS-SVK-ARENDE.sch](ERMS-SVK-ARENDE.sch) version 1.0 beta

@@ -6,8 +6,6 @@ Version 1.0 beta
 
 ## ERMS-SVK-ARENDE-värdelista 1 - Typ av identifikator
 
-(ERMS-SVK:2)
-
 | **Giltiga värden**  | **Kommentar**                           | **Källa** |
 |---------------------|-----------------------------------------|-----------|
 | aid                 | ArkivbildarID                           | ERMS-SVK  |
@@ -17,8 +15,6 @@ Version 1.0 beta
 
 ## ERMS-SVK-ARENDE-värdelista 2 - Klassificeringsstruktur
 
-(ERMS-SVK:4)
-
 | **Giltiga värden** | **Kommentar**                                  | **Källa** |
 |--------------------|------------------------------------------------|-----------|
 | KlaSL2016_1.0      | Klassificeringsstruktur för lokal nivå 1.0     | ERMS-SVK  |
@@ -26,8 +22,6 @@ Version 1.0 beta
 | KlaSS2016_1.0      | Klassificeringsstruktur för regional nivå 1.0  | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 3 - XML-dokumentets status
-
-(ERMS-SVK:7)
 
 | **Giltiga värden** | **Kommentar** | **Källa** |
 |--------------------|---------------|-----------|
@@ -42,16 +36,12 @@ Version 1.0 beta
 
 ## ERMS-SVK-ARENDE-värdelista 4 - Typ av ID
 
-(ERMS-SVK:10)
-
 | **Giltiga värden**   | **Kommentar**                           | **Källa** |
 |----------------------|-----------------------------------------|-----------|
 | aid                  | ArkivbildarID                           | ERMS-SVK  |
 | organisationsnummer  | Tio siffror utan bindestreck            | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 5 - Typ av underhållshändelse
-
-(ERMS-SVK:16)
 
 | **Giltiga värden** | **Kommentar** | **Källa** |
 |--------------------|---------------|-----------|
@@ -64,8 +54,6 @@ Version 1.0 beta
 | updated            |               | ERMS      |
 
 ## ERMS-SVK-ARENDE-värdelista 6 - Typ av aktör, agentType
-
-(ERMS-SVK:19 m.fl. )
 
 | **Giltiga värden** | **Kommentar**                               | **Källa** |
 |--------------------|---------------------------------------------|-----------|
@@ -82,16 +70,12 @@ Version 1.0 beta
 
 ## ERMS-SVK-ARENDE-värdelista 7 - Ärende- och handlingsstatus
 
-(ERMS-SVK:35, ERMS-SVK:101)
-
 | **Giltiga värden** | **Kommentar**                                                                                                 | **Källa** |
 |--------------------|---------------------------------------------------------------------------------------------------------------|-----------|
 | closed             | **Om ärende:** avslutat, stängt.<br/><br/>**Om handling:** registrerad i betydelsen inkommen eller upprättad. | ERMS      |
 | obliterated        | Makulerad.                                                                                                    | ERMS      |
 
 ## ERMS-SVK-ARENDE-värdelista 8 - Typ av idNumber
-
-(ERMS-SVK:3–48, ERMS-SVK:110–114)
 
 | **Giltiga värden**  | **Kommentar**                                              | **Källa** |
 |---------------------|------------------------------------------------------------|-----------|
@@ -101,16 +85,12 @@ Version 1.0 beta
 
 ## ERMS-SVK-ARENDE-värdelista 9 - Initiativ
 
-(ERMS-SVK:62)
-
 | **Giltiga värden** | **Kommentar** | **Källa** |
 |--------------------|---------------|-----------|
 | eget               |               | ERMS-SVK  |
 | externt            |               | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 10 - Typ av anteckning
-
-(ERMS-SVK:75, ERMS-SVK:137)
 
 | **Giltiga värden**     | **Kommentar** | **Källa** |
 |------------------------|---------------|-----------|
@@ -121,8 +101,6 @@ Version 1.0 beta
 | chattanteckning        |               | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 11 - Tillämpningsområde
-
-(ERMS-SVK:83, ERMS-SVK:155, ERMS-SVK:181)
 
 | **Giltiga värden** | **Kommentar** | **Källa** |
 |--------------------|---------------|-----------|
@@ -160,8 +138,6 @@ Version 1.0 beta
 
 ## ERMS-SVK-ARENDE-värdelista 12 - Åtgärd
 
-(ERMS-SVK:84, ERMS-SVK:156, SVK-ERMS:182)
-
 | **Giltiga värden** | **Kommentar** | **Källa** |
 |--------------------|---------------|-----------|
 | create             |               | ERMS-SVK  |
@@ -170,8 +146,6 @@ Version 1.0 beta
 | delete             |               | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 13 - Handlingstyp
-
-(ERMS-SVK:89)
 
 | **Giltiga värden**   | **Kommentar** | **Källa** |
 |----------------------|---------------|-----------|
@@ -185,8 +159,6 @@ Version 1.0 beta
 
 ## ERMS-SVK-ARENDE-värdelista 14 - Form
 
-(ERMS-SVK:90)
-
 | **Giltiga värden**   | **Kommentar**      | **Källa** |
 |----------------------|--------------------|-----------|
 | physical             |                    | ERMS      |
@@ -195,8 +167,6 @@ Version 1.0 beta
 
 ## ERMS-SVK-ARENDE-värdelista 15 - Riktning
 
-(ERMS-SVK:108)
-
 | **Giltiga värden** | **Kommentar**                                | **Källa** |
 |--------------------|----------------------------------------------|-----------|
 | incoming           | Om inkommen handling.                        | ERMS      |
@@ -204,8 +174,6 @@ Version 1.0 beta
 | internal           | Om handling som upprättats på annat sätt.    | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 16 - Avtalstyp
-
-(ERMS-SVK:147)
 
 | **Giltiga värden** | **Kommentar** | **Källa** |
 |--------------------|---------------|-----------|
@@ -216,8 +184,6 @@ Version 1.0 beta
 | överenskommelse    |               | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 17 - Variant
-
-(ERMS-SVK:??)
 
 | **Giltiga värden** | **Kommentar**     | **Källa** |
 |--------------------|-------------------|-----------|
@@ -230,8 +196,6 @@ Version 1.0 beta
 
 ## ERMS-SVK-ARENDE-värdelista 18 - Typ av objekt
 
-(ERMS-SVK:67)
-
 | **Giltiga värden** | **Kommentar**     | **Källa** |
 |--------------------|-------------------|-----------|
 | project            | projekt           | ERMS-SVK  |
@@ -239,37 +203,40 @@ Version 1.0 beta
 
 ## ERMS-SVK-ARENDE-värdelista 19 - Typ av arbetsflöde
 
-(ERMS-SVK:??)
-
 | **Giltiga värden** | **Kommentar**     | **Källa** |
 |--------------------|-------------------|-----------|
 | approval           |                   | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 20 - Arbetsflödes status
 
-(ERMS-SVK:??)
-
 | **Giltiga värden** | **Kommentar** | **Källa** |
 |--------------------|---------------|-----------|
-|                    |               | ERMS-SVK  |
-|                    |               | ERMS-SVK  |
+| approved           |               | ERMS-SVK  |
+| canceled           |               | ERMS-SVK  |
+| not_approved       |               | ERMS-SVK  |
+| open               |               | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 21 - Arbetsflödes prioritet
 
-(ERMS-SVK:??)
-
 | **Giltiga värden** | **Kommentar** | **Källa** |
 |--------------------|---------------|-----------|
-|                    |               | ERMS-SVK  |
-|                    |               | ERMS-SVK  |
+| high               |               | ERMS-SVK  |
+| low                |               | ERMS-SVK  |
+| standard           |               | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 22 - Datum
 
-(ERMS-SVK:??)
-
-| **Giltiga värden** | **Kommentar** | **Källa** |
-|--------------------|---------------|-----------|
-|                    |               | ERMS-SVK  |
-|                    |               | ERMS-SVK  |
-
-
+| **Giltiga värden** | **Kommentar**                | **Källa** |
+|--------------------|------------------------------|-----------|
+| closed             |                              | ERMS      |
+| created            |                              | ERMS      |
+| decision_date      |                              | ERMS      |
+| end                |                              | ERMS      |
+| finished           |                              | ERMS      |
+| expedited          |                              | ERMS      |
+| modified           | I betydelsen "senast ändrad" | ERMS      |
+| opened             |                              | ERMS      |
+| originated         | Se [ERMS-SVK:112](#erms-svk112---registrerat)     | ERMS      |
+| received           |                              | ERMS      |
+| sent               |                              | ERMS      |
+| start              |                              | ERMS      |

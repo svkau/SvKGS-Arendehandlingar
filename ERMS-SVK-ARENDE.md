@@ -207,7 +207,7 @@ Varje sådant leveranspaket får bara innehålla ärenden från en och samma ark
 
 <img src="https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/98ae301d-a05f-4f40-aef9-2f77683210d6" alt="figur_03" width="70%"/>
 
-*Figur 3. Mappstruktur för ärendeleverans. Namn på mappar och filer är enbart exempel.*
+*Mappstruktur för ärendeleverans. Namn på mappar och filer är enbart exempel.*
 
 Innan en leverans till e-arkivet görs, måste den levererande parten och e-arkivets förvaltningsorganisation
 tillsammans upprätta en leveransöverenskommelse där villkor och förutsättningar för leveransen specificeras.

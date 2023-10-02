@@ -4,6 +4,23 @@
 
 ***Version 1.0 beta***
 
+# Innehåll
+
+- 1 [Inledning](#1-inledning)
+  - 1.1 [Arkivpaket](#11-arkivpaket)
+- 2 [Specifikationer för ärendehandlingar](#2-specifikationer-för-ärendehandlingar)
+  - 2.2 [XML-dokumentet](#22-xml-dokumentet)
+  - 2.3 [Värdelistor](#23-värdelistor)
+  - 2.4 [Scheman](#24-scheman)
+  - 2.5 [Datatyper](#25-datatyper)
+  - 2.6 [Råd om användandet av *SvKGS Ärendehandlingar*](#26-råd-om-användandet-av-svkgs-ärendehandlingar)
+- 3 [Dataelement med exempel](#3-dataelement-med-exempel)
+  - 3.1 [Övergripande information om XML-dokumentet](#31-övergripande-information-om-xml-dokumentet)
+  - 3.2 [Element som används för information om både ärendeakter och handlingar](#32-element-som-används-för-information-om-både-ärendeakter-och-handlingar)
+  - 3.3 [Information om ärendeakter](#33-information-om-ärendeakter)
+  - 3.4 [Information om ärendehandlingar](#34-information-om-ärendehandlingar)
+  - 3.5 [Information om bifogade filer](#35-information-om-bifogade-filer)
+
 # 1. Inledning
 
 *Svenska kyrkans gemensamma specifikationer för elektronisk arkivering* beskriver vilken information som ska
@@ -99,7 +116,6 @@ I elementlistorna nedan finns de element som bör eller måste finnas i ett XML-
 - [Elementlista 6. ERMS-element för handlingar](#elementlista-6-ärendehandlingar)
 - [Elementlista 7. Tillagda element för handlingar](#elementlista-7-svenska-kyrkans-tilläggsinformation-om-ärendehandlingar)
 - [Elementlista 8. Element för bifogade filer](#elementlista-8-bifogad-fil)
-
 
 ## 2.3. Värdelistor
 

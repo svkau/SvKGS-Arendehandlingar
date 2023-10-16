@@ -1345,7 +1345,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
  
 > Om `idNumber` används hämtas värdet för `idNumberType`från [Värdelista 8](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-8---typ-av-idnumber).
 
-> **XML-element:**	`agent/@agentType="creator"`
+> **XML-element:**	`agent/@agentType="responsible_person"`
 
 ---
 

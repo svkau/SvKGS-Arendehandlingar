@@ -1585,19 +1585,14 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 ---
 
-#### ERMS-SVK:83 - *Schemaversioner*
+#### ERMS-SVK:83 - *Version av SvKGS Ärendehandlingar*
 
-> Anger vilka versioner av ERMS-SVK-ARENDE.xsd, ERMS.xsd, ERMS-SVK-element.xsd
-> och ERMS-SVK-ARENDE.sch som XML-dokumentet är kompatibelt med.
+> Anger vilken version av SvKGS Ärendehandlingar som XML-dokumentet är kompatibelt med.
 
 > Obligatoriskt.
 
-> **XML-element:**<br/>
-> `svk:ermsSvkArende/`<br/>
-> `@SchemaVersion="1.0"` (decimal)<br/>
-> `@ermsSchemaVersion="2.1.2"` (token)<br/>
-> `@elementSchemaVersion="1.0"` (decimal)<br/>
-> `@schematronVersion="1.0">` (decimal)
+> **XML-element:** `svk:ermsSvkArende/@ermsSvkArendeVersion="1.0"` (decimal)<br/>
+
 
 ---
 

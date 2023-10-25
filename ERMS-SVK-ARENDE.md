@@ -790,7 +790,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 #### Exempel 8 – Relaterat objekt
 
 ```xml
-<svk:relatedObject>
+<svk:relatedObjects>
     <svk:relatedObject typeOfObject="project">
         <svk:objectName>Omläggning av kyrktaket 2009</svk:objectName>
         <svk:objectId>P 2009:1</svk:objectId>

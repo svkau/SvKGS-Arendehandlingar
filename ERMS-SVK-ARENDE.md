@@ -803,7 +803,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 #### ERMS-SVK:34 - *Anteckningar*
 
-> Samlingselement för anteckningar kopplade till ett ärende.
+> Samlingselement för anteckningar kopplade till ett ärende eller dokument.
 
 > **XML-element:** `svk:svkNotes`<br/>
 
@@ -811,7 +811,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 #### ERMS-SVK:35 - *Anteckning*
 
-> Enskild anteckning kopplad till ärendet.
+> Enskild anteckning kopplad till ärendet eller dokumentet.
 
 > Elementet kan upprepas.
 

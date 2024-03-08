@@ -47,7 +47,7 @@ Version:	1.0 beta
 							<xs:element ref="svk:svkNotes" minOccurs="0"/>
 							<xs:element ref="svk:contractInfo" minOccurs="0"/>
 							<xs:element ref="svk:workflows" minOccurs="0"/>
-							<xs:element ref="svk:svkAppendix" minOccurs="0"/>
+							<xs:element ref="svk:svkAppendix" minOccurs="0" maxOccurs="unbounded"/>
 							<xs:element ref="svk:auditLogEvents" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>

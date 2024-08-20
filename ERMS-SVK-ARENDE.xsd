@@ -2,8 +2,8 @@
 
 <!--
 Namn:		ERMS-SVK-ARENDE.xsd
-Version:	1.0 beta
-Ändrad:		2023-09-28
+Version:	1.0
+Ändrad:		2024-08-20
 Ändrad av:	Henrik Vitalis
 -->
 
@@ -11,12 +11,11 @@ Version:	1.0 beta
 	xmlns="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE"
 	xmlns:erms="https://DILCIS.eu/XML/ERMS"
 	xmlns:svk = "https://xml.svenskakyrkan.se/ERMS-SVK-element"
-	targetNamespace="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE" elementFormDefault="qualified" attributeFormDefault="unqualified"
-	version="1.0">
+	targetNamespace="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
-	<xs:import namespace="https://DILCIS.eu/XML/ERMS" schemaLocation="https://citserms.dilcis.eu/schema/ERMS.xsd"/>
+	<xs:import namespace="https://DILCIS.eu/XML/ERMS" schemaLocation="ERMS_v3.xsd"/>
 	<xs:import namespace="https://xml.svenskakyrkan.se/ERMS-SVK-element"
-			   schemaLocation="https://raw.githubusercontent.com/svkau/ERMS-SVK-element/main/ERMS-SVK-element.xsd"/>
+			   schemaLocation="ERMS-SVK-element.xsd"/>
 	
 	<xs:element name="ermsSvkArende">
 		<xs:annotation>

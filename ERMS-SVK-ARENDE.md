@@ -2901,6 +2901,93 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
+#### ERMS-SVK:168 - *Information om e-signaturer*
+
+> Samlingselement för information om e-signaturer kopplade till filen.
+> 
+> (Tillägg till ERMS-standard)
+
+> **XML-element:** `svk:signatureInfo`<br/>
+
+---
+
+#### ERMS-SVK:169 - *Initierat datum*
+
+> Datum då signeringsproceduren initierades t.ex. genom att en inbjudan skickas till dem som ska underteckna.
+
+> Attributet `dateType` måste ha värdet ”created”. 
+
+> **XML-element:** `dates/date/@dateType="created"`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:170 - *Initierat av*
+
+> Namn (m.fl. uppgifter) på den person som har initierat signeringsproceduren.
+
+> Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
+> 
+> Attributet `agentType` måste ha värdet ”creator”.
+
+> **XML-element:** `/agent/@dagentType="creator"`<br/>
+> **Datatyp:** string
+
+---
+
+#### ERMS-SVK:171 - *Status*
+
+> Status på signeringsproceduren.
+
+> Värdet kan vara något av: "Pågående", "Slutförd" eller "Avbruten".
+
+> **XML-element:** `svk:signatureStatus"`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:172 - *Kontrollsumma*
+
+> Filens kontrollsumma som har skapats i samband med signeringen.
+
+> Värdet kan vara något av: "Pågående", "Slutförd" eller "Avbruten".
+
+> **XML-element:** `svk:signatureFileHash"`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:173 - *Algoritm*
+
+> Den krypteringsmetod som har hanvänts för att skapa kontrollsumman.
+
+> **XML-element:** `svk:signatureFileHash/@algorithm"`<br/>
+> **Datatyp:** token
+
+---
+
+#### ERMS-SVK:174 - *Information om undertecknare*
+
+> Samlingselement för information om person som har signerat dokumentet.
+> Elementet kan upprepas.
+
+> **XML-element:** `svk:signatories/signatory`<br/>
+
+---
+
+#### ERMS-SVK:175 - *Signerat datum*
+
+> Datum då personen har signerat dokumentet.
+
+> Attributet `agentType` måste ha värdet ”creator”.
+
+> **XML-element:** `/agent/@dagentType="creator"`<br/>
+> **Datatyp:** string
+
+---
+
+
+
 #### Exempel 29 – svkAppendix
 
 ```xml

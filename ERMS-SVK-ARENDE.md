@@ -47,15 +47,12 @@ för informationstypen i fråga.
 
 ## 1.1. Arkivpaket
 
-Leverans av information till e-arkivet sker i form av arkivpaket. Ett paket är en mappstruktur med filer.
-Paketet innehåller den levererade informationen, arkivobjektet, men också metadata som beskriver
-informationen och den levererande arkivbildaren.
+Leverans av information till e-arkivet sker i form av leveranspaket. Ett paket är en mappstruktur med filer som samlas i en arkivfil, t.ex. ZIP och TAR. Paketet innehåller den levererade informationen, arkivobjektet, men också metadata som beskriver informationen och den levererande arkivbildaren.
+
+Svenska kyrkans utformning av leveranspaket (SIP) utgår från Riksarkivets specifikation [FGS Paketstruktur 1.2](https://riksarkivet.se/Media/pdf-filer/doi-t/FGS_Paketstruktur_RAFGS1V1_2.pdf) men är anpassad efter egna behov. Efter mottagande i e-arkivet omformas paketet till ett arkivpaket (AIP) som är helt i enlighet med FGS Paketstruktur 1.2. Det finns en plan att övergå till version 2.0 av Riksarkivets FGS så snart det är möjligt.
 
 Specifikationerna i det här dokumentet beskriver arkivobjektet, det vill säga den information som
-ska arkiveras. Det utgör endast en del av hela arkivpaketet.
-
-Arkivpaketet i sin helhet utformas i enlighet med Riksarkivets specifikation
-[FGS Paketstruktur 1.2](https://riksarkivet.se/Media/pdf-filer/doi-t/FGS_Paketstruktur_RAFGS1V1_2.pdf).
+ska arkiveras. Det utgör endast en del av hela arkivpaketet. För mer information om leveranspaket,, se [SvKGS-Leveransbeskrivning](https://github.com/svkau/SvKGS-Leveransbeskrivning/blob/main/SvKGS-Leveransbeskrivning.md#svkgs-leveransbeskrivning)
 
 # 2. Specifikationer för ärendehandlingar
 
@@ -201,11 +198,10 @@ Informationen i det levererande IT-systemet måste mappas mot specifikationens d
 till ett XML-format som kan valideras av de scheman som ingår i specifikationen.
 Alla XML-filer måste ha teckenkodning UTF-8.
 
-En XML-fil får enbart innehålla ett enda ärende, men leveransen kan bestå av flera filer.
-Filerna samlas i en mapp, och om leveransen innehåller dokumentfiler samlas dessa i en undermapp.
+En XML-fil får enbart innehålla ett enda ärende, men leveransen kan bestå av flera filer i separata undermappar.
 Varje sådant leveranspaket får bara innehålla ärenden från en och samma arkivbildare och ett och samma diarium.
 
-<img src="https://github.com/svkau/SvKGS-Arendehandlingar/assets/13225565/98ae301d-a05f-4f40-aef9-2f77683210d6" alt="figur_03" width="70%"/>
+![erms_leverans](https://github.com/user-attachments/assets/28a88319-c5ea-4ddc-b3e8-577e4c59acf4)
 
 *Mappstruktur för ärendeleverans. Namn på mappar och filer är enbart exempel.*
 

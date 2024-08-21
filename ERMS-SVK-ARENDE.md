@@ -2914,6 +2914,8 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 #### ERMS-SVK:169 - *Initierat datum*
 
 > Datum då signeringsproceduren initierades t.ex. genom att en inbjudan skickas till dem som ska underteckna.
+>
+> Obligatoriskt.
 
 > Attributet `dateType` måste ha värdet ”created”. 
 
@@ -2925,6 +2927,8 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 #### ERMS-SVK:170 - *Initierat av*
 
 > Namn (m.fl. uppgifter) på den person som har initierat signeringsproceduren.
+>
+> Obligatoriskt.
 
 > Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 > 
@@ -2938,6 +2942,8 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 #### ERMS-SVK:171 - *Status*
 
 > Status på signeringsproceduren.
+>
+> Obligatoriskt.
 
 > Värdet kan vara något av: "Pågående", "Slutförd" eller "Avbruten".
 
@@ -2949,6 +2955,8 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 #### ERMS-SVK:172 - *Kontrollsumma*
 
 > Filens kontrollsumma som har skapats i samband med signeringen.
+>
+> Obligatoriskt.
 
 > Värdet kan vara något av: "Pågående", "Slutförd" eller "Avbruten".
 
@@ -2960,6 +2968,8 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 #### ERMS-SVK:173 - *Algoritm*
 
 > Den krypteringsmetod som har hanvänts för att skapa kontrollsumman.
+>
+> Obligatoriskt.
 
 > **XML-element:** `svk:signatureFileHash/@algorithm"`<br/>
 > **Datatyp:** token
@@ -2969,24 +2979,52 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 #### ERMS-SVK:174 - *Information om undertecknare*
 
 > Samlingselement för information om person som har signerat dokumentet.
+>
+> Obligatoriskt.
+> 
 > Elementet kan upprepas.
+
 
 > **XML-element:** `svk:signatories/signatory`<br/>
 
 ---
 
-#### ERMS-SVK:175 - *Signerat datum*
+#### ERMS-SVK:175 - *Undertecknat av*
 
-> Datum då personen har signerat dokumentet.
+> Namn (m.fl. uppgifter) på person som har undertecknat med e-signatur.
+>
+> Obligatoriskt.
 
-> Attributet `agentType` måste ha värdet ”creator”.
+> Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
+> 
+> Attributet `agentType` måste ha värdet ”main_signatory”.
 
-> **XML-element:** `/agent/@dagentType="creator"`<br/>
+> **XML-element:** `/agent/@dagentType="main_signatory"`<br/>
 > **Datatyp:** string
 
 ---
 
+#### ERMS-SVK:176 - *Undertecknat datum*
 
+> Datum då personen har undertecknat dokumentet.
+>
+> Obligatoriskt.
+
+> Attributet `dateType` måste ha värdet ”main_signature”.
+
+> **XML-element:** `dates/date/@dateType="main_signature"`<br/>
+> **Datatyp:** string
+
+---
+
+#### ERMS-SVK:177 - *Undertecknarens kommentar*
+
+> Kommentar som undertecknaren ev. har angivit i samband med undertecknandet.
+
+> **XML-element:** `svk:signatoryComment`<br/>
+> **Datatyp:** string
+
+---
 
 #### Exempel 29 – svkAppendix
 
@@ -2998,7 +3036,29 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 		<svk:dateLastEdited>2010-02-01T00:00:00</svk:dateLastEdited>
 		<svk:versionNumber>1</svk:versionNumber>
 		<svk:variant>preservation</svk:variant>
-    </svk:fileInfo>
+	</svk:fileInfo>
+	<svk:signatureInfo>
+		<dates><date dateType="created">2024-04-18T10:22:04</date></dates>
+		<agent agentType="creator">
+			<name>Dorian Gray</name>
+			<organisation>Kyrkstadens församling</organisation>
+			<idNumber idNumberType="username">knet\xxxx</idNumber>
+		</agent>
+		<svk:signatureStatus>Slutförd</svk:signatureStatus>
+		<svk:signatureFileHash algorithm="SHA-1">2aae6c35c94fcfb415dbe95f408b9ce91ee846ed</svk:signatureFileHash>
+		<svk:signatories>
+			<svk:signatory>
+				<agent agentType="main_signatory"><name>Gregor Samsa</name></agent>
+				<dates><date dateType="main_signature">2024-04-18T10:22:04</date></dates>
+				<svk:signatoryComment>Nu har jag skrivit under!</svk:signatoryComment>
+			</svk:signatory>
+			<svk:signatory>
+				<agent agentType="main_signatory"><name>Josef K.</name></agent>
+				<dates><date dateType="main_signature">2024-04-19T10:22:04</date></dates>
+				<svk:signatoryComment>Jag har också skrivit under!</svk:signatoryComment>
+			</svk:signatory>
+		</svk:signatories>
+	</svk:signatureInfo>
 </svk:svkAppendix>
 ```
 

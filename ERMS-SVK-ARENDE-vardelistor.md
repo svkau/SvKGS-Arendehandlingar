@@ -2,7 +2,7 @@
 
 # Värdelistor
 
-Version 1.0 beta
+Version 1.0
 
 ## ERMS-SVK-ARENDE-värdelista 1 - Typ av identifikator
 
@@ -64,6 +64,7 @@ Version 1.0 beta
 | delegator          | Person i vars ställe något utförs.          | ERMS-SVK  |
 | deliverer          | Ansvarig för leverans till e-arkivet.       | ERMS      |
 | editor             | Används i betydelsen "Medhandläggare".      | ERMS      |
+| main_signatory     | Den som har e-signerat ett dokument.        | ERMS      |
 | receiver           | Mottagare av en utgående handling.          | ERMS      |
 | responsible_person | Ansvarig för ett ärende eller handling.     | ERMS      |
 | sender             | Avsändare av en inkommen handling.          | ERMS      |
@@ -162,8 +163,8 @@ Version 1.0 beta
 | **Giltiga värden**   | **Kommentar**      | **Källa** |
 |----------------------|--------------------|-----------|
 | physical             |                    | ERMS      |
-| digitial             | Stavfel i ERMS.xsd | ERMS      |
-| physical_and_digital |                    | ERMS      |
+| digitial             |                    | ERMS      |
+| physical_and_digital | Stavfel i ERMS.xsd | ERMS      |
 
 ## ERMS-SVK-ARENDE-värdelista 15 - Riktning
 
@@ -236,7 +237,7 @@ Version 1.0 beta
 | expedited          |                              | ERMS      |
 | modified           | I betydelsen "senast ändrad" | ERMS      |
 | opened             |                              | ERMS      |
-| originated         | Se [ERMS-SVK:112](#erms-svk112---registrerat)     | ERMS      |
+| originated         | Se [ERMS-SVK:112](https://github.com/svkau/SvKGS-Arendehandlingar/blob/main/ERMS-SVK-ARENDE.md#erms-svk112---registrerat)     | ERMS      |
 | received           |                              | ERMS      |
 | sent               |                              | ERMS      |
 | start              |                              | ERMS      |

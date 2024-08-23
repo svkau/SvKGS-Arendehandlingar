@@ -76,7 +76,7 @@ Dessa redovisas nedan i detta dokument.
 ## 2.2. XML-dokumentet
 
 Det XML-dokument som innehåller information om en ärendeakt och de ingående handlingarna definieras i ett XML-schema.
-Se avsnittet Scheman nedan. Detta är XML-dokumentets grundläggande uppbyggnad:
+Se avsnittet [Scheman](#24-scheman) nedan. Detta är XML-dokumentets grundläggande uppbyggnad:
 
 
 
@@ -127,11 +127,11 @@ XML-scheman och Schematron används i ERMS för att på ett mer tekniskt sätt d
 ska utformas. Scheman kan också användas för att validera ett XML-dokument så att man kan avgöra om det
 följer specifikationen.
 
-I ERMS ingår schemana [ERMS.xsd](https://citserms.dilcis.eu/schema/ERMS.xsd) och [ERMS.sch](https://citserms.dilcis.eu/schema/erms.sch).
+I ERMS ingår schemana [ERMS_v3.xsd](https://citserms.dilcis.eu/schema/ERMS_v3.xsd) och [ERMS.sch](https://citserms.dilcis.eu/schema/erms_v3.sch).
 
 I *SvKGS Ärendehandlingar* används schemana
 
-**ERMS.xsd**<br/>
+**ERMS_v3.xsd**<br/>
 Schemat används för att validera de delat av XML-dokumentet som följer ERMS-standard.
 
 **ERMS-SVK-element.xsd**<br/>
@@ -145,7 +145,7 @@ och vilka tillagda element som får användas i enlighet med SvKGS Ärendehandli
 Denna del av XML-dokumentet ingår i ERMS-elementet `additionalXMLData`.
 
 **ERMS-SVK-ARENDEN.sch**<br/>
-Schemat innehåller dels de regler som ingår i ERMS-standarden (ERMS.sch), dels Svenska kyrkans regler som
+Schemat innehåller Svenska kyrkans regler som
 de beskrivs i *SvKGS Ärendehandlingar*. De två sistnämnda schemana är specifika för
 *SvKGS Ärendehandlingar* och är publikt tillgängliga på [Github](https://github.com/svkau/SvKGS-Arendehandlingar).
 
@@ -2064,10 +2064,12 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
     <agents>
         <agent agentType="creator">
             <name>Anna Andersson</name>
+            <organisation>Kyrkstadens pastorat</organisation>
             <idNumber idNumberType="username">svkanan</idNumber>
         </agent>
         <agent agentType="responsible_person">
             <name>Johan Göransson</name>
+            <organisation>Kyrkstadens pastorat</organisation>
             <idNumber idNumberType="username">svkjogo</idNumber>
         </agent>
         <!-- Om det är en inkommande handling: -->
@@ -2858,6 +2860,8 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 > Datum och tid då filen skapades (systeminformation).
 > 
 > Attributet `dateType` måste ha värdet "created".
+>
+> Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum) ovan.
 
 > **XML-element:** `dates/date/@dateType="created"`<br/>
 > **Datatyp:** dateTime
@@ -2869,6 +2873,8 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 > Datum och tid då filen senast ändrades (systeminformation).
 > 
 > Attributet `dateType` måste ha värdet "modified".
+>
+> Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum) ovan.
 
 > **XML-element:** `dates/date/@dateType="modified"`<br/>
 > **Datatyp:** dateTime
@@ -2911,9 +2917,11 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Datum då signeringsproceduren initierades t.ex. genom att en inbjudan skickas till dem som ska underteckna.
 >
-> Obligatoriskt.
+> Obligatoriskt om **Information om e-signaturer** används.
 
-> Attributet `dateType` måste ha värdet ”created”. 
+> Attributet `dateType` måste ha värdet ”created”.
+
+> Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum) ovan.
 
 > **XML-element:** `dates/date/@dateType="created"`<br/>
 > **Datatyp:** dateTime
@@ -2924,7 +2932,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Namn (m.fl. uppgifter) på den person som har initierat signeringsproceduren.
 >
-> Obligatoriskt.
+> Obligatoriskt om **Information om e-signaturer** används.
 
 > Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 > 
@@ -2939,7 +2947,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Status på signeringsproceduren.
 >
-> Obligatoriskt.
+> Obligatoriskt om **Information om e-signaturer** används.
 
 > Värdet kan vara något av: "Pågående", "Slutförd" eller "Avbruten".
 
@@ -2952,7 +2960,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Filens kontrollsumma som har skapats i samband med signeringen.
 >
-> Obligatoriskt.
+> Obligatoriskt om **Information om e-signaturer** används.
 
 > Värdet kan vara något av: "Pågående", "Slutförd" eller "Avbruten".
 
@@ -2965,7 +2973,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Den krypteringsmetod som har hanvänts för att skapa kontrollsumman.
 >
-> Obligatoriskt.
+> Obligatoriskt om **Information om e-signaturer** används.
 
 > **XML-element:** `svk:signatureFileHash/@algorithm"`<br/>
 > **Datatyp:** token
@@ -2976,7 +2984,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Samlingselement för information om person som har signerat dokumentet.
 >
-> Obligatoriskt.
+> Obligatoriskt om **Information om e-signaturer** används.
 > 
 > Elementet kan upprepas.
 
@@ -2989,7 +2997,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Namn (m.fl. uppgifter) på person som har undertecknat med e-signatur.
 >
-> Obligatoriskt.
+> Obligatoriskt om **Information om e-signaturer** används.
 
 > Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 > 
@@ -3004,7 +3012,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 > Datum då personen har undertecknat dokumentet.
 >
-> Obligatoriskt.
+> Obligatoriskt om **Information om e-signaturer** används.
 
 > Attributet `dateType` måste ha värdet ”main_signature”.
 

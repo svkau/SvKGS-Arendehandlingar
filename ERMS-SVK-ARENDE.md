@@ -153,10 +153,10 @@ En särskild anmärkning om elementet `appendix` i behöver göras. Eftersom det
 utöka detta element med flera underelement, och då det inte finns något element `additionalXMLData` här,
 används inte `appendix` utan i stället ett eget element `svkAppendix` som definieras i ERMS-SVK-element.xsd.
 
-Användandet av elementet appendix förbjuds genom en regel i ERMS-SVK.sch.
+Användandet av elementet appendix förbjuds genom en regel i ERMS-SVK-ARENDEN.sch.
 
 För att validera ett XML-dokument och avgöra om det följer specifikationerna i *SvKGS Ärendehandlingar*, måste man
-alltså använda både **ERMS.xsd** och **ERMS-SVK-ARENDE.xsd** (som i sin tur importerar och använder **ERMS-SVK-element.xsd**).
+alltså använda både **ERMS_v3.xsd** och **ERMS-SVK-ARENDE.xsd** (som i sin tur importerar och använder **ERMS-SVK-element.xsd**).
 Därtill måste dokumentet valideras mot **ERMS-SVK-ARENDE.sch**.
 
 ## 2.5. Datatyper

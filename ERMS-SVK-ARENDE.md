@@ -1218,9 +1218,9 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 > Används endast för Offentlig titel i leveranser från Public 360°.
 
-> Om elementet `otherTitel` används måste attributet `titleType` ha värdet ”publicTitle”.
+> Om elementet `otherTitel` används måste attributet `titleType` ha värdet ”public”.
 
-> **XML-element:**	`otherTitle/@titleType="publicTitle"`<br/>
+> **XML-element:**	`otherTitle/@titleType="public"`<br/>
 > **Datatyp:**	string
 
 ---
@@ -1230,7 +1230,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 ```xml
 <aggregation>
 	<title>Ärendets titel</title>
-	<otherTitle titleType="publicTitle">En offentlig titel</otherTitle>
+	<otherTitle titleType="public">En offentlig titel</otherTitle>
 </aggregation>
 ```
 
@@ -1843,9 +1843,9 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 > Används enbart för Offentlig titel i leveranser från Public 360°.
 
 > Om elementet *Annan titel* används måste attributet titleType ha
-> värdet ”publicTitle”.
+> värdet ”public”.
 
-> **XML-element:** `otherTitle/@titleType="publicTitle"`<br/>
+> **XML-element:** `otherTitle/@titleType="public"`<br/>
 > **Datatyp:** string
 
 ---
@@ -1855,7 +1855,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 ```xml
 <record>
 	<title>Handlingens titel</title>
-	<otherTitle titleType="publicTitle">En offentlig titel</otherTitle>
+	<otherTitle titleType="public">En offentlig titel</otherTitle>
 </record>
 ```
 

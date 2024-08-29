@@ -28,7 +28,7 @@ Följande scheman används av och är kompatibla med SvKGS-Ärendehandlingar 1.0
 
 [ERMS-SVK-element.xsd](https://github.com/svkau/ERMS-SVK/blob/main/ERMS-SVK-element.xsd) **version 1.0**
 
-[ERMS_v3.xsd](https://github.com/DILCISBoard/CITS-ERMS/blob/master/schema/ERMS_v3.xsd) **version 3.0.0**
+[ERMS_v3.xsd](https://github.com/DILCISBoard/CITS-ERMS/blob/master/schema/ERMS_v3.xsd) **version 3.0.1**
 
 [ERMS_v3.sch](https://github.com/DILCISBoard/CITS-ERMS/blob/master/schema/erms_v3.sch) **version 3.0.0**
 

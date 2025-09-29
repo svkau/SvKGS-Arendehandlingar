@@ -2668,7 +2668,73 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 ---
 
-#### ERMS-SVK:149 - *Bifogad fil*
+#### ERMS-SVK:149 - *Information om styrelsemöte*
+
+> Samlingselement för behandlingar kopplade till handlingen.
+
+> **XML-element:** `svk:boardMeetingInformation`<br/>
+
+---
+
+#### ERMS-SVK:150 - *Behandling i styrelsemöte*
+
+> Information om handlingens behandling vid ett styrelsemöte.
+
+> Obligatoriskt om *Information om styrelsemöte* används.
+
+> Elementet kan upprepas.
+
+> **XML-element:** `svk:boardHandling`<br/>
+
+---
+
+#### ERMS-SVK:151 - *Mötesinstans*
+
+> Mötesinstans där handlingen har behandlats, t.ex. Kyrkorådet.
+
+> Obligatoriskt om *Information om styrelsemöte* används.
+
+> **XML-element:** `svk:meetingInstance`<br/>
+
+---
+
+#### ERMS-SVK:152 - *Mötesdatum*
+
+> Datum för mötet då handlingen behandlades.
+
+> Obligatoriskt om *Information om styrelsemöte* används.
+
+> **XML-element:** `svk:meetingDate`<br/>
+> **Datatyp:** dateTime
+
+---
+
+#### ERMS-SVK:153 - *Dagordningspunkt*
+
+> Dagordningspunkt för behnadlingen, t.ex. Beslutsärende.
+
+> **XML-element:** `svk:agendaItem`<br/>
+
+---
+
+#### ERMS-SVK:154 - *Noteringar*
+
+> Noteringar som har gjorts i samband med att handlingen överlämnats till behandling.
+
+> **XML-element:** `svk:boardHandlingNotes`<br/>
+
+---
+
+#### ERMS-SVK:155 - *Behandlingsnummer*
+
+> Om samma handling har flera behandlingar, kan dessa numreras.
+
+> **XML-element:** `svk:boardHandling/@boardHandlingNumber`<br/>
+> **Datatyp:** Integer
+
+---
+
+#### ERMS-SVK:156 - *Bifogad fil*
 
 > Uppgifter om fil som är kopplad till den registrerade handlingen.
 
@@ -2698,7 +2764,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:150 - *Bifogad fil*
+#### ERMS-SVK:157 - *Bifogad fil*
 
 > Samlingselement för uppgifter om en fil som är kopplad till en registrerad handling.
 
@@ -2708,7 +2774,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:151 - *Appendix*
+#### ERMS-SVK:158 - *Appendix*
 
 > Samlingselement för den information om filen som följer ERMS-standard.
 
@@ -2716,7 +2782,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:152 - *Gallringsbar*
+#### ERMS-SVK:159 - *Gallringsbar*
 
 > Med gallringsbar avses här att den bifogade filen kan gallras innan handlingen i sig gallras.
 
@@ -2730,7 +2796,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:153 - *Namn*
+#### ERMS-SVK:160 - *Namn*
 
 > Filens namn.
 
@@ -2741,7 +2807,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:154 - *Beskrivning*
+#### ERMS-SVK:161 - *Beskrivning*
 
 > Beskrivning av filen.
 
@@ -2750,12 +2816,12 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:155 - *Filformat*
+#### ERMS-SVK:162 - *Filformat*
 
 > Filens format.
 
 > Obligatoriskt.
-> 
+>
 > Anges i form av filnamnsändelse (max fyra tecken) utan punkt och med små bokstäver.
 >
 > Exempel: pdf, png, txt
@@ -2765,7 +2831,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:156 - *Originalfilformat*
+#### ERMS-SVK:163 - *Originalfilformat*
 
 > Om filen är konverterad till arkivformat, anges här originalfilens format.
  
@@ -2778,7 +2844,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:157 - *Sökväg*
+#### ERMS-SVK:164 - *Sökväg*
 
 > Relativ sökväg till filens placering i arkivpaketet.
  
@@ -2791,7 +2857,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:158 - *Uppgift om e-signatur*
+#### ERMS-SVK:165 - *Uppgift om e-signatur*
 
 > Anger om det har funnits en e-signatur som har gallrats före leverans.
  
@@ -2802,7 +2868,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:159 - *E-signatur*
+#### ERMS-SVK:166 - *E-signatur*
 
 > Samlingselement för information om befintlig e-signatur.
  
@@ -2810,7 +2876,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:160 - *E-signatur finns*
+#### ERMS-SVK:167 - *E-signatur finns*
 
 > Anger om det finns en e-signatur.
 
@@ -2823,7 +2889,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:161 - *Verifikationsdatum*
+#### ERMS-SVK:168 - *Verifikationsdatum*
 
 > Datum och tid då e-signaturen senast verifierades.
 
@@ -2832,7 +2898,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:162 - *Signatur*
+#### ERMS-SVK:169 - *Signatur*
 
 ****
 
@@ -2845,7 +2911,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:163 - *Filinformation*
+#### ERMS-SVK:170 - *Filinformation*
 
 > Samlingselement för utökad information om filen.
 > 
@@ -2855,7 +2921,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:164 - *Skapad*
+#### ERMS-SVK:171 - *Skapad*
 
 > Datum och tid då filen skapades (systeminformation).
 > 
@@ -2868,7 +2934,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:165 - *Senast ändrad*
+#### ERMS-SVK:172 - *Senast ändrad*
 
 > Datum och tid då filen senast ändrades (systeminformation).
 > 
@@ -2881,7 +2947,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:166 - *Versionsnummer*
+#### ERMS-SVK:173 - *Versionsnummer*
 
 > Om flera versioner av samma fil är kopplade till handlingen, anges versionsnummer här.
 > 
@@ -2892,7 +2958,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:167 - *Variant*
+#### ERMS-SVK:174 - *Variant*
 
 > Om flera varianter av samma version är kopplade till handlingen, anges unik variant här.
 
@@ -2903,7 +2969,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:168 - *Information om e-signaturer*
+#### ERMS-SVK:175 - *Information om e-signaturer*
 
 > Samlingselement för information om e-signaturer kopplade till filen.
 > 
@@ -2913,7 +2979,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:169 - *Initierat datum*
+#### ERMS-SVK:176 - *Initierat datum*
 
 > Datum då signeringsproceduren initierades t.ex. genom att en inbjudan skickas till dem som ska underteckna.
 >
@@ -2928,7 +2994,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:170 - *Initierat av*
+#### ERMS-SVK:177 - *Initierat av*
 
 > Namn (m.fl. uppgifter) på den person som har initierat signeringsproceduren.
 >
@@ -2943,7 +3009,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:171 - *Status*
+#### ERMS-SVK:178 - *Status*
 
 > Status på signeringsproceduren.
 >
@@ -2956,7 +3022,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:172 - *Kontrollsumma*
+#### ERMS-SVK:179 - *Kontrollsumma*
 
 > Filens kontrollsumma som har skapats i samband med signeringen.
 >
@@ -2969,7 +3035,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:173 - *Algoritm*
+#### ERMS-SVK:180 - *Algoritm*
 
 > Den krypteringsmetod som har hanvänts för att skapa kontrollsumman.
 >
@@ -2980,7 +3046,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:174 - *Information om undertecknare*
+#### ERMS-SVK:181 - *Information om undertecknare*
 
 > Samlingselement för information om person som har signerat dokumentet.
 >
@@ -2993,7 +3059,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:175 - *Undertecknat av*
+#### ERMS-SVK:182 - *Undertecknat av*
 
 > Namn (m.fl. uppgifter) på person som har undertecknat med e-signatur.
 >
@@ -3008,7 +3074,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:176 - *Undertecknat datum*
+#### ERMS-SVK:183 - *Undertecknat datum*
 
 > Datum då personen har undertecknat dokumentet.
 >
@@ -3021,7 +3087,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 ---
 
-#### ERMS-SVK:177 - *Undertecknarens kommentar*
+#### ERMS-SVK:184 - *Undertecknarens kommentar*
 
 > Kommentar som undertecknaren ev. har angivit i samband med undertecknandet.
 

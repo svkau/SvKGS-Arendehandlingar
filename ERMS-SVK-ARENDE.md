@@ -214,7 +214,7 @@ Se mer om leveransförfarandet i Arkivhandboken, kapitel 8.
 ## 3.1. Övergripande information om XML-dokumentet
 
 Kontroll är ett obligatoriskt element som beskriver själva XML-filen och vad den innehåller.
-Den underlättare förståelsen av informationen, om XML-filen skulle separeras från arkivpaketet.
+Den underlättar förståelsen av informationen, om XML-filen skulle separeras från arkivpaketet.
 
 ### Elementlista 1. Kontroll
 
@@ -1474,10 +1474,10 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 (ERMS240)
 
->Samlingselement som används för uppgifter om beslut som har fattats i ärendet och
+> Samlingselement som används för uppgifter om beslut som har fattats i ärendet och
 > som i diariesystemet har registrerats separat och inte som en vanlig handling.
 
->Elementet kan upprepas.
+> Elementet kan upprepas.
 > 
 > *SvKGS Ärendehandlingar* har alltså ett betydligt snävare användningsområde
 > av elementet `action` än vad som är fallet i ERMS.
@@ -1522,7 +1522,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 >
 > Se avsnittet [3.2.2 Datum](ERMS-SVK-ARENDE.md#322-datum).
 
-> **XML-element:**	`dates/date/@dateType=”decision_date”`<br/>
+> **XML-element:**	`dates/actionDate/@dateType=”decision_date”`<br/>
 > **Datatyp:**	dateTime
 
 ---
@@ -1587,7 +1587,8 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 > Obligatoriskt.
 
-> **XML-element:** `svk:ermsSvkArende/@ermsSvkArendeVersion="1.0"` (decimal)<br/>
+> **XML-element:** `svk:ermsSvkArende/@ermsSvkArendeVersion="1.0"`<br/>
+> **Datatyp:** decimal
 
 
 ---
@@ -2583,7 +2584,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 > Attributet `agentType` måste ha värdet ”other” och attributet `otherAgentType` måste
 > ha värdet *closing_person*.
 
-> **XML-element:** `svk:agents/agent/@agentType="other" @otherAgentType="executor"`<br/>
+> **XML-element:** `svk:agents/agent/@agentType="other" @otherAgentType="closing_person"`<br/>
 
 ---
 
@@ -2605,7 +2606,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 > Kommentar som mottagaren kan lämna i anslutning till sin del i arbetsflödet.
 
-> **XML-element:** `svk:reciepientComment`<br/>
+> **XML-element:** `svk:recipientComment`<br/>
 > **Datatyp:** string
 
 ---
@@ -2618,7 +2619,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
         <svk:workflow typeOfWorkflow="approval">
             <svk:workflowName>Godkännande</svk:workflowName>
             <svk:workflowStatus>approved</svk:workflowStatus>
-            <svk:priority>normal</svk:priority>
+            <svk:workflowPriority>normal</svk:workflowPriority>
             <svk:agents>
                 <agent agentType="creator">
                     <name>Bo Mattsson</name>    
@@ -2646,7 +2647,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
                         <agent agentType="recipient">
                             <name>Patrik Andersson</name>
                         </agent>
-                        <agent agentType="other" otherAgentType="executor">
+                        <agent agentType="other" otherAgentType="closing_person">
                             <name>Patrik Andersson</name>
                             <idNumber type="username">knet\patand</idNumber>
                         </agent>
@@ -2711,7 +2712,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 #### ERMS-SVK:153 - *Dagordningspunkt*
 
-> Dagordningspunkt för behnadlingen, t.ex. Beslutsärende.
+> Dagordningspunkt för behandlingen, t.ex. Beslutsärende.
 
 > **XML-element:** `svk:agendaItem`<br/>
 
@@ -3004,7 +3005,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 > 
 > Attributet `agentType` måste ha värdet ”creator”.
 
-> **XML-element:** `/agent/@dagentType="creator"`<br/>
+> **XML-element:** `/agent/@agentType="creator"`<br/>
 > **Datatyp:** string
 
 ---
@@ -3028,8 +3029,6 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 >
 > Obligatoriskt om **Information om e-signaturer** används.
 
-> Värdet kan vara något av: "Pågående", "Slutförd" eller "Avbruten".
-
 > **XML-element:** `svk:signatureFileHash"`<br/>
 > **Datatyp:** token
 
@@ -3037,7 +3036,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 
 #### ERMS-SVK:180 - *Algoritm*
 
-> Den krypteringsmetod som har hanvänts för att skapa kontrollsumman.
+> Den krypteringsmetod som har använts för att skapa kontrollsumman.
 >
 > Obligatoriskt om **Information om e-signaturer** används.
 
@@ -3069,7 +3068,7 @@ I Svenska kyrkans anpassning av ERMS används i stället tilläggselementet
 > 
 > Attributet `agentType` måste ha värdet ”main_signatory”.
 
-> **XML-element:** `/agent/@dagentType="main_signatory"`<br/>
+> **XML-element:** `/agent/@agentType="main_signatory"`<br/>
 > **Datatyp:** string
 
 ---

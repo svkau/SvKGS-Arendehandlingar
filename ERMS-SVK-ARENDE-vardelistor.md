@@ -103,48 +103,11 @@ Version 1.0
 
 ## ERMS-SVK-ARENDE-värdelista 11 - Tillämpningsområde
 
-| **Giltiga värden** | **Kommentar** | **Källa** |
-|--------------------|---------------|-----------|
-| ankomstdatum       |               | ERMS-SVK  |
-| ansvarig           |               | ERMS-SVK  |
-| anteckning         |               | ERMS-SVK  |
-| avsändare          |               | ERMS-SVK  |
-| beskrivning        |               | ERMS-SVK  |
-| beslut             |               | ERMS-SVK  |
-| dokumentnummer     |               | ERMS-SVK  |
-| dokumentreferens   |               | ERMS-SVK  |
-| dokumentstatus     |               | ERMS-SVK  |
-| dokumenttitel      |               | ERMS-SVK  |
-| expedieringsdatum  |               | ERMS-SVK  |
-| fastighet          |               | ERMS-SVK  |
-| fil                |               | ERMS-SVK  |
-| form               |               | ERMS-SVK  |
-| handling           |               | ERMS-SVK  |
-| initiativ          |               | ERMS-SVK  |
-| klassificering     |               | ERMS-SVK  |
-| kommentar          |               | ERMS-SVK  |
-| medhandläggare     |               | ERMS-SVK  |
-| mottagare          |               | ERMS-SVK  |
-| nyckelord          |               | ERMS-SVK  |
-| projekt            |               | ERMS-SVK  |
-| riktning           |               | ERMS-SVK  |
-| sekretess          |               | ERMS-SVK  |
-| status             |               | ERMS-SVK  |
-| ärende             |               | ERMS-SVK  |
-| ärendemening       |               | ERMS-SVK  |
-| ärendenummer       |               | ERMS-SVK  |
-| ärendepart         |               | ERMS-SVK  |
-| ärendereferens     |               | ERMS-SVK  |
-| ärendestatus       |               | ERMS-SVK  |
+Värdelistan används inte och är borttagen!
 
 ## ERMS-SVK-ARENDE-värdelista 12 - Åtgärd
 
-| **Giltiga värden** | **Kommentar** | **Källa** |
-|--------------------|---------------|-----------|
-| create             |               | ERMS-SVK  |
-| read               |               | ERMS-SVK  |
-| update             |               | ERMS-SVK  |
-| delete             |               | ERMS-SVK  |
+Värdelistan används inte och är borttagen!
 
 ## ERMS-SVK-ARENDE-värdelista 13 - Handlingstyp
 

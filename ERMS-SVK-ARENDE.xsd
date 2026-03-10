@@ -2,19 +2,19 @@
 
 <!--
 Namn:		ERMS-SVK-ARENDE.xsd
-Version:	1.0
-Ändrad:		2026-02-24
+Version:	2.0
+Ändrad:		2026-03-10
 Ändrad av:	Henrik Vitalis
 -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE"
+	xmlns="https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2"
 	xmlns:erms="https://DILCIS.eu/XML/ERMS"
-	xmlns:svk = "https://xml.svenskakyrkan.se/ERMS-SVK-element"
-	targetNamespace="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	xmlns:elm = "https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v2"
+	targetNamespace="https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 	
-	<xs:import namespace="https://DILCIS.eu/XML/ERMS" schemaLocation="ERMS_v3.xsd"/>
-	<xs:import namespace="https://xml.svenskakyrkan.se/ERMS-SVK-element" schemaLocation="ERMS-SVK-element.xsd"/>
+	<xs:import namespace="https://DILCIS.eu/XML/ERMS" schemaLocation="https://citserms.dilcis.eu/schema/ERMS_v3.xsd"/>
+	<xs:import namespace="https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v2" schemaLocation="https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v2/ERMS-SVK-element.xsd"/>
 	
 	<xs:element name="ermsSvkArende">
 		<xs:annotation>
@@ -28,10 +28,10 @@ Version:	1.0
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element ref="svk:initiative" minOccurs="0"/>
-							<xs:element ref="svk:relatedObjects" minOccurs="0"/>
-							<xs:element ref="svk:svkNotes" minOccurs="0"/>
-							<xs:element ref="svk:auditLogEvents" minOccurs="0"/>
+							<xs:element ref="elm:initiative" minOccurs="0"/>
+							<xs:element ref="elm:relatedObjects" minOccurs="0"/>
+							<xs:element ref="elm:svkNotes" minOccurs="0"/>
+							<xs:element ref="elm:auditLogEvents" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
@@ -41,13 +41,13 @@ Version:	1.0
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element ref="svk:relatedObjects" minOccurs="0"/>
-							<xs:element ref="svk:svkNotes" minOccurs="0"/>
-							<xs:element ref="svk:contractInfo" minOccurs="0"/>
-							<xs:element ref="svk:workflows" minOccurs="0"/>
-							<xs:element ref="svk:boardMeetingInformation" minOccurs="0"/>
-							<xs:element ref="svk:svkAppendix" minOccurs="0" maxOccurs="unbounded"/>
-							<xs:element ref="svk:auditLogEvents" minOccurs="0"/>
+							<xs:element ref="elm:relatedObjects" minOccurs="0"/>
+							<xs:element ref="elm:svkNotes" minOccurs="0"/>
+							<xs:element ref="elm:contractInfo" minOccurs="0"/>
+							<xs:element ref="elm:workflows" minOccurs="0"/>
+							<xs:element ref="elm:boardMeetingInformation" minOccurs="0"/>
+							<xs:element ref="elm:svkAppendix" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="elm:auditLogEvents" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
@@ -56,6 +56,7 @@ Version:	1.0
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
+
 
 
 

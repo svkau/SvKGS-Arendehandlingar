@@ -47,7 +47,7 @@ Files use CRLF line endings (`.xsd`, `.xml`); preserve them when editing.
 
 ## XML Schema Architecture
 
-The root element `ermsSvkArende` (required attribute `ermsSvkArendeVersion`, decimal, e.g. `1.1`) contains a **choice** between:
+The root element `ermsSvkArende` (required attribute `ermsSvkArendeVersion`, decimal, e.g. `1.1` in v1 and `2.0` in v2) contains a **choice** between:
 
 - **`ermsSvkAggregation`** — case file (*ärende*); may contain:
   `initiative`, `relatedObjects`, `svkNotes`, `auditLogEvents`
@@ -62,7 +62,8 @@ All child elements come from the ERMS-SVK namespace.
 Validate `exempel.xml` (and any changed instance) before considering XML work done:
 1. The whole document against `ERMS_v3.xsd`.
 2. Each `svk:ermsSvkArende` element against `ERMS-SVK-ARENDE.xsd` (`additionalXMLData` is not strictly validated by ERMS_v3.xsd).
-3. Optionally against DILCIS `erms_v3.sch`.
+3. v2 only: against `ERMS-SVK-ARENDE.sch` (queryBinding xslt2; needs an XSLT 2.0 processor such as Saxon, not lxml).
+4. Optionally against DILCIS `erms_v3.sch`.
 
 libxml2/lxml cannot fetch `https` schemaLocations, so make local copies with rewritten `schemaLocation` in a scratch directory. Run lxml through `uv run --no-project --with lxml` and do not add it to the repo without asking.
 

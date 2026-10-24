@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <erms
 	xmlns="https://DILCIS.eu/XML/ERMS"
-	xmlns:svk="https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1"
+	xmlns:svk="https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2"
 	xmlns:elm="https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v1"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://DILCIS.eu/XML/ERMS https://citserms.dilcis.eu/schema/ERMS_v3.xsd
-	https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1 https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1/ERMS-SVK-ARENDE.xsd">
+	https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2 https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE.xsd">
 	<control>
 		<identification identificationType="arkivbildare">Sunne pastorat</identification>
     	<identification identificationType="organisationsnummer">1234567890</identification>
@@ -49,7 +49,7 @@
 			<relation relationType="reference">C 1995-0031</relation>
 			<additionalInformation>
 				<additionalXMLData>
-					<svk:ermsSvkArende ermsSvkArendeVersion="1.1">
+					<svk:ermsSvkArende ermsSvkArendeVersion="2.0">
 						<svk:ermsSvkAggregation>
 							<elm:initiative>eget</elm:initiative>
 							<elm:relatedObjects>
@@ -183,7 +183,7 @@
 				</notes>
 				<additionalInformation>
 					<additionalXMLData>
-						<svk:ermsSvkArende ermsSvkArendeVersion="1.1">
+						<svk:ermsSvkArende ermsSvkArendeVersion="2.0">
 							<svk:ermsSvkRecord>
 								<elm:contractInfo>
 									<elm:externalReference>ref3453</elm:externalReference>

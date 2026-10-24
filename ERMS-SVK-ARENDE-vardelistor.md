@@ -2,7 +2,7 @@
 
 # Värdelistor
 
-Version 1.1
+Version 2.0
 
 ## ERMS-SVK-ARENDE-värdelista 1 - Typ av identifikator
 

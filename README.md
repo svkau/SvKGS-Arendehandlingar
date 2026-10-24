@@ -3,7 +3,7 @@
 
 ## SvKGS-Ärendehandlingar
 
-**Version 1.1**
+**Version 2.0**
 
 *Svenska kyrkans gemensamma specifikationer - Ärendehandlingar* reglerar hur uppgifter i
 ärendehanterings- och diariesystem ska formateras inför leverans till Svenska kyrkans
@@ -15,14 +15,16 @@ Riksarkivet)](https://www.riksarkivet.se/fgs-anpassning).
 
 ## Innehåll
 
-- **Specifikation**: [ERMS-SVK-ARENDE.md](ERMS-SVK-ARENDE.md) version 1.1
-- **Värdelistor**: [ERMS-SVK-ARENDE-vardelistor.md](ERMS-SVK-ARENDE-vardelistor.md) version 1.1
+- **Specifikation**: [ERMS-SVK-ARENDE.md](ERMS-SVK-ARENDE.md) version 2.0
+- **Värdelistor**: [ERMS-SVK-ARENDE-vardelistor.md](ERMS-SVK-ARENDE-vardelistor.md) version 2.0
 
 ## Tillämpade scheman
 
-Följande scheman används av och är kompatibla med SvKGS-Ärendehandlingar 1.1:
+Följande scheman används av och är kompatibla med SvKGS-Ärendehandlingar 2.0:
 
-[ERMS-SVK-ARENDE.xsd](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1/ERMS-SVK-ARENDE.xsd) **version 1.1**
+[ERMS-SVK-ARENDE.xsd](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE.xsd) **version 2.0**
+
+[ERMS-SVK-ARENDE.sch](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE.sch) **version 2.0** (XSLT 2.0)
 
 [ERMS-SVK-element.xsd](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v1/ERMS-SVK-element.xsd) **version 1.1**
 

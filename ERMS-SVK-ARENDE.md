@@ -215,7 +215,9 @@ I tabellerna med dataelement nedan har varje element en identifieringskod (t.ex.
 Även elementets motsvarande kod i ERMS 3.0.0 anges inom parentes (t.ex. ERMS130), om det inte är ett tillagt element.
 
 Om ett element är obligatoriskt, anges detta särskilt. *Obligatoriskt* betyder att elementet krävs av
-XML-schemana, i förekommande fall när det överordnade elementet används.
+ERMS eller av XML-schemana, i förekommande fall när det överordnade elementet används.
+De flesta krav kontrolleras av XML-schemana. Krav som bara finns i ERMS-specifikationen
+anges som "Obligatoriskt enligt ERMS" och kontrolleras inte vid validering mot schemana.
 I annat fall är det frivilligt att använda elementet.
 
 Svenska kyrkans rekommendationer uttrycks med *bör*, t.ex. "Bör anges" eller "attributet bör ha värdet …".
@@ -648,6 +650,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 
 
 (ERMS55-56, ERMS194, ERMS253)
+
 Samlingselement för uppgift om sekretess.
 
 Elementet kan upprepas.
@@ -661,6 +664,7 @@ Om elementet *Sekretessmarkering* används bör attributet `restrictionType` ha 
 #### ERMS-SVK:23 - *Förklarande text*
 
 (ERMS58)
+
 Fritext som beskriver sekretessen.
 
 **XML-element:** `explanatoryText`<br/>
@@ -712,6 +716,7 @@ Om elementet *Sekretessdatum* används, bör attributet `dateType` ha värdet �
 #### ERMS-SVK:26 - *Kommentar*
 
 (ERMS49-50, ERMS149-150, ERMS221)
+
 Kommentar till ärendet eller handlingen.
 
 Kommentaren bör utgöras av en enda sammanhängande text och bör inte upprepas. Se exemplet nedan.
@@ -1098,6 +1103,7 @@ och fylls vid behov ut med nollor, t.ex. S 2019-0043.
 #### ERMS-SVK:52 - *Arkivansvarigs ID*
 
 (ERMS219-220)
+
 Ett unikt ID för den arkivansvariga enheten.
 
 Bör anges. Värdet på attributet `extraIdType` bör väljas från [Värdelista 4](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-4---typ-av-id).
@@ -1110,6 +1116,7 @@ Bör anges. Värdet på attributet `extraIdType` bör väljas från [Värdelista
 #### ERMS-SVK:53 - *Intern identifikator*
 
 (ERMS219-220)
+
 Befintligt id i det levererande systemet.
 
 Om elementet *Intern identifikator* används, bör attributet `extraIdType` ha värdet ”deliveringSystemId”.
@@ -1280,6 +1287,7 @@ Möjliga värden: ”closed” (avslutat) eller ”obliterated” (makulerat).
 #### ERMS-SVK:63 - *Ärendereferens*
 
 (ERMS52-53, ERMS251)
+
 Referens till och/eller från annat ärende.
 
 Elementet kan upprepas.
@@ -1444,6 +1452,8 @@ En beskrivning av ärendet utöver *Ärendemening*.
 
 Samlingselement för datum som gäller för ärendet.
 
+Obligatoriskt enligt ERMS, eftersom *Skapat* ([ERMS-SVK:74](#erms-svk74---skapat)) är obligatoriskt.
+
 Se avsnitt [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum).
 
 **XML-element:** `dates`<br/>
@@ -1456,11 +1466,11 @@ Se avsnitt [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum).
 
 Datum då ärendet skapades i systemet. Här avses ett av systemet automatiskt satt datum.
 
-Bör anges.
+Obligatoriskt enligt ERMS (ERMS204).
 
 Om uppgiften saknas i diariesystemet, bör samma datum som för *Öppnat* användas.
 
-Om elementet *Skapat* används, bör `dateType` ha värdet ”created”.
+Attributet `dateType` ska ha värdet ”created”.
 
 **XML-element:** `date/@dateType="created"`<br/>
 **Datatyp:** dateTime
@@ -1747,6 +1757,7 @@ Exempel: `S 2010-0034:1`
 #### ERMS-SVK:90 - *Intern identifikator*
 
 (ERMS147-148)
+
 Befintligt id i det levererande systemet.
 
 Om elementet *Intern identifikator* används, bör attributet `extraIdType` ha
@@ -1971,6 +1982,7 @@ Se [ERMS-SVK:22](ERMS-SVK-ARENDE.md#erms-svk22---sekretessmarkering).
 #### ERMS-SVK:102 - *Riktning*
 
 (ERMS189-191)
+
 Anger handlingens riktning.
 
 Bör anges. Värdet bör väljas från [Värdelista 15](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-15---riktning).
@@ -2013,6 +2025,7 @@ Kan vara något av värdena:
 #### ERMS-SVK:103 - *Aktörer*
 
 (ERMS158-166)
+
 Samlingselement för alla agerande parter.
 
 Bör anges.
@@ -2026,6 +2039,7 @@ Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 #### ERMS-SVK:104 - *Skapare*
 
 (ERMS158)
+
 Den som har skapat handlingen i systemet.
 
 Om elementet *Skapare* används, bör `agentType` ha värdet ”creator”.
@@ -2037,6 +2051,7 @@ Om elementet *Skapare* används, bör `agentType` ha värdet ”creator”.
 #### ERMS-SVK:105 - *Ansvarig*
 
 (ERMS93)
+
 Den som ägde eller hade ansvar för handlingen innan ärendet avslutades.
 
 Om elementet *Ansvarig* används, bör `agentType` ha värdet ”responsible_person”.
@@ -2048,6 +2063,7 @@ Om elementet *Ansvarig* används, bör `agentType` ha värdet ”responsible_per
 #### ERMS-SVK:106 - *Avsändare*
 
 (ERMS162)
+
 Avsändare av en inkommen handling.
 
 Bör anges om *Riktning* har värdet ”incoming”. Elementet kan upprepas.
@@ -2061,6 +2077,7 @@ Om elementet *Avsändare* används, bör `agentType` ha värdet ”sender”.
 #### ERMS-SVK:107 - *Mottagare*
 
 (ERMS93)
+
 Mottagare av en utgående handling.
 
 Bör anges om *Riktning* har värdet ”outgoing”. Elementet kan upprepas.
@@ -2074,6 +2091,7 @@ Om elementet *Mottagare* används, bör `agentType` ha värdet ”receiver”.
 #### ERMS-SVK:108 - *Annan aktör*
 
 (ERMS93)
+
 Annan typ av aktör än de ovan specificerade.
 
 Elementet kan upprepas.
@@ -2116,6 +2134,7 @@ Om elementet *Annan aktör* används, bör `agentType` ha värdet ”agent”.
 #### ERMS-SVK:109 - *Beskrivning*
 
 (ERMS139)
+
 Beskrivning av handlingen.
 
 **XML-element:** `description`<br/>
@@ -2126,7 +2145,10 @@ Beskrivning av handlingen.
 #### ERMS-SVK:110 - *Datum*
 
 (ERMS45)
+
 Samlingselement för alla datum som rör handlingen.
+
+Obligatoriskt enligt ERMS, eftersom *Skapat* ([ERMS-SVK:111](#erms-svk111---skapat)) är obligatoriskt.
 
 Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum) ovan.
 
@@ -2137,14 +2159,15 @@ Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum) ovan.
 #### ERMS-SVK:111 - *Skapat*
 
 (ERMS135)
+
 Datum och tid då handlingen skapades i systemet.
 Här avses ett av systemet automatiskt satt datum.
 
-Bör anges.
+Obligatoriskt enligt ERMS (ERMS135).
 
 Om uppgiften saknas i diariesystemet, bör samma datum som i *Registrerat* användas.
 
-Om elementet *Skapat* används, bör `dateType` ha värdet ”created”.
+Attributet `dateType` ska ha värdet ”created”.
 
 **XML-element:** `date/@dateType="created"`<br/>
 **Datatyp:** dateTime
@@ -2154,6 +2177,7 @@ Om elementet *Skapat* används, bör `dateType` ha värdet ”created”.
 #### ERMS-SVK:112 - *Registrerat*
 
 (ERMS136)
+
 Datum och tid då handlingen registrerades (diariefördes) som inkommen,
 utgående eller på annat sätt färdigställd.
 
@@ -2173,6 +2197,7 @@ Om elementet *Registrerat* används, bör `dateType` ha värdet ”originated”
 #### ERMS-SVK:113 - *Ankomstdatum*
 
 (ERMS47)
+
 Datum då handlingen inkom (om annat än *Registrerat*).
 
 Om elementet *Ankomstdatum* används, bör `dateType` ha värdet ”received”.
@@ -2185,6 +2210,7 @@ Om elementet *Ankomstdatum* används, bör `dateType` ha värdet ”received”.
 #### ERMS-SVK:114 - *Expedieringsdatum*
 
 (ERMS47)
+
 Datum då handlingen expedierades (om annat än *Registrerat*).
 
 Om elementet *Expedieringsdatum* används, bör `dateType` ha värdet ”expedited”.

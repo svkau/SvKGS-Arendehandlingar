@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <erms
 	xmlns="https://DILCIS.eu/XML/ERMS"
-	xmlns:svk="https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE"
-	xmlns:elm="https://xml.svenskakyrkan.se/ERMS-SVK-element"
+	xmlns:svk="https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1"
+	xmlns:elm="https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v1"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="https://DILCIS.eu/XML/ERMS https://citserms.dilcis.eu/schema/ERMS.xsd
-	https://xml.svenskakyrkan.se/ERMS-SVK-ARENDE https://raw.githubusercontent.com/svkau/SvKGS-Arendehandlingar/main/ERMS-SVK-ARENDE.xsd">
+	xsi:schemaLocation="https://DILCIS.eu/XML/ERMS https://citserms.dilcis.eu/schema/ERMS_v3.xsd
+	https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1 https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1/ERMS-SVK-ARENDE.xsd">
 	<control>
 		<identification identificationType="arkivbildare">Sunne pastorat</identification>
     	<identification identificationType="organisationsnummer">1234567890</identification>
-    	<identification identificationType="ärendenummer">P 2019-0254</identification>
+    	<identification identificationType="ärendenummer">F 2020-0032</identification>
 		<classificationSchema>
 			<textualDescriptionOfClassificationSchema>
-				<p>Klassificeringsstruktur för lokal nivå 2018, ver. 1.0</p>
+				<p>KlaSL2016_1.0</p>
 			</textualDescriptionOfClassificationSchema>
 		</classificationSchema>
 		<maintenanceInformation>
@@ -24,7 +24,7 @@
 			<maintenanceHistory>
 				<maintenanceEvent>
 					<eventType value="created"/>
-					<eventDateTime>2001-12-17T09:30:47</eventDateTime>
+					<eventDateTime>2024-03-15T09:30:47</eventDateTime>
 					<agent agentType="deliverer">
 						<name>Public360</name>
 						<organisation>Tietoevry</organisation>
@@ -35,7 +35,7 @@
 	</control>
 	<aggregations>
 		<aggregation systemIdentifier="3b9fbc5f-3eaf-4521-9726-0f142feb04c3" aggregationType="caseFile">
-			<objectId>F 2019-0032</objectId>
+			<objectId>F 2020-0032</objectId>
 			<extraId extraIdType="organisationsnummer">1234567890</extraId>
 			<extraId extraIdType="deliveringSystemId">34565</extraId>
 			<classification classificationCode="1.2">Styra verksamheten</classification>
@@ -44,13 +44,12 @@
 				<keyword>kyrkorådet</keyword>
 			</keywords>
 			<title>Det här är ett exempel på en ärendemening.</title>
-			<otherTitle titleType="description">Acta har en kompletterande titel/beskrivning</otherTitle>
 			<otherTitle titleType="public">Public 360 har en särskild publik ärendemening.</otherTitle>
 			<status value="closed"/>
 			<relation relationType="reference">C 1995-0031</relation>
 			<additionalInformation>
 				<additionalXMLData>
-					<svk:ermsSvkArende schemaVersion="1.0" ermsSchemaVersion="2.1.2" elementSchemaVersion="1.0" schematronVersion="1.0">
+					<svk:ermsSvkArende ermsSvkArendeVersion="1.1">
 						<svk:ermsSvkAggregation>
 							<elm:initiative>eget</elm:initiative>
 							<elm:relatedObjects>
@@ -62,7 +61,7 @@
 								<elm:relatedObject typeOfObject="realEstate">
 									<elm:objectName>Kyrkan</elm:objectName>
 									<elm:objectId>Kyrkbacken 1:2</elm:objectId>
-									<elm:deliveringSystemId>34958</elm:deliveringSystemId>
+									<elm:deliveringSystemId>34959</elm:deliveringSystemId>
 								</elm:relatedObject>
 							</elm:relatedObjects>
 							<elm:svkNotes>
@@ -74,32 +73,28 @@
 										</agent>
 									</elm:agents>
 									<dates>
-										<date dateType="created">2019-02-23T00:00:00</date>
+										<date dateType="created">2020-05-25T00:00:00</date>
 									</dates>
 								</elm:svkNote>
 							</elm:svkNotes>
 							<elm:auditLogEvents>
 								<elm:auditLogEvent>
-									<elm:eventTime>2009-09-22T11:47:00</elm:eventTime>
+									<elm:eventTime>2020-05-22T11:47:00</elm:eventTime>
 									<elm:user>Sara Andersson</elm:user>
 									<elm:scope>ärende</elm:scope>
-									<elm:action>create</elm:action>
+									<elm:action>Ärende skapades</elm:action>
 								</elm:auditLogEvent>
 								<elm:auditLogEvent>
-									<elm:eventTime>2009-09-22T11:52:00</elm:eventTime>
+									<elm:eventTime>2020-05-22T11:52:00</elm:eventTime>
 									<elm:user>Anna Andersson</elm:user>
 									<elm:scope>ärendemening</elm:scope>
-									<elm:action>update</elm:action>
-									<elm:valueBeforeChange>Upphandling av frysboxar</elm:valueBeforeChange>
-									<elm:valueAfterChange>Upphandling av kylskåp</elm:valueAfterChange>
+									<elm:action>Ärendemeningen ändrades från "Upphandling av frysboxar" till "Upphandling av kylskåp"</elm:action>
 								</elm:auditLogEvent>
 								<elm:auditLogEvent>
-									<elm:eventTime>2009-09-22T12:10:00</elm:eventTime>
+									<elm:eventTime>2020-05-30T12:10:00</elm:eventTime>
 									<elm:user>Anna Andersson</elm:user>
 									<elm:scope>status</elm:scope>
-									<elm:action>update</elm:action>
-									<elm:valueBeforeChange>Öppet</elm:valueBeforeChange>
-									<elm:valueAfterChange>Makulerat</elm:valueAfterChange>
+									<elm:action>Ärendestatus ändrades från Öppet till Avslutat</elm:action>
 								</elm:auditLogEvent>
 							</elm:auditLogEvents>
 						</svk:ermsSvkAggregation>
@@ -110,7 +105,7 @@
 				<explanatoryText>Sekretess enligt KO</explanatoryText>
 				<regulation>KO 54:2</regulation>
 				<dates>
-					<date dateType="created">2020-01-02T00:00:00</date>
+					<date dateType="created">2020-05-22T00:00:00</date>
 				</dates>
 			</restriction>
 			<agents>
@@ -136,7 +131,7 @@
 				<date dateType="closed">2020-05-30T00:00:00</date> <!-- ärendet officiellt avslutat -->
 			</dates>
 			<action>
-				<actionText>Beslutades att lägga frågan till handlingarna (Kr prot. 29/4 2010 § 3)</actionText>
+				<actionText>Beslutades att lägga frågan till handlingarna (Kr prot. 20/5 2020 § 3)</actionText>
 				<actionType>beslut</actionType>
 				<dates>
 					<actionDate dateType="decision_date">2020-05-20T00:00:00</actionDate>
@@ -147,10 +142,10 @@
 					</agent>
 				</agents>
 			</action>
-			<notes><note noteType="comment" noteDate="2019-02-21T00:00:00">Detta är ett exempel på en kommentar.</note></notes>
-			<record systemIdentifier="8dbbdc56-8ada-4ad5-a1ec-b8131a1086a2" recordPhysicalOrDigital="digitial" recordType="ärendedokument">
-				<objectId>C 1995-0032:1</objectId>
-				<extraId extraIdType="deliveringSystemId">34565</extraId>
+			<notes><note noteType="comment" noteDate="2020-05-25T00:00:00">Detta är ett exempel på en kommentar.</note></notes>
+			<record systemIdentifier="8dbbdc56-8ada-4ad5-a1ec-b8131a1086a2" recordPhysicalOrDigital="digital" recordType="ärendedokument">
+				<objectId>F 2020-0032:1</objectId>
+				<extraId extraIdType="deliveringSystemId">34566</extraId>
 				<classification classificationCode="1.2">Styra verksamheten</classification>
 				<keywords>
 					<keyword>församlingsordning</keyword>
@@ -180,15 +175,15 @@
 					</agent>
 				</agents>
 				<dates>
-					<date dateType="created">2020-02-02T00:00:00</date> <!-- skapat i systemet -->
-					<date dateType="originated">2020-02-03T00:00:00</date> <!-- registrerat -->
+					<date dateType="created">2020-05-23T00:00:00</date> <!-- skapat i systemet -->
+					<date dateType="originated">2020-05-25T00:00:00</date> <!-- registrerat -->
 				</dates>
 				<notes>
-					<note noteDate="2020-02-03T00:00:00">Detta är en kommentar till handlingen.</note>
+					<note noteType="comment" noteDate="2020-05-25T00:00:00">Detta är en kommentar till handlingen.</note>
 				</notes>
 				<additionalInformation>
 					<additionalXMLData>
-						<svk:ermsSvkArende schemaVersion="1.0" ermsSchemaVersion="2.1.2" elementSchemaVersion="1.0" schematronVersion="1.0">
+						<svk:ermsSvkArende ermsSvkArendeVersion="1.1">
 							<svk:ermsSvkRecord>
 								<elm:contractInfo>
 									<elm:externalReference>ref3453</elm:externalReference>
@@ -196,15 +191,15 @@
 									<elm:contractValue>45</elm:contractValue>
 									<elm:typeOfAgreement>avtal</elm:typeOfAgreement>
 									<dates>
-										<date dateType="start">2018-02-12T00:00:00</date>
-										<date dateType="end">2019-02-12T00:00:00</date>
+										<date dateType="start">2020-06-01T00:00:00</date>
+										<date dateType="end">2021-05-31T00:00:00</date>
 									</dates>
 								</elm:contractInfo>
 								<elm:workflows>
 									<elm:workflow typeOfWorkflow="approval">
 										<elm:workflowName>Godkännande</elm:workflowName>
 										<elm:workflowStatus>approved</elm:workflowStatus>
-										<elm:workflowPriority>normal</elm:workflowPriority>
+										<elm:workflowPriority>standard</elm:workflowPriority>
 										<elm:agents>
 											<agent agentType="creator">
 												<name>Tore Pettersson</name>
@@ -213,14 +208,14 @@
 											</agent>
 										</elm:agents>
 										<dates>
-											<date dateType="created">2023-08-12T00:00:00</date>
+											<date dateType="created">2020-05-23T00:00:00</date>
 										</dates>
 										<elm:workflowMessage>Kan ni vänligen godkänna detta.</elm:workflowMessage>
 										<elm:workflowNotes>
 											<elm:workflowNote>
 												<elm:workflowNoteText>En liten anteckning om arbetsflödet.</elm:workflowNoteText>
 												<dates>
-													<date dateType="created">2023-08-12T00:00:00</date>
+													<date dateType="created">2020-05-23T00:00:00</date>
 												</dates>
 												<elm:agents>
 													<agent agentType="sender">
@@ -239,7 +234,7 @@
 														<name>Patrik Andersson</name>
 														<organisation>Ledningsavdelningen</organisation>
 													</agent>
-													<agent agentType="other" otherAgentType="executor">
+													<agent agentType="other" otherAgentType="closing_person">
 														<name>Patrik Andersson</name>
 														<organisation>Ledningsavdelningen</organisation>
 														<idNumber idNumberType="username">patand</idNumber>
@@ -247,7 +242,7 @@
 													</agent>
 												</elm:agents>
 												<dates>
-													<date dateType="finished">2022-03-01T00:00:00</date>
+													<date dateType="finished">2020-05-24T00:00:00</date>
 												</dates>
 												<elm:recipientStatus>approved</elm:recipientStatus>
 											</elm:workflowRecipient>
@@ -256,7 +251,7 @@
 								</elm:workflows>
 								<elm:svkAppendix>
 									<appendix name="ansökan" path="filer/ansökan.pdf" fileFormat="pdf">
-										<eSignature present="true" dateeSignatureIsVerified="2020-03-04T00:00:00">
+										<eSignature present="true" dateeSignatureIsVerified="2020-05-25T00:00:00">
 											<signature>
 												<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
 													xsi:schemaLocation="http://www.w3.org/2000/09/xmldsig#
@@ -290,8 +285,8 @@
 									</appendix>
 									<elm:fileInfo>
 										<dates>
-											<date dateType="created">2010-02-01T00:00:00</date>
-											<date dateType="modified">2010-02-01T00:00:00</date>
+											<date dateType="created">2020-05-23T00:00:00</date>
+											<date dateType="modified">2020-05-23T00:00:00</date>
 										</dates>
 										<elm:versionNumber>1</elm:versionNumber>
 										<elm:variant>preservation</elm:variant>

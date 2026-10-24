@@ -55,19 +55,26 @@ Version 1.1
 
 ## ERMS-SVK-ARENDE-värdelista 6 - Typ av aktör, agentType
 
-| **Giltiga värden** | **Kommentar**                               | **Källa** |
-|--------------------|---------------------------------------------|-----------|
-| agent              | Används i betydelsen "Annan aktör".         | ERMS-     |
-| closing_person     | Den som avslutar eller färdigställer något. | ERMS-SVK  |
-| counterpart        | Ärendepart, extern part i ett ärende.       | ERMS      |
-| creator            | Den som skapar eller påbörjar något.        | ERMS      |
-| delegator          | Person i vars ställe något utförs.          | ERMS-SVK  |
-| deliverer          | Ansvarig för leverans till e-arkivet.       | ERMS      |
-| editor             | Används i betydelsen "Medhandläggare".      | ERMS      |
-| main_signatory     | Den som har e-signerat ett dokument.        | ERMS      |
-| receiver           | Mottagare av en utgående handling.          | ERMS      |
-| responsible_person | Ansvarig för ett ärende eller handling.     | ERMS      |
-| sender             | Avsändare av en inkommen handling.          | ERMS      |
+Värden med källan ERMS anges direkt i attributet `agentType`. Värden med källan ERMS-SVK finns inte i ERMS
+och anges därför med `agentType="other"` och värdet i attributet `otherAgentType`,
+t.ex. `<agent agentType="other" otherAgentType="closing_person">`.
+
+| **Giltiga värden** | **Kommentar**                                          | **Källa** |
+|--------------------|--------------------------------------------------------|-----------|
+| agent              | Används i betydelsen "Annan aktör".                    | ERMS      |
+| authorising_person | Beslutsfattare, person eller organ som fattat beslut.  | ERMS      |
+| closing_person     | Den som avslutar eller färdigställer något.            | ERMS-SVK  |
+| counterpart        | Ärendepart, extern part i ett ärende.                  | ERMS      |
+| creator            | Den som skapar eller påbörjar något.                   | ERMS      |
+| delegator          | Person i vars ställe något utförs.                     | ERMS-SVK  |
+| deliverer          | Ansvarig för leverans till e-arkivet.                  | ERMS      |
+| editor             | Används i betydelsen "Medhandläggare".                 | ERMS      |
+| main_signatory     | Den som har e-signerat ett dokument.                   | ERMS      |
+| other              | Används tillsammans med `otherAgentType`, se ovan.     | ERMS      |
+| receiver           | Mottagare av en utgående handling.                     | ERMS      |
+| recipient          | Mottagare i ett arbetsflöde.                           | ERMS      |
+| responsible_person | Ansvarig för ett ärende eller handling.                | ERMS      |
+| sender             | Avsändare av en inkommen handling.                     | ERMS      |
 
 ## ERMS-SVK-ARENDE-värdelista 7 - Ärende- och handlingsstatus
 
@@ -123,19 +130,23 @@ Värdelistan används inte och är borttagen!
 
 ## ERMS-SVK-ARENDE-värdelista 14 - Form
 
-| **Giltiga värden**   | **Kommentar**      | **Källa** |
-|----------------------|--------------------|-----------|
-| physical             |                    | ERMS      |
-| digitial             |                    | ERMS      |
-| physical_and_digital | Stavfel i ERMS.xsd | ERMS      |
+| **Giltiga värden**   | **Kommentar**                  | **Källa** |
+|----------------------|--------------------------------|-----------|
+| physical             | Enbart fysisk form.            | ERMS      |
+| digital              | Enbart digital form.           | ERMS      |
+| physical_and_digital | Både fysisk och digital form.  | ERMS      |
+| does_not_apply       | Uppgiften är inte tillämplig.  | ERMS      |
 
 ## ERMS-SVK-ARENDE-värdelista 15 - Riktning
 
-| **Giltiga värden** | **Kommentar**                                | **Källa** |
-|--------------------|----------------------------------------------|-----------|
-| incoming           | Om inkommen handling.                        | ERMS      |
-| outgoing           | Om handling som upprättats genom expedierng. | ERMS      |
-| internal           | Om handling som upprättats på annat sätt.    | ERMS-SVK  |
+Värdet med källan ERMS-SVK finns inte i ERMS och anges därför med `directionDefinition="other"` och värdet
+i attributet `otherDirectionDefinition`, dvs. `<direction directionDefinition="other" otherDirectionDefinition="internal"/>`.
+
+| **Giltiga värden** | **Kommentar**                                 | **Källa** |
+|--------------------|-----------------------------------------------|-----------|
+| incoming           | Om inkommen handling.                         | ERMS      |
+| outgoing           | Om handling som upprättats genom expediering. | ERMS      |
+| internal           | Om handling som upprättats på annat sätt.     | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 16 - Avtalstyp
 
@@ -175,10 +186,10 @@ Värdelistan används inte och är borttagen!
 
 | **Giltiga värden** | **Kommentar** | **Källa** |
 |--------------------|---------------|-----------|
-| approved           |               | ERMS-SVK  |
-| canceled           |               | ERMS-SVK  |
-| not_approved       |               | ERMS-SVK  |
-| open               |               | ERMS-SVK  |
+| approved           | Godkänt       | ERMS-SVK  |
+| canceled           | Avbrutet      | ERMS-SVK  |
+| open               | Pågående      | ERMS-SVK  |
+| unapproved         | Ej godkänt    | ERMS-SVK  |
 
 ## ERMS-SVK-ARENDE-värdelista 21 - Arbetsflödes prioritet
 
@@ -196,11 +207,12 @@ Värdelistan används inte och är borttagen!
 | created            |                              | ERMS      |
 | decision_date      |                              | ERMS      |
 | end                |                              | ERMS      |
-| finished           |                              | ERMS      |
 | expedited          |                              | ERMS      |
+| finished           |                              | ERMS      |
+| main_signature     | Datum för e-signering        | ERMS      |
 | modified           | I betydelsen "senast ändrad" | ERMS      |
 | opened             |                              | ERMS      |
-| originated         | Se [ERMS-SVK:112](https://github.com/svkau/SvKGS-Arendehandlingar/blob/main/ERMS-SVK-ARENDE.md#erms-svk112---registrerat)     | ERMS      |
+| originated         | Se [ERMS-SVK:112](ERMS-SVK-ARENDE.md#erms-svk112---registrerat) | ERMS      |
 | received           |                              | ERMS      |
 | sent               |                              | ERMS      |
 | start              |                              | ERMS      |

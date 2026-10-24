@@ -68,7 +68,9 @@ regleras av specifikationerna genom användandet av XML-scheman (XSD).
 Även bifogade filer (i godkänt arkivformat) kan arkiveras.
 
 *SvKGS Ärendehandlingar* följer helt och hållet *Specification for the E-ARK Content Information Type
-Specification for Electronic Records Management Systems* (ERMS) version 3.0.2.
+Specification for Electronic Records Management Systems* (ERMS) version 3.0.0
+([CITS_ERMS_v3_0_0.pdf](https://github.com/DILCISBoard/CITS-ERMS/tree/master/specification))
+med XML-schemat ERMS_v3.xsd version 3.0.2.
 Detta innebär att specifikationen också följer [FGS Ärendehantering 2.0](https://riksarkivet.se/arkivera-och-forvalta/medium-och-format/forvaltningsgemensamma-specifikationer/faststallda-fgser)
 och [Riksarkivets tillämpning av CITS ERMS (för överlämnande till Riksarkivet)](https://riksarkivet.se/files/2024/12/riksarkivets_tillaempning_av_e-ark_csip_och_sip_v1-0.pdf). 
 
@@ -197,9 +199,9 @@ Datatyper som kan förekomma är:
 - [boolean](https://www.w3.org/TR/xmlschema-2/#boolean)
 
 För att ange datum används alltid datatypen dateTime, vilket betyder att både datum och klockslag ned till
-sekundnivå ska anges i [UTC-format](https://sv.wikipedia.org/wiki/Koordinerad_universell_tid)
-enligt [ISO 8601](https://sv.wikipedia.org/wiki/ISO_8601) (med bindestreck och kolon). Om klockslag saknas används
-noll-tecken. Tidszon anges i regel inte och förutsätts då vara Europe/Stockholm.
+sekundnivå anges i formatet `ÅÅÅÅ-MM-DDTtt:mm:ss` enligt [ISO 8601](https://sv.wikipedia.org/wiki/ISO_8601)
+(med bindestreck och kolon). Om klockslag saknas används noll-tecken.
+Tidszon anges i regel inte och förutsätts då vara Europe/Stockholm.
 
 Exempel på datum och tid: `2018-03-04T15:15:22`. Enbart datum: `2020-09-17T00:00:00`.
 
@@ -210,7 +212,7 @@ Vid angivande av decimal används punkt som decimalavgränsare.
 ## 2.6. Råd om användandet av *SvKGS Ärendehandlingar*
 
 I tabellerna med dataelement nedan har varje element en identifieringskod (t.ex. ERMS-SVK:1).
-Även elementets motsvarande kod i ERMS anges, om det inte är ett tillagt element.
+Även elementets motsvarande kod i ERMS 3.0.0 anges inom parentes (t.ex. ERMS130), om det inte är ett tillagt element.
 
 Om ett element är obligatoriskt, anges detta särskilt. *Obligatoriskt* betyder att elementet krävs av
 XML-schemana, i förekommande fall när det överordnade elementet används.
@@ -645,8 +647,7 @@ Elementet `date` kräver datatypen dateTime. Se avsnittet **[2.5. Datatyper](#25
 #### ERMS-SVK:22 - *Sekretessmarkering*
 
 
-(ERMS253, ERMS57)
-
+(ERMS55-56, ERMS194, ERMS253)
 Samlingselement för uppgift om sekretess.
 
 Elementet kan upprepas.
@@ -659,8 +660,7 @@ Om elementet *Sekretessmarkering* används bör attributet `restrictionType` ha 
 
 #### ERMS-SVK:23 - *Förklarande text*
 
-(ERMS253, ERMS57)
-
+(ERMS58)
 Fritext som beskriver sekretessen.
 
 **XML-element:** `explanatoryText`<br/>
@@ -711,8 +711,7 @@ Om elementet *Sekretessdatum* används, bör attributet `dateType` ha värdet �
 
 #### ERMS-SVK:26 - *Kommentar*
 
-(ERMS212, ERMS50)
-
+(ERMS49-50, ERMS149-150, ERMS221)
 Kommentar till ärendet eller handlingen.
 
 Kommentaren bör utgöras av en enda sammanhängande text och bör inte upprepas. Se exemplet nedan.
@@ -1098,8 +1097,7 @@ och fylls vid behov ut med nollor, t.ex. S 2019-0043.
 
 #### ERMS-SVK:52 - *Arkivansvarigs ID*
 
-(ERMS219)
-
+(ERMS219-220)
 Ett unikt ID för den arkivansvariga enheten.
 
 Bör anges. Värdet på attributet `extraIdType` bör väljas från [Värdelista 4](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-4---typ-av-id).
@@ -1111,8 +1109,7 @@ Bör anges. Värdet på attributet `extraIdType` bör väljas från [Värdelista
 
 #### ERMS-SVK:53 - *Intern identifikator*
 
-(ERMS219)
-
+(ERMS219-220)
 Befintligt id i det levererande systemet.
 
 Om elementet *Intern identifikator* används, bör attributet `extraIdType` ha värdet ”deliveringSystemId”.
@@ -1282,8 +1279,7 @@ Möjliga värden: ”closed” (avslutat) eller ”obliterated” (makulerat).
 
 #### ERMS-SVK:63 - *Ärendereferens*
 
-(ERMS52-53)
-
+(ERMS52-53, ERMS251)
 Referens till och/eller från annat ärende.
 
 Elementet kan upprepas.
@@ -1356,6 +1352,8 @@ Om `idNumber` används bör värdet för `idNumberType` väljas från [Värdelis
 
 #### ERMS-SVK:67 - *Handläggare*
 
+(ERMS93)
+
 Ansvarig handläggare för ärendet.
 
 Om elementet *Handläggare* används, bör attributet `agentType` ha värdet ”responsible_person”.
@@ -1384,6 +1382,8 @@ Om `idNumber` används bör värdet för `idNumberType` väljas från [Värdelis
 
 #### ERMS-SVK:69 - *Ärendepart*
 
+(ERMS93)
+
 Extern part i ärendet.
 
 Elementet kan upprepas.
@@ -1398,6 +1398,8 @@ Om `idNumber` används bör värdet för `idNumberType` väljas från [Värdelis
 
 #### ERMS-SVK:70 - *Annan aktör*
 
+(ERMS93)
+
 Annan typ av aktör eller kontakt kopplad till ärendet.
 
 Elementet kan upprepas.
@@ -1411,6 +1413,8 @@ Om `idNumber` används bör värdet för `idNumberType` väljas från [Värdelis
 ---
 
 #### ERMS-SVK:71 - *Avslutare*
+
+(ERMS93-94)
 
 Den som har avslutat eller makulerat ärendet.
 
@@ -1465,6 +1469,8 @@ Om elementet *Skapat* används, bör `dateType` ha värdet ”created”.
 
 #### ERMS-SVK:75 - *Öppnat*
 
+(ERMS47)
+
 Datum då ärendet officiellt öppnades.
 
 Bör anges.
@@ -1477,6 +1483,8 @@ Om elementet *Öppnat* används, bör `dateType` ha värdet ”opened”.
 ---
 
 #### ERMS-SVK:76 - *Avslutat*
+
+(ERMS213)
 
 Datum då ärendet avslutades eller makulerades.
 
@@ -1738,8 +1746,7 @@ Exempel: `S 2010-0034:1`
 
 #### ERMS-SVK:90 - *Intern identifikator*
 
-(ERMS148-149)
-
+(ERMS147-148)
 Befintligt id i det levererande systemet.
 
 Om elementet *Intern identifikator* används, bör attributet `extraIdType` ha
@@ -1963,8 +1970,7 @@ Se [ERMS-SVK:22](ERMS-SVK-ARENDE.md#erms-svk22---sekretessmarkering).
 
 #### ERMS-SVK:102 - *Riktning*
 
-(ERMS189)
-
+(ERMS189-191)
 Anger handlingens riktning.
 
 Bör anges. Värdet bör väljas från [Värdelista 15](ERMS-SVK-ARENDE-vardelistor.md#erms-svk-arende-v%C3%A4rdelista-15---riktning).
@@ -2006,8 +2012,7 @@ Kan vara något av värdena:
 
 #### ERMS-SVK:103 - *Aktörer*
 
-(ERMS158-)
-
+(ERMS158-166)
 Samlingselement för alla agerande parter.
 
 Bör anges.
@@ -2020,8 +2025,7 @@ Se avsnittet [3.2.1. Aktörer](ERMS-SVK-ARENDE.md#321-aktörer).
 
 #### ERMS-SVK:104 - *Skapare*
 
-(ERMS)
-
+(ERMS158)
 Den som har skapat handlingen i systemet.
 
 Om elementet *Skapare* används, bör `agentType` ha värdet ”creator”.
@@ -2032,8 +2036,7 @@ Om elementet *Skapare* används, bör `agentType` ha värdet ”creator”.
 
 #### ERMS-SVK:105 - *Ansvarig*
 
-(ERMS)
-
+(ERMS93)
 Den som ägde eller hade ansvar för handlingen innan ärendet avslutades.
 
 Om elementet *Ansvarig* används, bör `agentType` ha värdet ”responsible_person”.
@@ -2044,8 +2047,7 @@ Om elementet *Ansvarig* används, bör `agentType` ha värdet ”responsible_per
 
 #### ERMS-SVK:106 - *Avsändare*
 
-(ERMS)
-
+(ERMS162)
 Avsändare av en inkommen handling.
 
 Bör anges om *Riktning* har värdet ”incoming”. Elementet kan upprepas.
@@ -2058,8 +2060,7 @@ Om elementet *Avsändare* används, bör `agentType` ha värdet ”sender”.
 
 #### ERMS-SVK:107 - *Mottagare*
 
-(ERMS)
-
+(ERMS93)
 Mottagare av en utgående handling.
 
 Bör anges om *Riktning* har värdet ”outgoing”. Elementet kan upprepas.
@@ -2072,8 +2073,7 @@ Om elementet *Mottagare* används, bör `agentType` ha värdet ”receiver”.
 
 #### ERMS-SVK:108 - *Annan aktör*
 
-(ERMS)
-
+(ERMS93)
 Annan typ av aktör än de ovan specificerade.
 
 Elementet kan upprepas.
@@ -2115,8 +2115,7 @@ Om elementet *Annan aktör* används, bör `agentType` ha värdet ”agent”.
 
 #### ERMS-SVK:109 - *Beskrivning*
 
-(ERMS)
-
+(ERMS139)
 Beskrivning av handlingen.
 
 **XML-element:** `description`<br/>
@@ -2126,8 +2125,7 @@ Beskrivning av handlingen.
 
 #### ERMS-SVK:110 - *Datum*
 
-(ERMS)
-
+(ERMS45)
 Samlingselement för alla datum som rör handlingen.
 
 Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum) ovan.
@@ -2138,8 +2136,7 @@ Se avsnittet [3.2.2. Datum](ERMS-SVK-ARENDE.md#322-datum) ovan.
 
 #### ERMS-SVK:111 - *Skapat*
 
-(ERMS)
-
+(ERMS135)
 Datum och tid då handlingen skapades i systemet.
 Här avses ett av systemet automatiskt satt datum.
 
@@ -2156,8 +2153,7 @@ Om elementet *Skapat* används, bör `dateType` ha värdet ”created”.
 
 #### ERMS-SVK:112 - *Registrerat*
 
-(ERMS)
-
+(ERMS136)
 Datum och tid då handlingen registrerades (diariefördes) som inkommen,
 utgående eller på annat sätt färdigställd.
 
@@ -2176,8 +2172,7 @@ Om elementet *Registrerat* används, bör `dateType` ha värdet ”originated”
 
 #### ERMS-SVK:113 - *Ankomstdatum*
 
-(ERMS)
-
+(ERMS47)
 Datum då handlingen inkom (om annat än *Registrerat*).
 
 Om elementet *Ankomstdatum* används, bör `dateType` ha värdet ”received”.
@@ -2189,8 +2184,7 @@ Om elementet *Ankomstdatum* används, bör `dateType` ha värdet ”received”.
 
 #### ERMS-SVK:114 - *Expedieringsdatum*
 
-(ERMS)
-
+(ERMS47)
 Datum då handlingen expedierades (om annat än *Registrerat*).
 
 Om elementet *Expedieringsdatum* används, bör `dateType` ha värdet ”expedited”.
@@ -2221,6 +2215,8 @@ Se [ERMS-SVK:26](ERMS-SVK-ARENDE.md#erms-svk26---kommentar).
 ---
 
 #### ERMS-SVK:115 - *Utökad XML-data*
+
+(ERMS169, ERMS43)
 
 *Utökad XML-data* är en del av Svenska kyrkans anpassning av ERMS.
 
@@ -2815,6 +2811,8 @@ Elementet kan upprepas.
 
 #### ERMS-SVK:158 - *Appendix*
 
+(ERMS28)
+
 Samlingselement för den information om filen som följer ERMS-standard.
 
 Obligatoriskt.
@@ -2824,6 +2822,8 @@ Obligatoriskt.
 ---
 
 #### ERMS-SVK:159 - *Gallringsbar*
+
+(ERMS29)
 
 Med gallringsbar avses här att den bifogade filen kan gallras innan handlingen i sig gallras.
 
@@ -2839,6 +2839,8 @@ Värdet kan vara: true, false, 1 (som motsvarar true) eller 0 (som motsvarar fal
 
 #### ERMS-SVK:160 - *Namn*
 
+(ERMS30)
+
 Filens namn.
 
 Obligatoriskt.
@@ -2850,6 +2852,8 @@ Obligatoriskt.
 
 #### ERMS-SVK:161 - *Beskrivning*
 
+(ERMS31)
+
 Beskrivning av filen.
 
 **XML-element:** `appendix/@description`<br/>
@@ -2858,6 +2862,8 @@ Beskrivning av filen.
 ---
 
 #### ERMS-SVK:162 - *Filformat*
+
+(ERMS32)
 
 Filens format.
 
@@ -2874,6 +2880,8 @@ Exempel: pdf, png, txt
 
 #### ERMS-SVK:163 - *Originalfilformat*
 
+(ERMS33)
+
 Om filen är konverterad till arkivformat, anges här originalfilens format.
 
 Anges i form av filnamnsändelse (max fyra tecken) utan punkt och med små bokstäver.
@@ -2886,6 +2894,8 @@ Exempel: docx, xlsx, msg
 ---
 
 #### ERMS-SVK:164 - *Sökväg*
+
+(ERMS34)
 
 Relativ sökväg till filens placering i arkivpaketet.
 
@@ -2900,6 +2910,8 @@ Exempel: files/document_01.pdf
 
 #### ERMS-SVK:165 - *Uppgift om e-signatur*
 
+(ERMS35)
+
 Anger om det har funnits en e-signatur som har gallrats före leverans.
 
 Värdet kan vara: true, false, 1 (som motsvarar true) eller 0 (som motsvarar false).
@@ -2911,6 +2923,8 @@ Värdet kan vara: true, false, 1 (som motsvarar true) eller 0 (som motsvarar fal
 
 #### ERMS-SVK:166 - *E-signatur*
 
+(ERMS36)
+
 Samlingselement för information om befintlig e-signatur.
 
 **XML-element:** `appendix/eSignature`<br/>
@@ -2918,6 +2932,8 @@ Samlingselement för information om befintlig e-signatur.
 ---
 
 #### ERMS-SVK:167 - *E-signatur finns*
+
+(ERMS37)
 
 Anger om det finns en e-signatur.
 
@@ -2932,6 +2948,8 @@ Värdet kan vara: true, false, 1 (som motsvarar true) eller 0 (som motsvarar fal
 
 #### ERMS-SVK:168 - *Verifikationsdatum*
 
+(ERMS38)
+
 Datum och tid då e-signaturen senast verifierades.
 
 **XML-element:** `eSignature/@dateeSignatureIsVerified`<br/>
@@ -2940,6 +2958,8 @@ Datum och tid då e-signaturen senast verifierades.
 ---
 
 #### ERMS-SVK:169 - *Signatur*
+
+(ERMS39)
 
 Element för filens e-signatur enligt dess eget XML-schema.
 

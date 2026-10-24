@@ -2,7 +2,7 @@
 
 # SvKGS-Ärendehandlingar
 
-***Version 1.0***
+***Version 1.1***
 
 # Innehåll
 
@@ -61,11 +61,11 @@ Specifikationerna är främst avsedda för arkivering av information från diari
 t.ex. Tietoevrys **Public 360°**, Vitecs **Acta** och **FAS** samt Eniacs **Aveny**.
 
 Registrerad information om ett ärende och dess ingående handlingar bevaras i ett XML-dokument som
-regleras av specifikationerna genom användandet av scheman (XSD och Schematron).
+regleras av specifikationerna genom användandet av XML-scheman (XSD).
 Även bifogade filer (i godkänt arkivformat) kan arkiveras.
 
 *SvKGS Ärendehandlingar* följer helt och hållet *Specification for the E-ARK Content Information Type
-Specification for Electronic Records Management Systems* (ERMS) version 2.1.0.
+Specification for Electronic Records Management Systems* (ERMS) version 3.0.2.
 Detta innebär att specifikationen också följer [FGS Ärendehantering 2.0](https://riksarkivet.se/arkivera-och-forvalta/medium-och-format/forvaltningsgemensamma-specifikationer/faststallda-fgser)
 och [Riksarkivets tillämpning av CITS ERMS (för överlämnande till Riksarkivet)](https://riksarkivet.se/files/2024/12/riksarkivets_tillaempning_av_e-ark_csip_och_sip_v1-0.pdf). 
 
@@ -127,37 +127,51 @@ XML-scheman och Schematron används i ERMS för att på ett mer tekniskt sätt d
 ska utformas. Scheman kan också användas för att validera ett XML-dokument så att man kan avgöra om det
 följer specifikationen.
 
-I ERMS ingår schemana [ERMS_v3.xsd](https://citserms.dilcis.eu/schema/ERMS_v3.xsd) och [ERMS.sch](https://citserms.dilcis.eu/schema/erms_v3.sch).
+I ERMS ingår schemana [ERMS_v3.xsd](https://citserms.dilcis.eu/schema/ERMS_v3.xsd) och [erms_v3.sch](https://citserms.dilcis.eu/schema/erms_v3.sch).
 
 I *SvKGS Ärendehandlingar* används schemana
 
-**ERMS_v3.xsd**<br/>
-Schemat används för att validera de delat av XML-dokumentet som följer ERMS-standard.
+**ERMS_v3.xsd** (version 3.0.2)<br/>
+Schemat används för att validera de delar av XML-dokumentet som följer ERMS-standard.
+Observera att adressen [https://citserms.dilcis.eu/schema/ERMS_v3.xsd](https://citserms.dilcis.eu/schema/ERMS_v3.xsd)
+alltid pekar på den senaste versionen 3.x av schemat.
 
-**ERMS-SVK-element.xsd**<br/>
+**erms_v3.sch** (version 3.0.0)<br/>
+ERMS egna Schematron-regler. De kontrollerar bland annat att attribut av typen `other…` används
+när ett attribut har värdet "other".
+
+**ERMS-SVK-element.xsd** (version 1.1)<br/>
 I detta schema definieras alla element som är Svenska kyrkans tillägg till ERMS. Schemat är alltså inte
 specifikt för *SvKGS Ärendehandlingar* utan används i andra anpassningar av ERMS.
-Schemat är publikt tillgängligt på [Github](https://github.com/svkau/ERMS-SVK-element).
+Schemat är publikt tillgängligt på
+[https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v1/ERMS-SVK-element.xsd](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v1/ERMS-SVK-element.xsd).
 
-**ERMS-SVK-ARENDE.xsd**<br/>
+**ERMS-SVK-ARENDE.xsd** (version 1.1)<br/>
 Schemat reglerar själva strukturen på den del av XML-dokumentet som utgörs av Svenska kyrkans tillägg
-och vilka tillagda element som får användas i enlighet med SvKGS Ärendehandlingar.
+och vilka tillagda element som får användas i enlighet med *SvKGS Ärendehandlingar*.
 Denna del av XML-dokumentet ingår i ERMS-elementet `additionalXMLData`.
+Schemat är specifikt för *SvKGS Ärendehandlingar* och är publikt tillgängligt på
+[https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1/ERMS-SVK-ARENDE.xsd](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1/ERMS-SVK-ARENDE.xsd).
 
-**ERMS-SVK-ARENDEN.sch**<br/>
-Schemat innehåller Svenska kyrkans regler som
-de beskrivs i *SvKGS Ärendehandlingar*. De två sistnämnda schemana är specifika för
-*SvKGS Ärendehandlingar* och är publikt tillgängliga på [Github](https://github.com/svkau/SvKGS-Arendehandlingar).
+Följande namnrymder används:
 
-En särskild anmärkning om elementet `appendix` i behöver göras. Eftersom det har funnits behov av att
+| Schema               | Namnrymd                                                   |
+|----------------------|------------------------------------------------------------|
+| ERMS_v3.xsd          | `https://DILCIS.eu/XML/ERMS`                               |
+| ERMS-SVK-element.xsd | `https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v1`      |
+| ERMS-SVK-ARENDE.xsd  | `https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1` |
+
+En särskild anmärkning om elementet `appendix` behöver göras. Eftersom det har funnits behov av att
 utöka detta element med flera underelement, och då det inte finns något element `additionalXMLData` här,
-används inte `appendix` utan i stället ett eget element `svkAppendix` som definieras i ERMS-SVK-element.xsd.
-
-Användandet av elementet appendix förbjuds genom en regel i ERMS-SVK-ARENDEN.sch.
+används inte `appendix` direkt i `record/additionalInformation` utan i stället ett eget element `svkAppendix`
+som definieras i ERMS-SVK-element.xsd. ERMS-elementet `appendix` ingår i sin tur i `svkAppendix`.
+Elementet `appendix` bör därför inte användas direkt i `record/additionalInformation`.
 
 För att validera ett XML-dokument och avgöra om det följer specifikationerna i *SvKGS Ärendehandlingar*, måste man
 alltså använda både **ERMS_v3.xsd** och **ERMS-SVK-ARENDE.xsd** (som i sin tur importerar och använder **ERMS-SVK-element.xsd**).
-Därtill måste dokumentet valideras mot **ERMS-SVK-ARENDE.sch**.
+Dokumentet bör också valideras mot **erms_v3.sch**.
+
+Svenska kyrkans rekommendationer i denna specifikation (uttryckta med "bör") kontrolleras inte av schemana.
 
 ## 2.5. Datatyper
 
@@ -1579,7 +1593,7 @@ Anger vilken version av SvKGS Ärendehandlingar som XML-dokumentet är kompatibe
 
 Obligatoriskt.
 
-**XML-element:** `svk:ermsSvkArende/@ermsSvkArendeVersion="1.0"`<br/>
+**XML-element:** `svk:ermsSvkArende/@ermsSvkArendeVersion="1.1"`<br/>
 **Datatyp:** decimal
 
 ---

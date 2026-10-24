@@ -3,7 +3,7 @@
 
 ## SvKGS-Ärendehandlingar
 
-**Version 1.0**
+**Version 1.1**
 
 *Svenska kyrkans gemensamma specifikationer - Ärendehandlingar* reglerar hur uppgifter i
 ärendehanterings- och diariesystem ska formateras inför leverans till Svenska kyrkans
@@ -15,25 +15,17 @@ Riksarkivet)](https://www.riksarkivet.se/fgs-anpassning).
 
 ## Innehåll
 
-- **Specifikation**: [ERMS-SVK-ARENDE.md](ERMS-SVK-ARENDE.md) version 1.0
-- **Värdelistor**: [ERMS-SVK-ARENDE-vardelistor.md](ERMS-SVK-ARENDE-vardelistor.md) version 1.0
+- **Specifikation**: [ERMS-SVK-ARENDE.md](ERMS-SVK-ARENDE.md) version 1.1
+- **Värdelistor**: [ERMS-SVK-ARENDE-vardelistor.md](ERMS-SVK-ARENDE-vardelistor.md) version 1.1
 
 ## Tillämpade scheman
 
-Följande scheman används av och är kompatibla med SvKGS-Ärendehandlingar 1.0:
+Följande scheman används av och är kompatibla med SvKGS-Ärendehandlingar 1.1:
 
-[ERMS-SVK-ARENDE.xsd](ERMS-SVK-ARENDE.xsd) **version 1.0**
+[ERMS-SVK-ARENDE.xsd](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v1/ERMS-SVK-ARENDE.xsd) **version 1.1**
 
-[ERMS-SVK-ARENDE.sch](ERMS-SVK-ARENDE.sch) **version 1.0**
+[ERMS-SVK-element.xsd](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v1/ERMS-SVK-element.xsd) **version 1.1**
 
-[ERMS-SVK-element.xsd](https://github.com/svkau/ERMS-SVK/blob/main/ERMS-SVK-element.xsd) **version 1.0**
+[ERMS_v3.xsd](https://citserms.dilcis.eu/schema/ERMS_v3.xsd) **version 3.0.2**
 
-[ERMS_v3.xsd](https://github.com/DILCISBoard/CITS-ERMS/blob/master/schema/ERMS_v3.xsd) **version 3.0.1**
-
-[ERMS_v3.sch](https://github.com/DILCISBoard/CITS-ERMS/blob/master/schema/erms_v3.sch) **version 3.0.0**
-
-
-
-
-
-
+[erms_v3.sch](https://citserms.dilcis.eu/schema/erms_v3.sch) **version 3.0.0**

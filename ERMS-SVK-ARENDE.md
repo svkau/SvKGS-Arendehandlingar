@@ -800,13 +800,13 @@ Objektets id-nummer i det levererande systemet.
 #### Exempel 8 – Relaterat objekt
 
 ```xml
-<svk:relatedObjects>
-    <svk:relatedObject typeOfObject="project">
-        <svk:objectName>Omläggning av kyrktaket 2009</svk:objectName>
-        <svk:objectId>P 2009:1</svk:objectId>
-        <svk:deliveringSystemId>34958</svk:deliveringSystemId>
-    </svk:relatedObject>
-</svk:relatedObjects>
+<elm:relatedObjects>
+    <elm:relatedObject typeOfObject="project">
+        <elm:objectName>Omläggning av kyrktaket 2009</elm:objectName>
+        <elm:objectId>P 2009:1</elm:objectId>
+        <elm:deliveringSystemId>34958</elm:deliveringSystemId>
+    </elm:relatedObject>
+</elm:relatedObjects>
 ```
 
 ---
@@ -884,19 +884,19 @@ Attributet `dateType` måste ha värdet *created*
 
 ```xml
 <svk:ermsSvkAggregation>
-	<svk:svkNotes>
-		<svk:svkNote typeOfNote="generell anteckning">
-			<svk:noteText>Detta är en anteckning</svk:noteText>
-			<svk:agents>
+	<elm:svkNotes>
+		<elm:svkNote typeOfNote="generell anteckning">
+			<elm:noteText>Detta är en anteckning</elm:noteText>
+			<elm:agents>
                 <agent agentType="creator">
                     <name>Jörgen Persson</name>
                 </agent>
-            </svk:agents>
+            </elm:agents>
 			<dates>
                 <date dateType="created">2019-02-23T00:00:00</date>
             </dates>
-		</svk:svkNote>
-	</svk:svkNotes>
+		</elm:svkNote>
+	</elm:svkNotes>
 </svk:ermsSvkAggregation>
 ```
 ---
@@ -982,26 +982,25 @@ Om ett värde har ändrats, anges här lydelsen efter ändringen.
 #### Exempel 10 – Ändringslogg
 
 ```xml
-<svk:auditLogEvents>
-    <svk:auditLogEvent>
-        <svk:time>2009-09-22T11:47:00</svk:time>
-        <svk:user> Jörgen Persson</svk:user>
-        <svk:action>Ärende skapades</svk:action>
-    </svk:auditLogEvent>
-    <svk:auditLogEvent>
-        <svk:time>2009-09-22T11:52:00</svk:time>
-        <svk:user>Jörgen Persson</svk:user>
-        <svk:action>Ärendemeningen uppdaterades</svk:action>
-        <svk:valueBeforeChange>Upphandling av frysboxar</svk:valueBeforeChange>
-        <svk:valueAfterChange>Upphandling av kylskåp</svk:valueAfterChange>
-    </svk:auditLogEvent>
-    <svk:auditLogEvent>
-        <svk:time>2009-09-22T12:10:00</svk:time>
-        <svk:user> Jörgen Persson </svk:user>
-        <svk:scope>ärendestatus</svk:scope>
-        <svk:action>Ärendestatus ändrades frånn Öppet till Avslutat</svk:action>
-    </svk:auditLogEvent>
-</svk:auditLogEvents>
+<elm:auditLogEvents>
+	<elm:auditLogEvent>
+		<elm:eventTime>2009-09-22T11:47:00</elm:eventTime>
+		<elm:user>Jörgen Persson</elm:user>
+		<elm:action>Ärende skapades</elm:action>
+	</elm:auditLogEvent>
+	<elm:auditLogEvent>
+		<elm:eventTime>2009-09-22T11:52:00</elm:eventTime>
+		<elm:user>Jörgen Persson</elm:user>
+		<elm:scope>ärendemening</elm:scope>
+		<elm:action>Ärendemeningen ändrades från "Upphandling av frysboxar" till "Upphandling av kylskåp"</elm:action>
+	</elm:auditLogEvent>
+	<elm:auditLogEvent>
+		<elm:eventTime>2009-09-22T12:10:00</elm:eventTime>
+		<elm:user>Jörgen Persson</elm:user>
+		<elm:scope>ärendestatus</elm:scope>
+		<elm:action>Ärendestatus ändrades från Öppet till Avslutat</elm:action>
+	</elm:auditLogEvent>
+</elm:auditLogEvents>
 ```
 
 ---
@@ -1058,6 +1057,8 @@ Obligatoriskt.
 
 ```xml
 <aggregation systemIdentifier="3b9fbc5f-3eaf-4521-9726-0f142feb04c3" aggregationType="caseFile">
+	<!-- Ärendeaktens övriga element -->
+</aggregation>
 ```
 
 ---
@@ -1737,6 +1738,7 @@ värdet ”deliveringSystemId”.
 <record>
 	<objectId>C 1995-0032:1</objectId>
 	<extraId extraIdType="deliveringSystemId">34565</extraId>
+</record>
 ```
 
 #### ERMS-SVK:91 - *Informationsklassning*
@@ -1883,7 +1885,7 @@ makulerat.
 <record>
 	<status value="closed"/>
 </record>
-````
+```
 
 **XML-element:** `status/@value`<br/>
 **Datatyp:** string
@@ -2336,16 +2338,16 @@ Om elementet *Giltigt till* används, måste attributet `dateType` ha värdet �
 
 ```xml
 <svk:ermsSvkRecord>
-	<svk:contractInfo>
-		<svk:externalReference>ref3453</svk:externalReference>
-		<svk:callOffValue currency="SEK">34000</svk:callOffValue>
-		<svk:contractValue currency="SEK">45000</svk:contractValue>
-		<svk:typeOfAgreement>Avtal</svk:typeOfAgreement>
+	<elm:contractInfo>
+		<elm:externalReference>ref3453</elm:externalReference>
+		<elm:callOffValue currency="SEK">34000</elm:callOffValue>
+		<elm:contractValue currency="SEK">45000</elm:contractValue>
+		<elm:typeOfAgreement>avtal</elm:typeOfAgreement>
 		<dates>
 			<date dateType="start">2018-02-12T00:00:00</date>
 			<date dateType="end">2019-02-12T00:00:00</date>
 		</dates>
-	</svk:contractInfo>
+	</elm:contractInfo>
 </svk:ermsSvkRecord>
 ```
 
@@ -2619,55 +2621,59 @@ Kommentar som mottagaren kan lämna i anslutning till sin del i arbetsflödet.
 
 ```xml
 <svk:ermsSvkRecord>
-    <svk:workflows>
-        <svk:workflow typeOfWorkflow="approval">
-            <svk:workflowName>Godkännande</svk:workflowName>
-            <svk:workflowStatus>approved</svk:workflowStatus>
-            <svk:workflowPriority>normal</svk:workflowPriority>
-            <svk:agents>
-                <agent agentType="creator">
-                    <name>Bo Mattsson</name>    
-                </agent>
-            </svk:agents>
-            <dates>
-                <date dateType="created">2022-01-14T00:00:00</date>
-            </dates>
-            <svk:workflowMessage>Översändes för godkännande.</svk:workflowMessage>
-            <svk:workflowNotes>
-                <svk:workflowNote>
-                    <svk:workflowNoteText>Nu är det bråttom!</svk:workflowNoteText>
-                    <dates>
-                        <date dateType="created">2022-02-28T00:00:00</date>
-                    </dates>
-                    <svk:agents>
-                        <agent agentType="sender">Bo Mattsson</agent>
-                        <agent agentType="receiver">Patrik Andersson</agent>
-                    </svk:agents>
-                </svk:workflowNote>
-            </svk:workflowNotes>
-            <svk:workflowRecipients>
-                <svk:workflowRecipient>
-                    <svk:agents>
-                        <agent agentType="recipient">
-                            <name>Patrik Andersson</name>
-                        </agent>
-                        <agent agentType="other" otherAgentType="closing_person">
-                            <name>Patrik Andersson</name>
-                            <idNumber type="username">knet\patand</idNumber>
-                        </agent>
-                        <agent agentType="other" otherAgentType="delegator">
-                            <name>Gudrun Andersson</name>
-                        </agent>
-                    </svk:agents>
-                    <dates>
-                        <date dateType="finished">2022-03-01T00:00:00</date>
-                    </dates>
-                    <svk:recipientStatus>approved</svk:recipientStatus>
-                    <svk:recipientComment>Det ser bra ut! Jag godkänner.</svk:recipientComment>
-                </svk:workflowRecipient>
-            </svk:workflowRecipients>
-        </svk:workflow>
-    </svk:workflows>
+	<elm:workflows>
+		<elm:workflow typeOfWorkflow="approval">
+			<elm:workflowName>Godkännande</elm:workflowName>
+			<elm:workflowStatus>approved</elm:workflowStatus>
+			<elm:workflowPriority>standard</elm:workflowPriority>
+			<elm:agents>
+				<agent agentType="creator">
+					<name>Bo Mattsson</name>
+				</agent>
+			</elm:agents>
+			<dates>
+				<date dateType="created">2022-01-14T00:00:00</date>
+			</dates>
+			<elm:workflowMessage>Översändes för godkännande.</elm:workflowMessage>
+			<elm:workflowNotes>
+				<elm:workflowNote>
+					<elm:workflowNoteText>Nu är det bråttom!</elm:workflowNoteText>
+					<dates>
+						<date dateType="created">2022-02-28T00:00:00</date>
+					</dates>
+					<elm:agents>
+						<agent agentType="sender">
+							<name>Bo Mattsson</name>
+						</agent>
+						<agent agentType="receiver">
+							<name>Patrik Andersson</name>
+						</agent>
+					</elm:agents>
+				</elm:workflowNote>
+			</elm:workflowNotes>
+			<elm:workflowRecipients>
+				<elm:workflowRecipient>
+					<elm:agents>
+						<agent agentType="recipient">
+							<name>Patrik Andersson</name>
+						</agent>
+						<agent agentType="other" otherAgentType="closing_person">
+							<name>Patrik Andersson</name>
+							<idNumber idNumberType="username">knet\patand</idNumber>
+						</agent>
+						<agent agentType="other" otherAgentType="delegator">
+							<name>Gudrun Andersson</name>
+						</agent>
+					</elm:agents>
+					<dates>
+						<date dateType="finished">2022-03-01T00:00:00</date>
+					</dates>
+					<elm:recipientStatus>approved</elm:recipientStatus>
+					<elm:recipientComment>Det ser bra ut! Jag godkänner.</elm:recipientComment>
+				</elm:workflowRecipient>
+			</elm:workflowRecipients>
+		</elm:workflow>
+	</elm:workflows>
 </svk:ermsSvkRecord>
 ```
 
@@ -3102,39 +3108,51 @@ Kommentar som undertecknaren ev. har angivit i samband med undertecknandet.
 #### Exempel 29 – svkAppendix
 
 ```xml
-<svk:svkAppendix>
-	<svk:appendix name="ansökan" path="filer/ansökan.pdf" fileFormat="pdf">
+<elm:svkAppendix>
+	<appendix name="ansökan" path="filer/ansökan.pdf" fileFormat="pdf">
 		<eSignature present="true"/>
-	</svk:appendix>
-	<svk:fileInfo>
-		<svk:dateCreated>2010-02-01T00:00:00</svk:dateCreated>
-		<svk:dateLastEdited>2010-02-01T00:00:00</svk:dateLastEdited>
-		<svk:versionNumber>1</svk:versionNumber>
-		<svk:variant>preservation</svk:variant>
-	</svk:fileInfo>
-	<svk:signatureInfo>
-		<dates><date dateType="created">2024-04-18T10:22:04</date></dates>
+	</appendix>
+	<elm:fileInfo>
+		<dates>
+			<date dateType="created">2010-02-01T00:00:00</date>
+			<date dateType="modified">2010-02-01T00:00:00</date>
+		</dates>
+		<elm:versionNumber>1</elm:versionNumber>
+		<elm:variant>preservation</elm:variant>
+	</elm:fileInfo>
+	<elm:signatureInfo>
+		<dates>
+			<date dateType="created">2024-04-18T10:22:04</date>
+		</dates>
 		<agent agentType="creator">
 			<name>Dorian Gray</name>
 			<organisation>Kyrkstadens församling</organisation>
 			<idNumber idNumberType="username">knet\xxxx</idNumber>
 		</agent>
-		<svk:signatureStatus>Slutförd</svk:signatureStatus>
-		<svk:signatureFileHash algorithm="SHA-1">2aae6c35c94fcfb415dbe95f408b9ce91ee846ed</svk:signatureFileHash>
-		<svk:signatories>
-			<svk:signatory>
-				<agent agentType="main_signatory"><name>Gregor Samsa</name></agent>
-				<dates><date dateType="main_signature">2024-04-18T10:22:04</date></dates>
-				<svk:signatoryComment>Nu har jag skrivit under!</svk:signatoryComment>
-			</svk:signatory>
-			<svk:signatory>
-				<agent agentType="main_signatory"><name>Josef K.</name></agent>
-				<dates><date dateType="main_signature">2024-04-19T10:22:04</date></dates>
-				<svk:signatoryComment>Jag har också skrivit under!</svk:signatoryComment>
-			</svk:signatory>
-		</svk:signatories>
-	</svk:signatureInfo>
-</svk:svkAppendix>
+		<elm:signatureStatus>Slutförd</elm:signatureStatus>
+		<elm:signatureFileHash algorithm="SHA-1">2aae6c35c94fcfb415dbe95f408b9ce91ee846ed</elm:signatureFileHash>
+		<elm:signatories>
+			<elm:signatory>
+				<agent agentType="main_signatory">
+					<name>Gregor Samsa</name>
+				</agent>
+				<dates>
+					<date dateType="main_signature">2024-04-18T10:22:04</date>
+				</dates>
+				<elm:signatoryComment>Nu har jag skrivit under!</elm:signatoryComment>
+			</elm:signatory>
+			<elm:signatory>
+				<agent agentType="main_signatory">
+					<name>Josef K.</name>
+				</agent>
+				<dates>
+					<date dateType="main_signature">2024-04-19T10:22:04</date>
+				</dates>
+				<elm:signatoryComment>Jag har också skrivit under!</elm:signatoryComment>
+			</elm:signatory>
+		</elm:signatories>
+	</elm:signatureInfo>
+</elm:svkAppendix>
 ```
 
 ---

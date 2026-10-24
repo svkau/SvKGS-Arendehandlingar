@@ -59,13 +59,13 @@ All child elements come from the ERMS-SVK namespace.
 
 ## Validation
 
-Validate `exempel.xml` (and any changed instance) before considering XML work done:
-1. The whole document against `ERMS_v3.xsd`.
-2. Each `svk:ermsSvkArende` element against `ERMS-SVK-ARENDE.xsd` (`additionalXMLData` is not strictly validated by ERMS_v3.xsd).
-3. v2 only: against `ERMS-SVK-ARENDE.sch` (queryBinding xslt2; needs an XSLT 2.0 processor such as Saxon, not lxml).
-4. Optionally against DILCIS `erms_v3.sch`.
+Tools live in `tools/` (uv project, dependencies lxml and saxonche). Run from the repo root:
 
-libxml2/lxml cannot fetch `https` schemaLocations, so make local copies with rewritten `schemaLocation` in a scratch directory. Run lxml through `uv run --no-project --with lxml` and do not add it to the repo without asking.
+- `uv run --project tools tools/validate.py exempel.xml` – XSD (whole document against `ERMS_v3.xsd`, each `svk:ermsSvkArende` against `ERMS-SVK-ARENDE.xsd`) and, in v2, `ERMS-SVK-ARENDE.sch`. `--erms-sch` also runs DILCIS `erms_v3.sch`.
+- `uv run --project tools tools/check_spec.py` – spec XML examples validate, internal links resolve, value lists match XSD enumerations.
+- `uv run --project tools tools/test_schematron.py` – mutation tests for the Schematron; every assert must have a test case. Add a case in `CASES` when adding a rule.
+
+Run all three before considering spec, schema or example changes done. `ERMS-SVK-element.xsd` v1 is read from the sibling repo `../erms-svk/` (or `$ERMS_SVK_ELEMENT`) because it is not yet on the web server. Downloads are cached in `tools/.cache/` (git-ignored).
 
 ## Standards Basis
 

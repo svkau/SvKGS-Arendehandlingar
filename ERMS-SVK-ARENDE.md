@@ -168,9 +168,15 @@ Schemat är specifikt för *SvKGS Ärendehandlingar* och är publikt tillgängli
 **ERMS-SVK-ARENDE.sch** (version 2.0)<br/>
 Schematron-schemat innehåller Svenska kyrkans regler så som de beskrivs i *SvKGS Ärendehandlingar*.
 Varje regel hänvisar till det dataelement (ERMS-SVK:n) som den kontrollerar.
-Schemat använder XSLT 2.0 (`queryBinding="xslt2"`), på samma sätt som erms_v3.sch, och kräver därför
-en XSLT 2.0-processor, t.ex. Saxon. Schemat är publikt tillgängligt på
+Schemat använder XSLT 1.0 (`queryBinding="xslt"`) och kan därför köras med vilken XSLT-processor som helst,
+t.ex. libxslt. Schemat är publikt tillgängligt på
 [https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE.sch](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE.sch).
+
+**ERMS-SVK-ARENDE-xslt2.sch** (version 2.0)<br/>
+En variant av ERMS-SVK-ARENDE.sch med samma regler och samma resultat, skriven för XSLT 2.0 (`queryBinding="xslt2"`)
+på samma sätt som erms_v3.sch. Den kräver en XSLT 2.0-processor, t.ex. Saxon, och kan användas i stället för
+ERMS-SVK-ARENDE.sch. Schemat är publikt tillgängligt på
+[https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE-xslt2.sch](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE-xslt2.sch).
 
 Följande namnrymder används:
 
@@ -189,7 +195,7 @@ Det kontrolleras av en regel i ERMS-SVK-ARENDE.sch.
 
 För att validera ett XML-dokument och avgöra om det följer specifikationerna i *SvKGS Ärendehandlingar*, måste man
 alltså använda både **ERMS_v3.xsd** och **ERMS-SVK-ARENDE.xsd** (som i sin tur importerar och använder **ERMS-SVK-element.xsd**).
-Därtill ska dokumentet valideras mot **ERMS-SVK-ARENDE.sch**, och det bör också valideras mot **erms_v3.sch**.
+Därtill ska dokumentet valideras mot **ERMS-SVK-ARENDE.sch** (eller **ERMS-SVK-ARENDE-xslt2.sch**), och det bör också valideras mot **erms_v3.sch**.
 
 Svenska kyrkans rekommendationer i denna specifikation (uttryckta med "bör") kontrolleras inte av schemana.
 

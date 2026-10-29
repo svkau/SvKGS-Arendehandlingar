@@ -6,7 +6,7 @@ Kräver [uv](https://docs.astral.sh/uv/). Kör från repots rot.
 |----------|-------------|
 | `uv run --project tools tools/validate.py fil.xml [...]` | Validerar XML-dokument mot ERMS_v3.xsd, ERMS-SVK-ARENDE.xsd och (i v2) ERMS-SVK-ARENDE.sch. Lägg till `--erms-sch` för att även köra DILCIS erms_v3.sch. |
 | `uv run --project tools tools/check_spec.py` | Kontrollerar att specens XML-exempel validerar, att interna länkar fungerar och att värdelistorna stämmer med XSD:erna. |
-| `uv run --project tools tools/test_schematron.py` | Mutationstester för ERMS-SVK-ARENDE.sch: varje regel ska slå till för ett känt fel och inte för exempel.xml. |
+| `uv run --project tools tools/test_schematron.py` | Mutationstester för ERMS-SVK-ARENDE.sch och ERMS-SVK-ARENDE-xslt2.sch: varje regel ska slå till för ett känt fel och inte för exempel.xml, och de två filerna ska ge samma resultat. |
 
 ## Scheman
 
@@ -16,4 +16,5 @@ Kräver [uv](https://docs.astral.sh/uv/). Kör från repots rot.
 - `ERMS_v3.xsd`, `erms_v3.sch` och SchXslt (Schematron-kompilator, från Maven Central med
   kontrollsumma) hämtas första gången och sparas i `tools/.cache/`.
 
-Schematron körs med Saxon HE (`saxonche`) eftersom schemat använder XSLT 2.0.
+ERMS-SVK-ARENDE.sch (XSLT 1.0) körs med lxml (`isoschematron`, libxslt), som är en ren XSLT 1.0-processor.
+ERMS-SVK-ARENDE-xslt2.sch och erms_v3.sch använder XSLT 2.0 och körs med Saxon HE (`saxonche`) och SchXslt.

@@ -24,7 +24,9 @@ Följande scheman används av och är kompatibla med SvKGS-Ärendehandlingar 2.0
 
 [ERMS-SVK-ARENDE.xsd](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE.xsd) **version 2.0**
 
-[ERMS-SVK-ARENDE.sch](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE.sch) **version 2.0** (XSLT 2.0)
+[ERMS-SVK-ARENDE.sch](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE.sch) **version 2.0** (XSLT 1.0)
+
+[ERMS-SVK-ARENDE-xslt2.sch](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-ARENDE/v2/ERMS-SVK-ARENDE-xslt2.sch) **version 2.0** (XSLT 2.0, samma regler)
 
 [ERMS-SVK-element.xsd](https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v1/ERMS-SVK-element.xsd) **version 1.1**
 

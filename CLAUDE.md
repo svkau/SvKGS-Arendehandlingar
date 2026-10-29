@@ -13,7 +13,7 @@ This is a **pure specification repository** — there are no build tools, packag
 | Branch | Version | Content |
 |--------|---------|---------|
 | `v1` | 1.x (currently 1.1) | Plain ERMS + ERMS-SVK elements. XSD validation only, **no own Schematron**. SvK requirements are written as recommendations ("bör"). |
-| `Uppdateringar-inför-v2` → later `main` | 2.x | Rules with "ska" and an own Schematron (`ERMS-SVK-ARENDE.sch`). |
+| `Uppdateringar-inför-v2` → later `main` | 2.x | Rules with "ska" and an own Schematron: `ERMS-SVK-ARENDE.sch` (XSLT 1.0, main file, for ESSArch) and `ERMS-SVK-ARENDE-xslt2.sch` (XSLT 2.0, same rules; keep the two in sync). |
 
 The branch model mirrors the sibling repo `erms-svk` (svkau/ERMS-SVK). Links in v1 documents must not point to GitHub `main`, because `main` will become v2.
 
@@ -63,7 +63,7 @@ Tools live in `tools/` (uv project, dependencies lxml and saxonche). Run from th
 
 - `uv run --project tools tools/validate.py exempel.xml` – XSD (whole document against `ERMS_v3.xsd`, each `svk:ermsSvkArende` against `ERMS-SVK-ARENDE.xsd`) and, in v2, `ERMS-SVK-ARENDE.sch`. `--erms-sch` also runs DILCIS `erms_v3.sch`.
 - `uv run --project tools tools/check_spec.py` – spec XML examples validate, internal links resolve, value lists match XSD enumerations.
-- `uv run --project tools tools/test_schematron.py` – mutation tests for the Schematron; every assert must have a test case. Add a case in `CASES` when adding a rule.
+- `uv run --project tools tools/test_schematron.py` – mutation tests for both Schematron files (XSLT 1.0 via lxml/libxslt, XSLT 2.0 via Saxon); every assert must have a test case and both files must give identical results. Add a case in `CASES` when adding a rule, and add the rule to both files.
 
 Run all three before considering spec, schema or example changes done. `ERMS-SVK-element.xsd` v1 is read from the sibling repo `../erms-svk/` (or `$ERMS_SVK_ELEMENT`) because it is not yet on the web server. Downloads are cached in `tools/.cache/` (git-ignored).
 

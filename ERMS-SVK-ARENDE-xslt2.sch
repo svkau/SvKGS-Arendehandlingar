@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Namn:		ERMS-SVK-ARENDE.sch
+Namn:		ERMS-SVK-ARENDE-xslt2.sch
 Version:	2.0
-Ändrad:		2026-10-24
+Ändrad:		2026-10-29
 Ändrad av:	Henrik Vitalis
 
 Svenska kyrkans regler för SvKGS Ärendehandlingar 2.0, utöver det som kontrolleras av
@@ -16,6 +16,8 @@ ERMS_v3.xsd och ERMS-SVK-ARENDE.xsd.
 - Kontrollerna av "other…"-attribut i ERMS finns i DILCIS erms_v3.sch och upprepas inte här.
 
 Kräver en XSLT 2.0-processor, t.ex. Saxon.
+Variant av ERMS-SVK-ARENDE.sch (XSLT 1.0) med samma regler och samma resultat; de två filerna
+ska hållas i takt. ERMS-SVK-ARENDE.sch är huvudfilen.
 -->
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -79,7 +81,7 @@ Kräver en XSLT 2.0-processor, t.ex. Saxon.
 		</rule>
 	</pattern>
 
-	<pattern id="ERMS-SVK-4-vl2">
+	<pattern id="ERMS-SVK-4-struktur">
 		<rule context="erms:control/erms:classificationSchema/erms:textualDescriptionOfClassificationSchema/erms:p">
 			<assert id="ERMS-SVK-4-vl2" test="normalize-space(.) = $VL2">
 				Klassificeringsstrukturen "<value-of select="."/>" finns inte i Värdelista 2 (ERMS-SVK:4).</assert>
@@ -142,7 +144,7 @@ Kräver en XSLT 2.0-processor, t.ex. Saxon.
 		</rule>
 	</pattern>
 
-	<pattern id="ERMS-SVK-date-vl22">
+	<pattern id="ERMS-SVK-date">
 		<!-- Gäller alla datum, se 3.2.2 och Värdelista 22 -->
 		<rule context="erms:date | erms:actionDate">
 			<assert id="ERMS-SVK-date-vl22" test="@dateType = $VL22">

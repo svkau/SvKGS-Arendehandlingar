@@ -4,8 +4,8 @@ version = "2.0.0"
 description = "Validering och tester för SvKGS Ärendehandlingar"
 requires-python = ">=3.11"
 dependencies = [
-    "lxml>=5.0",      # XSD-validering
-    "saxonche>=12.5", # XSLT 2.0 för Schematron (queryBinding xslt2)
+    "lxml>=5.0",      # XSD-validering och Schematron med XSLT 1.0 (queryBinding xslt)
+    "saxonche>=12.5", # Schematron med XSLT 2.0 (queryBinding xslt2): -xslt2.sch och erms_v3.sch
 ]
 
 [tool.uv]

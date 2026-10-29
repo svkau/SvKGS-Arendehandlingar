@@ -6,7 +6,7 @@ Användning (från repots rot):
 Steg:
 1. Hela dokumentet mot ERMS_v3.xsd.
 2. Varje svk:ermsSvkArende mot ERMS-SVK-ARENDE.xsd (additionalXMLData valideras inte strikt av ERMS).
-3. Mot ERMS-SVK-ARENDE.sch, om filen finns (v2).
+3. Mot ERMS-SVK-ARENDE.sch (XSLT 1.0), om filen finns (v2).
 4. Med --erms-sch även mot DILCIS erms_v3.sch.
 
 Avslutas med kod 1 om något fel hittas.

@@ -1,8 +1,9 @@
-"""Mutationstester för ERMS-SVK-ARENDE.sch (v2).
+"""Mutationstester för ERMS-SVK-ARENDE.sch (XSLT 1.0) och ERMS-SVK-ARENDE-xslt2.sch (v2).
 
 Varje fall ändrar exempel.xml på ett ställe och kontrollerar att exakt de förväntade
-assert-id:na slår till. Testet kontrollerar också att varje assert i schemat har minst ett fall
-och att exempel.xml är giltigt.
+assert-id:na slår till. Testet kontrollerar också att varje assert i schemat har minst ett fall,
+att exempel.xml är giltigt, att schemana är giltig ISO Schematron och att de två filerna
+har samma assert-id:n. Samma fall körs mot båda filerna, så att de ger samma resultat.
 
 Användning (från repots rot):
     uv run --project tools tools/test_schematron.py
@@ -12,8 +13,9 @@ from __future__ import annotations
 import copy
 import re
 import sys
+from pathlib import Path
 
-from lxml import etree
+from lxml import etree, isoschematron
 
 import schemas
 from schematron import Schematron
@@ -151,19 +153,47 @@ CASES = [
     ("originalfilformat med punkt", setattr_(APX + "/e:appendix", "originalFileFormat", ".docx"), {"ERMS-SVK-163-format"}),
     ("filinfo fel datumtyp", setattr_(APX + "/elm:fileInfo/e:dates/e:date[@dateType='modified']", "dateType", "opened"), {"ERMS-SVK-171-typer"}),
     ("filinfo två created", dup(APX + "/elm:fileInfo/e:dates/e:date[@dateType='created']"), {"ERMS-SVK-171-en"}),
+    # Gränsfall för XSLT 1.0-omskrivningen (värdelistor som strängar, matches() ersatt)
+    ("identifikationstyp med avgränsare", setattr_("//e:control/e:identification[@identificationType='arkivbildare']", "identificationType", "aid|arkivbildare"), {"ERMS-SVK-1-arkivbildare", "ERMS-SVK-2-vl1"}),
+    ("okänd identifikationstyp dubbelt", append("//e:control", '<identification identificationType="namn">A</identification><identification identificationType="namn">B</identification>'), {"ERMS-SVK-2-vl1"}),
+    ("prioritet med avgränsare", settext("(//elm:workflowPriority)[1]", "high|low"), {"ERMS-SVK-131-vl21"}),
+    ("orgnr elva siffror", settext("//e:control/e:identification[@identificationType='organisationsnummer']", "12345678901"), {"ERMS-SVK-2-orgnr-format"}),
+    ("ärendenummer två mellanslag", settext(AGG + "/e:objectId", "F  2020-0032"), {"ERMS-SVK-51-format", "ERMS-SVK-89-format"}),
+    ("ärendenummer gemen diariekod", settext(AGG + "/e:objectId", "f 2020-0032"), {"ERMS-SVK-51-format", "ERMS-SVK-89-format"}),
+    ("ärendenummer bokstav i löpnummer", settext(AGG + "/e:objectId", "F 2020-003A"), {"ERMS-SVK-51-format", "ERMS-SVK-89-format"}),
+    ("UUID med versaler", setattr_(AGG, "systemIdentifier", "3B9FBC5F-3EAF-4521-9726-0F142FEB04C3"), set()),
+    ("UUID bindestreck på fel plats", setattr_(AGG, "systemIdentifier", "3b9fbc5f3-eaf-4521-9726-0f142feb04c3"), {"ERMS-SVK-49-uuid"}),
+    ("UUID med icke-hex", setattr_(REC, "systemIdentifier", "8dbbdc56-8ada-4ad5-a1ec-b8131a1086ag"), {"ERMS-SVK-86-uuid"}),
+    ("filformat fem tecken", setattr_(APX + "/e:appendix", "fileFormat", "jpeg2"), {"ERMS-SVK-162-format"}),
+    ("filformat tomt", setattr_(APX + "/e:appendix", "fileFormat", ""), {"ERMS-SVK-162-format"}),
 ]
 
+# Huvudfilen (XSLT 1.0) och XSLT 2.0-varianten ska ha samma regler och ge samma resultat.
+SCH_FILES = ["ERMS-SVK-ARENDE.sch", "ERMS-SVK-ARENDE-xslt2.sch"]
 
-def main() -> int:
-    sch_path = schemas.REPO / "ERMS-SVK-ARENDE.sch"
-    if not sch_path.exists():
-        print("ERMS-SVK-ARENDE.sch finns inte (v1). Inget att testa.")
-        return 0
+
+def iso_schematron_errors(sch_path) -> list[str]:
+    """Validerar ett Schematron-schema mot ISO Schematrons RELAX NG (från lxml). Bl.a. måste alla id vara unika."""
+    rng = Path(isoschematron.__file__).parent / "resources" / "rng" / "iso-schematron.rng"
+    validator = etree.RelaxNG(etree.parse(str(rng)))
+    if validator.validate(etree.parse(str(sch_path))):
+        return []
+    return [f"rad {e.line}: {e.message}" for e in validator.error_log]
+
+
+def run_cases(sch_path) -> tuple[int, set[str]]:
+    """Kör alla fall mot ett schema. Returnerar antal fel och schemats assert-id:n."""
+    print(f"== {sch_path.name}")
+    fails = 0
+    errors = iso_schematron_errors(sch_path)
+    for e in errors:
+        print(f"FEL inte giltig ISO Schematron, {e}")
+    fails += bool(errors)
+
     base = etree.parse(str(schemas.REPO / "exempel.xml"))
     sch = Schematron(sch_path)
     ids = lambda tree: {i for i, _, _ in sch.failures(tree)}
 
-    fails = 0
     got = ids(base)
     print(f"{'OK ' if not got else 'FEL'} giltigt exempel {sorted(got) if got else ''}")
     fails += bool(got)
@@ -185,8 +215,26 @@ def main() -> int:
     if unknown:
         print("FEL testfall med okända assert-id:", ", ".join(unknown))
     fails += bool(untested) + bool(unknown)
+    print(f"{len(CASES) + 1} fall, {len(asserts)} asserts: {'alla stämmer' if not fails else f'{fails} fel'}\n")
+    return fails, asserts
 
-    print(f"\n{len(CASES) + 1} fall, {len(asserts)} asserts: {'alla stämmer' if not fails else f'{fails} fel'}")
+
+def main() -> int:
+    paths = [schemas.REPO / f for f in SCH_FILES if (schemas.REPO / f).exists()]
+    if not paths:
+        print("ERMS-SVK-ARENDE.sch finns inte (v1). Inget att testa.")
+        return 0
+    fails = 0
+    assert_sets = []
+    for p in paths:
+        f, asserts = run_cases(p)
+        fails += f
+        assert_sets.append(asserts)
+    if len(paths) == 2 and assert_sets[0] != assert_sets[1]:
+        print("FEL filerna har olika assert-id:",
+              ", ".join(sorted(assert_sets[0] ^ assert_sets[1])))
+        fails += 1
+    print(f"Totalt: {'alla stämmer' if not fails else f'{fails} fel'}")
     return 1 if fails else 0
 
 
